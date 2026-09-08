@@ -37,47 +37,95 @@ body {
   background-color: #3b1900;
 }
 
-/* Slide 2 - Introtekst */
+/* Slide 2 - Inhoud */
 .remark-slide-container:nth-of-type(2) img {
   position: absolute;
-  height: 450px;
   right: 5%;
   top: 15%;
+  height: 450px;
 }
 
-.remark-slide-container:nth-of-type(2) p {
-  font-size: 28px;
+/* Slide 3 - Mijn startpunt */
+.remark-slide-container:nth-of-type(3) img {
+  position: absolute;
+  height: 380px;
+  right: 5%;
+  top: 25%;
+}
+
+.remark-slide-container:nth-of-type(3) p {
+  max-width: 30%;
+}
+
+/* Slide 4 - Waarom country? */
+.remark-slide-container:nth-of-type(4) img {
+  position: absolute;
+  height: 400px;
+  right: 5%;
+  top: 25%;
+}
+
+.remark-slide-container:nth-of-type(4) p {
   max-width: 40%;
 }
 
-/* Slide 3 - Inhoud */
-.remark-slide-container:nth-of-type(3) li {
-  font-size: 26px;
+/* Slide 5 - Country muziek als digital garden */
+.remark-slide-container:nth-of-type(5) img {
+  position: absolute;
+  height: 380px;
+  right: 5%;
+  top: 25%;
 }
 
-.remark-slide-container:nth-of-type(3) img {
+.remark-slide-container:nth-of-type(5) p,
+.remark-slide-container:nth-of-type(5) li {
+  font-size: 18px;
+  max-width: 40%;
+}
+
+/* Slide 6 - Hoe kan mijn garden groeien? */
+.remark-slide-container:nth-of-type(6) img {
   position: absolute;
+  height: 450px;
+  right: 5%;
+  top: 22%;
+}
+
+/* Slide 6 + 5 + 8 grid */
+.taken-grid {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  column-gap: 0;
+}
+
+.taken-grid p {
+  margin-bottom: 5px;
+  color: #d9a441;
+  font-size:22px;
+  font-weight: bold;
+}
+
+.taken-grid ul {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Slide 7 - Een voorbeeld van een vertakking */
+.remark-slide-container:nth-of-type(7) img {
+  position: absolute;
+  height: 400px;
+  right: 5%;
+  top: 22%;
+}
+
+/* Slide 10 - Reflectie */
+.remark-slide-container:nth-of-type(10) img {
+  position: absolute;
+  height: 500px;
   right: 5%;
   top: 15%;
-  width: 400px;
-  height: 500px;
 }
 
-/* Slide 4 - Mijn Onderwerp */
-.remark-slide-container:nth-of-type(4) .remark-slide-content {
-  position: relative;
-}
-
-.remark-slide-container:nth-of-type(4) img {
-  position: absolute;
-  right: 5%;
-  top: 15%;
-  width: 300px;
-  height: 500px;
-}
-
-.remark-slide-container:nth-of-type(4) h1,
-.remark-slide-container:nth-of-type(4) h3,
-.remark-slide-container:nth-of-type(4) p {
-  max-width: 60%;
+.remark-slide-container:nth-of-type(10) p {
+  max-width: 50%;
 }
