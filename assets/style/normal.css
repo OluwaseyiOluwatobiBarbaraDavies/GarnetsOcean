@@ -1,14 +1,83 @@
-/* HIER KOMT JOUW CSS */
 @font-face {
-  font-family: "Comic Relief";
-  src: url(../type/ComicRelief-Regular.woff2);
+  font-family: "texas tango";
+  src: url(../type/TexasTango-Bold.otf);
   font-weight: 400;
-  font-style: normal;
+  font-style: bold;
 }
 
 body {
-  font-family: "Comic Relief", system-ui;
+  font-family: "modern romance", sans-serif;
   background-color: Canvas;
   color: CanvasText;
   color-scheme: light dark;
+}
+
+/* Titel-slide */
+.remark-slide-container:first-of-type .remark-slide-content {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ), 
+    url(../../assets/images/background.jpeg);
+    
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* Titel */
+.remark-slide-container:first-of-type h1 {
+  font-family: "texas tango", sans-serif;
+}
+
+/* Andere slides achtergrond */
+.remark-slide-container:not(:first-of-type) .remark-slide-content {
+  background-color: #3b1900;
+}
+
+/* Slide 2 - Introtekst */
+.remark-slide-container:nth-of-type(2) img {
+  position: absolute;
+  height: 450px;
+  right: 5%;
+  top: 15%;
+}
+
+.remark-slide-container:nth-of-type(2) p {
+  font-size: 28px;
+  max-width: 40%;
+}
+
+/* Slide 3 - Inhoud */
+.remark-slide-container:nth-of-type(3) li {
+  font-size: 26px;
+}
+
+.remark-slide-container:nth-of-type(3) img {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  width: 400px;
+  height: 500px;
+}
+
+/* Slide 4 - Mijn Onderwerp */
+.remark-slide-container:nth-of-type(4) .remark-slide-content {
+  position: relative;
+}
+
+.remark-slide-container:nth-of-type(4) img {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  width: 300px;
+  height: 500px;
+}
+
+.remark-slide-container:nth-of-type(4) h1,
+.remark-slide-container:nth-of-type(4) h3,
+.remark-slide-container:nth-of-type(4) p {
+  max-width: 60%;
 }
