@@ -1,0 +1,65 @@
+:root {
+    --main-font-color: #ffffff;
+    --secondary-font-color: #d9a441;
+    --background-color: #3b1900;
+}
+@font-face {
+    font-family: "eastwood";
+    src: url(../type/Eastwood.otf);
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url(../type/Roboto-Regular.ttf);
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url(../type/Roboto-Bold.ttf);
+    font-weight: 700;
+    font-style: bold;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-family: "eastwood";
+}
+
+p {
+    font-family:"roboto";
+    font-style: normal;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--secondary-font-color);
+    position: sticky;
+    top: 0;
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: var(--main-font-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: var(--background-color);
+    color: var(--main-font-color)
+}
