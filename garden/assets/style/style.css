@@ -234,7 +234,6 @@ nav ul li a:hover {
   color: var(--text-gold);
 }
 
-/* Grids */
 .gallery-container1 {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -263,7 +262,7 @@ nav ul li a:hover {
 .gallery-artists img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: top; /* Keeps artist faces centered in the crop */
+  object-position: top;
 }
 
 .gallery-artists .desc {
@@ -288,7 +287,6 @@ nav ul li a:hover {
   color: var(--text-gold);
 }
 
-/* Wanted Poster Credits Component */
 .wanted-card {
   text-align: center;
   border: 4px double var(--secondary-font-color);
@@ -349,7 +347,6 @@ footer {
   font-size: 14px;
 }
 
-/* Lightbox Modal */
 .modal {
   display: none;
   position: fixed;
