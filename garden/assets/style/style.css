@@ -58,7 +58,7 @@
 }
 
 body {
-    background-color: radial-gradient (circle at top, #2b1409 0%, var(--background-color) 70%);
+    background: radial-gradient(circle at top, #2b1409 0%, var(--background-color) 70%);
     background-attachment: fixed;
     color: var(--main-font-color);
     font-family: "roboto", sans-serif;

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hold Your Horses | Coming Soon</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .coming-soon-card {
+      text-align: center;
+      padding: 60px 20px;
+      margin-top: 40px;
+    }
+
+    .coming-soon-icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .coming-soon-title {
+      font-family: "rye", serif;
+      color: var(--secondary-font-color);
+      font-size: 32px;
+      margin-bottom: 15px;
+      border-bottom: none;
+    }
+
+    .coming-soon-text {
+      font-size: 18px;
+      max-width: 500px;
+      margin: 0 auto 30px auto;
+      color: var(--main-font-color);
+      opacity: 0.9;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 12px 24px;
+      font-family: "rye", serif;
+      color: var(--wood-dark);
+      background: var(--secondary-font-color);
+      border: 2px solid var(--leather-accent);
+      border-radius: 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-home:hover {
+      background: var(--text-gold);
+      color: var(--background-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px var(--gold-glow);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="coming-soon.html">Garden</a></li>
+      <li><a href="coming-soon.html">Music</a></li>
+      <li><a href="coming-soon.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <article class="card coming-soon-card">
+      <div class="coming-soon-icon">🤠</div>
+      <h1 class="coming-soon-title">Hold Your Horses!</h1>
+      <p class="coming-soon-text">
+        This trail is still under construction. We're currently tuning the guitars and building this page for the digital garden.
+      </p>
+      <a href="index.html" class="btn-home">← Back to Main Trail</a>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; Garnet's Ocean — Digital Garden</p>
+  </footer>
+
+  <script src="../js/script.js" defer></script>
+</body>
+</html>
