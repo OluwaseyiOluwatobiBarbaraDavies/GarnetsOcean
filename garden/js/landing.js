@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Delay redirect to match CSS transition time (850ms)
       setTimeout(function () {
         // Adjust path to "../index.html" if index.html is located in the parent directory
-        window.location.href = "index.html";
+        window.location.href = "landing.html";
       }, 850);
     });
 
