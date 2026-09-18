@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       setTimeout(function () {
-        window.location.href = "../html/landing.html";
+        window.location.href = "assets/html/landing.html";
       }, 850);
     });
 
