@@ -14,10 +14,10 @@ Een fork van de model repository gemaakt en gepubliceerd via mijn eigen Github o
 3. Ik kan in VSCodium aanpassingen maken op mijn web pagina en deze publiceren door mijn code op te slaan en te pushen naar de main via de gekozen hosting platform. Hierbij heb ik ook via transip.nl een domeinnaam aangemaakt waardoor alles wat ik heb gecodeerd komt op mijn website te staan.
 
 ### 2 sept - Interactie: MMD, microinteracties, forms
- <img src="../GarnetsOcean/readMeImages/workshop2sept.jpg" alt="Workshop 2 sept: Interacties: MMD, microinteracties, forms ">
+ <img src="readMeImages/workshop2sept.jpg" alt="Workshop 2 sept: Interacties: MMD, microinteracties, forms ">
 
 ### 2 sept - CSS: fonts met kleur en effecten 
-<img src="../GarnetsOcean/readMeImages/Workshop2sept.png" alt="Workshop 2 sept: CSS: fonts met kleur en effecten">
+<img src="readMeImages/Workshop2sept.png" alt="Workshop 2 sept: CSS: fonts met kleur en effecten">
 
 ### 4 sept - Praktische CSS
-<img src="../GarnetsOcean/readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS">
+<img src="readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS">
