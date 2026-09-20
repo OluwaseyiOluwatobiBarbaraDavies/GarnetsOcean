@@ -86,37 +86,72 @@ const researchSources = [
     {
         title: "Geschiedenis van het Wilde Westen & Frontier Life",
         category: "Geschiedenis",
-        author: "National Cowboy & Western Heritage Museum",
-        description: "Achtergrondinformatie over het leven van cowboys, veeteelt en de ontwikkeling van de Amerikaanse frontier in de 19e eeuw.",
-        url: "https://nationalcowboymuseum.org/"
+        author: "Plum Rose Publishing",
+        description: "Achtergrondinformatie over de geschiedenis van countrymuziek en de Amerikaanse cultuur.",
+        url: "https://plumrosepublishing.com/the-history-of-country-music/"
     },
     {
         title: "De Evolutie van Country Muziek & Subgenres",
         category: "Muziek",
         author: "Country Music Hall of Fame",
         description: "Historische documentatie over de oorsprong van Honky Tonk, Outlaw Country en de moderne countrymuziekindustrie.",
-        url: "https://www.countrymusichalloffame.org/"
+        url: "https://www.countrymusichalloffame.org/learn/country-music-history"
     },
     {
-        title: "Houston Livestock Show and Rodeo Geschiedenis",
+        title: "Roots & Branches of Country Music",
         category: "Cultuur & Evenementen",
-        author: "HLSR Archieven",
-        description: "Gedocumenteerde geschiedenis van de grootste rodeo ter wereld en de impact ervan op de Texaanse cultuur.",
-        url: "https://www.rodeohouston.com/"
+        author: "PBS - Ken Burns",
+        description: "Gedocumenteerde geschiedenis van de roots, vertakkingen en culturele impact van countrymuziek.",
+        url: "https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music"
     },
     {
-        title: "Texas State Historical Association (TSHA)",
+        title: "History of Country Music in Oklahoma",
         category: "Geschiedenis",
-        author: "Handbook of Texas",
-        description: "Online encyclopedie en academische artikelen over historische gebeurtenissen, bevolking en cultuur in Texas.",
-        url: "https://www.tshaonline.org/handbook"
+        author: "Oklahoma Historical Society",
+        description: "Online encyclopedie en academische artikelen over de geschiedenis van countrymuziek.",
+        url: "https://www.okhistory.org/publications/enc/entry?entry=CO072"
     },
     {
-        title: "The Roots of American Roots Music",
+        title: "The Roots of American Roots & Bluegrass Music",
         category: "Muziek",
-        author: "Smithsonian Folkways",
+        author: "Britannica",
         description: "Onderzoek naar traditionele Amerikaanse volksmuziek, bluegrass en vroege verhalen verteld via liedjes.",
-        url: "https://folkways.si.edu/"
+        url: "https://www.britannica.com/art/bluegrass-music"
+    },
+    {
+        title: "History of Country Music",
+        category: "Muziek",
+        author: "Grizzly Rose",
+        description: "Overzicht van de rijke geschiedenis van countrymuziek, artiesten en locaties.",
+        url: "https://grizzlyrose.com/history-of-country-music/"
+    },
+    {
+        title: "Discover Country Music Themes",
+        category: "Muziek",
+        author: "Music Rising at Tulane",
+        description: "Thematisch onderzoek naar de muzikale tradities en ontwikkeling van countrymuziek.",
+        url: "https://musicrising.tulane.edu/discover/themes/country-music/"
+    },
+    {
+        title: "A Brief History of Country Music",
+        category: "Geschiedenis",
+        author: "Medium (Midweek Crisis)",
+        description: "Een beknopt historisch overzicht van het ontstaan en de evolutie van het genre.",
+        url: "https://midweekcrisis.medium.com/a-brief-history-of-country-music-ca72e8fff803"
+    },
+    {
+        title: "An American Tradition: History of Country Music Influences",
+        category: "Muziek",
+        author: "Musicnotes",
+        description: "Artikelen over de invloeden en muzikale tradities die country gevormd hebben.",
+        url: "https://www.musicnotes.com/blog/an-american-tradition-the-history-of-country-music-influences/?srsltid=AfmBOopG-MGnrjlAKgoXNbYHh73PstFLviQs8-YRZ_68QN1us4Aj6wYG"
+    },
+    {
+        title: "Dolly Parton and the Roots of Country Music",
+        category: "Muziek & Geschiedenis",
+        author: "Library of Congress",
+        description: "Tijdlijn en historische artikelen over de wortels van countrymuziek en iconische artiesten.",
+        url: "https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/"
     }
 ];
 
