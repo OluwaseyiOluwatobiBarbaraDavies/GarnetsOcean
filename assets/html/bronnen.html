@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilde Westen & Country Bronnen Ledger</title>
+
+    <link rel="stylesheet" href="../resources/style/landing.css">
+    <link rel="stylesheet" href="../resources/style/bronnen.css">
+</head>
+<body class="page-body">
+
+    <nav class="western-nav page-container nav-margin">
+        <ul>
+            <li><a href="../resource/html/landing.html">Home</a></li>
+            <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" target="_blank" rel="noopener">Read Me</a></li>
+            <li><a href="../html/story.html">Story</a></li>
+            <li><a href="../html/bronnen.html" class="active">Bronnen</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-container header-margin text-center">
+        <div class="wooden-plank header-card">
+        <h1>BRONVERMELDINGEN</h1>
+
+        <div class="tab-container">
+            <button id="tabVisualBtn" onclick="switchView('visual')" class="tab-btn tab-btn-active">
+            🖼️ Afbeeldingsbronnen
+            </button>
+            <button id="tabResearchBtn" onclick="switchView('research')" class="tab-btn tab-btn-inactive">
+            📚 Onderzoek & Literatuur
+            </button>
+        </div>
+        </div>
+    </header>
+
+    <main class="page-container">
+        
+        <section id="visualView" class="view-section">
+        <div class="parchment-bg filter-bar">
+            <input 
+            type="text" 
+            id="searchInput" 
+            oninput="filterSources()" 
+            placeholder="Zoek bestand, artiest, uitgever..." 
+            class="search-input"
+            >
+
+            <div id="filterContainer" class="filter-group">
+                <button onclick="setCategory('Alle')" class="filter-btn filter-btn-active">Alle (9)</button>
+                <button onclick="setCategory('Artiesten')" class="filter-btn filter-btn-inactive">Artiesten (5)</button>
+                <button onclick="setCategory('Evenementen & Posters')" class="filter-btn filter-btn-inactive">Evenementen (3)</button>
+                <button onclick="setCategory('Landschap')" class="filter-btn filter-btn-inactive">Landschap (1)</button>
+            </div>
+        </div>
+
+        <div id="sourcesGrid" class="sources-grid"></div>
+        </section>
+
+        <section id="researchView" class="view-section hidden">
+        <div class="parchment-bg research-card">
+            <div class="research-header">
+            <h2>📚 Literatuur & Historische Bronnen</h2>
+            <p class="research-subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
+            </div>
+            
+            <div id="researchList" class="research-list">
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+    <script src="../js/bronnen.js"></script>
+</body>
+</html>
