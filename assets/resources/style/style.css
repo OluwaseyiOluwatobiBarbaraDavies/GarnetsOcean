@@ -52,12 +52,12 @@
   --iron-hoop: linear-gradient(180deg, var(--iron-light) 0%, var(--iron-mid) 100%);
   --shadow-black-98: rgba(0, 0, 0, 0.98);
   --shadow-black-95: rgba(0, 0, 0, 0.95);
-  --shadow-black-90: rgba(0, 0, 0, 0.9);
+  --shadow-black-90: rgba(0, 0, 0, 0.90);
   --shadow-black-85: rgba(0, 0, 0, 0.85);
-  --shadow-black-80: rgba(0, 0, 0, 0.8);
-  --shadow-black-70: rgba(0, 0, 0, 0.7);
-  --shadow-black-60: rgba(0, 0, 0, 0.6);
-  --shadow-black-50: rgba(0, 0, 0, 0.5);
+  --shadow-black-80: rgba(0, 0, 0, 0.80);
+  --shadow-black-70: rgba(0, 0, 0, 0.70);
+  --shadow-black-60: rgba(0, 0, 0, 0.60);
+  --shadow-black-50: rgba(0, 0, 0, 0.50);
 }
 
 .landing-body {
@@ -75,21 +75,20 @@
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   position: relative;
 }
 
 .saloon-stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
+  justify-items: center;
   perspective: 1400px;
   transform-style: preserve-3d;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
   position: relative;
   z-index: 10;
 }
@@ -153,19 +152,27 @@
   position: absolute;
   top: 20%;
   z-index: 25;
-  display: flex;
+  display: grid;
   align-items: center;
 }
 
 .lantern-left {
   left: -86px;
-  flex-direction: row-reverse;
+  grid-template-columns: auto auto;
+  grid-template-areas: "lantern bracket";
 }
 
 .lantern-right {
   right: -86px;
-  flex-direction: row;
+  grid-template-columns: auto auto;
+  grid-template-areas: "bracket lantern";
 }
+
+.lantern-left .saloon-lantern { grid-area: lantern; }
+.lantern-left .lantern-bracket { grid-area: bracket; }
+
+.lantern-right .saloon-lantern { grid-area: lantern; }
+.lantern-right .lantern-bracket { grid-area: bracket; }
 
 .lantern-bracket {
   width: 32px;
@@ -202,9 +209,9 @@
 .saloon-lantern {
   position: relative;
   width: 54px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
   filter: drop-shadow(0 10px 15px var(--shadow-black-95));
 }
 
@@ -222,9 +229,8 @@
   background: radial-gradient(circle at center, var(--lantern-glass-inner) 10%, var(--lantern-glass-outer) 100%);
   border: 3px solid var(--lantern-glass-border);
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   box-shadow: 0 0 30px rgba(255, 150, 30, 0.85);
   position: relative;
   overflow: hidden;
@@ -242,9 +248,9 @@
   position: relative;
   width: 24px;
   height: 38px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  display: grid;
+  justify-items: center;
+  align-items: end;
   filter: drop-shadow(0 0 8px var(--flame-glow-shadow));
 }
 
@@ -336,7 +342,9 @@
 .saloon-doors {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left-door right-door";
   cursor: pointer;
   position: relative;
   z-index: 10;
@@ -344,9 +352,9 @@
 }
 
 .door {
-  width: 49%;
+  width: 98%;
   height: 64%;
-  margin-top: 18%;
+  margin-top: 36%;
   background: 
     linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.4) 100%),
     repeating-linear-gradient(0deg, var(--wood-door) 0px, var(--wood-frame) 3px, #4d2e1f 6px, #26150d 12px);
@@ -360,7 +368,8 @@
 }
 
 .door-left {
-  margin-right: auto;
+  grid-area: left-door;
+  justify-self: start;
   transform-origin: left center;
   border-top-right-radius: 90px 45px;
   border-bottom-right-radius: 90px 45px;
@@ -369,7 +378,8 @@
 }
 
 .door-right {
-  margin-left: auto;
+  grid-area: right-door;
+  justify-self: end;
   transform-origin: right center;
   border-top-left-radius: 90px 45px;
   border-bottom-left-radius: 90px 45px;
@@ -470,9 +480,9 @@
   position: absolute;
   bottom: -20px;
   right: clamp(10px, 2vw, 40px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
   z-index: 5;
   filter: drop-shadow(12px 18px 28px var(--shadow-black-95));
   pointer-events: none;
