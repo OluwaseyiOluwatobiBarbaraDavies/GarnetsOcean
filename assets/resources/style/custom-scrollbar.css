@@ -1,35 +1,43 @@
 :root {
-  --scrollbar-gold-primary: #d4af37;
-  --scrollbar-gold-light: #e6c280;
-  --scrollbar-gold-dark: #b37228;
-  --scrollbar-track-bg: #1a0f07;
-  --scrollbar-label-red: #8b0000;
-  --scrollbar-white: #ffffff;
-
-  --vinyl-dark-1: #000000;
-  --vinyl-dark-2: #050505;
-  --vinyl-dark-3: #111111;
-  --vinyl-dark-4: #1a1a1a;
-  --vinyl-dark-5: #222222;
-
-  --scrollbar-track-width: 4px;
-  --scrollbar-track-padding: 60px;
-  --scrollbar-widget-right: 15px;
-  --scrollbar-track-right: 36px;
+  --track-bg: #1a0f07;
+  --track-box-shadow-inset: rgba(0, 0, 0, 0.8);
+  --track-box-shadow-glow: rgba(212, 175, 55, 0.2);
+  --progress-gradient-start: #d4af37;
+  --progress-gradient-mid: #e6c280;
+  --progress-gradient-end: #b37228;
+  --progress-box-shadow: rgba(212, 175, 55, 0.6);
+  --vinyl-disc-stop-1: #050505;
+  --vinyl-disc-stop-2: #1a1a1a;
+  --vinyl-disc-stop-3: #111;
+  --vinyl-disc-stop-4: #050505;
+  --vinyl-disc-stop-5: #222;
+  --vinyl-disc-stop-6: #111;
+  --vinyl-disc-stop-7: #000;
+  --vinyl-border: #d4af37;
+  --vinyl-box-shadow: rgba(0, 0, 0, 0.7);
+  --vinyl-box-shadow-glow: rgba(212, 175, 55, 0.4);
+  --vinyl-hover-box-shadow: rgba(0, 0, 0, 0.8);
+  --vinyl-hover-box-shadow-glow: rgba(212, 175, 55, 0.8);
+  --label-bg: #8b0000;
+  --label-border: #d4af37;
+  --center-dot-bg: #fff;
+  --note-text-shadow-1: rgba(0, 0, 0, 0.8);
+  --note-text-shadow-2: rgba(212, 175, 55, 0.5);
+  --scroll-track-right: 36px;
+  --scroll-track-top: 60px;
+  --scroll-track-bottom: 60px;
+  --scroll-track-width: 4px;
+  --scroll-track-radius: 2px;
+  --scroll-widget-right: 15px;
+  --scroll-widget-top: 60px;
   --vinyl-size: 46px;
-  --vinyl-label-size: 16px;
-  --vinyl-center-dot-size: 4px;
-
-  --z-scrollbar-track: 9997;
-  --z-scrollbar-widget: 9998;
-  --z-scrollbar-notes: 9999;
-
-  --gold-glow-soft: 0 0 8px rgba(212, 175, 55, 0.6);
-  --gold-glow-intense: 0 0 15px rgba(212, 175, 55, 0.8);
-  --gold-shadow-faint: 0 0 2px rgba(212, 175, 55, 0.2);
-  --gold-shadow-med: 0 0 10px rgba(212, 175, 55, 0.4);
-  --gold-shadow-note: 0 0 10px rgba(212, 175, 55, 0.5);
-  --text-shadow-dark: 0 0 6px rgba(0, 0, 0, 0.8);
+  --vinyl-radius: 50%;
+  --vinyl-border-width: 2px;
+  --label-size: 16px;
+  --label-radius: 50%;
+  --label-border-width: 1px;
+  --center-dot-size: 4px;
+  --center-dot-radius: 50%;
 }
 
 ::-webkit-scrollbar {
@@ -44,14 +52,14 @@ html {
 
 .country-scroll-track {
   position: fixed;
-  right: var(--scrollbar-track-right);
-  top: var(--scrollbar-track-padding);
-  bottom: var(--scrollbar-track-padding);
-  width: var(--scrollbar-track-width);
-  background: var(--scrollbar-track-bg);
-  border-radius: calc(var(--scrollbar-track-width) / 2);
-  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8), var(--gold-shadow-faint);
-  z-index: var(--z-scrollbar-track);
+  right: var(--scroll-track-right);
+  top: var(--scroll-track-top);
+  bottom: var(--scroll-track-bottom);
+  width: var(--scroll-track-width);
+  background: var(--track-bg);
+  border-radius: var(--scroll-track-radius);
+  box-shadow: inset 0 0 4px var(--track-box-shadow-inset), 0 0 2px var(--track-box-shadow-glow);
+  z-index: 9997;
   pointer-events: none;
 }
 
@@ -61,26 +69,21 @@ html {
   left: 0;
   width: 100%;
   height: 0%;
-  background: linear-gradient(
-    180deg,
-    var(--scrollbar-gold-primary),
-    var(--scrollbar-gold-light),
-    var(--scrollbar-gold-dark)
-  );
-  border-radius: calc(var(--scrollbar-track-width) / 2);
-  box-shadow: var(--gold-glow-soft);
+  background: linear-gradient(180deg, var(--progress-gradient-start), var(--progress-gradient-mid), var(--progress-gradient-end));
+  border-radius: var(--scroll-track-radius);
+  box-shadow: 0 0 8px var(--progress-box-shadow);
   transition: height 0.05s linear;
 }
 
 .country-scroll-widget {
   position: fixed;
-  right: var(--scrollbar-widget-right);
-  top: var(--scrollbar-track-padding);
-  z-index: var(--z-scrollbar-widget);
+  right: var(--scroll-widget-right);
+  top: var(--scroll-widget-top);
+  z-index: 9998;
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: auto;
+  pointer-events: auto; 
   cursor: grab;
   user-select: none;
   touch-action: none;
@@ -93,19 +96,10 @@ html {
 .vinyl-disc-indicator {
   width: var(--vinyl-size);
   height: var(--vinyl-size);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    var(--vinyl-dark-2) 20%,
-    var(--vinyl-dark-4) 21%,
-    var(--vinyl-dark-3) 35%,
-    var(--vinyl-dark-2) 36%,
-    var(--vinyl-dark-5) 55%,
-    var(--vinyl-dark-3) 56%,
-    var(--vinyl-dark-1) 100%
-  );
-  border: 2px solid var(--scrollbar-gold-primary);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), var(--gold-shadow-med);
+  border-radius: var(--vinyl-radius);
+  background: radial-gradient(circle, var(--vinyl-disc-stop-1) 20%, var(--vinyl-disc-stop-2) 21%, var(--vinyl-disc-stop-3) 35%, var(--vinyl-disc-stop-4) 36%, var(--vinyl-disc-stop-5) 55%, var(--vinyl-disc-stop-6) 56%, var(--vinyl-disc-stop-7) 100%);
+  border: var(--vinyl-border-width) solid var(--vinyl-border);
+  box-shadow: 0 4px 15px var(--vinyl-box-shadow), 0 0 10px var(--vinyl-box-shadow-glow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,35 +108,35 @@ html {
 }
 
 .vinyl-disc-indicator:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), var(--gold-glow-intense);
+  box-shadow: 0 4px 20px var(--vinyl-hover-box-shadow), 0 0 15px var(--vinyl-hover-box-shadow-glow);
 }
 
 .vinyl-disc-indicator::before {
   content: '';
-  width: var(--vinyl-label-size);
-  height: var(--vinyl-label-size);
-  border-radius: 50%;
-  background: var(--scrollbar-label-red);
-  border: 1px solid var(--scrollbar-gold-primary);
+  width: var(--label-size);
+  height: var(--label-size);
+  border-radius: var(--label-radius);
+  background: var(--label-bg);
+  border: var(--label-border-width) solid var(--label-border);
 }
 
 .vinyl-disc-indicator::after {
   content: '';
   position: absolute;
-  width: var(--vinyl-center-dot-size);
-  height: var(--vinyl-center-dot-size);
-  border-radius: 50%;
-  background: var(--scrollbar-white);
+  width: var(--center-dot-size);
+  height: var(--center-dot-size);
+  border-radius: var(--center-dot-radius);
+  background: var(--center-dot-bg);
 }
 
 .scroll-music-note {
   position: fixed;
   pointer-events: none;
-  z-index: var(--z-scrollbar-notes);
+  z-index: 9999;
   font-family: Georgia, serif;
   font-weight: bold;
   user-select: none;
-  text-shadow: var(--text-shadow-dark), var(--gold-shadow-note);
+  text-shadow: 0 0 6px var(--note-text-shadow-1), 0 0 10px var(--note-text-shadow-2);
   animation: floatAndFadeNote 1.2s ease-out forwards;
 }
 
