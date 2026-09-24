@@ -22,6 +22,115 @@ Een fork van de model repository gemaakt en gepubliceerd via mijn eigen Github o
 ### 4 sept - Praktische CSS
 <img src="readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS">
 
+### Uitgebreid Creatief Proces & Ontwerpkeuzes
+
+Het ontwerp van deze website is niet zomaar ontstaan, maar is het resultaat van een zorgvuldig doorlopen creatief proces. Onderzoek naar de Texaanse cultuur, countrymuziek en de sfeer rondom honky-tonk bars en saloons is vertaald naar visuele keuzes, interactie en unieke websitecomponenten.
+
+---
+
+**Van Moodboard naar Kleurenpalet en Sfeer:**
+
+Het visuele startpunt was het verzamelen van beeldmateriaal in een uitgebreid moodboard. Hierin kwamen onder andere klassieke festivalposters, rodeo-evenementen, Texaanse landschappen, countrybars en iconische portretten van countryartiesten terug. Vanuit deze beelden is een warm en rustiek kleurenpalet ontwikkeld met diepe houttinten, warme bruinen en goudachtige accenten.
+
+Deze combinatie zorgt ervoor dat de website een herkenbare country-uitstraling krijgt. De sfeer is geïnspireerd op een authentieke *honky-tonk* bar en traditionele materialen zoals hout en leer. Hierdoor voelt de website minder aan als een standaard webpagina en meer als een digitaal plakboek dat aansluit bij het onderwerp.
+
+| Visueel Onderzoek | Abstract Onderzoek |
+| :---: | :---: |
+| ![Visueel onderzoek](readMeImages/visueel_research.png) | ![Abstract onderzoek](readMeImages/abstract_research.png) |
+| *Kleuren, sfeer en beeldgebruik* | *Vormen, composities en richtingen* |
+
+---
+
+**Van Onderzoek naar Eerste Ideeën:**
+
+Na het verzamelen van inspiratie zijn verschillende ideeën en mogelijke richtingen uitgewerkt. Hiervoor zijn onder andere de Crazy 8's gebruikt om in korte tijd meerdere concepten te bedenken en visueel te verkennen.
+
+| Crazy 8's (1 t/m 4) | Crazy 8's (5 t/m 8) |
+| :---: | :---: |
+| ![Crazy 8's schetsen 1 t/m 4](readMeImages/Crazy8_1.jpg) | ![Crazy 8's schetsen 5 t/m 8](readMeImages/Crazy8_2.jpg) |
+| *Eerste vier conceptschetsen* | *Laatste vier conceptschetsen* |
+
+---
+
+**Het Saloon-startscherm & Thematische Beleving:**
+
+Geïnspireerd door old-school countrybars en saloons ontstond het idee voor de introductiepagina. Dit resulteerde in een interactief startscherm met saloondeuren en dynamische, geanimeerde gradientkleuren op de achtergrond.
+
+Tijdens het ontwerpproces is het startscherm meerdere keren aangepast voordat de uiteindelijke versie werd gekozen.
+
+| Eerste Iteratie | Finale Versie |
+| :---: | :---: |
+| ![Eerste iteratie startscherm](readMeImages/start_iteratie1.png) | ![Finale startscherm](readMeImages/start_final.png) |
+| *Procesfase startscherm* | *Uiteindelijke versie* |
+
+Wanneer de bezoeker met de cursor over de saloondeuren beweegt, verschijnt een kleine cursor-tool met de tekst **“Come In”**. Na het aanklikken van de deuren wordt een animatie uitgevoerd waarbij de deuren opengaan en de gebruiker wordt verwelkomd op de website.
+
+---
+
+**De Opbouw van het Homescreen & Navigatie:**
+
+Al tijdens de eerste schetsfase is de structuur van de website gekoppeld aan het thema muziek. Dit is onder andere terug te zien in de navigatie en de visuele lijnen van de startpagina, die zijn geïnspireerd op de snaren en hals van een akoestische gitaar.
+
+Ook het homescreen is tijdens het proces meerdere keren aangepast.
+
+| Eerste Iteratie | Finale Versie |
+| :---: | :---: |
+| ![Eerste iteratie homescreen](readMeImages/home_iteratie1.png) | ![Finale homescreen](readMeImages/home_final.png) |
+| *Procesfase homescreen* | *Uiteindelijke versie* |
+
+De startpagina zelf is bewust overzichtelijk en rustig gehouden, zodat de verschillende onderdelen van de Digital Garden niet met elkaar concurreren. De content is verdeeld over gestapelde kaarten (*cards*). Deze kaarten versterken het gevoel van een fysiek plakboek en sluiten tegelijkertijd aan bij het idee van een Digital Garden waarin informatie steeds verder kan worden uitgebreid en verbonden.
+
+---
+
+**Specifieke Componenten & Micro-interacties:**
+
+  - **Navbar & Responsief Banjo-menu:**
+
+    De navigatiebalk sluit qua stijl aan bij de houten accenten en de algemene country-esthetiek van de website. Ook de navbar heeft verschillende ontwerpiteraties doorlopen voordat de uiteindelijke versie werd gekozen.
+
+    ![Finale navbar](readMeImages/navbar_final.png)
+
+    *Uiteindelijke versie van de navigatiebalk.*
+
+    Voor kleinere schermen is een apart mobiel menu ontworpen. Het oorspronkelijke idee was om hiervoor een gitaar als interactief element te gebruiken. Omdat een realistische gitaar met pure CSS onnodig complex zou worden, is gekozen voor een vereenvoudigde banjo.
+
+    De banjo heeft meerdere iteraties doorlopen:
+
+    | Banjo Iteratie 1 | Banjo Iteratie 2 | Finale Banjo-menu |
+    | :---: | :---: | :---: |
+    | ![Banjo iteratie 1](readMeImages/banjo_iteratie1.png) | ![Banjo iteratie 2](readMeImages/banjo_iteratie2.png) | ![Finale banjo](readMeImages/banjo_final.png) |
+    | *Eerste opzet* | *Tweede iteratie* | *Uiteindelijk menu-icoon* |
+
+    Door op het banjo-icoon te klikken, wordt het mobiele navigatiemenu geopend.
+
+  - **Custom Scrollbar – Vinylplaat:**
+
+    Om de standaard browser-scrollbar te vervangen door een element dat beter bij het thema past, is een custom scrollbar ontworpen in de vorm van een vinylplaat.
+
+    ![Custom scrollbar](readMeImages/scrollbar.png)
+
+    *Ontwerp van de custom scrollbar.*
+
+    Tijdens het scrollen verschijnen er muzieknoten rondom de plaat. Een gouden lijn beweegt mee en geeft visueel aan hoe ver de gebruiker zich op de pagina bevindt. Hierdoor wordt een functioneel onderdeel van de website tegelijkertijd onderdeel van de visuele identiteit.
+
+---
+
+**Bronnenpagina:**
+
+  De bronnenpagina is bewust overzichtelijk en georganiseerd gehouden. Hier kunnen gebruikers eenvoudig de gebruikte bronnen, afbeeldingen en andere relevante materialen terugvinden.
+
+  ![Bronnenpagina](readMeImages/bronnen.png)
+
+  *De uiteindelijke bronnenpagina.*
+
+### Ontwerp als Samenhangend Geheel
+
+Hoewel ieder onderdeel afzonderlijk is ontworpen, zijn de verschillende componenten bewust met elkaar verbonden. Het kleurenpalet, de houten en leren uitstraling, de muziekgerelateerde interacties, de saloondeuren, de banjo en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit. Hierdoor voelt de website niet als een verzameling losse elementen, maar als één samenhangende digitale omgeving rondom countrymuziek en de Texaanse cultuur.
+
+### Ontwerp als Samenhangend Geheel
+
+Hoewel ieder onderdeel afzonderlijk is ontworpen, zijn de verschillende componenten bewust met elkaar verbonden. Het kleurenpalet, de houten en leren uitstraling, de muziekgerelateerde interacties, de saloondeuren, de banjo en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit. Hierdoor voelt de website niet als een verzameling losse elementen, maar als één samenhangende digitale omgeving rondom countrymuziek en de Texaanse cultuur.
+
 ## Bronnen
 
 ### Bronnen voor Onderzoek
