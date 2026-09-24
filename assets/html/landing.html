@@ -9,6 +9,7 @@
     <title>Garnet's Ocean - Country Music Digital Garden</title>
     <link rel="stylesheet" href="../resources/style/landing.css">
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
+    <link rel="stylesheet" href="../resources/style/language-changer.css">
 
     <script
       data-page="[https://voorbeeld.nl]"
@@ -19,16 +20,18 @@
   <body>
     <nav>
       <ul>
-        <li><a href="../html/landing.html">Home</a></li>
-        <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean">Read Me</a></li>
-        <li><a href="../html/story.html">Story</a></li>
-        <li><a href="../html/bronnen.html" class="active">Bronnen</a></li>
+        <li><a href="../html/landing.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
+        <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
+        <li><a href="../html/bronnen.html" class="active" data-i18n="nav_sources">Bronnen</a></li>
       </ul>
+
+      <button id="langToggleBtn" type="button">NL / ENG</button>
     </nav>
 
     <header class="hero">
-      <h1>Country Music</h1>
-      <p class="subtitle">
+      <h1 data-i18n="hero_title">Country Music</h1>
+      <p class="subtitle" data-i18n="hero_subtitle">
         Dit is de model repository,
         <a href="https://github.com/CMDA/model" target="-blank" rel="noopener">fork deze repository op GitHub.</a>
       </p>
@@ -36,38 +39,38 @@
 
     <main class="container">
       <article class="card">
-        <h2>Mijn startpunt</h2>
-        <p>Country muziek is voor mij meer dan alleen een muziekgenre.</p>
-        <p>Ik ben geboren en opgegroeid in <strong>Houston, Texas</strong>, waar Country muziek onderdeel is van de cultuur.</p>
+        <h2 data-i18n="art1_title">Mijn startpunt</h2>
+        <p data-i18n="art1_p1">Country muziek is voor mij meer dan alleen een muziekgenre.</p>
+        <p data-i18n="art1_p2">Ik ben geboren en opgegroeid in <strong>Houston, Texas</strong>, waar Country muziek onderdeel is van de cultuur.</p>
         
         <div class="section-block">
-          <p class="section-label">Je komt het bijvoorbeeld tegen bij:</p>
+          <p class="section-label" data-i18n="art1_label">Je komt het bijvoorbeeld tegen bij:</p>
           <div class="gallery-container1">
             <div class="resp-item">
               <div class="gallery">
                 <img src="../resources/images/texasFlag.jpg" alt="Texas Flag">
-                <div class="desc">De vlag van de staat Texas</div>
+                <div class="desc" data-i18n="img_texas_flag">De vlag van de staat Texas</div>
               </div>
             </div>
             
             <div class="resp-item">
               <div class="gallery">
                 <img src="../resources/images/rodeo.jpg" alt="Rodeo Day">
-                <div class="desc">Rodeo Day in Houston, Texas</div>
+                <div class="desc" data-i18n="img_rodeo_day">Rodeo Day in Houston, Texas</div>
               </div>
             </div>
 
             <div class="resp-item">
               <div class="gallery">
                 <img src="../resources/images/CountryDay.jpg" alt="Country Day">
-                <div class="desc">Country Day in Houston, Texas</div>
+                <div class="desc" data-i18n="img_country_day">Country Day in Houston, Texas</div>
               </div>
             </div>
             
             <div class="resp-item main-poster">
               <div class="gallery">
                 <img src="../resources/images/FestivalPoster.jpg" alt="Festival Poster">
-                <div class="desc">Festival Poster voor Rodeo Day in Houston, Texas</div>
+                <div class="desc" data-i18n="img_festival_poster">Festival Poster voor Rodeo Day in Houston, Texas</div>
               </div>
             </div>
           </div> 
@@ -75,11 +78,11 @@
       </article>
 
       <article class="card">
-        <h2>Waarom Country Music als Digital Garden?</h2>
-        <p>Ik luister zelf graag naar Country muziek</p>
+        <h2 data-i18n="art2_title">Waarom Country Music als Digital Garden?</h2>
+        <p data-i18n="art2_p1">Ik luister zelf graag naar Country muziek</p>
         
         <div class="section-block">
-          <p class="section-label">Vooral de volgende muzikanten vind ik erg interressant:</p>
+          <p class="section-label" data-i18n="art2_label">Vooral de volgende muzikanten vind ik erg interressant:</p>
 
           <div class="gallery-artists">
             <div class="gallery">
@@ -105,31 +108,31 @@
           </div>
         </div>
 
-        <p>Country is door de jaren heen sterk veranderd—van traditionele country tot moderne nummers met invloeden van <strong>pop, rock</strong> en <strong>hiphop</strong>.</p>
-        <p>Dat maakt het een ontzettend boeiend onderwerp om steeds verder te ontdekken.</p>
+        <p data-i18n="art2_p2">Country is door de jaren heen sterk veranderd—van traditionele country tot moderne nummers met invloeden van <strong>pop, rock</strong> en <strong>hiphop</strong>.</p>
+        <p data-i18n="art2_p3">Dat maakt het een ontzettend boeiend onderwerp om steeds verder te ontdekken.</p>
       </article>
 
       <article class="card">
-        <h2>Country muziek als Digital Garden</h2>
-        <p>Country muziek is een goed onderwerp voor een Digital Garden omdat het <strong>veel verschillende kanten</strong> en <strong>verbindingen</strong> heeft.</p>
+        <h2 data-i18n="art3_title">Country muziek als Digital Garden</h2>
+        <p data-i18n="art3_p1">Country muziek is een goed onderwerp voor een Digital Garden omdat het <strong>veel verschillende kanten</strong> en <strong>verbindingen</strong> heeft.</p>
         
         <div class="section-block">
-          <p>Vanuit één nummer of artiest kun je steeds nieuwe onderwerpen ontdekken:</p>
+          <p data-i18n="art3_p2">Vanuit één nummer of artiest kun je steeds nieuwe onderwerpen ontdekken:</p>
           <ul class="garden-list">
-            <li><strong>Artiesten</strong> → muziek, albums en songwriting</li>
-            <li><strong>Muziekstijlen</strong> → traditional country, bluegrass, country rock en modern country</li>
-            <li><strong>Cultuur</strong> → Texas, rodeo, cowboys en honky-tonk</li>
-            <li><strong>Geschiedenis</strong> → de oorsprong en ontwikkeling van country</li>
-            <li><strong>Invloeden</strong> → folk, blues, gospel, rock, pop en hiphop</li>
+            <li data-i18n="list_artists"><strong>Artiesten</strong> → muziek, albums en songwriting</li>
+            <li data-i18n="list_styles"><strong>Muziekstijlen</strong> → traditional country, bluegrass, country rock en modern country</li>
+            <li data-i18n="list_culture"><strong>Cultuur</strong> → Texas, rodeo, cowboys en honky-tonk</li>
+            <li data-i18n="list_history"><strong>Geschiedenis</strong> → de oorsprong en ontwikkeling van country</li>
+            <li data-i18n="list_influences"><strong>Invloeden</strong> → folk, blues, gospel, rock, pop en hiphop</li>
           </ul>
-          Eén onderwerp kan dus stees nieuwe takken creëren. Dit maakt Country muziek geschikt voor een Digital Garden die <strong>blijft groeien en veranderen</strong>.
+          <span data-i18n="art3_p3">Eén onderwerp kan dus stees nieuwe takken creëren. Dit maakt Country muziek geschikt voor een Digital Garden die <strong>blijft groeien en veranderen</strong>.</span>
         </div>
       </article>
 
     </main>
 
     <footer>
-      <p>[Copyleft 2026, all wrongs reversed]</p>
+      <p data-i18n="footer_text">[Copyleft 2026, all wrongs reversed]</p>
     </footer>
 
     <div id="imageModal" class="modal">
@@ -140,5 +143,6 @@
 
     <script src="../js/landing.js" defer></script>
     <script src="../js/custom-scrollbar.js" defer></script>
+    <script src="../js/language-changer.js" defer></script>
   </body>
 </html>
