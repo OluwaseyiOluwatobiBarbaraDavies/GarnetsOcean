@@ -50,6 +50,11 @@ Na het verzamelen van inspiratie zijn verschillende ideeën en mogelijke richtin
 | ![Crazy 8's schetsen 1 t/m 4](readMeImages/Crazy8_1.jpg) | ![Crazy 8's schetsen 5 t/m 8](readMeImages/Crazy8_2.jpg) |
 | *Eerste vier conceptschetsen* | *Laatste vier conceptschetsen* |
 
+![ColorPalette](readMeImages/colorPalette.png)
+
+*Primaire kleuren palette*
+
+
 ---
 
 **Het Saloon-startscherm & Thematische Beleving:**
