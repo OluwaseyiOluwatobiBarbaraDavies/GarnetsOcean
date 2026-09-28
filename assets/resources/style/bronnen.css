@@ -59,7 +59,6 @@ h1 {
     font-size: 1.75rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    color: linear-gradient(180deg, #ffe39f 0%, #d9a441 60%, #9e6319 100%);
 }
 
 @media (min-width: 650px) {

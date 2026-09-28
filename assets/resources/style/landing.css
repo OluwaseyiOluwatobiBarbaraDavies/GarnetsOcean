@@ -30,27 +30,27 @@
   font-family: "eastwood";
   src: url(../type/Eastwood.otf);
   font-weight: 100;
-  font-style: swap;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "rye";
   src: url(../type/Rye-Regular.ttf);
-  font-style: swap;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "roboto";
   src: url(../type/Roboto-Regular.ttf);
   font-weight: 400;
-  font-style: swap;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "roboto";
   src: url(../type/Roboto-Bold.ttf);
   font-weight: 700;
-  font-style: swap;
+  font-style: normal;
 }
 
 * {
