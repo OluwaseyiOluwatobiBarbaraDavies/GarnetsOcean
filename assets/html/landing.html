@@ -8,6 +8,7 @@
 
     <title>Garnet's Ocean - Country Music Digital Garden</title>
     <link rel="stylesheet" href="../resources/style/landing.css">
+    <link rel="stylesheet" href="../resources/style/navbar.css">
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
     <link rel="stylesheet" href="../resources/style/language-changer.css">
 
@@ -16,6 +17,11 @@
       src="https://digitaaltuintje.nl/webring.js"
       defer
     ></script>
+    <script src="../js/landing.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/custom-scrollbar.js" defer></script>
+    <script src="../js/language-changer.js" defer></script>
+    
   </head>
   <body>
     <nav>
@@ -24,9 +30,10 @@
         <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
         <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
         <li><a href="../html/bronnen.html" class="active" data-i18n="nav_sources">Bronnen</a></li>
+        <li class="nav-language">
+          <button id="langToggleBtn" type="button">NL / ENG</button>
+        </li>
       </ul>
-
-      <button id="langToggleBtn" type="button">NL / ENG</button>
     </nav>
 
     <header class="hero">
@@ -141,8 +148,5 @@
       <div id="modalCaption" class="modal-caption"></div>
     </div>
 
-    <script src="../js/landing.js" defer></script>
-    <script src="../js/custom-scrollbar.js" defer></script>
-    <script src="../js/language-changer.js" defer></script>
   </body>
 </html>

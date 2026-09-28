@@ -15,19 +15,6 @@
     src: url(../type/Rye-Regular.ttf);
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav ul {
-  flex-grow: 1;
-}
-
 nav #langToggleBtn {
   background-color: var(--lang-btn-bg);
   color: var(--lang-btn-color);
@@ -99,17 +86,14 @@ nav #langToggleBtn:active {
 }
 
 @media (max-width: 650px) {
-  nav #langToggleBtn {
-    position: fixed;
-    top: 12px;
-    right: 65px;
-    width: 76px;
-    height: 30px;
-    font-size: 11px;
-    margin-right: 0;
+  nav .nav-language {
+    justify-items: center;
   }
-  
-  nav #langToggleBtn.is-eng::before {
-    transform: translateX(44px);
+
+  nav #langToggleBtn {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0;
   }
 }
