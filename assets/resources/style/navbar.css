@@ -218,8 +218,8 @@ nav ul li a.active {
 
 html.menu-open,
 body.menu-open {
-  overflow: hidden !important;
-  overflow-y: hidden !important;
+  overflow: auto !important;
+  overflow-y: auto !important;
 }
 
 body.menu-open .country-scroll-track,
@@ -227,7 +227,7 @@ body.menu-open .country-scroll-widget {
   display: none !important;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 53.125rem) {
   nav {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -349,5 +349,35 @@ body.menu-open .country-scroll-widget {
     box-shadow: inset 0 2px 4px var(--mobile-link-hover-shadow-inset), 0 3px 8px var(--mobile-link-hover-shadow);
     transform: translateX(-4px);
     text-shadow: 0 0 6px var(--mobile-link-hover-text-shadow);
+  }
+}
+
+
+
+
+/* ==================== MARK: TOETSENBORD ==================== */
+@media (max-width: 53.125rem) {
+  nav ul {
+    max-width: 100vw;
+    overflow-y: auto;
+    max-height: 100dvh;
+    visibility: hidden;
+  }
+  nav ul.open {
+    visibility: visible;
+  }
+  /* Zonder JavaScript blijven de links gewoon in beeld. */
+  nav:not(.nav-enhanced) ul {
+    position: static;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    transform: none;
+    visibility: visible;
+  }
+  nav:not(.nav-enhanced) ul li {
+    opacity: 1;
+    transform: none;
   }
 }

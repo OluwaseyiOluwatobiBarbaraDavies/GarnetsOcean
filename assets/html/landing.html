@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +25,7 @@
   </head>
 
   <body>
+    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga naar de inhoud</a>
     <!--
       De classes en id's worden ook gebruikt in de CSS en Javascript.
       De divs rond de afbeeldingen houden de foto's en biijscrfiten bij elkaar.
@@ -34,7 +35,7 @@
     <!-- ==================== MARK: NAVIGATIE ==================== -->
     <nav>
       <ul>
-        <li><a href="../html/landing.html" class="active" data-i18n="nav_home">Home</a></li>
+        <li><a href="../html/landing.html" class="active" aria-current="page" data-i18n="nav_home">Home</a></li>
         <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
         <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
         <li><a href="../html/bronnen.html" data-i18n="nav_sources">Bronnen</a></li>
@@ -50,12 +51,12 @@
       <h1 data-i18n="hero_title">Country Music</h1>
       <p class="subtitle" data-i18n="hero_subtitle">
         Dit is de model repository,
-        <a href="https://github.com/CMDA/model" target="-blank" rel="noopener">fork deze repository op GitHub.</a>
+        <a href="https://github.com/CMDA/model" target="_blank" rel="noopener">fork deze repository op GitHub.</a>
       </p>
     </header>
 
     <!-- ==================== MARK: INHOUD ==================== -->
-    <main class="container">
+    <main id="mainContent" class="container" tabindex="-1">
       <!-- MARK: MIJN STARPUNT -->
       <article class="card">
         <h2 data-i18n="art1_title">Mijn startpunt</h2>
@@ -67,28 +68,28 @@
           <div class="gallery-container1">
             <div class="resp-item">
               <div class="gallery">
-                <img src="../resources/images/texasFlag.jpg" alt="Texas Flag">
+                <a class="gallery-image-link" href="../resources/images/texasFlag.jpg"><img src="../resources/images/texasFlag.jpg" alt="Texas Flag"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_texas_flag">De vlag van de staat Texas</div>
               </div>
             </div>
             
             <div class="resp-item">
               <div class="gallery">
-                <img src="../resources/images/rodeo.jpg" alt="Rodeo Day">
+                <a class="gallery-image-link" href="../resources/images/rodeo.jpg"><img src="../resources/images/rodeo.jpg" alt="Rodeo Day"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_rodeo_day">Rodeo Day in Houston, Texas</div>
               </div>
             </div>
 
             <div class="resp-item">
               <div class="gallery">
-                <img src="../resources/images/CountryDay.jpg" alt="Country Day">
+                <a class="gallery-image-link" href="../resources/images/CountryDay.jpg"><img src="../resources/images/CountryDay.jpg" alt="Country Day"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_country_day">Country Day in Houston, Texas</div>
               </div>
             </div>
             
             <div class="resp-item main-poster">
               <div class="gallery">
-                <img src="../resources/images/FestivalPoster.jpg" alt="Festival Poster">
+                <a class="gallery-image-link" href="../resources/images/FestivalPoster.jpg"><img src="../resources/images/FestivalPoster.jpg" alt="Festival Poster"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_festival_poster">Festival Poster voor Rodeo Day in Houston, Texas</div>
               </div>
             </div>
@@ -106,23 +107,23 @@
 
           <div class="gallery-artists">
             <div class="gallery">
-                <img src="../resources/images/artist-dolly.jpg" alt="Dolly Parton">
+                <a class="gallery-image-link" href="../resources/images/artist-dolly.jpg"><img src="../resources/images/artist-dolly.jpg" alt="Dolly Parton"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc">Dolly Parton</div>
             </div>
             <div class="gallery">
-                <img src="../resources/images/artist_don.jpg" alt="Don Williams">
+                <a class="gallery-image-link" href="../resources/images/artist_don.jpg"><img src="../resources/images/artist_don.jpg" alt="Don Williams"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc">Don Williams</div>
             </div>          
             <div class="gallery">
-                <img src="../resources/images/artist_ella.jpg" alt="Ella Langley">
+                <a class="gallery-image-link" href="../resources/images/artist_ella.jpg"><img src="../resources/images/artist_ella.jpg" alt="Ella Langley"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc">Ella Langley</div>
             </div>
             <div class="gallery">
-                <img src="../resources/images/artist_kameron.jpg" alt="Kameron Marlowe">
+                <a class="gallery-image-link" href="../resources/images/artist_kameron.jpg"><img src="../resources/images/artist_kameron.jpg" alt="Kameron Marlowe"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc">Kameron Marlowe</div>
               </div>
             <div class="gallery">
-                <img src="../resources/images/artist_warren.jpg" alt="Warren Zeiders">
+                <a class="gallery-image-link" href="../resources/images/artist_warren.jpg"><img src="../resources/images/artist_warren.jpg" alt="Warren Zeiders"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc">Warren Zeiders</div>
             </div>
           </div>
@@ -158,12 +159,13 @@
     </footer>
 
     <!-- ==================== MARK: VERGOTE AFBEELDING ==================== -->
-    <div id="imageModal" class="modal">
-      <!-- Met deze knop sluit je de vergrote afbeelding via landing.js -->
-      <span class="modal-close">&times;</span>
-      <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="Teaxs Flag">
-      <div id="modalCaption" class="modal-caption"></div>
-    </div>
+    <!-- De browser regelt de focus binnen het geopende venster. -->
+    <dialog id="imageModal" class="modal" aria-labelledby="imageModalTitle">
+      <h2 id="imageModalTitle" class="visually-hidden" data-i18n="image_title">Vergrote afbeelding</h2>
+      <button type="button" class="modal-close" data-i18n="privacy_close">Sluiten</button>
+      <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="Texas Flag">
+      <p id="modalCaption" class="modal-caption"></p>
+    </dialog>
 
   </body>
 </html>

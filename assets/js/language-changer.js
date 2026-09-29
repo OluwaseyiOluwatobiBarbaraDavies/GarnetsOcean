@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateContent() {
+        document.documentElement.lang = currentLang === 'NL' ? 'nl' : 'en';
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.dataset.i18n;
             const value = t(key, element.textContent);
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (toggleBtn.tagName === 'SELECT') toggleBtn.value = currentLang;
             else toggleBtn.textContent = currentLang;
             toggleBtn.classList.toggle('is-eng', currentLang === 'ENG');
-            const label = currentLang === 'ENG' ? 'Schakel naar Nederlands' : 'Switch to English';
+            const label = currentLang === 'ENG' ? 'Language: English. Switch to Dutch' : 'Taal: Nederlands. Wissel naar Engels';
             toggleBtn.setAttribute('aria-label', label);
             toggleBtn.title = label;
         }

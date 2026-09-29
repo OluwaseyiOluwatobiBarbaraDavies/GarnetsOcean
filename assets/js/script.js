@@ -1,68 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const saloonDoors = document.getElementById("saloonDoors");
-  const doorTooltip = document.getElementById("doorTooltip");
+// ==================== MARK: DE SALOON BINNENGAAN ====================
 
-  if (saloonDoors) {
-    saloonDoors.addEventListener("click", function () {
-      saloonDoors.classList.add("open");
+document.addEventListener('DOMContentLoaded', () => {
+  const entrance = document.querySelector('#saloonDoors');
+  if (!entrance) return;
 
-      if (doorTooltip) {
-        doorTooltip.style.opacity = "0";
-      }
+  let opening = false;
+  entrance.addEventListener('click', event => {
+    // Een nieuw tabblad openen blijft gewoon werken.
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      setTimeout(function () {
-        window.location.href = "assets/html/landing.html";
-      }, 850);
-    });
+    event.preventDefault();
+    if (opening) return;
+    opening = true;
+    entrance.classList.add('open');
+    window.setTimeout(() => window.location.assign(entrance.href), 850);
+  });
 
-    saloonDoors.addEventListener("mousemove", function (e) {
-      if (doorTooltip && !saloonDoors.classList.contains("open")) {
-        doorTooltip.style.opacity = "1";
-        doorTooltip.style.left = e.clientX + 15 + "px";
-        doorTooltip.style.top = e.clientY + 15 + "px";
-      }
-    });
-
-    saloonDoors.addEventListener("mouseleave", function () {
-      if (doorTooltip) {
-        doorTooltip.style.opacity = "0";
-      }
-    });
-  }
-
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  const captionText = document.getElementById("modalCaption");
-  const closeBtn = document.querySelector(".modal-close");
-
-  if (modal) {
-    document.querySelectorAll(".gallery img").forEach((img) => {
-      img.style.cursor = "pointer";
-      img.addEventListener("click", function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-
-        const desc = this.nextElementSibling;
-        captionText.innerHTML = desc ? desc.innerHTML : this.alt;
-      });
-    });
-
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        modal.style.display = "none";
-      });
-    }
-
-    window.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.style.display === "block") {
-        modal.style.display = "none";
-      }
-    });
-  }
+  // Ook na Terug in de browser kunnen de deuren opnieuw open.
+  window.addEventListener('pageshow', () => {
+    opening = false;
+    entrance.classList.remove('open');
+  });
 });

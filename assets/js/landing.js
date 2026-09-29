@@ -1,37 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  const captionText = document.getElementById("modalCaption");
-  const closeBtn = document.querySelector(".modal-close");
+// ==================== MARK: AFBEELDING VERGROTEN ====================
 
-  document.querySelectorAll(".gallery img").forEach((img) => {
-    img.style.cursor = "pointer";
-    img.addEventListener("click", function () {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      modalImg.alt = this.alt;
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('#imageModal');
+  const modalImage = document.querySelector('#modalImg');
+  const caption = document.querySelector('#modalCaption');
+  const closeButton = modal?.querySelector('.modal-close');
+  if (!modal || !modalImage || !caption || !closeButton) return;
 
-      const desc = this.nextElementSibling;
-      captionText.innerHTML = desc ? desc.innerHTML : this.alt;
+  let trigger = null;
+  document.querySelectorAll('.gallery-image-link').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      trigger = link;
+      const image = link.querySelector('img');
+      modalImage.src = link.href;
+      modalImage.alt = image.alt;
+      caption.textContent = link.nextElementSibling?.textContent || image.alt;
+      modal.showModal();
+      closeButton.focus();
     });
   });
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-    });
-  }
-
-  // Close modal when clicking outside the image
-  window.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && modal.style.display === "block") {
-      modal.style.display = "none";
-    }
-  });
+  closeButton.addEventListener('click', () => modal.close());
+  modal.addEventListener('close', () => trigger?.focus());
 });

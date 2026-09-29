@@ -72,9 +72,11 @@
       #1f120b 16px,
       var(--wood-darkest) 17px
     );
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: auto;
   display: grid;
   place-items: center;
   position: relative;
@@ -88,7 +90,8 @@
   perspective: 1400px;
   transform-style: preserve-3d;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   position: relative;
   z-index: 10;
 }
@@ -261,7 +264,7 @@
   height: 34px;
   background: linear-gradient(180deg, var(--flame-outer-top) 0%, var(--flame-outer-mid) 60%, var(--flame-outer-bottom) 100%);
   border-radius: 50% 50% 35% 35% / 70% 70% 30% 30%;
-  animation: flameFlicker 0.2s ease-in-out infinite alternate;
+  animation: flameFlicker 0.2s ease-in-out 20 alternate;
   transform-origin: bottom center;
 }
 
@@ -272,7 +275,7 @@
   height: 24px;
   background: linear-gradient(180deg, var(--flame-inner-top) 0%, var(--flame-inner-bottom) 100%);
   border-radius: 50% 50% 35% 35% / 70% 70% 30% 30%;
-  animation: flameFlicker 0.15s ease-in-out infinite alternate-reverse;
+  animation: flameFlicker 0.15s ease-in-out 20 alternate-reverse;
   transform-origin: bottom center;
 }
 
@@ -303,7 +306,7 @@
   width: 150px;
   height: 150px;
   background: radial-gradient(circle, var(--lantern-glow) 0%, rgba(0, 0, 0, 0) 70%);
-  animation: haloFlicker 0.15s infinite alternate;
+  animation: haloFlicker 0.15s 20 alternate;
   pointer-events: none;
 }
 
@@ -328,7 +331,7 @@
     rgba(180, 50, 220, 0.8)
   );
   background-size: 300% 300%;
-  animation: colorSweep 7s ease infinite alternate;
+  animation: colorSweep 2s ease 2 alternate;
   filter: blur(35px);
   pointer-events: none;
 }
@@ -632,10 +635,81 @@
 /* 4. Small Mobile Phones / Landscape Mode (< 400px or short screens) */
 @media (max-height: 500px) {
   .saloon-sign {
-    display: none; /* Hide sign on short screens to make space for doors */
+    padding-block: 0.25rem;
   }
 
   .saloon-frame {
     height: 90vh;
+  }
+}
+
+
+
+
+/* ==================== MARK: TOETSENBORD EN BEWEGING ==================== */
+
+.saloon-stage {
+  width: 100%;
+  padding-block: 1rem;
+}
+
+.saloon-sign {
+  max-width: 95%;
+}
+
+.saloon-sign h1 {
+  overflow-wrap: anywhere;
+}
+
+.saloon-doors {
+  text-decoration: none;
+}
+
+.saloon-doors .entrance-label {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  z-index: 20;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 0.125rem solid #ffd700;
+  border-radius: 0.25rem;
+  background: #231204;
+  color: #fff3dc;
+  font: 1rem/1.5 "rye", serif;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.saloon-doors:focus-visible {
+  outline: 0.25rem solid #ffd700;
+  outline-offset: -0.25rem;
+}
+
+/* Na een paar seconden stopt de versiering vanzelf. */
+@media (prefers-reduced-motion: reduce) {
+  .landing-body *,
+  .landing-body *::before,
+  .landing-body *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .saloon-sign h1 {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    text-shadow: none;
+  }
+  .saloon-doors .entrance-label {
+    color: LinkText;
+    background: Canvas;
+    border-color: LinkText;
+  }
+  .saloon-doors:focus-visible {
+    outline-color: Highlight;
   }
 }

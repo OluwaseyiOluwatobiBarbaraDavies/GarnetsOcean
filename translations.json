@@ -112,7 +112,17 @@
     "privacy_links": "Links naar andere websites",
     "privacy_linksText": "Links naar bijvoorbeeld GitHub en de oorspronkelijke bronnen openen andere websites. Daar geldt de privacy-informatie van die aanbieders.",
     "privacy_control": "Wat kun je zelf doen?",
-    "privacy_controlText": "Je kunt de sitegegevens voor garnetsocean.nl verwijderen via de privacy-instellingen van je browser. Daarmee wis je ook de opgeslagen taalkeuze. Dit verwijdert geen loggegevens bij GitHub of andere aanbieders."  },
+    "privacy_controlText": "Je kunt de sitegegevens voor garnetsocean.nl verwijderen via de privacy-instellingen van je browser. Daarmee wis je ook de opgeslagen taalkeuze. Dit verwijdert geen loggegevens bij GitHub of andere aanbieders.",
+    "story_page_title": "Even geduld | Digital Garden",
+    "story_heading": "Ho, rustig aan!",
+    "story_description": "Dit pad is nog in aanleg. Ik stem de gitaren en werk aan deze pagina voor mijn digital garden.",
+    "story_back": "← Terug naar Home",
+    "entry_title": "Welkom in de saloon",
+    "entry_enter": "Ga naar de homepage",
+    "skip_content": "Ga naar de inhoud",
+    "image_enlarge": " — Vergroot afbeelding",
+    "image_title": "Vergrote afbeelding"
+  },
   "ENG": {
     "langLabel": "Nederlands",
     "nav_home": "Home",
@@ -226,6 +236,15 @@
     "privacy_links": "Links to other websites",
     "privacy_linksText": "Links to GitHub and original sources open other websites. Those providers’ privacy information applies there.",
     "privacy_control": "What can you do?",
-    "privacy_controlText": "You can clear site data for garnetsocean.nl in your browser’s privacy settings. This also clears your saved language choice. It does not delete logs held by GitHub or other providers."
+    "privacy_controlText": "You can clear site data for garnetsocean.nl in your browser’s privacy settings. This also clears your saved language choice. It does not delete logs held by GitHub or other providers.",
+    "story_page_title": "Hold Your Horses | Coming Soon",
+    "story_heading": "Hold Your Horses!",
+    "story_description": "This trail is still under construction. I’m tuning the guitars and building this page for my digital garden.",
+    "story_back": "← Back to Home",
+    "entry_title": "Enter the Saloon",
+    "entry_enter": "Enter the website",
+    "skip_content": "Skip to content",
+    "image_enlarge": " — Enlarge image",
+    "image_title": "Enlarged image"
   }
 }
