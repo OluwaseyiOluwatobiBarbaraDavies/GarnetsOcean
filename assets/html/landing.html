@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
     <link rel="stylesheet" href="../resources/style/language-changer.css">
 
+    <!-- Bron webring: "https://digitaaltuintje.nl/webring.js" -->
     <script
       data-page="[https://voorbeeld.nl]"
       src="https://digitaaltuintje.nl/webring.js"
@@ -21,9 +22,16 @@
     <script src="../js/navbar.js" defer></script>
     <script src="../js/custom-scrollbar.js" defer></script>
     <script src="../js/language-changer.js" defer></script>
-
   </head>
+
   <body>
+    <!--
+      De classes en id's worden ook gebruikt in de CSS en Javascript.
+      De divs rond de afbeeldingen houden de foto's en biijscrfiten bij elkaar.
+      Met data-i18n wordt de juiste tekst uit translations.json opgehaald.
+    -->
+    
+    <!-- ==================== MARK: NAVIGATIE ==================== -->
     <nav>
       <ul>
         <li><a href="../html/landing.html" class="active" data-i18n="nav_home">Home</a></li>
@@ -36,6 +44,7 @@
       </ul>
     </nav>
 
+    <!-- ==================== MARK: INTRO ==================== -->
     <header class="hero">
       <h1 data-i18n="hero_title">Country Music</h1>
       <p class="subtitle" data-i18n="hero_subtitle">
@@ -44,7 +53,9 @@
       </p>
     </header>
 
+    <!-- ==================== MARK: INHOUD ==================== -->
     <main class="container">
+      <!-- MARK: MIJN STARPUNT -->
       <article class="card">
         <h2 data-i18n="art1_title">Mijn startpunt</h2>
         <p data-i18n="art1_p1">Country muziek is voor mij meer dan alleen een muziekgenre.</p>
@@ -84,6 +95,7 @@
         </div>  
       </article>
 
+      <!-- MARK: COUNTRY MUSIC ALS DIGITAL GARDEN -->
       <article class="card">
         <h2 data-i18n="art2_title">Waarom Country Music als Digital Garden?</h2>
         <p data-i18n="art2_p1">Ik luister zelf graag naar Country muziek</p>
@@ -119,6 +131,7 @@
         <p data-i18n="art2_p3">Dat maakt het een ontzettend boeiend onderwerp om steeds verder te ontdekken.</p>
       </article>
 
+      <!-- MARK: VERBINDIGEN EN ONDERWERPEN -->
       <article class="card">
         <h2 data-i18n="art3_title">Country muziek als Digital Garden</h2>
         <p data-i18n="art3_p1">Country muziek is een goed onderwerp voor een Digital Garden omdat het <strong>veel verschillende kanten</strong> en <strong>verbindingen</strong> heeft.</p>
@@ -138,11 +151,14 @@
 
     </main>
 
+    <!-- ==================== MARK: FOOTER ==================== -->
     <footer>
       <p data-i18n="footer_text">[Copyleft 2026, all wrongs reversed]</p>
     </footer>
 
+    <!-- ==================== MARK: VERGOTE AFBEELDING ==================== -->
     <div id="imageModal" class="modal">
+      <!-- Met deze knop sluit je de vergrote afbeelding via landing.js -->
       <span class="modal-close">&times;</span>
       <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="Teaxs Flag">
       <div id="modalCaption" class="modal-caption"></div>

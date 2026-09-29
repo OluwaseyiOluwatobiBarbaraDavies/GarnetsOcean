@@ -1,3 +1,5 @@
+// ==================== MARK: AFBEELDINGSBRONNEN ====================
+
 const imageSources = [
   {
     "title": "Vlag van Texas",
@@ -105,6 +107,12 @@ const imageSources = [
   }
 ];
 
+
+
+
+
+// ==================== MARK: ONDERZOEK EN LITERATUUR ====================
+
 const researchSources = [
   {
     "title": "Geschiedenis van het Wilde Westen & Frontier Life",
@@ -208,122 +216,188 @@ const researchSources = [
   }
 ];
 
+
+
+
+
+// ==================== MARK: VERTALINGEN ====================
+
 function translated(key, fallback) {
-    return window.siteI18n ? window.siteI18n.t(key, fallback) : fallback;
+  return window.siteI18n ? window.siteI18n.t(key, fallback) : fallback;
 }
 
+// Zo worden tekens zoals & en < als tekst getoonf in de kaartjes.
 function escapeHTML(value) {
-    return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 }
 
+// De categorie blijft hetzelfde, ook als de taal verandert.
 let currentCategory = "Alle";
 
-function switchView(view) {
-    const visualView = document.getElementById('visualView');
-    const researchView = document.getElementById('researchView');
-    const tabVisualBtn = document.getElementById('tabVisualBtn');
-    const tabResearchBtn = document.getElementById('tabResearchBtn');
 
-    if (view === 'visual') {
-        visualView.classList.remove('hidden');
-        researchView.classList.add('hidden');
-        tabVisualBtn.className = "tab-btn tab-btn-active";
-        tabResearchBtn.className = "tab-btn tab-btn-inactive";
-    } else if (view === 'research') {
-        visualView.classList.add('hidden');
-        researchView.classList.remove('hidden');
-        tabVisualBtn.className = "tab-btn tab-btn-inactive";
-        tabResearchBtn.className = "tab-btn tab-btn-active";
-        renderResearchList(researchSources);
-    }
+
+
+
+// ==================== MARK: WISSELEN TUSSEN OVERZICHTEN ====================
+
+function switchView(view) {
+  const visualView = document.getElementById('visualView');
+  const researchView = document.getElementById('researchView');
+  const tabVisualBtn = document.getElementById('tabVisualBtn');
+  const tabResearchBtn = document.getElementById('tabResearchBtn');
+
+  if (view === 'visual') {
+    visualView.classList.remove('hidden');
+    researchView.classList.add('hidden');
+    tabVisualBtn.classList.toggle("tab-btn-active", true);
+    tabVisualBtn.classList.toggle("tab-btn-inactive", false);
+    tabVisualBtn.setAttribute("aria-pressed", "true");
+    tabResearchBtn.classList.toggle("tab-btn-active", false);
+    tabResearchBtn.classList.toggle("tab-btn-inactive", true);
+    tabResearchBtn.setAttribute("aria-pressed", "false");
+  } else if (view === 'research') {
+    visualView.classList.add('hidden');
+    researchView.classList.remove('hidden');
+    tabVisualBtn.classList.toggle("tab-btn-active", false);
+    tabVisualBtn.classList.toggle("tab-btn-inactive", true);
+    tabVisualBtn.setAttribute("aria-pressed", "false");
+    tabResearchBtn.classList.toggle("tab-btn-active", true);
+    tabResearchBtn.classList.toggle("tab-btn-inactive", false);
+    tabResearchBtn.setAttribute("aria-pressed", "true");
+    renderResearchList(researchSources);
+  }
 }
 
+
+
+
+
+// ==================== MARK: FILTEREN EN ZOEKEN ====================
+
 function setCategory(category) {
-    currentCategory = category;
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        const isActive = btn.dataset.category === category;
-        btn.className = `filter-btn ${isActive ? 'filter-btn-active' : 'filter-btn-inactive'}`;
-    });
-    filterSources();
+  currentCategory = category;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const isActive = btn.dataset.category === category;
+    btn.classList.toggle("filter-btn-active", isActive);
+    btn.classList.toggle("filter-btn-inactive", !isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
+  });
+  filterSources();
 }
 
 function filterSources() {
-    const query = document.getElementById("searchInput").value.toLowerCase();
-    const filtered = imageSources.filter(item => {
-        const matchesCat = currentCategory === "Alle" || item.category === currentCategory;
-        const matchesQuery = translated(item.titleKey, item.title).toLowerCase().includes(query) || item.title.toLowerCase().includes(query) || 
-                            item.filename.toLowerCase().includes(query) || 
-                            item.sourceAuthor.toLowerCase().includes(query);
-        return matchesCat && matchesQuery;
-    });
-    renderSourcesGrid(filtered);
+  const query = document.querySelector("#searchInput").value.trim().toLowerCase();
+  const filtered = imageSources.filter(item => {
+    const matchesCat = currentCategory === "Alle" || item.category === currentCategory;
+    const matchesQuery = translated(item.titleKey, item.title).toLowerCase().includes(query) || item.title.toLowerCase().includes(query) || item.filename.toLowerCase().includes(query) || item.sourceAuthor.toLowerCase().includes(query);
+    return matchesCat && matchesQuery;
+  });
+  renderSourcesGrid(filtered);
 }
+
+
+
+
+
+// ==================== MARK: AFBEELDINGEN TONEN ====================
 
 function renderSourcesGrid(items) {
-    const grid = document.getElementById("sourcesGrid");
-    if (!grid) return;
+  const grid = document.getElementById("sourcesGrid");
+  if (!grid) return;
 
-    if (!items.length) {
-        grid.innerHTML = `<div style="grid-column: 1 / -1;" class="parchment-bg source-card p-8 text-center font-bold">${escapeHTML(translated("sources_empty", "Geen afbeeldingen gevonden."))}</div>`;
-        return;
-    }
+  if (!items.length) {
+    grid.innerHTML = `<div class="parchment-bg source-card sources empty">${escapeHTML(translated("sources_empty", "Geen afbeeldingen gevonden."))}</div>`;
+    return;
+  }
 
-    grid.innerHTML = items.map(item => `
-        <div class="parchment-bg source-card">
-        <div>
-            <div class="card-img-container">
-            <img src="${item.filepath}" alt="${escapeHTML(translated(item.titleKey, item.title))}">
-            <span class="category-badge">${escapeHTML(translated(item.categoryKey, item.category))}</span>
-            </div>
-            <div class="card-body">
-            <h3 class="card-title">${escapeHTML(translated(item.titleKey, item.title))}</h3>
-            <p class="card-filename">${item.filename}</p>
-            <div class="card-details">
-                <div><strong>${escapeHTML(translated("sources_source", "Bron:"))}</strong> ${item.sourceAuthor}</div>
-                ${item.secondaryCredit ? `<div style="font-size: 11px; margin-top: 2px;"><strong>${escapeHTML(translated("sources_photographer", "Fotograaf:"))}</strong> ${escapeHTML(translated(item.creditKey, item.secondaryCredit))}</div>` : ''}
-            </div>
-            </div>
-        </div>
-        <div class="card-footer">
-            ${item.url ? `
-            <a href="${item.url}" target="_blank" rel="noopener" class="card-btn">
-                <span>${escapeHTML(translated("sources_original", "Bekijk Originele Bron"))}</span> ↗
-            </a>
-            ` : `
-            <span class="card-badge-direct">
-                ${escapeHTML(translated("sources_direct", "Directe Vermelding"))}
-            </span>
-            `}
-        </div>
-        </div>
-    `).join('');
+  grid.innerHTML = items.map(item => `
+    <div class="parchment-bg source-card">
+    <div>
+      <div class="card-img-container">
+      <img src="${escapeHTML(item.filepath)}" alt="${escapeHTML(translated(item.titleKey, item.title))}">
+      <span class="category-badge">${escapeHTML(translated(item.categoryKey, item.category))}</span>
+      </div>
+      <div class="card-body">
+      <h3 class="card-title">${escapeHTML(translated(item.titleKey, item.title))}</h3>
+      <p class="card-filename">${escapeHTML(item.filename)}</p>
+      <div class="card-details">
+        <div><strong>${escapeHTML(translated("sources_source", "Bron:"))}</strong> ${escapeHTML(item.sourceAuthor)}</div>
+        ${item.secondaryCredit ? `<div class="source-credit"><strong>${escapeHTML(translated("sources_photographer", "Fotograaf:"))}</strong> ${escapeHTML(translated(item.creditKey, item.secondaryCredit))}</div>` : ''}
+      </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      ${item.url ? `
+      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" class="card-btn">
+        <span>${escapeHTML(translated("sources_original", "Bekijk Originele Bron"))}</span> ↗
+      </a>
+      ` : `
+      <span class="card-badge-direct">
+        ${escapeHTML(translated("sources_direct", "Directe Vermelding"))}
+      </span>
+      `}
+    </div>
+    </div>
+  `).join('');
 }
+
+
+
+
+
+// ==================== MARK: ONDERZOEK TONEN ====================
 
 function renderResearchList(items) {
-    const container = document.getElementById("researchList");
-    if (!container) return;
+  const container = document.getElementById("researchList");
+  if (!container) return;
 
-    container.innerHTML = items.map(item => `
-        <div class="parchment-bg source-card" style="padding: 1.25rem;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(120,53,15,0.2); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
-            <h3 class="card-title" style="font-size: 1.125rem;">${escapeHTML(translated(item.titleKey, item.title))}</h3>
-            <span class="category-badge" style="position: relative; top: auto; right: auto;">${escapeHTML(translated(item.categoryKey, item.category))}</span>
-        </div>
-        <p style="font-size: 0.875rem; margin: 0.5rem 0; line-height: 1.5; color: var(--amber-950);">${escapeHTML(translated(item.descriptionKey, item.description))}</p>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; margin-top: 0.5rem;">
-            <span><strong>${escapeHTML(translated("sources_author", "Auteur/Instituut:"))}</strong> ${item.author}</span>
-            <a href="${item.url}" target="_blank" rel="noopener" style="color: var(--amber-900); font-weight: bold; text-decoration: underline;">${escapeHTML(translated("sources_visit", "Bezoek Bron"))} ↗</a>
-        </div>
-        </div>
-    `).join('');
+  container.innerHTML = items.map(item => `
+    <div class="parchment-bg source-card">
+    <div class="research-source-heading">
+      <h3 class="card-title">${escapeHTML(translated(item.titleKey, item.title))}</h3>
+      <span class="category-badge">${escapeHTML(translated(item.categoryKey, item.category))}</span>
+    </div>
+    <p class="research-description">${escapeHTML(translated(item.descriptionKey, item.description))}</p>
+    <div class="research-source-footer">
+      <span><strong>${escapeHTML(translated("sources_author", "Auteur/Instituut:"))}</strong> ${item.author}</span>
+      <a href="${item.url}" target="_blank" rel="noopener">${escapeHTML(translated("sources_visit", "Bezoek Bron"))} ↗</a>
+    </div>
+    </div>
+  `).join('');
 }
 
+
+
+
+
+// ==================== MARK: PAGINA STARTEN ====================
+
 document.addEventListener("DOMContentLoaded", () => {
-    filterSources();
-    renderResearchList(researchSources);
+  // De knoppen gebruiken de functies hierboven, zonder onclick in de HTML.
+  document.querySelector("#tabVisualBtn").addEventListener("click", () => {
+    switchView("visual");
+  });
+
+  document.querySelector("#tabResearchBtn").addEventListener("click", () => {
+    switchView("research");
+  });
+
+  document.querySelectorAll("#filterContainer button[data-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setCategory(button.dataset.category);
+    });
+  });
+
+  document.querySelector("#searchInput").addEventListener("input", filterSources);
+
+  switchView("visual");
+  setCategory(currentCategory);
+  renderResearchList(researchSources);
 });
-// Re-render translated content while retaining the current tab, category and search.
+
+// Bij een andere taal worden de kaartjes opnieuw ingevuld.
+// Het zoekveld, de categorie en het gekozen overzicht blijven staan.
 document.addEventListener("languagechange", () => {
-    filterSources();
-    renderResearchList(researchSources);
+  filterSources();
+  renderResearchList(researchSources);
 });

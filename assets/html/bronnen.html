@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
     <link rel="stylesheet" href="../resources/style/language-changer.css">
 </head>
+
 <body class="page-body">
+
+    <!-- ==================== MARK: NAVIGATIE ==================== -->
     <nav class="western-nav nav-margin">
         <ul>
             <li><a href="../html/landing.html" data-i18n="nav_home">Home</a></li>
@@ -20,6 +23,12 @@
             <li class="nav-language"><button id="langToggleBtn" type="button">NL / ENG</button></li>
         </ul>
     </nav>
+
+
+
+
+
+    <!-- ==================== MARK: PAGINATITEL EN KNOPPEN ==================== -->
     <header class="page-container header-margin text-center">
         <div class="wooden-plank header-card">
             <h1 data-i18n="sources_heading">BRONVERMELDINGEN</h1>
@@ -29,11 +38,19 @@
             </div>
         </div>
     </header>
+
+
+
+
+
+    <!-- ==================== MARK: BRONNEN ==================== -->
     <main class="page-container">
+        <!-- MARK: AFBEELDINGSBRONNEN -->
         <section id="visualView" class="view-section">
             <h2 data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</h2>
             <div class="parchment-bg filter-bar">
                 <input type="text" id="searchInput" oninput="filterSources()" placeholder="Zoek bestand, artiest, uitgever..." aria-label="Zoek bestand, artiest, uitgever..." data-i18n-placeholder="sources_search" data-i18n-aria-label="sources_search" class="search-input">
+                <!-- De categoriewaaarden blijven hetzelfde bij het wisselen van taal -->
                 <div id="filterContainer" class="filter-group">
                     <button onclick="setCategory('Alle')" data-category="Alle" class="filter-btn filter-btn-active"><span data-i18n="sources_filter_all">Alle</span> (9)</button>
                     <button onclick="setCategory('Artiesten')" data-category="Artiesten" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_artists">Artiesten</span> (5)</button>
@@ -41,8 +58,11 @@
                     <button onclick="setCategory('Landschap')" data-category="Landschap" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_landscape">Landschap</span> (1)</button>
                 </div>
             </div>
+            <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
             <div id="sourcesGrid" class="sources-grid"></div>
         </section>
+
+        <!-- MARK: ONDERZOEK EN LITERATUUR -->
         <section id="researchView" class="view-section hidden">
             <div class="parchment-bg research-card">
                 <div class="research-header">
@@ -53,6 +73,12 @@
             </div>
         </section>
     </main>
+
+
+
+
+    
+    <!-- ==================== MARK: SCRIPTS ==================== -->
     <script src="../js/bronnen.js" defer></script>
     <script src="../js/custom-scrollbar.js" defer></script>
     <script src="../js/navbar.js" defer></script>
