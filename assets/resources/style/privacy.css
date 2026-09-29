@@ -1,0 +1,142 @@
+/* ==================== MARK: BASIS ==================== */
+/* Deze regels gelden alleen voor de melding en de privacypagina. */
+
+@font-face {
+  font-family: "roboto";
+  src: url(../type/Roboto-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+#privacyNotice,
+#privacyNotice *,
+.privacy-page,
+.privacy-page *,
+.privacy-entry-links,
+.privacy-entry-links * {
+  box-sizing: border-box;
+}
+
+.privacy-page {
+  margin: 0;
+  background: #160a04;
+  color: #f4f1ea;
+  font-family: 'roboto', serif;
+  line-height: 1.6;
+}
+
+.privacy-page main {
+  width: min(90%, 50rem);
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+.privacy-page section {
+  padding-block: 1rem;
+  border-bottom: 0.0625rem solid #8c4a32;
+}
+
+.privacy-page h1,
+.privacy-page h2 {
+  color: #f4c468;
+  line-height: 1.3;
+}
+
+.privacy-page a,
+#privacyNotice a,
+.privacy-entry-links a {
+  color: #ffe1a1;
+  overflow-wrap: anywhere;
+}
+
+.privacy-page a[aria-current="page"] {
+  font-weight: bold;
+}
+
+
+#privacyNotice .privacy-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+#privacyNotice .privacy-title-row h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+
+
+
+
+/* ==================== MARK: MELDING ==================== */
+
+#privacyNotice {
+  width: min(92vw, 36rem);
+  max-height: 85dvh;
+  overflow-y: auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 0.15rem solid #d4a373;
+  border-radius: 0.75rem;
+  background: #2b1704;
+  color: #f4f1ea;
+  font: 1rem/1.6 'roboto', serif;
+  box-shadow: 0 1rem 3rem #0009;
+}
+
+#privacyNotice::backdrop {
+  background: #000b;
+}
+
+#privacyNotice h2 {
+  color: #f4c468;
+  font-size: 1.6rem;
+  border: 0;
+}
+
+.privacy-languages,
+.privacy-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.privacy-page main button:not(#langToggleBtn),
+#privacyNotice button:not(#langToggleBtn),
+.privacy-entry-links button:not(#langToggleBtn) {
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid #d4a373;
+  border-radius: 0.4rem;
+  background: #4a2810;
+  color: #fff3dc;
+  font: inherit;
+  cursor: pointer;
+}
+
+.privacy-languages button[aria-pressed="true"] {
+  background: #f4c468;
+  color: #231204;
+}
+
+.privacy-entry-links {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+  display: grid;
+  gap: 0.5rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.75rem;
+  background: #2b1704;
+  border-radius: 0.5rem;
+  z-index: 1200;
+  font: 0.875rem/1.5 Georgia, serif;
+}
+
+.privacy-page :focus-visible,
+#privacyNotice :focus-visible,
+.privacy-entry-links :focus-visible {
+  outline: 0.2rem solid #ffd700;
+  outline-offset: 0.2rem;
+}

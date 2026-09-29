@@ -1,3 +1,5 @@
+// ==================== MARK: NAVIGATIE ====================
+
 function initNavToggle() {
   const nav = document.querySelector('nav');
   const navUl = document.querySelector('nav ul');

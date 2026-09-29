@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const CONFIG = {
         storageKey: 'preferredLanguage',
         defaultLang: 'NL',
-        jsonPath: '../../translations.json'
+        jsonPath: document.documentElement.dataset.translationsPath || '../../translations.json'
     };
     const toggleBtn = document.getElementById('langToggleBtn');
     let currentLang = CONFIG.defaultLang;
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const t = (key, fallback = key) => translations[currentLang]?.[key]
         ?? translations[CONFIG.defaultLang]?.[key] ?? fallback;
 
-    // Render the supported Markdown as DOM nodes, preserving bold text and links.
     function renderMarkdown(element, text) {
         const fragment = document.createDocumentFragment();
         const pattern = /\*\*(.+?)\*\*|\[([^\]]+)\]\((?:"([^"]+)"|([^\s)]+))\)/g;
