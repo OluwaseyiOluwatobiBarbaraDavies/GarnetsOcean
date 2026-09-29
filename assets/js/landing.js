@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     img.addEventListener("click", function () {
       modal.style.display = "block";
       modalImg.src = this.src;
+      modalImg.alt = this.alt;
 
       const desc = this.nextElementSibling;
       captionText.innerHTML = desc ? desc.innerHTML : this.alt;

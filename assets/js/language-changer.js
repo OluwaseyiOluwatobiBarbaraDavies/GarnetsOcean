@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         defaultLang: 'NL',
         jsonPath: '../../translations.json'
     };
-
     const toggleBtn = document.getElementById('langToggleBtn');
-    if (!toggleBtn) return;
+    let currentLang = CONFIG.defaultLang;
+    try {
+        currentLang = localStorage.getItem(CONFIG.storageKey) || CONFIG.defaultLang;
+    } catch (error) {
+        console.warn('Language preference storage is unavailable.', error);
+    }
 
-    let translations = {};
-    let currentLang = localStorage.getItem(CONFIG.storageKey) || CONFIG.defaultLang;
-
+    let translations;
     try {
         const response = await fetch(CONFIG.jsonPath);
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
@@ -19,64 +21,85 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Failed to load translations:', error);
         return;
     }
-
-    const markdownToHTML = (text) => {
-        return text
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\[(.*?)\]\("(.*?)"\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-    };
-
-    const updateContent = (lang) => {
-        document.querySelectorAll('[data-i18n]').forEach((element) => {
-            const key = element.getAttribute('data-i18n');
-
-            if (translations[lang] && Object.prototype.hasOwnProperty.call(translations[lang], key)) {
-                const translatedText = translations[lang][key];
-
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.value = translatedText;
-                } else {
-                    element.innerHTML = markdownToHTML(translatedText);
-                }
-            }
-        });
-
-        document.documentElement.setAttribute('lang', lang === 'NL' ? 'nl' : 'eng');
-
-        if (toggleBtn.tagName === 'SELECT') {
-            toggleBtn.value = lang;
-        } else {
-            toggleBtn.textContent = lang;
-        }
-
-        if (lang === 'ENG') {
-            toggleBtn.classList.add('is-eng');
-            toggleBtn.setAttribute('aria-label', 'Schakel naar Nederlands');
-            toggleBtn.setAttribute('title', 'Schakel naar Nederlands');
-        } else {
-            toggleBtn.classList.remove('is-eng');
-            toggleBtn.setAttribute('aria-label', 'Switch to English');
-            toggleBtn.setAttribute('title', 'Switch to English');
-        }
-    };
-
-    if (!translations[currentLang]) {
+    if (!['NL', 'ENG'].includes(currentLang) || !translations[currentLang]) {
         currentLang = CONFIG.defaultLang;
     }
 
-    updateContent(currentLang);
+    const t = (key, fallback = key) => translations[currentLang]?.[key]
+        ?? translations[CONFIG.defaultLang]?.[key] ?? fallback;
 
-    if (toggleBtn.tagName === 'SELECT') {
-        toggleBtn.addEventListener('change', () => {
-            currentLang = toggleBtn.value;
-            localStorage.setItem(CONFIG.storageKey, currentLang);
-            updateContent(currentLang);
+    // Render the supported Markdown as DOM nodes, preserving bold text and links.
+    function renderMarkdown(element, text) {
+        const fragment = document.createDocumentFragment();
+        const pattern = /\*\*(.+?)\*\*|\[([^\]]+)\]\((?:"([^"]+)"|([^\s)]+))\)/g;
+        let end = 0;
+        for (const match of text.matchAll(pattern)) {
+            fragment.append(document.createTextNode(text.slice(end, match.index)));
+            if (match[1] !== undefined) {
+                const strong = document.createElement('strong');
+                strong.textContent = match[1];
+                fragment.append(strong);
+            } else {
+                const href = match[3] || match[4];
+                const url = new URL(href, document.baseURI);
+                if (['https:', 'http:'].includes(url.protocol)) {
+                    const link = document.createElement('a');
+                    link.href = url.href;
+                    link.textContent = match[2];
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    fragment.append(link);
+                } else {
+                    fragment.append(document.createTextNode(match[2]));
+                }
+            }
+            end = match.index + match[0].length;
+        }
+        fragment.append(document.createTextNode(text.slice(end)));
+        element.replaceChildren(fragment);
+    }
+
+    function updateContent() {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.dataset.i18n;
+            const value = t(key, element.textContent);
+            if (element.matches('input, textarea')) {
+                element.placeholder = value;
+            } else if (element.tagName === 'TITLE') {
+                element.textContent = value;
+            } else {
+                renderMarkdown(element, value);
+            }
         });
-    } else {
-        toggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'NL' ? 'ENG' : 'NL';
-            localStorage.setItem(CONFIG.storageKey, currentLang);
-            updateContent(currentLang);
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            element.placeholder = t(element.dataset.i18nPlaceholder, element.placeholder);
+        });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+            element.setAttribute('aria-label', t(element.dataset.i18nAriaLabel));
+        });
+        document.documentElement.lang = currentLang === 'NL' ? 'nl' : 'en';
+        if (toggleBtn) {
+            if (toggleBtn.tagName === 'SELECT') toggleBtn.value = currentLang;
+            else toggleBtn.textContent = currentLang;
+            toggleBtn.classList.toggle('is-eng', currentLang === 'ENG');
+            const label = currentLang === 'ENG' ? 'Schakel naar Nederlands' : 'Switch to English';
+            toggleBtn.setAttribute('aria-label', label);
+            toggleBtn.title = label;
+        }
+        document.dispatchEvent(new CustomEvent('languagechange', {detail: {lang: currentLang}}));
+    }
+
+    window.siteI18n = {t, get language() { return currentLang; }};
+    updateContent();
+    if (toggleBtn) {
+        toggleBtn.addEventListener(toggleBtn.tagName === 'SELECT' ? 'change' : 'click', () => {
+            const nextLang = toggleBtn.tagName === 'SELECT'
+                ? toggleBtn.value : currentLang === 'NL' ? 'ENG' : 'NL';
+            if (!['NL', 'ENG'].includes(nextLang) || !translations[nextLang]) return;
+            currentLang = nextLang;
+            try { localStorage.setItem(CONFIG.storageKey, currentLang); }
+            catch (error) { console.warn('Could not save language preference.', error); }
+            updateContent();
         });
     }
 });
