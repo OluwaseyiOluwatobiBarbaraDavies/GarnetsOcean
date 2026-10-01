@@ -1,53 +1,171 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-translations-path="../../translations.json">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="story_page_title">Even geduld | Digital Garden</title>
-  <link rel="stylesheet" href="../assets/style/landing.css">
+  <title data-i18n="garden_page_title">Country Roots | Mijn muzikale tuin</title>
   <link rel="stylesheet" href="../resources/style/navbar.css">
-  <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
   <link rel="stylesheet" href="../resources/style/language-changer.css">
   <link rel="stylesheet" href="../resources/style/story.css">
-
   <script src="../js/navbar.js" defer></script>
-  <script src="../js/custom-scrollbar.js" defer></script>
   <script src="../js/language-changer.js" defer></script>
+  <script src="../js/story.js" defer></script>
 </head>
-<body>
-
-
-
-
+<body class="story-page">
+  <a class="garden-skip" href="#gardenContent"><span data-i18n="garden_skip">Ga direct naar hoofdinhoud</span></a>
 
   <!-- ==================== MARK: NAVIGATIE ==================== -->
   <nav>
     <ul>
-      <li><a href="../html/landing.html" class="active" data-i18n="nav_home">Home</a></li>
+      <li><a href="landing.html" data-i18n="nav_home">Home</a></li>
       <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
-      <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
-      <li><a href="../html/bronnen.html" data-i18n="nav_sources">Bronnen</a></li>
-      <li><a href="../html/privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-      <li class="nav-language">
-        <button id="langToggleBtn" type="button">NL / ENG</button>
-      </li>
+      <li><a href="story.html" class="active" aria-current="page" data-i18n="nav_story">Story</a></li>
+      <li><a href="bronnen.html" data-i18n="nav_sources">Bronnen</a></li>
+      <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+      <li class="nav-language"><button id="langToggleBtn" type="button" aria-label="Switch to English">NL</button></li>
     </ul>
   </nav>
 
 
 
 
-  <!-- ==================== MARK: BINNENKORT ==================== -->
-  <main class="container">
-    <article class="card coming-soon-card">
-      <!-- Het hoedje is alleen voor de sfeer. -->
-      <span class="coming-soon-icon" aria-hidden="true">🤠</span>
-      <h1 class="coming-soon-title" data-i18n="story_heading">Ho rustig aan!</h1>
-      <p class="coming-soon-text" data-i18n="story_description">
-        Dit pad is nog in aanleg. Ik stem de gitaren en werk aan deze pagina voor mijn Digital Garden.
-      </p>
-      <a href="index.html" class="btn-home" data-i18n="story_back">← Terug naar Home</a>
-    </article>
+
+  <!-- ==================== MARK: MIJN TUIN ==================== -->
+  <main id="gardenContent" tabindex="-1">
+    <header class="garden-hero">
+      <div>
+        <p class="garden-eyebrow">Garnet’s Ocean / Digital Garden</p>
+        <h1>Country Roots</h1>
+        <h2 data-i18n="garden_subtitle">Mijn muzikale tuin</h2>
+        <p data-i18n="garden_intro">Country muziek is voor mij meer dan een muziekgenre. Hier verzamel ik mijn startpunten: artiesten, Texas, rodeo en de verbindingen tussen muziekstijlen. Deze tuin blijft groeien en veranderen.</p>
+        <a class="garden-link" href="#gardenNotes"><span data-i18n="garden_explore">Ontdek de eerste notities</span> <span aria-hidden="true">↘</span></a>
+      </div>
+      <figure class="garden-photo">
+        <img src="../resources/images/texasFlag.jpg" alt="" width="600" height="400">
+        <figcaption><span data-i18n="garden_photo">De vlag van Texas — mijn startpunt</span></figcaption>
+      </figure>
+    </header>
+
+    <div class="garden-index">
+      <a href="#gardenRoots"><span data-i18n="garden_roots_link">01 / Mijn wortels</span></a>
+      <a href="#gardenArtists"><span data-i18n="garden_artists_link">02 / Artiesten</span></a>
+      <a href="#gardenNotes"><span data-i18n="garden_notes_link">03 / Verbindingen</span></a>
+    </div>
+
+
+
+
+
+    <!-- ==================== MARK: MIJN WORTELS ==================== -->
+    <section id="gardenRoots" class="garden-section">
+      <p class="garden-eyebrow">01 / Houston, Texas</p>
+      <h2 data-i18n="garden_roots">Hier begint het</h2>
+      <div class="garden-roots-grid">
+        <article class="garden-paper">
+          <h3 data-i18n="garden_home_heading">Country dichtbij huis</h3>
+          <p data-i18n="garden_home_text">Ik ben geboren en opgegroeid in Houston, Texas, waar Country muziek onderdeel is van de cultuur. Je komt het bijvoorbeeld tegen bij Rodeo Day en Country Day.</p>
+          <a href="landing.html"><span data-i18n="garden_home_link">Lees mijn startpunt op de homepage</span></a>
+        </article>
+        <figure class="garden-photo">
+          <img src="../resources/images/CountryDay.jpg" alt="" loading="lazy" width="600" height="400">
+          <figcaption><span data-i18n="garden_country_day">Country Day in Houston, Texas</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ==================== MARK: ARTIESTEN ==================== -->
+    <section id="gardenArtists" class="garden-section">
+      <p class="garden-eyebrow">02 / <span data-i18n="garden_collection">Mijn verzameling</span></p>
+      <h2 data-i18n="garden_artists">Artiesten om verder te ontdekken</h2>
+      <p data-i18n="garden_artists_intro">Ik luister graag naar Country muziek. Deze vijf artiesten uit mijn homepage zijn het begin van mijn verzameling.</p>
+      <div class="garden-controls" hidden>
+        <div>
+          <label for="gardenSearch"><span data-i18n="garden_search_label">Zoek een artiest</span></label>
+          <input id="gardenSearch" type="search" aria-describedby="gardenSearchHelp" aria-controls="gardenArtistList">
+          <p id="gardenSearchHelp" class="garden-help"><span data-i18n="garden_search_help">Typ een naam. De lijst wordt tijdens het typen gefilterd.</span></p>
+        </div>
+        <div>
+          <label for="gardenSort"><span data-i18n="garden_sort_label">Sorteer op naam</span></label>
+          <select id="gardenSort" aria-controls="gardenArtistList"><option value="asc">A–Z</option><option value="desc">Z–A</option></select>
+        </div>
+      </div>
+      <p class="garden-help" role="status" aria-atomic="true" id="gardenResults"></p>
+      <ul id="gardenArtistList" class="garden-artists">
+        <li data-artist="Dolly Parton">
+          <figure class="garden-photo">
+            <img src="../resources/images/artist-dolly.jpg" alt="" loading="lazy" width="400" height="400">
+            <figcaption>Dolly Parton</figcaption>
+          </figure>
+        </li>
+        <li data-artist="Don Williams">
+          <figure class="garden-photo">
+            <img src="../resources/images/artist_don.jpg" alt="" loading="lazy" width="400" height="400">
+            <figcaption>Don Williams</figcaption>
+          </figure>
+        </li>
+        <li data-artist="Ella Langley">
+          <figure class="garden-photo">
+            <img src="../resources/images/artist_ella.jpg" alt="" loading="lazy" width="400" height="400">
+            <figcaption>Ella Langley</figcaption>
+          </figure>
+        </li>
+        <li data-artist="Kameron Marlowe">
+          <figure class="garden-photo">
+            <img src="../resources/images/artist_kameron.jpg" alt="" loading="lazy" width="400" height="400">
+            <figcaption>Kameron Marlowe</figcaption>
+          </figure>
+        </li>
+        <li data-artist="Warren Zeiders">
+          <figure class="garden-photo">
+            <img src="../resources/images/artist_warren.jpg" alt="" loading="lazy" width="400" height="400">
+            <figcaption>Warren Zeiders</figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p id="gardenEmpty" hidden><span data-i18n="garden_empty">Geen artiest gevonden. Probeer een andere naam.</span></p>
+      <a href="bronnen.html"><span data-i18n="garden_credits">Bekijk de afbeeldingsbronnen en credits</span></a>
+    </section>
+
+
+
+
+
+    <!-- ==================== MARK: NOTITIES EN VERBINDINGEN ==================== -->
+    <section id="gardenNotes" class="garden-section">
+      <p class="garden-eyebrow">03 / <span data-i18n="garden_growing">In ontwikkeling</span></p>
+      <h2 data-i18n="garden_notes">Van één onderwerp naar het volgende</h2>
+      <p data-i18n="garden_notes_intro">Een nummer of artiest kan leiden naar muziekstijlen, cultuur, geschiedenis en invloeden. Dit zijn mijn eerste notities en vragen om verder uit te zoeken.</p>
+      <div class="garden-notes-grid">
+        <article class="garden-paper">
+          <h3 data-i18n="garden_styles">Muziek die verandert</h3>
+          <p data-i18n="garden_styles_text">Country is door de jaren heen veranderd: van traditionele country tot moderne nummers met invloeden van pop, rock en hiphop.</p>
+          <details><summary><span data-i18n="garden_question">Vraag om verder te onderzoeken</span></summary>
+            <p data-i18n="garden_styles_question">Welke verschillen hoor ik tussen traditional country, bluegrass, country rock en modern country?</p>
+          </details>
+          <a href="#gardenArtists"><span data-i18n="garden_to_artists">Verbinding: mijn artiesten</span></a>
+        </article>
+        <article class="garden-paper">
+          <h3 data-i18n="garden_culture">Muziek en cultuur</h3>
+          <p data-i18n="garden_culture_text">Texas, rodeo, cowboys en honky-tonk zijn onderwerpen die ik vanuit Country muziek verder kan ontdekken. Houston is daarbij mijn persoonlijke startpunt.</p>
+          <details><summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
+            <p data-i18n="garden_culture_question">Hoe komen muziek en de cultuur van Texas samen bij de rodeo?</p>
+          </details>
+          <a href="#gardenRoots"><span data-i18n="garden_to_roots">Verbinding: Houston en mijn wortels</span></a>
+        </article>
+        <article class="garden-paper">
+          <h3 data-i18n="garden_history">Wortels en invloeden</h3>
+          <p data-i18n="garden_history_text">Folk, blues, gospel, rock, pop en hiphop zijn aanknopingspunten om de oorsprong en ontwikkeling van Country muziek verder te onderzoeken.</p>
+          <details><summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
+            <p data-i18n="garden_history_question">Welke verbindingen vind ik terug in de historische bronnen die ik heb verzameld?</p>
+          </details>
+          <a href="bronnen.html"><span data-i18n="garden_to_sources">Verbinding: onderzoek en literatuur</span></a>
+        </article>
+      </div>
+    </section>
   </main>
 
 
@@ -55,8 +173,9 @@
 
 
   <!-- ==================== MARK: FOOTER ==================== -->
-  <footer>
-    <p>&copy; Garnet's Ocean — Digital Garden</p>
+  <footer class="garden-footer">
+    <p>Garnet’s Ocean / Country Roots</p>
+    <a href="#gardenContent"><span data-i18n="garden_top">Terug naar het begin</span></a>
   </footer>
 </body>
 </html>

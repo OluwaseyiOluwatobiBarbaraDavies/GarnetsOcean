@@ -2,7 +2,14 @@
 /* MARK: KLEUREN */
 /****************/
 :root {
-  --story-button-shadow: #0006;
+  --garden-bg: #190e08;
+  --garden-paper: #2b1b11;
+  --garden-text: #f5ebd6;
+  --garden-muted: #dfc7a8;
+  --garden-accent: #f4c468;
+  --garden-border: #a97948;
+  --garden-shadow: rgba(0, 0, 0, 0.25);
+  --garden-focus: #ffd700;
 }
 
 
@@ -16,7 +23,21 @@
 @font-face {
   font-family: "rye";
   src: url("../type/Rye-Regular.ttf") format("truetype");
-  font-display: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../type/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../type/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
 }
 
 
@@ -24,119 +45,287 @@
 
 
 /***************************/
-/* MARK: PAGINA */
+/* MARK: BASIS */
 /*************************/
+
+/* De inhoudslinks scrollen rustig naar hun onderdeel. */
+html:has(> body.story-page) {
+  scroll-behavior: smooth;
+}
+
+.story-page,
+.story-page *,
+.story-page *::before,
+.story-page *::after {
+  box-sizing: border-box;
+}
 
 .story-page {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-.story-page > .container {
-  display: grid;
-  align-content: center;
-  width: 100%;
-  padding: clamp(1rem, 4vw, 3rem);
-}
-
-
-
-
-
-/***************************/
-/* MARK: BINNENKORT-KAART */
-/*************************/
-
-.coming-soon-card {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  gap: 1.25rem;
-  padding: clamp(1.5rem, 6vw, 3.75rem);
-  text-align: center;
-}
-
-.coming-soon-icon {
-  font-size: 3.125rem;
-  line-height: 1.2;
-  animation: story-pulse 2s ease-in-out 3;
-}
-
-.coming-soon-title {
   margin: 0;
-  font-family: "rye", serif;
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-  line-height: 1.3;
-  letter-spacing: 0;
-  color: var(--secondary-font-color);
-  background: none;
-  -webkit-text-fill-color: currentColor;
-  filter: none;
-}
-
-.coming-soon-text {
-  max-width: 40ch;
-  margin: 0;
-  color: var(--background-color);
-  font-size: 1.125rem;
+  background: var(--garden-bg);
+  color: var(--garden-text);
+  font-family: "roboto", sans-serif;
   line-height: 1.7;
 }
 
+.story-page [hidden] {
+  display: none !important;
+}
+
+.story-page main,
+.garden-footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.story-page main h1,
+.story-page main h2,
+.story-page main h3 {
+  font-family: "rye", serif;
+  color: var(--garden-accent);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.story-page main h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  margin-block: 0.5rem 1rem;
+}
+
+.story-page main h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.story-page main h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.story-page main a,
+.garden-footer a {
+  color: var(--garden-accent);
+  text-underline-offset: 0.2em;
+}
+
+.story-page main a:hover,
+.garden-footer a:hover {
+  text-decoration-thickness: 0.15em;
+}
+
+.story-page main p {
+  max-width: 65ch;
+}
+
+.story-page main [id],
+#gardenContent {
+  scroll-margin-top: 7rem;
+}
+
 
 
 
 
 /***************************/
-/* MARK: TERUG NAAR HOME */
+/* MARK: TITEL EN INHOUD */
 /*************************/
 
-.btn-home {
+.garden-hero {
   display: grid;
-  place-items: center;
-  min-height: 2.75rem;
-  padding: 0.75rem 1.5rem;
-  border: 0.125rem solid var(--leather-accent);
-  border-radius: 0.25rem;
-  background: var(--secondary-font-color);
-  color: var(--background-color);
-  font-family: "rye", serif;
-  text-decoration: none;
+  gap: 2rem;
+  align-items: center;
+  padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+.garden-eyebrow {
+  color: var(--garden-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  box-shadow: 0 0.25rem 0.625rem var(--story-button-shadow);
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
 }
 
-.btn-home:hover {
-  background: var(--text-gold);
-  color: var(--background-color);
-  transform: translateY(-0.125rem);
+.garden-link {
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-weight: 700;
 }
 
-.btn-home:focus-visible {
-  outline: 0.1875rem solid var(--text-gold);
+.garden-index {
+  display: grid;
+  gap: 0.75rem;
+  padding-block: 1.25rem;
+  border-block: 0.0625rem solid var(--garden-border);
+}
+
+.garden-index a {
+  padding: 0.5rem;
+}
+
+.garden-section {
+  padding-block: clamp(2rem, 5vw, 4rem);
+  border-bottom: 0.0625rem solid var(--garden-border);
+}
+
+.garden-roots-grid,
+.garden-notes-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.garden-paper {
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 0.0625rem dashed var(--garden-border);
+  border-radius: 0.4rem;
+  background: var(--garden-paper);
+  box-shadow: 0.25rem 0.25rem 0 var(--garden-shadow);
+}
+
+.garden-paper details {
+  margin-block: 1.25rem;
+  border-block: 0.0625rem solid var(--garden-border);
+  padding-block: 0.75rem;
+}
+
+.garden-paper summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+
+
+
+
+/***************************/
+/* MARK: FOTO'S EN ARTIESTEN */
+/*************************/
+
+.garden-photo {
+  margin: 0;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 0.0625rem solid var(--garden-border);
+  background: var(--garden-paper);
+  box-shadow: 0 0.5rem 1.5rem var(--garden-shadow);
+}
+
+.garden-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.garden-photo figcaption {
+  padding: 1rem 0.25rem 0.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.garden-artists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-block: 1.5rem;
+}
+
+.garden-artists img {
+  aspect-ratio: 1;
+  object-position: top;
+}
+
+.garden-controls {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.garden-controls label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.garden-controls input,
+.garden-controls select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem;
+  border: 0.0625rem solid var(--garden-border);
+  border-radius: 0.25rem;
+  background: var(--garden-paper);
+  color: var(--garden-text);
+  font: inherit;
+}
+
+.garden-help {
+  font-size: 0.9rem;
+  color: var(--garden-muted);
+}
+
+.garden-footer {
+  display: grid;
+  gap: 0.5rem;
+  padding-block: 2rem;
+  color: var(--garden-muted);
+}
+
+
+
+
+
+/***************************/
+/* MARK: TOETSENBORD */
+/*************************/
+
+.story-page :focus-visible {
+  outline: 0.1875rem solid var(--garden-focus);
   outline-offset: 0.25rem;
 }
 
+.garden-skip {
+  position: fixed;
+  inset: 0.5rem auto auto 0.5rem;
+  z-index: 5000;
+  max-width: calc(100% - 1rem);
+  padding: 0.75rem 1rem;
+  background: var(--garden-paper);
+  color: var(--garden-text);
+  transform: translateY(calc(-100% - 1rem));
+}
+
+.garden-skip:focus {
+  transform: none;
+}
+
 
 
 
 
 /***************************/
-/* MARK: ANIMATIE */
+/* MARK: GROTERE SCHERMEN */
 /*************************/
 
-@keyframes story-pulse {
-  0%,
-  100% {
-    transform: scale(1);
+@media (min-width: 45rem) {
+  .garden-hero {
+    grid-template-columns: 1.3fr 1fr;
   }
 
-  50% {
-    transform: scale(1.1);
+  .garden-roots-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .garden-index,
+  .garden-notes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .garden-controls {
+    grid-template-columns: 2fr 1fr;
   }
 }
 
@@ -145,20 +334,38 @@
 
 
 /***************************/
-/* MARK: MINDER BEWEGING */
+/* MARK: LICHTE MODUS */
 /*************************/
 
-/* Geen beweging als de bezoeker dat zo heeft ingesteld. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --garden-bg: #f7f1e5;
+    --garden-paper: #fffaf0;
+    --garden-text: #302015;
+    --garden-muted: #6c4c35;
+    --garden-accent: #733c08;
+    --garden-border: #a37443;
+    --garden-shadow: rgba(90, 50, 20, 0.12);
+    --garden-focus: #733c08;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .coming-soon-icon,
-  .coming-soon-card {
-    animation: none;
+  html:has(> body.story-page) {
+    scroll-behavior: auto;
   }
 
-  .coming-soon-card,
-  .coming-soon-card h1,
-  .btn-home {
-    transition: none;
-    transform: none;
+  .story-page *,
+  .story-page *::before,
+  .story-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .story-page :focus-visible {
+    outline-color: Highlight;
   }
 }
