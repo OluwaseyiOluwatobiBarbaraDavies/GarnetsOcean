@@ -44,9 +44,9 @@
 
 
 
-/***************************/
+/****************/
 /* MARK: BASIS */
-/*************************/
+/**************/
 
 /* De inhoudslinks scrollen rustig naar hun onderdeel. */
 html:has(> body.story-page) {
@@ -125,9 +125,9 @@ html:has(> body.story-page) {
 
 
 
-/***************************/
+/**************************/
 /* MARK: TITEL EN INHOUD */
-/*************************/
+/************************/
 
 .garden-hero {
   display: grid;
@@ -195,9 +195,9 @@ html:has(> body.story-page) {
 
 
 
-/***************************/
+/******************************/
 /* MARK: FOTO'S EN ARTIESTEN */
-/*************************/
+/****************************/
 
 .garden-photo {
   margin: 0;
@@ -277,9 +277,9 @@ html:has(> body.story-page) {
 
 
 
-/***************************/
+/**********************/
 /* MARK: TOETSENBORD */
-/*************************/
+/********************/
 
 .story-page :focus-visible {
   outline: 0.1875rem solid var(--garden-focus);
@@ -333,9 +333,9 @@ html:has(> body.story-page) {
 
 
 
-/***************************/
+/***********************/
 /* MARK: LICHTE MODUS */
-/*************************/
+/*********************/
 
 @media (prefers-color-scheme: light) {
   :root {
