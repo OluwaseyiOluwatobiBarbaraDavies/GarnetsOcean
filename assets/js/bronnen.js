@@ -226,13 +226,14 @@ function translated(key, fallback) {
   return window.siteI18n ? window.siteI18n.t(key, fallback) : fallback;
 }
 
-// Zo worden tekens zoals & en < als tekst getoonf in de kaartjes.
+// Zo worden tekens zoals & en < als tekst getoond in de kaartjes.
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 }
 
 // De categorie blijft hetzelfde, ook als de taal verandert.
 let currentCategory = "Alle";
+let resultTimer;
 
 
 
@@ -293,6 +294,16 @@ function filterSources() {
     return matchesCat && matchesQuery;
   });
   renderSourcesGrid(filtered);
+
+  // Even wachten voorkomt een melding bij elke losse toetsaanslag.
+  window.clearTimeout(resultTimer);
+  resultTimer = window.setTimeout(() => {
+    const status = document.getElementById('sourcesResults');
+    if (status) {
+      status.textContent = translated('sources_result_count', 'Aantal gevonden afbeeldingen: {count}.')
+        .replace('{count}', String(filtered.length));
+    }
+  }, 300);
 }
 
 
@@ -306,7 +317,7 @@ function renderSourcesGrid(items) {
   if (!grid) return;
 
   if (!items.length) {
-    grid.innerHTML = `<div class="parchment-bg source-card sources empty">${escapeHTML(translated("sources_empty", "Geen afbeeldingen gevonden."))}</div>`;
+    grid.innerHTML = `<div class="parchment-bg source-card sources-empty">${escapeHTML(translated("sources_empty", "Geen afbeeldingen gevonden."))}</div>`;
     return;
   }
 
@@ -319,17 +330,23 @@ function renderSourcesGrid(items) {
       </div>
       <div class="card-body">
       <h3 class="card-title">${escapeHTML(translated(item.titleKey, item.title))}</h3>
-      <p class="card-filename">${escapeHTML(item.filename)}</p>
-      <div class="card-details">
+      <p id="image-file-${imageSources.indexOf(item)}" class="card-filename"><span class="visually-hidden">${escapeHTML(translated('sources_filename_label', 'Bestandsnaam:'))} </span>${escapeHTML(item.filename)}</p>
+      <div id="image-details-${imageSources.indexOf(item)}" class="card-details">
         <div><strong>${escapeHTML(translated("sources_source", "Bron:"))}</strong> ${escapeHTML(item.sourceAuthor)}</div>
-        ${item.secondaryCredit ? `<div class="source-credit"><strong>${escapeHTML(translated("sources_photographer", "Fotograaf:"))}</strong> ${escapeHTML(translated(item.creditKey, item.secondaryCredit))}</div>` : ''}
+        ${item.secondaryCredit ? `<div id="image-credit-${imageSources.indexOf(item)}" class="source-credit"><strong>${escapeHTML(translated("sources_photographer", "Fotograaf:"))}</strong> ${escapeHTML(translated(item.creditKey, item.secondaryCredit))}</div>` : ''}
       </div>
       </div>
     </div>
+    <p id="image-context-${imageSources.indexOf(item)}" class="visually-hidden">
+      ${escapeHTML(translated('sources_category_label', 'Categorie:'))} ${escapeHTML(translated(item.categoryKey, item.category))}.
+      ${item.url ? escapeHTML(translated('sources_new_tab', 'Opent in een nieuw tabblad.')) : ''}
+    </p>
     <div class="card-footer">
       ${item.url ? `
-      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" class="card-btn">
-        <span>${escapeHTML(translated("sources_original", "Bekijk Originele Bron"))}</span> ↗
+      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" class="card-btn" aria-describedby="image-file-${imageSources.indexOf(item)} ${item.secondaryCredit ? `image-credit-${imageSources.indexOf(item)} ` : ''}image-context-${imageSources.indexOf(item)}">
+        <span>${escapeHTML(translated("sources_original", "Bekijk Originele Bron"))}</span>
+        <span class="visually-hidden"> — ${escapeHTML(translated(item.titleKey, item.title))} — ${escapeHTML(translated("sources_source", "Bron:"))} ${escapeHTML(item.sourceAuthor)}</span>
+        <span aria-hidden="true">↗</span>
       </a>
       ` : `
       <span class="card-badge-direct">
@@ -357,10 +374,15 @@ function renderResearchList(items) {
       <h3 class="card-title">${escapeHTML(translated(item.titleKey, item.title))}</h3>
       <span class="category-badge">${escapeHTML(translated(item.categoryKey, item.category))}</span>
     </div>
-    <p class="research-description">${escapeHTML(translated(item.descriptionKey, item.description))}</p>
+    <p id="research-description-${researchSources.indexOf(item)}" class="research-description">${escapeHTML(translated(item.descriptionKey, item.description))}</p>
     <div class="research-source-footer">
-      <span><strong>${escapeHTML(translated("sources_author", "Auteur/Instituut:"))}</strong> ${item.author}</span>
-      <a href="${item.url}" target="_blank" rel="noopener">${escapeHTML(translated("sources_visit", "Bezoek Bron"))} ↗</a>
+      <span id="research-author-${researchSources.indexOf(item)}"><strong>${escapeHTML(translated("sources_author", "Auteur/Instituut:"))}</strong> ${escapeHTML(item.author)}</span>
+      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" aria-describedby="research-description-${researchSources.indexOf(item)} research-author-${researchSources.indexOf(item)} research-context-${researchSources.indexOf(item)}">
+        ${escapeHTML(translated("sources_visit", "Bezoek Bron"))}
+        <span class="visually-hidden"> — ${escapeHTML(translated(item.titleKey, item.title))}</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <span id="research-context-${researchSources.indexOf(item)}" class="visually-hidden">${escapeHTML(translated('sources_new_tab', 'Opent in een nieuw tabblad.'))}</span>
     </div>
     </div>
   `).join('');

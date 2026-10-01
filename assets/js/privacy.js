@@ -1,4 +1,6 @@
-// ==================== MARK: PRIVACYMELDING ====================
+//*************************  
+// * MARK: PRIVACYMELDING *
+//*************************
 
 document.addEventListener('DOMContentLoaded', () => {
   const notice = document.querySelector('#privacyNotice');

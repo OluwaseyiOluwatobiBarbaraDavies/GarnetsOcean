@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga naar de inhoud</a>
+    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a>
     <!--
       De classes en id's worden ook gebruikt in de CSS en Javascript.
       De divs rond de afbeeldingen houden de foto's en biijscrfiten bij elkaar.
@@ -162,7 +162,10 @@
     <!-- De browser regelt de focus binnen het geopende venster. -->
     <dialog id="imageModal" class="modal" aria-labelledby="imageModalTitle">
       <h2 id="imageModalTitle" class="visually-hidden" data-i18n="image_title">Vergrote afbeelding</h2>
-      <button type="button" class="modal-close" data-i18n="privacy_close">Sluiten</button>
+      <button type="button" class="modal-close">
+        <span aria-hidden="true">X</span>
+        <span class="visually-hidden" data-i18n="privacy_close">Sluiten</span>
+      </button>
       <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="Texas Flag">
       <p id="modalCaption" class="modal-caption"></p>
     </dialog>

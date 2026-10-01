@@ -12,6 +12,8 @@
 </head>
 
 <body class="page-body">
+    <!-- Met Tab verschijnt deze link linksboven. -->
+    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a> 
 
     <!-- ==================== MARK: NAVIGATIE ==================== -->
     <nav class="western-nav nav-margin">
@@ -34,8 +36,8 @@
         <div class="wooden-plank header-card">
             <h1 data-i18n="sources_heading">BRONVERMELDINGEN</h1>
             <div class="tab-container">
-                <button id="tabVisualBtn" onclick="switchView('visual')" class="tab-btn tab-btn-active" data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</button>
-                <button id="tabResearchBtn" onclick="switchView('research')" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_research">📚 Onderzoek &amp; Literatuur</button>
+                <button type="button" aria-controls="visualView" id="tabVisualBtn" class="tab-btn tab-btn-active" data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</button>
+                <button type="button" aria-controls="researchView" id="tabResearchBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_research">📚 Onderzoek &amp; Literatuur</button>
             </div>
         </div>
     </header>
@@ -43,23 +45,28 @@
 
 
 
-
+ 
     <!-- ==================== MARK: BRONNEN ==================== -->
-    <main class="page-container">
+    <main id="mainContent" class="page-container" tabindex="-1">
         <!-- MARK: AFBEELDINGSBRONNEN -->
         <section id="visualView" class="view-section">
             <h2 data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</h2>
             <div class="parchment-bg filter-bar">
-                <input type="text" id="searchInput" oninput="filterSources()" placeholder="Zoek bestand, artiest, uitgever..." aria-label="Zoek bestand, artiest, uitgever..." data-i18n-placeholder="sources_search" data-i18n-aria-label="sources_search" class="search-input">
+                <!-- Het zoekveld krijgt een label zonder de indeling te veranderen. -->
+                <label for="search-input" class="visually-hidden" data-i18n="sources_search_label">Zoek in afbeeldingsbronnen</label>
+                <input type="text" id="searchInput" placeholder="Zoek bestand, artiest, uitgever..." aria-describedby="sourcesSearchHelp" data-i18n-placeholder="sources_search" class="search-input">
+                <p id="sourcesSearchHelp" class="visually-hidden" data-i18n="sources_search_help">Typ een titel, bestandsnaam of uitgever. De afbeeldingen worden tijdens het typen gefilterd, binnen de gekozen categorie.</p>
+                <p id="sourcesFilterHelp" class="visually-hidden" data-i18n="sources_filter_help">Toon afbeeldingen uit deze categorie. Alle toont alle categorieën. Je zoekterm blijft van toepassing.</p>
                 <!-- De categoriewaaarden blijven hetzelfde bij het wisselen van taal -->
                 <div id="filterContainer" class="filter-group">
-                    <button onclick="setCategory('Alle')" data-category="Alle" class="filter-btn filter-btn-active"><span data-i18n="sources_filter_all">Alle</span> (9)</button>
-                    <button onclick="setCategory('Artiesten')" data-category="Artiesten" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_artists">Artiesten</span> (5)</button>
-                    <button onclick="setCategory('Evenementen &amp; Posters')" data-category="Evenementen &amp; Posters" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_events">Evenementen</span> (3)</button>
-                    <button onclick="setCategory('Landschap')" data-category="Landschap" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_landscape">Landschap</span> (1)</button>
+                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Alle" class="filter-btn filter-btn-active"><span data-i18n="sources_filter_all">Alle</span> (9)</button>
+                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Artiesten" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_artists">Artiesten</span> (5)</button>
+                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Evenementen &amp; Posters" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_events">Evenementen</span> (3)</button>
+                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Landschap" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_landscape">Landschap</span> (1)</button>
                 </div>
             </div>
             <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
+            <p id="sourcesResults" class="visually-hidden" role="status" aria-atomic="true"></p>
             <div id="sourcesGrid" class="sources-grid"></div>
         </section>
 
@@ -67,8 +74,8 @@
         <section id="researchView" class="view-section hidden">
             <div class="parchment-bg research-card">
                 <div class="research-header">
-                    <h2 data-i18n="sources_research_heading">📚 Literatuur &amp; Historische Bronnen</h2>
-                    <p class="research-subtitle" data-i18n="sources_research_subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
+                <h2 data-i18n="sources_research_heading">📚 Literatuur &amp; Historische Bronnen</h2>
+                <p class="research-subtitle" data-i18n="sources_research_subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
                 </div>
                 <div id="researchList" class="research-list"></div>
             </div>

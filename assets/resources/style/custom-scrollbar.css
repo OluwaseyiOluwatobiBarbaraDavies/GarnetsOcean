@@ -1,3 +1,7 @@
+/******************/
+/* MARK: KLEUREN */
+/****************/
+
 :root {
   --track-bg: #1a0f07;
   --track-box-shadow-inset: rgba(0, 0, 0, 0.8);
@@ -40,15 +44,31 @@
   --center-dot-radius: 50%;
 }
 
-::-webkit-scrollbar {
-  display: none;
-  width: 0;
-}
+
+
+
+
+/*******************************/
+/* MARK: STANDAARD SCROLLBALK */
+/*****************************/
 
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+
+
+
+
+/*****************************/
+/* MARK: SPOOR EN VOORTGANG */
+/***************************/
 
 .country-scroll-track {
   position: fixed;
@@ -75,15 +95,23 @@ html {
   transition: height 0.05s linear;
 }
 
+
+
+
+
+/*****************************/
+/* MARK: VERSLEEPBARE PLAAT */
+/***************************/
+
 .country-scroll-widget {
   position: fixed;
   right: var(--scroll-widget-right);
   top: var(--scroll-widget-top);
   z-index: 9998;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: auto; 
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  pointer-events: auto;
   cursor: grab;
   user-select: none;
   touch-action: none;
@@ -94,16 +122,15 @@ html {
 }
 
 .vinyl-disc-indicator {
+  position: relative;
+  display: grid;
+  place-items: center;
   width: var(--vinyl-size);
   height: var(--vinyl-size);
   border-radius: var(--vinyl-radius);
   background: radial-gradient(circle, var(--vinyl-disc-stop-1) 20%, var(--vinyl-disc-stop-2) 21%, var(--vinyl-disc-stop-3) 35%, var(--vinyl-disc-stop-4) 36%, var(--vinyl-disc-stop-5) 55%, var(--vinyl-disc-stop-6) 56%, var(--vinyl-disc-stop-7) 100%);
   border: var(--vinyl-border-width) solid var(--vinyl-border);
   box-shadow: 0 4px 15px var(--vinyl-box-shadow), 0 0 10px var(--vinyl-box-shadow-glow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   transition: transform 0.1s linear, box-shadow 0.2s ease;
 }
 
@@ -129,6 +156,14 @@ html {
   background: var(--center-dot-bg);
 }
 
+
+
+
+
+/**********************/
+/* MARK: MUZIEKNOTEN */
+/********************/
+
 .scroll-music-note {
   position: fixed;
   pointer-events: none;
@@ -140,14 +175,25 @@ html {
   animation: floatAndFadeNote 1.2s ease-out forwards;
 }
 
+
+
+
+
+/*******************/
+/* MARK: ANIMATIE */
+/*****************/
+
+/* JavaScript bepaalt per noot de zijwaartse afstand en draaiing. */
 @keyframes floatAndFadeNote {
   0% {
     opacity: 1;
     transform: translate(0, 0) scale(0.7) rotate(0deg);
   }
+
   50% {
     opacity: 0.9;
   }
+
   100% {
     opacity: 0;
     transform: translate(var(--dx), -70px) scale(1.3) rotate(var(--dr));
