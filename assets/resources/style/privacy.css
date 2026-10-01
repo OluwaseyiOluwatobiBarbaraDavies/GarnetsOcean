@@ -21,23 +21,24 @@
 
 
 
-/****************/
+/***************************/
 /* MARK: FONTS */
-/**************/
+/*************************/
 
 @font-face {
-  font-family: "robto";
+  font-family: "roboto";
   src: url("../type/Roboto-Regular.ttf") format("truetype");
-  font-display: normal;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
 
 
 
-/****************/
+/***************************/
 /* MARK: BASIS */
-/**************/
+/*************************/
 
 #privacyNotice,
 #privacyNotice *,
@@ -64,9 +65,9 @@
 
 
 
-/************************/
+/***************************/
 /* MARK: PAGINA-INHOUD */
-/**********************/
+/*************************/
 
 .privacy-page main {
   width: min(90%, 50rem);
@@ -88,9 +89,9 @@
 
 
 
-/*****************************/
-/* MARK: TITEL EN TAALKEUZE */
 /***************************/
+/* MARK: TITEL EN TAALKEUZE */
+/*************************/
 
 /* De titel mag afbreken, de taalknop blijft ernaast staan. */
 .privacy-title-row {
@@ -113,9 +114,9 @@
 
 
 
-/*************************/
+/***************************/
 /* MARK: PRIVACYMELDING */
-/***********************/
+/*************************/
 
 #privacyNotice {
   width: min(92vw, 36rem);
@@ -175,4 +176,68 @@
 #privacyNotice :focus-visible {
   outline: 0.2rem solid var(--privacy-focus-color);
   outline-offset: 0.2rem;
+}
+
+
+
+
+
+/***************************/
+/* MARK: LICHTE MODUS */
+/*************************/
+
+/* De pagina en melding volgen de kleurvoorkeur van de bezoeker. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --privacy-page-bg: #f7f1e5;
+    --privacy-text: #2b1810;
+    --privacy-section-border: #ba9e73;
+    --privacy-heading-color: #733c08;
+    --privacy-link-color: #7a3e0b;
+    --privacy-notice-bg: #fffaf0;
+    --privacy-notice-border: #a37443;
+    --privacy-notice-shadow: rgba(90, 50, 20, 0.18);
+    --privacy-backdrop: rgba(35, 18, 4, 0.45);
+    --privacy-button-bg: #733c08;
+    --privacy-button-text: #fffaf0;
+    --privacy-focus-color: #733c08;
+  }
+
+  /* De titel krijgt geen tekstverloop uit landing.css. */
+  .privacy-page main h1 {
+    background: none;
+    color: var(--privacy-heading-color);
+    -webkit-text-fill-color: currentColor;
+    filter: none;
+    text-shadow: none;
+  }
+
+  .privacy-page main a:hover,
+  #privacyNotice a:hover {
+    color: var(--privacy-link-color);
+    text-shadow: none;
+  }
+}
+
+
+
+
+
+/***************************/
+/* MARK: SYSTEEMKLEUREN */
+/*************************/
+
+@media (forced-colors: active) {
+  .privacy-page main h1 {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    filter: none;
+    text-shadow: none;
+  }
+
+  .privacy-page main :focus-visible,
+  #privacyNotice :focus-visible {
+    outline-color: Highlight;
+  }
 }

@@ -4,6 +4,8 @@
 
 :root {
   --main-font-color: #ffffff;
+  --landing-body-text: #ffffff;
+  --landing-content-hover: #f4c468;
   --secondary-font-color: #d9a441;
   --background-color: #160a04;
   --card-bg: linear-gradient(145deg, #2e1a12, #21110a);
@@ -99,7 +101,7 @@
 body {
   background: radial-gradient(circle at top, var(--landing-page-glow) 0%, var(--background-color) 70%);
   background-attachment: fixed;
-  color: var(--main-font-color);
+  color: var(--landing-body-text);
   font-family: "roboto", sans-serif;
   margin: 0;
   padding: 0;
@@ -315,6 +317,7 @@ footer {
 }
 
 .desc {
+  color: var(--landing-body-text);
   padding: 12px;
   text-align: center;
   font-size: 14px;
@@ -323,7 +326,8 @@ footer {
 }
 
 .gallery:hover .desc {
-  color: var(--text-gold);
+  color: var(--landing-body-text);
+  color: var(--landing-content-hover);
 }
 
 .gallery-container1 {
@@ -360,6 +364,7 @@ footer {
 }
 
 .gallery-artists .desc {
+  color: var(--landing-body-text);
   align-self: end;
 }
 
@@ -386,7 +391,7 @@ footer {
 
 .garden-list li:hover {
   transform: translateX(6px);
-  color: var(--text-gold);
+  color: var(--landing-content-hover);
 }
 
 
@@ -627,6 +632,8 @@ input:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     --main-font-color: #2b1810;
+    --landing-body-text: #2b1810;
+    --landing-content-hover: #733c08;
     --secondary-font-color: #8c4a11;
     --background-color: #f7f1e5;
     --card-bg: linear-gradient(145deg, #ffffff, #f2e7d5);
@@ -662,6 +669,7 @@ input:focus-visible {
   }
 
   .desc {
+  color: var(--landing-body-text);
     background: linear-gradient(180deg, var(--landing-light-caption-start) 0%, var(--landing-light-caption-end) 100%);
   }
 

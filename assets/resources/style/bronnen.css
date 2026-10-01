@@ -40,6 +40,24 @@
   --accessibility-border: #d4a373;
   --skip-background: #231204;
   --skip-text: #fff3dc;
+
+  --sources-light-background: #f7f1e5;
+  --sources-light-glow: #ebe0d0;
+  --sources-light-heading: #733c08;
+  --sources-light-text: #451a03;
+  --sources-light-plank-top: #f2e7d5;
+  --sources-light-plank-bottom: #e8d7c3;
+  --sources-light-border: #ba9e73;
+  --sources-light-card: #fffaf0;
+  --sources-light-grain: #eee3d3;
+  --sources-light-inset: #efe2cb;
+  --sources-light-shadow: rgba(90, 50, 20, 0.12);
+  --sources-light-highlight: rgba(255, 255, 255, 0.6);
+  --sources-light-tab: #eee3d3;
+  --sources-light-tab-hover: #e1c9a5;
+  --sources-light-input: #fffdf8;
+  --sources-light-placeholder: #795237;
+  --sources-light-focus: #733c08;
 }
 
 
@@ -641,9 +659,87 @@ h3 {
   }
 }
 
+/***************************/
+/* MARK: LICHTE MODUS */
+/*************************/
+
+@media (prefers-color-scheme: light) {
+  .page-body {
+    background: radial-gradient(circle at top, var(--sources-light-glow) 0%, var(--sources-light-background) 70%);
+    color: var(--sources-light-text);
+  }
+
+  /* Deze kleuren gelden voor de inhoud; de navigatie houdt haar eigen kleuren. */
+  .page-body > header,
+  .page-body > main {
+    --parchment: var(--sources-light-card);
+    --parchment-grain: var(--sources-light-grain);
+    --parchment-shadow: var(--sources-light-inset);
+    --parchment-border: var(--sources-light-border);
+    --shadow-heavy: var(--sources-light-shadow);
+    --shadow-medium: var(--sources-light-shadow);
+    --shadow-soft: var(--sources-light-shadow);
+    --wood-highlight: var(--sources-light-highlight);
+    --search-background: var(--sources-light-input);
+    --search-placeholder: var(--sources-light-placeholder);
+    color: var(--sources-light-text);
+  }
+
+  .page-body .wooden-plank {
+    background: linear-gradient(180deg, var(--sources-light-plank-top), var(--sources-light-plank-bottom));
+    border-color: var(--sources-light-border);
+  }
+
+  .page-body .header-card h1 {
+    background: none;
+    color: var(--sources-light-heading);
+    -webkit-text-fill-color: currentColor;
+    filter: none;
+    text-shadow: none;
+  }
+
+  .page-body .sub-title,
+  .page-body .view-section > h2 {
+    color: var(--sources-light-heading);
+  }
+
+  .page-body .tab-btn-inactive {
+    background-color: var(--sources-light-tab);
+    color: var(--sources-light-text);
+    border-color: var(--sources-light-border);
+  }
+
+  .page-body .tab-btn-inactive:hover {
+    background-color: var(--sources-light-tab-hover);
+  }
+
+  .page-body .card-btn:hover {
+    color: var(--amber-100);
+    text-shadow: none;
+  }
+
+  .page-body > header :focus-visible,
+  .page-body > main :focus-visible {
+    outline: 0.1875rem solid var(--sources-light-focus);
+    outline-offset: 0.1875rem;
+    box-shadow: none;
+  }
+}
+
+
+
+
+
 @media (forced-colors: active) {
+  .page-body > header :focus-visible,
+  .page-body > main :focus-visible,
   .page-body > .skip-link:focus,
   .page-body > #mainContent:focus-visible {
     outline-color: Highlight;
+  }
+
+  .page-body .header-card h1 {
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
   }
 }
