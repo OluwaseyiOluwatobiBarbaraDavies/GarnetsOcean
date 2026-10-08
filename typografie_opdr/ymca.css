@@ -1,0 +1,587 @@
+/* MARK: FONT */
+@font-face {
+  font-family: Seraphs;
+  src: url("font/SeraphsVF.woff2") format("woff2");
+  font-weight: 100 200;
+  font-display: swap;
+}
+
+/* MARK: ALGMENE INSTELLINGEN */
+/* Padding en borders tellen mee in de breedte, zodat de indeling niet verschuift. */
+* {
+  box-sizing: border-box;
+}
+
+/* Eén achtergrond voor de hele pagina. SRFS 10 is de gewone serif-variant. */
+body {
+  margin: 0;
+  padding: 1em;
+  background: #fff;
+  color: #000;
+  font-family: Seraphs, "Times New Roman", serif;
+  font-synthesis: none;
+  font-variation-settings: "SRFS" 10;
+}
+
+h2, p {
+  margin: 0;
+}
+
+p {
+  font-weight: 131;
+  line-height: 1.1;
+}
+
+h2 {
+  font-weight: 188;
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+
+/* MARK: PAGINA INDELING */
+/* Vijf onderdelen naast elkaar, zonder ruimte ertussen. */
+.lyrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  max-width: 85rem;
+  margin: auto;
+}
+
+/* Elk onderdeel is het uitgangspunt voor de absolute posities. De tekst schaalt mee met het scherm. */
+.lyrics section {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 5 / 8;
+  overflow: hidden;
+  font-size: min(1.5vw, 1.28rem);
+}
+
+/* MARK: LARGE */
+/* YOUNG MAN staat groot aan het begin van de tekst. */
+.large > div {
+  position: absolute;
+  inset: 8% 7% auto;
+}
+
+/* Deze lijn staat los van de tekst. Met top en height kan de lengte aangepast worden. */
+.large > div::before {
+  content: "";
+  position: absolute;
+  top: 0.9em;
+  left: 0;
+  width: .2em;
+  height: calc(100% - 4.8em);
+  background: currentColor;
+}
+
+/* scaleX maakt de letters smaller, zonder de lettergrootte te verlagen. */
+.large h2 {
+  font-variation-settings: "SRFS" 10;
+  font-weight: 194;
+  font-size: 4.7em;
+  line-height: 1.1;
+  transform: scaleX(.68);
+  transform-origin: left;
+  width: 147%;
+}
+
+.large h2 + h2 {
+  font-weight: 200;
+  font-size: 5.6em;
+  line-height: 1;
+}
+
+.large p {
+  font-weight: 131;
+  margin-top: .6em;
+  padding-left: 0;
+  font-size: 1em;
+  line-height: 1.05;
+}
+
+/* MARK: BUILD UP */
+/* De herhaling staat iets schuin om de opbouw wat meer beweging te geven. */
+.crescendo > div {
+  position: absolute;
+  inset: 10% 8% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .2em;
+  transform: rotate(-8deg);
+}
+
+.crescendo p {
+  font-variation-settings: "SRFS" 10;
+  font-weight: 150;
+  line-height: 1;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+  transform: scaleX(.53);
+}
+
+/* Elke volgende regel wordt groter en zwaarder. */
+.crescendo p:nth-child(1) {
+  font-weight: 119;
+  font-size: .85em;
+}
+
+.crescendo p:nth-child(2) {
+  font-weight: 135;
+  font-size: 1.3em;
+}
+
+.crescendo p:nth-child(3) {
+  font-weight: 151;
+  font-size: 1.8em;
+}
+
+.crescendo p:nth-child(4) {
+  font-weight: 168;
+  font-size: 2.4em;
+}
+
+.crescendo p:nth-child(5) {
+  font-weight: 184;
+  font-size: 3.2em;
+}
+
+.crescendo p:nth-child(6) {
+  font-weight: 200;
+  font-size: 4em;
+}
+
+/* MARK: FADING AWAY */
+/* De kleine tekst staat boven DOWN, zodat die goed leesbaar blijft. */
+.falling > p {
+  font-weight: 131;
+  position: absolute;
+  top: 15%;
+  left: 18%;
+  font-size: 1.05em;
+  text-align: center;
+  transform: rotate(8deg);
+  z-index: 1;
+}
+
+.falling > div {
+  position: absolute;
+  inset: 29% 7% 4%;
+  display: flex;
+}
+
+/* Het masker laat de letters van bijna onzichtbaar naar zwart verlopen. SRFS 0 geeft letters zonder schreef. */
+.falling div span {
+  font-variation-settings: "SRFS" 0;
+  width: 25%;
+  flex: 0 0 25%;
+  font-size: 4.1em;
+  font-weight: 181;
+  transform: scaleX(.66);
+  transform-origin: top center;
+  text-shadow: none;
+  padding-top: 1.2em;
+  line-height: .85;
+  mask-image: linear-gradient(to bottom, transparent, #0002 25%, #000 70%);
+}
+
+.falling div span:nth-child(2) {
+  margin-top: .55em;
+}
+
+.falling div span:nth-child(3) {
+  margin-top: 1.1em;
+}
+
+.falling div span:nth-child(4) {
+  margin-top: 1.65em;
+}
+
+/* MARK: RISING */
+.rising > p {
+  font-weight: 144;
+  position: absolute;
+  top: 23%;
+  left: 8%;
+  font-size: 1.35em;
+  text-align: center;
+  transform: rotate(-17deg);
+}
+
+/* De letters staan naast elkaar. De marges hieronder zetten ze steeds een stap hoger. */
+.rising > div {
+  position: absolute;
+  inset: 21% 5% 7%;
+  display: flex;
+  align-items: end;
+}
+
+/* SRFS 30 geeft GROUND de wedge-variant met puntige schreven. */
+.rising div span {
+  font-variation-settings: "SRFS" 30;
+  flex: 0 0 16.666%;
+  width: 16.666%;
+  font-size: 3.15em;
+  font-weight: 188;
+  line-height: 1;
+  transform: scaleX(.6) scaleY(1.4);
+  transform-origin: bottom center;
+}
+
+.rising div span:nth-child(2) {
+  margin-bottom: .55em;
+}
+
+.rising div span:nth-child(3) {
+  margin-bottom: 1.1em;
+}
+
+.rising div span:nth-child(4) {
+  margin-bottom: 1.65em;
+}
+
+.rising div span:nth-child(5) {
+  margin-bottom: 2.2em;
+}
+
+.rising div span:nth-child(6) {
+  margin-bottom: 2.75em;
+}
+
+/* De pijl is een uitgesneden vlak. De punten van clip-path maken de lijn en de pijlpunt. */
+.rising > div::before {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  bottom: 4.2em;
+  width: 10em;
+  height: 9em;
+  background: currentColor;
+  clip-path: polygon(
+    0 99%,
+    94% 5%,
+    90% 5%,
+    100% 0,
+    96% 11%,
+    96% 5%,
+    1% 100%
+  );
+  pointer-events: none;
+}
+
+/* MARK: CHORUS */
+/* Het refrein wordt drie keer herhaald. Flex verdeelt de regels over de hoogte. */
+.chorus > div {
+  position: absolute;
+  inset: 8% 5% 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.chorus p {
+  font-weight: 131;
+  font-size: .85em;
+  line-height: 1.3;
+}
+
+/* SRFS 20 geeft het refrein stevige slab-schreven. */
+.chorus h2 {
+  font-variation-settings: "SRFS" 20;
+  font-weight: 175;
+  font-size: 3.8em;
+  line-height: 1.05;
+  white-space: nowrap;
+  transform: scaleX(.66);
+}
+
+/* MARK: EXPLOSION */
+.explosion > p {
+  font-weight: 156;
+  position: absolute;
+  top: 15%;
+  left: 17%;
+  font-size: 1em;
+  transform: rotate(-18deg);
+}
+
+/* De lege spans worden de strepen rondom YOUNG MAN. */
+.explosion > div {
+  position: absolute;
+  inset: 0;
+}
+
+/* De zware Tuskan-variant maakt deze woorden wat uitbundiger. */
+.explosion h2 {
+  font-variation-settings: "SRFS" 40;
+  font-weight: 200;
+  position: absolute;
+  font-size: 3.6em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.explosion h2:first-of-type {
+  top: 34%;
+  left: 1%;
+  transform: rotate(-30deg) scaleX(.68);
+}
+
+.explosion h2:last-of-type {
+  top: 53%;
+  left: 24%;
+  transform: rotate(-19deg) scaleX(.75);
+}
+
+.explosion div span {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: .15em;
+  height: 3em;
+  background: currentColor;
+  clip-path: polygon(0 0,100% 0,50% 100%);
+}
+
+.explosion div span:nth-child(1) {
+  transform: rotate(25deg) translateY(-7em);
+}
+
+.explosion div span:nth-child(2) {
+  transform: rotate(65deg) translateY(-7em);
+}
+
+.explosion div span:nth-child(3) {
+  transform: rotate(150deg) translateY(-7em);
+}
+
+.explosion div span:nth-child(4) {
+  transform: rotate(210deg) translateY(-7em);
+}
+
+.explosion div span:nth-child(5) {
+  transform: rotate(245deg) translateY(-7em);
+}
+
+.explosion div span:nth-child(6) {
+  transform: rotate(315deg) translateY(-7em);
+}
+
+/* MARK: LAYERS */
+.layers > p {
+  font-weight: 131;
+  position: absolute;
+  top: 17%;
+  left: 8%;
+  font-size: 1em;
+}
+
+/* De lagen verdwijnen onderaan langzaam door het masker. */
+.layers > div {
+  position: absolute;
+  inset: 35% 6% 4%;
+  mask-image: linear-gradient(#000 65%, transparent);
+}
+
+.layers div span {
+  font-variation-settings: "SRFS" 0;
+  position: absolute;
+  left: 0;
+  font-size: 4.5em;
+  font-weight: 175;
+  line-height: 1;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+  transform: scaleX(.5) scaleY(1.6) skewY(-8deg);
+  transform-origin: left top;
+}
+
+/* Elke laag schuift iets naar beneden en wordt donkerder en zwaarder. */
+.layers div span:nth-child(1) {
+  font-weight: 125;
+  top: 0;
+  opacity: .18;
+}
+
+.layers div span:nth-child(2) {
+  font-weight: 144;
+  top: .4em;
+  opacity: .3;
+}
+
+.layers div span:nth-child(3) {
+  font-weight: 162;
+  top: .8em;
+  opacity: .5;
+}
+
+.layers div span:nth-child(4) {
+  font-weight: 181;
+  top: 1.2em;
+  opacity: .7;
+}
+
+.layers div span:nth-child(5) {
+  font-weight: 200;
+  top: 1.6em;
+}
+
+/* MARK: MINIMALISTIC */
+/* Hier blijft de indeling rustig: tekst en lijnen staan in het midden. */
+.minimal > div {
+  position: absolute;
+  inset: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.minimal h2 {
+  font-variation-settings: "SRFS" 10;
+  font-weight: 169;
+  font-size: 4.5em;
+  line-height: 1;
+  transform: scaleX(.67);
+  margin: .12em 0;
+}
+
+.minimal p {
+  font-weight: 125;
+  font-size: 1.05em;
+  line-height: 1.15;
+  margin: .4em 0;
+}
+
+/* De lege divs zijn de lijnen. Flex vult de ruimte boven en onder de tekst. */
+.minimal div div {
+  width: 4px;
+  flex: 1;
+  align-self: center;
+  background: currentColor;
+}
+
+/* MARK: WAVES */
+/* SVG wordt gebruikt om de tekst langs gebogen paden te laten lopen. */
+.wave svg {
+  position: absolute;
+  inset: 8% 0;
+  width: 100%;
+  height: 84%;
+}
+
+.wave text {
+  font-family: inherit;
+  font-weight: 138;
+  font-size: 1.5em;
+}
+
+/* SRFS 60 is de kalligrafische variant, passend bij de golvende tekst. */
+.wave text:nth-of-type(2) {
+  font-variation-settings: "SRFS" 60;
+  font-size: 4em;
+  font-weight: 181;
+  letter-spacing: -.04em;
+}
+
+.wave svg > path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+/* MARK: BENDY ROAD */
+.road > h2 {
+  font-variation-settings: "SRFS" 30;
+  font-weight: 188;
+  position: absolute;
+  top: 11%;
+  left: 7%;
+  font-size: 2.6em;
+  line-height: 1.1;
+  white-space: nowrap;
+  transform: scaleX(.66);
+  transform-origin: left;
+}
+
+/* De weg en de tekst staan samen in één SVG, zodat ze samen schalen. */
+.road svg {
+  position: absolute;
+  inset: 26% 0 0;
+  width: 100%;
+  height: 74%;
+}
+
+.road path {
+  fill: currentColor;
+}
+
+.road text {
+  font-family: inherit;
+  font-size: .85em;
+  font-weight: 144;
+  fill: #f0ede4;
+}
+
+/* De eerste twee regels staan buiten de weg en krijgen daarom donkere tekst. */
+.road text:nth-of-type(-n+2) {
+  fill: #080808;
+}
+
+/* MARK: RESPONSIVE */
+/* Op kleinere schermen komen er minder kolommen. De lettergrootte wordt daarop aangepast. */
+@media (max-width: 62.5em) {
+  .lyrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lyrics section {
+    font-size: 2.4vw;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .lyrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lyrics section {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 23.75em) {
+  .lyrics {
+    grid-template-columns: 1fr;
+  }
+
+  .lyrics section {
+    font-size: 7vw;
+  }
+}
+
+.falling div span {
+  font-variation-settings: "SRFS" 0;
+  font-weight: 181;
+  position: relative;
+}
+
+/* MARK: Extra vervaging */
+/* data-letter wordt hier nog een keer gebruikt voor het uitgerekte, vage deel boven de letter. */
+.falling div span::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: .85;
+  transform: scaleY(2.4);
+  transform-origin: top;
+  opacity: .55;
+  filter: blur(.025em);
+  z-index: -1;
+}

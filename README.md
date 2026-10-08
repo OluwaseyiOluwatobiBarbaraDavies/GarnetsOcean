@@ -13,12 +13,17 @@ Website: [garnetsocean.nl](https://garnetsocean.nl)
 Een fork van de model repository gemaakt en gepubliceerd via mijn eigen Github omgeving.
 
 ### Checkouts 
+<details>
+<summary><b>Klik hier om alle checkouts te lezen</b></summary>
+
+<br>
 
 #### Bryenne - 31-08-2026
 1. Een source hosting platform is een platform waarop jouw source code kan worden behouden/beheerd. Ik heb gekozen voor Github omdat ik daar het meest bekend mee ben.
 2. Ik heb mijn gamerTag Garnet Oceans gebruikt als inspiratie gebruikt voor mijn domeinnaam. Maar inplaats van Garnet Oceans heb ik het veranderd naar Garnets Ocean zodat het meer persoonlijker werd in verband met mijn Digital Garden. 
 3. Ik kan in VSCodium aanpassingen maken op mijn web pagina en deze publiceren door mijn code op te slaan en te pushen naar de main via de gekozen hosting platform. Hierbij heb ik ook via transip.nl een domeinnaam aangemaakt waardoor alles wat ik heb gecodeerd komt op mijn website te staan.
 
+</details>
 
 ### Weekoverzicht
 
@@ -30,9 +35,14 @@ De onderdelen hieronder vullen mijn eerdere log aan. De werkzaamheden van week 2
 | 2 | 7–13 september 2026 | Eerste saloon en homepage, lichte modus, kleine schermen en presentatie over mijn onderwerpkeuze. |
 | 3 | 14–20 september 2026 | Vertaalfunctie, bronnenpagina en custom scrollbar toegevoegd; HTML gevalideerd. |
 | 4 | 21–27 september 2026 | Thema's op andere pagina's, toegankelijkheid en de eerste story-pagina. |
-| 5 | 28 september–5 oktober 2026 | Verdere verfijning van CSS, kleurconflicten, de afbeeldingspopup en Country Roots. Hieronder staat een tussenstand; de week is nog niet afgerond. |
+| 5 | 28 september–4 oktober 2026 | Verdere verfijning van CSS, kleurconflicten, de afbeeldingspopup en Country Roots. Hieronder staat een tussenstand; de week is nog niet afgerond. |
+| 6 | 5 oktober - 11 oktober 2026 | Opdrachten over typografie gemaakt
 
 #### Week 1 — Reflectie op de workshops
+<details>
+<summary><b>Klik hier om Week 1 te bekijken</b></summary>
+
+<br>
 
 ##### 2 sept - Interactie: MMD, microinteracties, forms
  <img src="readMeImages/workshop2sept.jpg" alt="Workshop 2 sept: Interacties: MMD, microinteracties, forms ">
@@ -43,7 +53,15 @@ De onderdelen hieronder vullen mijn eerdere log aan. De werkzaamheden van week 2
 ##### 4 sept - Praktische CSS
 <img src="readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS">
 
+</details>
+
+---
+
 #### Week 2 — De eerste website en mijn onderwerpkeuze
+<details>
+<summary><b>Klik hier om Week 2 te bekijken</b></summary>
+
+<br>
 
 **De saloon en homepage bouwen**
 
@@ -61,7 +79,15 @@ Ik heb een presentatie gemaakt om aan een medestudent uit te leggen waarom ik Co
 
 De presentatie was bedoeld om duidelijk te maken hoe die onderwerpen met elkaar verbonden kunnen worden. Vanuit één artiest of nummer kan ik steeds een nieuw onderwerp onderzoeken. Dat sluit aan bij een digital garden die niet meteen af hoeft te zijn.
 
+</details>
+
+---
+
 #### Week 3 — Taalkeuze, bronnen, scrollbar en HTML-validatie
+<details>
+<summary><b>Klik hier om Week 3 te bekijken</b></summary>
+
+<br>
 
 **Nederlands en Engels**
 
@@ -100,7 +126,15 @@ IDs zijn wel nuttig voor gerichte verwijzingen: bijvoorbeeld een skip link naar 
 | :---: | :---: |
 | ![Error1](readMeImages/validatie_1.png) | ![Error2](readMeImages/validatie_2.png) |
 
+</details>
+
+---
+
 #### Week 4 — Thema's, toegankelijkheid en het begin van mijn garden
+<details>
+<summary><b>Klik hier om Week 4 te bekijken</b></summary>
+
+<br>
 
 **Lichte en donkere modus uitbreiden**
 
@@ -134,7 +168,13 @@ Dit beschrijft de werkzaamheden en gevonden problemen. De gebruikte screenreader
 
 Ik heb een story-pagina toegevoegd als begin van mijn digital garden. Daarmee kreeg de website naast de introductie en bronnen ook een plek voor onderwerpen en notities die ik verder kan uitwerken. De verdere uitwerking van deze pagina staat bij de latere verfijningen hieronder.
 
+</details>
+
 #### Week 5 — Tussenstand: opruimen en verder verfijnen
+<details>
+<summary><b>Klik hier om Week 5 te bekijken</b></summary>
+
+<br>
 
 **CSS overzichtelijker maken**
 
@@ -194,11 +234,77 @@ Ik wil hier onderscheid maken tussen cookies, `localStorage` en verzoeken naar a
 
 ![PrivacyMelding](readMeImages/pop-up.png)
 
+</details>
+
+---
+
+#### Week 6 - Play the Rules
+<details>
+<summary><b>Klik hier om week 6 te lezen</b></summary>
+
+<br>
+
+**Typografie opdracht: Play the rules**
+
+| | Schetsen | |
+| :---: | :---: | :---: |
+| ![PlayTheRulesSchets1](readMeImages/play_the_rules_sketch1.png) | ![PlayTheRulesSchets2](readMeImages/play_the_rules_sketch2.png) | ![PlayTheRulesSchets3](readMeImages/play_the_rules_sketch3.png) |
+
+| Digitale uitwerking |
+| :---: |
+| ![PlayTheRules](readMeImages/play_the_rules.png) |
+
+
+
+---
+**Ontwerpkeuzes**
+
+Voor dit ontwerp heb ik de songtekst van *Y.M.C.A.* gebruikt als uitgangspunt. Ik wilde de energie en betekenis van de tekst zichtbaar maken met typografie. Daarom heb ik gespeeld met lettergrootte, gewicht, herhaling, richting en witruimte.
+
+Ik heb gekozen voor zwarte tekst op een witte achtergrond. Zo ligt de aandacht op de letters en hun compositie. De onderdelen hebben geen kaders of nummers, waardoor de pagina meer als één geheel leest. De witruimte zorgt ervoor dat de verschillende effecten elkaar niet verdringen.
+
+*Typografie en compositie*
+
+| Omschrijving | Uitwerking |
+| :---: | :---: |
+| **YOUNG MAN** staat aan het begin groot en zwaar om meteen de aandacht te trekken. De verticale lijn links verbindt de woorden met de kleinere songtekst eronder. | ![PlayTheRules1](readMeImages/play_the_rules1.png) |
+| Bij de herhaalde **YOUNG MAN** worden de woorden steeds groter en zwaarder. Dit geeft een visuele opbouw, vergelijkbaar met een stem die steeds krachtiger klinkt. De lichte draaiing geeft de compositie extra beweging. | ![PlayTheRules2](readMeImages/play_the_rules2.png) |
+| Bij **DOWN** loopt de tekst van vaag naar duidelijk zichtbaar. De letters staan steeds lager, zodat hun positie de betekenis van het woord ondersteunt.  | ![PlayTheRules3](readMeImages/play_the_rules3.png) |
+| **GROUND** loopt juist omhoog. De pijl volgt dezelfde richting en sluit aan bij de aanmoediging om jezelf weer op te pakken. | ![PlayTheRules4](readMeImages/play_the_rules4.png) |
+| Het refrein **Y.M.C.A.** wordt drie keer herhaald. Deze herhaling maakt het ritme van het nummer zichtbaar.  | ![PlayTheRules5](readMeImages/play_the_rules5.png) |
+| Bij **I said, YOUNG MAN!** zorgen de schuine woorden en de strepen eromheen voor nadruk, alsof de tekst wordt geroepen. | ![PlayTheRules6](readMeImages/play_the_rules6.png) |
+| **UNHAPPY** bestaat uit overlappende lagen die steeds donkerder en zwaarder worden. Dit geeft het woord meer visueel gewicht. Daarna volgt een rustigere compositie: gecentreerde tekst met twee verticale lijnen. Dat zorgt voor afwisseling tussen drukke en rustige delen. | ![PlayTheRules7](readMeImages/play_the_rules7.png) |
+| Een minimalistiche design zodat het de nadruk legt op **YOUNG MAN** | ![PlayTheRules8](readMeImages/play_the_rules8.png) |
+| De golvende versie van **Y.M.C.A.** sluit aan bij het dansbare karakter van het nummer. | ![PlayTheRules9](readMeImages/play_the_rules9.png) |
+| De slingerende weg aan het einde verbeeldt het zoeken naar een plek waar je naartoe kunt gaan. De tekst staat deels op de weg, zodat vorm en inhoud samenkomen. | ![PlayTheRules](readMeImages/play_the_rules10.png) |
+
+*Het variabele lettertype*
+
+Ik heb **Seraphs** gekozen omdat dit variabele lettertype verschillende gewichten en schreefvormen bevat. Met `font-weight` verander ik hoe licht of zwaar de letters zijn. Met de `SRFS`-as wissel ik tussen onder andere schreefloze, serif-, slab-, wedge- en kalligrafische vormen.
+
+Hierdoor krijgen de onderdelen een eigen uitstraling, terwijl ze toch hetzelfde lettertype gebruiken. De zwaardere varianten geven nadruk; de lichtere varianten houden de kleinere songtekst leesbaar.
+
+*Technische keuzes*
+
+De HTML bevat de tekst en de structuur. De vormgeving staat in een apart CSS-bestand, zodat beide overzichtelijk blijven. Elk onderdeel heeft één herkenbare class; de elementen daarbinnen worden zoveel mogelijk met eenvoudige selectors gestyled.
+
+Voor de afmetingen gebruik ik vooral relatieve eenheden zoals `em`, `%` en `vw`. Hierdoor kunnen tekst en composities meeschalen met het scherm. Met `line-height` regel ik de afstand tussen tekstregels. CSS Grid verdeelt de onderdelen over de pagina, terwijl media queries het aantal kolommen aanpassen op kleinere schermen.
+
+Voor de golvende tekst en de weg gebruik ik SVG. Daarmee kan tekst een gebogen pad volgen en blijven de vormen scherp wanneer ze groter of kleiner worden weergegeven.
+
+</details>
+
+---
+
 ## Creatief proces en ontwerpkeuzes
 
 Het ontwerp van deze website is niet zomaar ontstaan, maar is het resultaat van een zorgvuldig doorlopen creatief proces. Onderzoek naar de Texaanse cultuur, countrymuziek en de sfeer rondom honky-tonk bars en saloons is vertaald naar visuele keuzes, interactie en unieke websitecomponenten.
 
 ---
+<details>
+<summary><b>Klik hier om de Creatief proces en ontwerpkeuzes verder te lezen</b></summary>
+
+<br>
 
 **Van Moodboard naar Kleurenpalet en Sfeer:**
 
@@ -281,15 +387,13 @@ De startpagina zelf is bewust overzichtelijk en rustig gehouden, zodat de versch
     Door op het banjo-icoon te klikken, wordt het mobiele navigatiemenu geopend.
 
   - **Custom Scrollbar – Vinylplaat:**
+    
+    |  | *Ontwerp van de custom scrollbar.* |
+    | :---: | :---: |
+    | Om de standaard browser-scrollbar te vervangen door een element dat beter bij het thema past, is een custom scrollbar ontworpen in de vorm van een vinylplaat. Tijdens het scrollen verschijnen er muzieknoten rondom de plaat. Een gouden lijn beweegt mee en geeft visueel aan hoe ver de gebruiker zich op de pagina bevindt. Hierdoor wordt een functioneel onderdeel van de website tegelijkertijd onderdeel van de visuele identiteit. | ![Custom scrollbar](readMeImages/scrollbar.png) |
 
-    Om de standaard browser-scrollbar te vervangen door een element dat beter bij het thema past, is een custom scrollbar ontworpen in de vorm van een vinylplaat.
-
-    ![Custom scrollbar](readMeImages/scrollbar.png)
-
-    *Ontwerp van de custom scrollbar.*
-
-    Tijdens het scrollen verschijnen er muzieknoten rondom de plaat. Een gouden lijn beweegt mee en geeft visueel aan hoe ver de gebruiker zich op de pagina bevindt. Hierdoor wordt een functioneel onderdeel van de website tegelijkertijd onderdeel van de visuele identiteit.
-
+   
+    
 ---
 
 **Bronnenpagina:**
@@ -300,18 +404,33 @@ De startpagina zelf is bewust overzichtelijk en rustig gehouden, zodat de versch
 
   *De uiteindelijke bronnenpagina.*
 
-### Retrospective
+### Ontwerp als Samenhangend Geheel
+
+Hoewel ieder onderdeel afzonderlijk is ontworpen, zijn de verschillende componenten bewust met elkaar verbonden. Het kleurenpalet, de houten en leren uitstraling, de muziekgerelateerde interacties, de saloondeuren, de banjo en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit. Hierdoor voelt de website niet als een verzameling losse elementen, maar als één samenhangende digitale omgeving rondom countrymuziek en de Texaanse cultuur.
+
+</details>
+
+## Retrospectives
+<details>
+<summary><b>Retrospect 1</b></summary>
+
+<br>
+
 ![Retro1](readMeImages/Retro_1_1.png)
 
 ![Retro2](readMeImages/Retro_1_2.png)
 
 ![Retro3](readMeImages/Retro_1_3.png)
 
+</details>
+
+<details>
+<summary><b>Retrospect 2</b></summary>
+
+<br>
 
 
-### Ontwerp als Samenhangend Geheel
-
-Hoewel ieder onderdeel afzonderlijk is ontworpen, zijn de verschillende componenten bewust met elkaar verbonden. Het kleurenpalet, de houten en leren uitstraling, de muziekgerelateerde interacties, de saloondeuren, de banjo en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit. Hierdoor voelt de website niet als een verzameling losse elementen, maar als één samenhangende digitale omgeving rondom countrymuziek en de Texaanse cultuur.
+</details>
 
 ## Bronnen
 
