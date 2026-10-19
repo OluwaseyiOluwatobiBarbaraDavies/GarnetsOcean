@@ -1,194 +1,184 @@
-/******************/
-/* MARK: KLEUREN */
-/****************/
-:root {
-  --garden-bg: #190e08;
-  --garden-paper: #2b1b11;
-  --garden-text: #f5ebd6;
-  --garden-muted: #dfc7a8;
-  --garden-accent: #f4c468;
-  --garden-border: #a97948;
-  --garden-shadow: rgba(0, 0, 0, 0.25);
-  --garden-focus: #ffd700;
+/*********************************/
+/* MARK: KLEUREN EN INSTELLINGEN */
+/*******************************/
+
+.story-page {
+  --bg: #190e08;
+  --panel: #2b1b11;
+  --gold: #f4c468;
+  --muted: #dfc7a8;
+  --text: #f5ebd6;
+  --line: #a97948;
+  --ink: #382113;
+  --parchment: #e8c797;
+  --paper-link: #633309;
+  --focus: #ffe391;
+  --border-dark: #714622;
+  --sleeve: #cba476;
+  --font-body: Roboto, sans-serif;
+  --font-display: Rye, serif;
+  --font-paper: Eastwood, serif;
+  --content-width: 75rem;
+  --page-gutter: 1rem;
+  --section-space: clamp(2.75rem, 5vw, 4rem);
+  --anchor-offset: 5.625rem;
+  --radius: 0.3125rem;
+  --motion-fast: 0.3s;
+  --motion-normal: 0.4s;
+  --peg-duration: 0.65s;
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 8%, #3c2314 0, var(--bg) 40%, #110905 100%);
+  color: var(--text);
+  font: 400 1rem/1.65 var(--font-body);
+  box-sizing: border-box;
 }
 
 
 
 
 
-/****************/
+/***************/
 /* MARK: FONTS */
-/**************/
+/*************/
 
 @font-face {
-  font-family: "rye";
-  src: url("../type/Rye-Regular.ttf") format("truetype");
+  font-family: Rye;
+  src: url('../type/Rye-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "roboto";
-  src: url("../type/Roboto-Regular.ttf") format("truetype");
+  font-family: Roboto;
+  src: url('../type/Roboto-Regular.ttf') format('truetype');
+  font-display: swap;
   font-weight: 400;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "roboto";
-  src: url("../type/Roboto-Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: Roboto;
+  src: url('../type/Roboto-Bold.ttf') format('truetype');
   font-display: swap;
+  font-weight: 700;
 }
 
 
 
 
 
-/****************/
-/* MARK: BASIS */
-/**************/
+/***********************************/
+/* MARK: BASIS EN TOEGANKELIJKHEID */
+/*********************************/
 
-/* De inhoudslinks scrollen rustig naar hun onderdeel. */
-html:has(> body.story-page) {
+html:has(> .story-page) {
   scroll-behavior: smooth;
 }
 
-.story-page,
 .story-page *,
 .story-page *::before,
 .story-page *::after {
   box-sizing: border-box;
 }
 
-.story-page {
-  margin: 0;
-  background: var(--garden-bg);
-  color: var(--garden-text);
-  font-family: "roboto", sans-serif;
-  line-height: 1.7;
-}
-
 .story-page [hidden] {
   display: none !important;
 }
 
-.story-page main,
-.garden-footer {
-  width: min(100% - 2rem, 72rem);
+.story-page main {
+  width: min(100% - 2 * var(--page-gutter), var(--content-width));
   margin-inline: auto;
+}
+
+.story-page .garden-footer {
+  width: min(100% - 2 * var(--page-gutter), var(--content-width));
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9375rem;
+  padding: 2.1875rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+.story-page main [id],
+.story-page #gardenContent {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 .story-page main h1,
 .story-page main h2,
 .story-page main h3 {
-  font-family: "rye", serif;
-  color: var(--garden-accent);
-  line-height: 1.3;
-  overflow-wrap: anywhere;
+  font-family: var(--font-display);
+  line-height: 1.2;
 }
 
-.story-page main h1 {
-  font-size: clamp(2.5rem, 7vw, 5.5rem);
-  margin-block: 0.5rem 1rem;
+.story-page a {
+  color: var(--gold);
 }
 
-.story-page main h2 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+.story-page button,
+.story-page input,
+.story-page select {
+  font: inherit;
 }
 
-.story-page main h3 {
-  font-size: 1.2rem;
-  margin-top: 0;
+.story-page :focus-visible {
+  outline: 0.1875rem solid var(--focus);
+  outline-offset: 0.25rem;
 }
 
-.story-page main a,
-.garden-footer a {
-  color: var(--garden-accent);
-  text-underline-offset: 0.2em;
+.story-page .garden-skip {
+  position: fixed;
+  z-index: 5000;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.75rem;
+  background: var(--gold);
+  color: var(--bg);
+  transform: translateY(-160%);
 }
 
-.story-page main a:hover,
-.garden-footer a:hover {
-  text-decoration-thickness: 0.15em;
+.story-page .garden-skip:focus {
+  transform: none;
 }
 
-.story-page main p {
+.story-page .eyebrow {
+  font-size: 0.73rem;
+  letter-spacing: 0.23em;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.story-page .section-heading {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.story-page .section-heading h2 {
+  color: var(--gold);
+  font-size: clamp(1.6rem, 3.6vw, 2.7rem);
+  margin: 0.45rem 0;
+}
+
+.story-page .section-heading p {
+  color: var(--muted);
+  margin: 0.5rem auto;
   max-width: 65ch;
 }
 
-.story-page main [id],
-#gardenContent {
-  scroll-margin-top: 7rem;
+.story-page .section-heading::after {
+  content: '──── ✦ ────';
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--line);
+  letter-spacing: 0.3em;
 }
 
-
-
-
-
-/**************************/
-/* MARK: TITEL EN INHOUD */
-/************************/
-
-.garden-hero {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-  padding-block: clamp(2rem, 6vw, 5rem);
-}
-
-.garden-eyebrow {
-  color: var(--garden-muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.garden-link {
-  display: inline-block;
-  padding-block: 0.5rem;
-  font-weight: 700;
-}
-
-.garden-index {
-  display: grid;
-  gap: 0.75rem;
-  padding-block: 1.25rem;
-  border-block: 0.0625rem solid var(--garden-border);
-}
-
-.garden-index a {
-  padding: 0.5rem;
-}
-
-.garden-section {
-  padding-block: clamp(2rem, 5vw, 4rem);
-  border-bottom: 0.0625rem solid var(--garden-border);
-}
-
-.garden-roots-grid,
-.garden-notes-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.garden-paper {
-  min-width: 0;
-  padding: clamp(1rem, 3vw, 2rem);
-  border: 0.0625rem dashed var(--garden-border);
-  border-radius: 0.4rem;
-  background: var(--garden-paper);
-  box-shadow: 0.25rem 0.25rem 0 var(--garden-shadow);
-}
-
-.garden-paper details {
-  margin-block: 1.25rem;
-  border-block: 0.0625rem solid var(--garden-border);
-  padding-block: 0.75rem;
-}
-
-.garden-paper summary {
-  cursor: pointer;
-  font-weight: 700;
+.story-page .garden-section {
+  padding: var(--section-space) 0;
+  border-bottom: 0.0625rem solid var(--border-dark);
 }
 
 
@@ -196,81 +186,315 @@ html:has(> body.story-page) {
 
 
 /******************************/
-/* MARK: FOTO'S EN ARTIESTEN */
+/* MARK: TITEL EN INTRODUCTIE */
 /****************************/
 
-.garden-photo {
-  margin: 0;
-  min-width: 0;
-  padding: 0.65rem;
-  border: 0.0625rem solid var(--garden-border);
-  background: var(--garden-paper);
-  box-shadow: 0 0.5rem 1.5rem var(--garden-shadow);
+.story-page .garden-hero {
+  min-height: 36.875rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: center;
+  padding: 2.8125rem 0;
+  position: relative;
+  border-bottom: 0.0625rem solid #81542b;
 }
 
-.garden-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+.story-page .garden-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 30%, #f4c46812, transparent 40%);
 }
 
-.garden-photo figcaption {
-  padding: 1rem 0.25rem 0.5rem;
+.story-page .hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.story-page .hero-copy h1 {
+  font-size: 3.7rem;
+  line-height: 0.96;
+  color: var(--gold);
+  text-shadow: 0.25rem 0.3125rem 0 #3b1d0d;
+  margin: 0.9375rem 0 1.5rem;
+}
+
+.story-page .hero-copy h2 {
+  max-width: 26ch;
+  margin: 1.5rem 0 1rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
   font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.story-page .hero-intro {
+  max-width: 46ch;
+  margin: 0 0 1.75rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.3vw, 1.075rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.story-page .hero-cta {
+  display: inline-flex;
+  gap: 1.375rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.0625rem solid var(--gold);
+  background: var(--gold);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 0.875rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--motion-fast), transform var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.story-page .hero-cta:hover {
+  background: var(--text);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1.5625rem #f4c46838;
+}
+
+.story-page .hero-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0.375rem;
+  left: 1.125rem;
+  width: 0;
+  height: 0.125rem;
+  background: var(--ink);
+  transition: width var(--motion-normal);
+}
+
+.story-page .hero-cta:hover::after {
+  width: calc(100% - 2.25rem);
+}
+
+.story-page .hero-scene {
+  min-height: 21.875rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.story-page .hero-halo {
+  position: absolute;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ad6a2c55, transparent 70%);
+  filter: blur(0.625rem);
+  animation: garden-halo 5s ease-in-out infinite alternate;
+}
+
+.story-page .hero-disc {
+  position: absolute;
+  width: min(85%, 22.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, #141414 0 0.1875rem, #282828 0.25rem 0.375rem, #0d0d0d 0.4375rem 0.5625rem);
+  box-shadow: 0 1.25rem 2.5rem #000b, 0 0 0 0.5rem #1b0f09;
+  animation: garden-record-turn 22s linear infinite;
+  display: grid;
+  place-items: center;
+}
+
+.story-page .hero-disc-label {
+  display: grid;
+  place-items: center;
+  width: 36%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #c49147;
+  color: #2b160a;
+  font: 1rem/1.3 var(--font-display);
   text-align: center;
 }
 
-.garden-artists {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin-block: 1.5rem;
+.story-page .hero-photo {
+  position: absolute;
+  width: 62%;
+  max-width: 17.8125rem;
+  right: 0;
+  bottom: 8%;
+  margin: 0;
+  padding: 0.625rem 0.625rem 1.5rem;
+  background: #f3e9d6;
+  box-shadow: 0 0.75rem 1.5rem #0009;
+  transform: rotate(8deg);
+  transition: transform 0.45s;
 }
 
-.garden-artists img {
-  aspect-ratio: 1;
-  object-position: top;
+.story-page .hero-photo:hover {
+  transform: rotate(1deg) translateY(-0.75rem);
 }
 
-.garden-controls {
-  display: grid;
-  gap: 1rem;
-  align-items: start;
-  margin-top: 1.5rem;
-}
-
-.garden-controls label {
+.story-page .hero-photo img {
   display: block;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.garden-controls input,
-.garden-controls select {
   width: 100%;
-  min-height: 2.75rem;
-  padding: 0.65rem;
-  border: 0.0625rem solid var(--garden-border);
-  border-radius: 0.25rem;
-  background: var(--garden-paper);
-  color: var(--garden-text);
-  font: inherit;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
 }
 
-.garden-help {
-  font-size: 0.9rem;
-  color: var(--garden-muted);
+.story-page .hero-photo figcaption {
+  color: #41230f;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-top: 0.5625rem;
 }
 
-.garden-footer {
-  display: grid;
-  gap: 0.5rem;
-  padding-block: 2rem;
-  color: var(--garden-muted);
+.story-page .hero-spark {
+  position: absolute;
+  color: var(--gold);
+  font-size: 2rem;
+  animation: garden-float 4s ease-in-out infinite;
+}
+
+.story-page .spark-one {
+  top: 10%;
+  right: 12%;
+}
+
+.story-page .spark-two {
+  bottom: 15%;
+  left: 5%;
+  animation-delay: 1.4s;
+}
+
+
+
+
+
+/***********************************/
+/* MARK: MUZIEKNOTEN EN TITELGLOED */
+/*********************************/
+
+.story-page .music-title {
+  --note-duration: 4.2s;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.story-page .hero-copy .music-title {
+  text-shadow: 0.25rem 0.3125rem 0 #3b1d0d, 0 0 1rem #f4c46800, 0 0 2.25rem #f4c46800;
+  transition: text-shadow 0.7s ease-in-out;
+}
+
+.story-page .music-title-notes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.story-page .music-title-note {
+  position: absolute;
+  top: var(--note-top);
+  left: var(--note-left);
+  opacity: 0;
+  color: var(--gold);
+  font: normal clamp(1.25rem, 2.5vw, 2rem)/1 Georgia, serif;
+  text-shadow: 0 0 0.75rem #f4c46855;
+  transform: translateY(0.375rem) scale(0.85);
+}
+
+.story-page .music-title-note:nth-child(1) {
+  --note-top: -14%;
+  --note-left: 5%;
+  --note-delay: 0s;
+}
+
+.story-page .music-title-note:nth-child(2) {
+  --note-top: -16%;
+  --note-left: 74%;
+  --note-delay: 0.4s;
+}
+
+.story-page .music-title-note:nth-child(3) {
+  --note-top: 46%;
+  --note-left: 90%;
+  --note-delay: 0.8s;
+}
+
+.story-page .music-title-note:nth-child(4) {
+  --note-top: 78%;
+  --note-left: 90%;
+  --note-delay: 1.2s;
+}
+
+.story-page .music-title-note:nth-child(5) {
+  --note-top: 107%;
+  --note-left: 25%;
+  --note-delay: 1.6s;
+}
+
+.story-page .music-title-note:nth-child(6) {
+  --note-top: 104%;
+  --note-left: 2%;
+  --note-delay: 2s;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .story-page .music-title-note {
+    animation: garden-title-notes var(--note-duration) ease-in-out var(--note-delay) infinite;
+    animation-play-state: paused;
+  }
+
+  .story-page .music-title:hover .music-title-notes {
+    opacity: 1;
+  }
+
+  .story-page .music-title:hover .music-title-note {
+    animation-play-state: running;
+  }
+}
+
+@media (hover: hover) {
+  .story-page .hero-copy .music-title:hover {
+    text-shadow: 0.25rem 0.3125rem 0 #3b1d0d, 0 0 1rem #f4c46866, 0 0 2.25rem #f4c46833;
+  }
+}
+
+/* Houd de noten op smalle schermen binnen de paginaranden. */
+
+@keyframes garden-title-notes {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0.375rem) scale(0.9);
+  }
+
+  35% {
+    opacity: 0.8;
+    transform: translateY(-0.125rem) scale(1);
+  }
+
+  55% {
+    opacity: 0.8;
+    transform: translateY(-0.375rem) scale(1.02);
+  }
+
+  95% {
+    opacity: 0;
+    transform: translateY(-1.125rem) scale(1.05);
+  }
 }
 
 
@@ -278,27 +502,523 @@ html:has(> body.story-page) {
 
 
 /**********************/
-/* MARK: TOETSENBORD */
+/* MARK: BESTEMMINGEN */
 /********************/
 
-.story-page :focus-visible {
-  outline: 0.1875rem solid var(--garden-focus);
-  outline-offset: 0.25rem;
+.story-page .garden-crossroads {
+  padding: 2.75rem 0 var(--section-space);
 }
 
-.garden-skip {
-  position: fixed;
-  inset: 0.5rem auto auto 0.5rem;
-  z-index: 5000;
-  max-width: calc(100% - 1rem);
-  padding: 0.75rem 1rem;
-  background: var(--garden-paper);
-  color: var(--garden-text);
-  transform: translateY(calc(-100% - 1rem));
+.story-page .garden-index {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
-.garden-skip:focus {
-  transform: none;
+.story-page .destination {
+  min-height: 9.375rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.25rem;
+  border: 0.125rem solid #a16e3c;
+  border-radius: 0.5rem;
+  background: linear-gradient(130deg, #eed0a0, #b78651);
+  color: #281509;
+  text-decoration: none;
+  box-shadow: 0 0.75rem 1.25rem #0006;
+  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+}
+
+.story-page .destination:hover {
+  transform: translateY(-0.75rem) rotate(-1deg);
+  box-shadow: 0 1.375rem 2.375rem #000a, 0 0 1.5rem #e5ad5a55;
+  border-color: #f9d68d;
+}
+
+.story-page .destination::before {
+  content: '';
+  position: absolute;
+  inset: 0.5rem;
+  border: 0.0625rem dashed #71451e80;
+  pointer-events: none;
+}
+
+.story-page .destination-number {
+  position: absolute;
+  top: 0.8125rem;
+  left: 1.25rem;
+  font: 1.6rem var(--font-display);
+}
+
+.story-page .destination-art {
+  position: absolute;
+  right: 1.25rem;
+  top: 0.125rem;
+  font: 6rem var(--font-paper);
+  opacity: 0.16;
+  transform: rotate(-15deg);
+  transition: transform var(--motion-normal);
+}
+
+.story-page .destination:hover .destination-art {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.story-page .destination-copy {
+  display: grid;
+  gap: 0.25rem;
+  position: relative;
+  padding-right: 1.75rem;
+}
+
+.story-page .destination-copy strong {
+  font: 1.3rem var(--font-display);
+}
+
+.story-page .destination-copy small {
+  font-size: 0.78rem;
+}
+
+.story-page .destination-arrow {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.4375rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  display: grid;
+  place-items: center;
+  background: #3b1e0c;
+  color: var(--gold);
+  border-radius: 50%;
+  transition: transform var(--motion-fast);
+}
+
+.story-page .destination:hover .destination-arrow {
+  transform: translateX(0.3125rem);
+}
+
+
+
+
+
+/************************/
+/* MARK: GITAARTIJDLIJN */
+/**********************/
+
+.story-page .country-history {
+  --head-width: 6rem;
+  --head-half: calc(var(--head-width) / 2);
+  --head-shape: polygon(7% 3%, 25% 0, 50% 5%, 75% 0, 93% 3%, 100% 80%, 85% 100%, 15% 100%, 0 80%);
+  --shaft-width: 1.125rem;
+  --wing-width: 1.875rem;
+  --peg-text-gap: 0.625rem;
+  --wing-offset: calc(var(--head-half) - 0.125rem + var(--shaft-width) - 0.0625rem);
+  --label-offset: calc(var(--wing-offset) + var(--wing-width) + var(--peg-text-gap));
+  --fretboard-width: calc(var(--head-width) + 0.125rem);
+  --frets: 6;
+  padding: 4.0625rem clamp(0.75rem, 3vw, 2.25rem) var(--section-space);
+  background: radial-gradient(ellipse at 42% 35%, #402617 0%, #1b0d08 65%, #100806 100%);
+  border-block: 0.0625rem solid #704521;
+  overflow: hidden;
+  padding-inline: 0.5rem;
+}
+
+.story-page .history-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 68.75rem;
+  margin: auto;
+  align-items: start;
+}
+
+.story-page .guitar-stage {
+  min-width: 0;
+  max-width: 32.5rem;
+  width: 100%;
+  margin: auto;
+}
+
+.story-page .guitar {
+  min-width: 0;
+  position: relative;
+}
+
+.story-page .head-area {
+  position: relative;
+  height: auto;
+  padding-bottom: 0.1875rem;
+  max-width: 21.25rem;
+  margin: auto;
+}
+
+.story-page .head-area::before {
+  content: '';
+  position: absolute;
+  top: 0.1875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--head-width) + 0.25rem);
+  height: calc(100% - 0.75rem);
+  clip-path: var(--head-shape);
+  background: #b78949;
+  pointer-events: none;
+}
+
+.story-page .headstock {
+  position: absolute;
+  top: 0.3125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--head-width);
+  height: calc(100% - 1rem);
+  clip-path: var(--head-shape);
+  background: linear-gradient(90deg, #28140a, #87532b 12%, #3a1d0f 34%, #60351c 68%, #291308);
+  border: 0.1875rem solid #9d6935;
+  box-shadow: inset 0 0 1.25rem #0a0503;
+}
+
+.story-page .headstock-inlay {
+  position: absolute;
+  inset: 1.25rem 0 auto;
+  text-align: center;
+  color: #d7a756;
+  font-size: 1.75rem;
+}
+
+.story-page .machine-posts {
+  position: absolute;
+  inset: 3.875rem 0.75rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 4.875rem;
+}
+
+.story-page .machine-posts span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #fff0b3, #a36d2c 60%, #44250f);
+  border: 0.125rem solid #d4a65a;
+}
+
+.story-page .headstock-inlay span {
+  display: block;
+  font-size: 5rem;
+  margin-top: 1.4375rem;
+  opacity: 0.8;
+}
+
+.story-page .machine-posts span:nth-child(odd) {
+  justify-self: start;
+}
+
+.story-page .machine-posts span:nth-child(even) {
+  justify-self: end;
+}
+
+/* Het grid volgt vanzelf het aantal stemmechanieken in de HTML. */
+
+.story-page .tuning-keys {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 4.875rem;
+  padding-top: 3.625rem;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.story-page .tuner {
+  position: relative;
+  width: 100%;
+  height: 2.625rem;
+  border: 0;
+  background: transparent;
+  color: #f0c587;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.story-page .tuner .key-label {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  width: calc(100% - var(--label-offset));
+  line-height: 1.2;
+  font-size: 0.625rem;
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+  transition: color var(--motion-fast), text-shadow var(--motion-fast);
+}
+
+.story-page .tuner .key-shaft {
+  pointer-events: auto;
+  position: absolute;
+  top: 1rem;
+  width: var(--shaft-width);
+  height: 0.5625rem;
+  background: linear-gradient(#eacb83, #75491d);
+  border: 0.0625rem solid #ad793e;
+}
+
+.story-page .tuner .key-wing {
+  pointer-events: auto;
+  position: absolute;
+  top: 0.375rem;
+  width: var(--wing-width);
+  height: 1.8125rem;
+  border: 0.0625rem solid #ffdf98;
+  border-radius: 0.5625rem 0.25rem 0.5625rem 0.25rem;
+  background: linear-gradient(135deg, #f8d58b, #bd863d 40%, #6f3d19 75%, #eac17d);
+  box-shadow: inset 0.125rem 0.125rem 0.25rem #fff6, 0 0.1875rem 0.5rem #000a;
+  transform-origin: center;
+  transition: transform var(--peg-duration) ease-in-out, filter var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.story-page .tuner .key-label strong {
+  display: block;
+}
+
+.story-page .tuner .key-label small {
+  display: block;
+  font-size: 0.5rem;
+  color: #b99770;
+  margin-top: 0.1875rem;
+}
+
+.story-page .tuner.left .key-label {
+  right: var(--label-offset);
+  text-align: right;
+}
+
+.story-page .tuner.right .key-label {
+  left: var(--label-offset);
+  text-align: left;
+}
+
+.story-page .tuner.left .key-shaft {
+  right: calc(var(--head-half) - 0.125rem);
+}
+
+.story-page .tuner.right .key-shaft {
+  left: calc(var(--head-half) - 0.125rem);
+}
+
+.story-page .tuner.left .key-wing {
+  right: var(--wing-offset);
+  transform: perspective(31.25rem) rotateX(0deg);
+}
+
+.story-page .tuner.right .key-wing {
+  left: var(--wing-offset);
+  transform: perspective(31.25rem) rotateX(0deg) scaleX(-1);
+}
+
+.story-page .tuner.left.active .key-wing {
+  transform: perspective(31.25rem) rotateX(180deg);
+}
+
+.story-page .tuner.right.active .key-wing {
+  transform: perspective(31.25rem) rotateX(-180deg) scaleX(-1);
+}
+
+.story-page .tuner:hover .key-wing,
+.story-page .tuner.active .key-wing {
+  filter: brightness(1.35);
+  box-shadow: 0 0 1.375rem #f5ba58aa, inset 0.125rem 0.125rem 0.3125rem #fff9;
+}
+
+.story-page .tuner.active .key-label {
+  color: #fff1c6;
+  text-shadow: 0 0 0.75rem #ffd16d;
+}
+
+.story-page .nut {
+  height: 0.5625rem;
+  width: var(--fretboard-width);
+  margin: -0.5rem auto 0;
+  position: relative;
+  z-index: 6;
+  background: linear-gradient(#fff0c7, #a9987d);
+  border-radius: 0.125rem;
+}
+
+.story-page .fretboard {
+  position: relative;
+  width: var(--fretboard-width);
+  height: 36.875rem;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #1a0c07, #60391f 8%, #342014 50%, #60391f 92%, #1a0c07);
+  border-inline: 0.3125rem solid #170c08;
+  box-shadow: 0 0 1.25rem #0009;
+  z-index: 4;
+}
+
+.story-page .strings {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 16%, #e8d7b7 16.4%, transparent 17%, transparent 29%, #c4b8a6 29.4%, transparent 30%, transparent 42%, #e8d7b7 42.4%, transparent 43%, transparent 55%, #c4b8a6 55.4%, transparent 56%, transparent 68%, #e8d7b7 68.4%, transparent 69%, transparent 81%, #c4b8a6 81.4%, transparent 82%);
+  filter: drop-shadow(0 0 0.125rem #fff6);
+  pointer-events: none;
+}
+
+.story-page .frets {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(100% / var(--frets) - 0.25rem), #b6aea4 calc(100% / var(--frets) - 0.25rem), #eee4d6 calc(100% / var(--frets) - 0.125rem), #69615a calc(100% / var(--frets)));
+  pointer-events: none;
+}
+
+.story-page .fret-dots i {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #d5c4a5;
+  opacity: 0.7;
+}
+
+.story-page .fret-dots i:nth-child(1) {
+  top: 29%;
+}
+
+.story-page .fret-dots i:nth-child(2) {
+  top: 61%;
+}
+
+.story-page .fret-dots i:nth-child(3) {
+  top: 88%;
+}
+
+.story-page .event-markers {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
+  padding-block: 7% 5%;
+}
+
+.story-page .timeline-event {
+  position: relative;
+}
+
+.story-page .timeline-event:nth-child(3n+1) {
+  --event-string: 30%;
+}
+
+.story-page .timeline-event:nth-child(3n+2) {
+  --event-string: 56%;
+}
+
+.story-page .timeline-event:nth-child(3n) {
+  --event-string: 69%;
+}
+
+.story-page .event-marker {
+  position: absolute;
+  top: 50%;
+  left: var(--event-string);
+  transform: translate(-50%, -50%);
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 50%;
+  border: 0.125rem solid #ffe6a3;
+  background: radial-gradient(circle at 30% 20%, #ffe4a0, #bd8030 63%, #724016);
+  color: #291609;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.75rem #f3b85488;
+  z-index: 5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.story-page .event-marker:hover,
+.story-page .event-marker.active {
+  transform: translate(-50%, -50%) scale(1.22);
+  box-shadow: 0 0 1.875rem #ffd075;
+}
+
+.story-page .marker-label {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2.25rem);
+  transform: translateY(-50%);
+  width: 6.75rem;
+  padding: 0.5rem;
+  border: 0.0625rem solid #9e7038;
+  border-radius: 0.4375rem;
+  background: #180c08f2;
+  color: #f0d6aa;
+  font-size: 0.625rem;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.story-page .marker-label strong {
+  display: block;
+  color: #f5c878;
+  font-size: 0.75rem;
+}
+
+.story-page .guitar-body {
+  position: relative;
+  width: min(100%, 22.8125rem);
+  height: 21.5625rem;
+  margin: -1.375rem auto 0;
+  border-radius: 45% 45% 47% 47% / 35% 35% 50% 50%;
+  border: 0.3125rem solid #633313;
+  background: radial-gradient(ellipse at 50% 40%, #c28745, #874416 60%, #4b220f 95%);
+  box-shadow: inset 0 0 1.5625rem #321206, 0 0.875rem 1.875rem #0009;
+  display: grid;
+  place-items: center;
+}
+
+.story-page .body-rosette {
+  display: grid;
+  place-items: center;
+  width: 8.25rem;
+  height: 8.25rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #130a06 60%, #b48347 62%, #2c1509 67%, #c89652 71%, #3d200e 76%);
+}
+
+.story-page .sound-hole {
+  text-align: center;
+  color: #ac8046;
+  font-size: 2.25rem;
+}
+
+.story-page .sound-hole small {
+  display: block;
+  font-size: 0.5rem;
+  letter-spacing: 0.125rem;
+}
+
+.story-page .bridge {
+  position: absolute;
+  bottom: 2.3125rem;
+  width: 8.125rem;
+  height: 1.375rem;
+  border-radius: var(--radius);
+  border-top: 0.1875rem solid #b68b55;
+  background: #211108;
+}
+
+.story-page .bridge span {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  top: 0.375rem;
+  height: 0.25rem;
+  border-radius: 0.1875rem;
+  background: #e9d1a4;
 }
 
 
@@ -306,26 +1026,900 @@ html:has(> body.story-page) {
 
 
 /***************************/
-/* MARK: GROTERE SCHERMEN */
+/* MARK: HISTORISCHE KAART */
 /*************************/
 
-@media (min-width: 45rem) {
-  .garden-hero {
-    grid-template-columns: 1.3fr 1fr;
+.story-page .history-details {
+  padding-top: 0;
+  min-width: 0;
+  max-width: 34.375rem;
+  width: 100%;
+  margin: auto;
+}
+
+.story-page .parchment {
+  min-height: 26.25rem;
+  padding: 1.625rem clamp(1.125rem, 3vw, 2.1875rem);
+  color: #412716;
+  background: linear-gradient(130deg, #b78d5d, #e7cba2 16%, #f2d9b1 56%, #bd925f);
+  clip-path: polygon(0 1%, 8% 0, 16% 1%, 25% 0, 35% 1%, 47% 0, 61% 1%, 75% 0, 90% 1%, 100% 0, 99% 20%, 100% 43%, 99% 65%, 100% 88%, 99% 100%, 80% 99%, 60% 100%, 40% 99%, 20% 100%, 0 99%, 1% 70%, 0 40%);
+  box-shadow: inset 0 0 2.8125rem #75471f66;
+}
+
+.story-page .parchment.paper-swap {
+  animation: garden-paper-reveal 0.5s ease;
+}
+
+.story-page .paper-era {
+  text-align: center;
+  letter-spacing: 0.125rem;
+  font-size: 0.8125rem;
+  color: #80502c;
+}
+
+.story-page main .parchment h3 {
+  font-family: var(--font-paper);
+  text-align: center;
+  color: #2d1a0d;
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  margin: 0.625rem 0 1.25rem;
+}
+
+.story-page .archive-art {
+  height: 9.375rem;
+  border: 0.5rem solid #d3b18a;
+  background: linear-gradient(145deg, #322318, #806344 55%, #281d15);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  box-shadow: 0 0.25rem 0.625rem #54331b55;
+  color: #e9c99b;
+}
+
+.story-page .archive-art span {
+  font-size: 3.375rem;
+}
+
+.story-page .archive-art small {
+  letter-spacing: 0.125rem;
+}
+
+.story-page .event-year {
+  color: #925a2e;
+  margin: 1.125rem 0 0.25rem;
+}
+
+.story-page .parchment h4 {
+  font: 700 1.375rem/1.3 var(--font-paper);
+  margin: 0 0 0.625rem;
+  color: #2d1a0d;
+}
+
+.story-page .event-description {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.story-page .history-source {
+  color: var(--paper-link);
+  font-size: 0.8rem;
+}
+
+.story-page .paper-flourish {
+  text-align: center;
+  color: #926235;
+  margin-top: 1.25rem;
+}
+
+.story-page .other-heading {
+  text-align: center;
+  font-size: 0.6875rem;
+  letter-spacing: 0.125rem;
+  margin: 1.5rem 0 0.75rem;
+  color: #c5985a;
+}
+
+.story-page .event-shortcuts {
+  border: 0.0625rem solid #704a29;
+  background: #1e100b;
+  border-radius: 0.625rem;
+  padding: 0.625rem;
+}
+
+.story-page .event-shortcuts button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #e8c48a;
+  background: transparent;
+  border: 0;
+  border-bottom: 0.0625rem solid #51341e;
+  padding: 0.75rem 0.625rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background 0.25s, padding-left 0.25s;
+}
+
+.story-page .event-shortcuts button:hover {
+  background: #382012;
+  padding-left: 1.125rem;
+}
+
+.story-page .event-shortcuts button:last-child {
+  border: 0;
+}
+
+.story-page .event-shortcuts button.active {
+  background: #492b16;
+  color: #ffe4a9;
+}
+
+.story-page .event-shortcuts small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #a98051;
+  font-size: 0.6875rem;
+}
+
+.story-page .history-quote {
+  text-align: center;
+  color: #bc8c55;
+  font-style: italic;
+  font-size: 0.8125rem;
+  margin-top: 1.375rem;
+}
+
+
+
+
+
+/******************************/
+/* MARK: ONDERZOEK EN BRONNEN */
+/****************************/
+
+.story-page .research-intro {
+  max-width: 75ch;
+  margin: 0 auto 2rem;
+}
+
+.story-page .research-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.story-page .research-tab {
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background var(--motion-fast), border-color var(--motion-fast);
+}
+
+.story-page .style-card {
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background var(--motion-fast), border-color var(--motion-fast);
+  display: grid;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.story-page .research-tab:hover,
+.story-page .style-card:hover,
+.story-page .research-tab.active,
+.story-page .style-card.active {
+  border-color: var(--gold);
+  background: #492b16;
+}
+
+.story-page .research-display,
+.story-page .style-detail,
+.story-page .discovery-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+.story-page [data-explorer-panel] + [data-explorer-panel] {
+  margin-top: 1.25rem;
+}
+
+.story-page [data-explorer-panel][hidden] + [data-explorer-panel] {
+  margin-top: 0;
+}
+
+.story-page .research-stamp {
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.story-page .research-connection {
+  border-left: 0.125rem solid var(--gold);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.story-page .style-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.story-page .style-card > span {
+  color: var(--gold);
+  font-family: var(--font-display);
+}
+
+.story-page .style-card small {
+  color: var(--muted);
+}
+
+.story-page .discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.25rem;
+}
+
+.story-page .discovery-card > span {
+  color: var(--gold);
+  font-family: var(--font-display);
+}
+
+.story-page .source-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.75rem;
+}
+
+.story-page .source-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+
+
+
+
+/**************************************/
+/* MARK: ARTIESTEN ZOEKEN EN SORTEREN */
+/************************************/
+
+.story-page .artist-section {
+  overflow: hidden;
+}
+
+.story-page .garden-controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 45rem;
+  margin: 0 auto 1.5625rem;
+}
+
+.story-page .garden-controls label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.375rem;
+}
+
+.story-page .garden-controls input,
+.story-page .garden-controls select {
+  width: 100%;
+  padding: 0.6875rem 0.8125rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.story-page .garden-help {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.4375rem 0;
+}
+
+
+
+
+
+/**********************************/
+/* MARK: PLATENCOLLECTIE EN VINYL */
+/********************************/
+
+.story-page .garden-artists {
+  --record-size: 85%;
+  --record-slide: 60%;
+  --record-label-size: 82%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: clamp(1.25rem, 3vw, 2.5rem);
+  row-gap: 2rem;
+  max-width: 22rem;
+  padding: 0;
+  margin: 2rem auto 1rem;
+}
+
+.story-page .garden-artists li {
+  min-width: 0;
+}
+
+.story-page .record-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 0 calc(37% + 2.5rem);
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  isolation: isolate;
+}
+
+.story-page .record-sleeve {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  border: 0.0625rem solid #e0bc85;
+  background: var(--sleeve, #cba476);
+  box-shadow: 0.3125rem 0.5rem 1.125rem #000b;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.story-page .record-sleeve img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(.12) contrast(1.04);
+}
+
+/* De naam blijft beschikbaar voor zoeken, sorteren en de artiestendialoog. */
+
+.story-page .record-title {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  font-size: 0.8rem;
+}
+
+.story-page .record-vinyl {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc((100% - var(--record-size)) / 2);
+  display: grid;
+  place-items: center;
+  width: var(--record-size);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 0.125rem solid #39312b;
+  background: repeating-radial-gradient(circle, #101010 0 0.125rem, #292929 0.1875rem 0.25rem, #101010 0.3125rem 0.4375rem);
+  box-shadow: 0 0.4375rem 0.875rem #000b;
+  transform: translateY(0);
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.story-page .record-vinyl::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--record-label-size);
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  border: 0.1875rem solid #5c341b;
+  border-radius: 50%;
+  background: #d4a35f;
+}
+
+/* Een afzonderlijk tekstvlak houdt ook namen van twee regels onder de hoes. */
+
+.story-page .record-vinyl::after {
+  content: attr(data-name);
+  position: absolute;
+  top: 71%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 62%;
+  min-height: 2.4em;
+  color: #28170d;
+  font: 700 clamp(1.125rem, 1.9vw, 1.5rem)/1.2 var(--font-paper, Arial, sans-serif);
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.story-page .record-card:hover .record-vinyl,
+.story-page .record-card:focus-visible .record-vinyl {
+  transform: translateY(var(--record-slide));
+}
+
+.story-page .record-card:hover .record-sleeve,
+.story-page .record-card:focus-visible .record-sleeve {
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 0.9375rem 1.625rem #000a;
+}
+
+.story-page .record-hint {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0;
+  right: 0;
+  display: block;
+  text-align: center;
+  font-size: .65rem;
+  letter-spacing: .07em;
+  color: var(--gold);
+  opacity: .7;
+  transition: opacity var(--motion-fast, .2s);
+}
+
+.story-page .record-card:hover .record-hint,
+.story-page .record-card:focus-visible .record-hint {
+  opacity: 1;
+}
+
+.story-page .artist-credits {
+  text-align: center;
+}
+
+
+
+
+
+/**************************/
+/* MARK: ARTIESTENDIALOOG */
+/************************/
+
+.story-page .artist-dialog {
+  width: min(90vw, 50rem);
+  max-height: 90vh;
+  overflow: auto;
+  border: 0.125rem solid #b88645;
+  border-radius: 0.625rem;
+  padding: 1.5625rem;
+  background: linear-gradient(145deg, #2f1c11, #140b07);
+  color: var(--text);
+  box-shadow: 0 1.5625rem 5rem #000;
+}
+
+.story-page .artist-dialog::backdrop {
+  background: #090402d9;
+  backdrop-filter: blur(0.3125rem);
+}
+
+.story-page .dialog-close {
+  position: absolute;
+  right: 0.875rem;
+  top: 0.375rem;
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.story-page .dialog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.story-page .dialog-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  border: 0.625rem solid var(--sleeve);
+  filter: sepia(0.18);
+}
+
+.story-page .dialog-copy h2 {
+  font: clamp(1.7rem, 3vw, 2.5rem) var(--font-display);
+  color: var(--gold);
+}
+
+.story-page .dialog-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.story-page .dialog-tags {
+  display: flex;
+  gap: 0.4375rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.story-page .dialog-tags span {
+  padding: 0.25rem 0.5625rem;
+  border: 0.0625rem solid #80532b;
+  border-radius: 1.25rem;
+  font-size: 0.75rem;
+  color: #e9c18c;
+}
+
+
+
+
+
+/****************************/
+/* MARK: PRIKBORD EN FOOTER */
+/**************************/
+
+.story-page .connections-section {
+  padding-bottom: 6.875rem;
+}
+
+.story-page .pinboard {
+  position: relative;
+  padding: 4.0625rem 1rem 1.5rem;
+  background: repeating-linear-gradient(0deg, #26160c 0 0.3125rem, #2f1a0e 0.375rem 0.625rem, #231309 0.6875rem 0.875rem);
+  border: 0.75rem solid #4b2b15;
+  box-shadow: inset 0 0 2.1875rem #0009, 0 0.9375rem 1.875rem #0007;
+}
+
+.story-page .pinboard-string {
+  position: absolute;
+  top: 3.4375rem;
+  left: 10%;
+  width: 80%;
+  height: 3.4375rem;
+  border-top: 0.1875rem solid #b58c5e;
+  border-radius: 50%;
+  transform: rotate(1deg);
+  opacity: 0.8;
+}
+
+.story-page .garden-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.story-page .garden-paper {
+  position: relative;
+  padding: 2.375rem 1.5rem 1.5625rem;
+  background: linear-gradient(140deg, #f1d8ab, #c69b65);
+  color: #362012;
+  box-shadow: 0.3125rem 0.75rem 1.125rem #0009;
+  transform: rotate(0deg);
+  transition: transform 0.35s, box-shadow 0.35s;
+  padding-inline: 1.0625rem;
+  margin: 0;
+}
+
+.story-page .garden-paper:nth-child(2) {
+  transform: rotate(0deg);
+  margin-top: 0.9375rem;
+  margin: 0;
+}
+
+.story-page .garden-paper:nth-child(3) {
+  transform: rotate(0deg);
+  margin-top: -0.3125rem;
+  margin: 0;
+}
+
+.story-page .garden-paper:hover,
+.story-page .garden-paper:focus-within {
+  transform: rotate(0deg) translateY(-0.875rem) scale(1.02);
+  box-shadow: 0.625rem 1.25rem 1.5625rem #000a;
+  z-index: 2;
+}
+
+.story-page .paper-pin {
+  position: absolute;
+  top: -0.6875rem;
+  left: 50%;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ff9b66, #b33816 70%);
+  box-shadow: 0.125rem 0.3125rem 0.375rem #0009;
+}
+
+.story-page .note-stamp {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: #79522c;
+}
+
+.story-page .garden-paper h3 {
+  color: #42210d;
+  font-size: 1.15rem;
+  margin: 0.625rem 0;
+}
+
+.story-page .garden-paper p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.story-page .garden-paper a {
+  color: var(--paper-link);
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+
+.story-page .garden-paper details {
+  margin: 1.125rem 0;
+  border-block: 0.0625rem dashed #986b3c;
+  padding: 0.625rem 0;
+}
+
+.story-page .garden-paper summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.story-page .garden-paper details[open] summary {
+  color: #8b3d0d;
+}
+
+
+
+
+
+/*******************************/
+/* MARK: BEWEGING EN ANIMATIES */
+/*****************************/
+
+.story-page .reveal-pending {
+  opacity: 0;
+  transform: translateY(1.875rem);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.story-page .reveal-pending.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes garden-float {
+  50% {
+    transform: translateY(-1rem) rotate(12deg);
+  }
+}
+
+@keyframes garden-halo {
+  to {
+    opacity: 0.45;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes garden-record-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes garden-paper-reveal {
+  from {
+    opacity: 0.55;
+    transform: translateY(0.75rem);
   }
 
-  .garden-roots-grid {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* De collectie heeft maximaal drie platen per rij. */
+
+.story-page .dialog-image {
+  max-width: 14.375rem;
+  margin: auto;
+}
+
+
+
+
+
+/************************/
+/* MARK: SCHERMFORMATEN */
+/**********************/
+
+/* Grotere schermen bouwen voort op de éénkolomsbasis. */
+
+@media (min-width: 26.251rem) {
+  .story-page .hero-copy h1 {
+    font-size: clamp(4rem, 8.5vw, 7rem);
+  }
+
+  .story-page .country-history {
+    --head-width: 7rem;
+    --shaft-width: 1.375rem;
+    --wing-width: 2.125rem;
+  }
+
+  .story-page .head-area {
+    max-width: 31.25rem;
+  }
+
+  .story-page .tuner .key-label {
+    font-size: clamp(0.625rem, 1.25vw, 0.875rem);
+  }
+
+  .story-page .tuner .key-label small {
+    font-size: 0.625rem;
+  }
+
+  .story-page .marker-label {
+    width: 9.0625rem;
+    font-size: 0.6875rem;
+  }
+
+  .story-page .record-title {
+    font-size: initial;
+  }
+}
+
+@media (min-width: 42rem) {
+  .story-page .garden-artists {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 46rem;
+  }
+}
+
+@media (min-width: 43.751rem) {
+  .story-page .garden-footer {
+    flex-direction: initial;
+    text-align: initial;
+  }
+
+  .story-page .garden-hero {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    gap: 3rem;
+    padding: 3.5rem 2% 4rem;
   }
 
-  .garden-index,
-  .garden-notes-grid {
+  .story-page .hero-scene {
+    min-height: 26.25rem;
+  }
+
+  .story-page .music-title-note:nth-child(1) {
+    --note-top: 12%;
+    --note-left: -9%;
+  }
+
+  .story-page .music-title-note:nth-child(3) {
+    --note-top: 28%;
+    --note-left: 104%;
+  }
+
+  .story-page .music-title-note:nth-child(4) {
+    --note-left: 97%;
+  }
+
+  .story-page .music-title-note:nth-child(6) {
+    --note-top: 58%;
+    --note-left: -9%;
+  }
+
+  .story-page .garden-index {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .garden-controls {
+  .story-page .destination {
+    min-height: 12.8125rem;
+  }
+
+  .story-page .country-history {
+    padding-inline: initial;
+  }
+
+  .story-page .garden-controls {
     grid-template-columns: 2fr 1fr;
+  }
+
+  .story-page .dialog-grid {
+    grid-template-columns: 40% 1fr;
+  }
+
+  .story-page .pinboard {
+    padding: 4.6875rem 1.875rem 2.5rem;
+  }
+
+  .story-page .garden-notes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .story-page .garden-paper {
+    transform: rotate(-3deg);
+    margin: initial;
+  }
+
+  .story-page .garden-paper:nth-child(2) {
+    transform: rotate(2deg);
+    margin: initial;
+  }
+
+  .story-page .garden-paper:nth-child(3) {
+    transform: rotate(-1deg);
+    margin: initial;
+  }
+
+  .story-page .dialog-image {
+    max-width: initial;
+    margin: initial;
+  }
+}
+
+@media (min-width: 59.376rem) {
+  .story-page .history-layout {
+    grid-template-columns: minmax(24.375rem, 1fr) minmax(19.375rem, 1fr);
+    gap: 2.8125rem;
+  }
+
+  .story-page .guitar-stage {
+    max-width: initial;
+    width: initial;
+    margin: initial;
+  }
+
+  .story-page .history-details {
+    padding-top: 15rem;
+    max-width: initial;
+    width: initial;
+    margin: initial;
+  }
+
+  .story-page .garden-notes-grid {
+    gap: 1.75rem;
+  }
+
+  .story-page .garden-paper {
+    padding-inline: initial;
+  }
+}
+
+@media (min-width: 62rem) {
+  .story-page .garden-artists {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 70rem;
   }
 }
 
@@ -333,25 +1927,19 @@ html:has(> body.story-page) {
 
 
 
-/***********************/
-/* MARK: LICHTE MODUS */
-/*********************/
+/******************************/
+/* MARK: GEBRUIKERSVOORKEUREN */
+/****************************/
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --garden-bg: #f7f1e5;
-    --garden-paper: #fffaf0;
-    --garden-text: #302015;
-    --garden-muted: #6c4c35;
-    --garden-accent: #733c08;
-    --garden-border: #a37443;
-    --garden-shadow: rgba(90, 50, 20, 0.12);
-    --garden-focus: #733c08;
+@media (prefers-reduced-motion: reduce) {
+  .story-page .record-vinyl,
+  .story-page .record-sleeve {
+    transition: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:has(> body.story-page) {
+  html:has(> .story-page) {
     scroll-behavior: auto;
   }
 
@@ -360,7 +1948,11 @@ html:has(> body.story-page) {
   .story-page *::after {
     animation: none !important;
     transition: none !important;
-    scroll-behavior: auto !important;
+  }
+
+  .story-page .reveal-pending {
+    opacity: 1;
+    transform: none;
   }
 }
 

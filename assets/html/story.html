@@ -1,181 +1,485 @@
 <!DOCTYPE html>
 <html lang="nl" data-translations-path="../../translations.json">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="garden_page_title">Country Roots | Mijn muzikale tuin</title>
-  <link rel="stylesheet" href="../resources/style/navbar.css">
-  <link rel="stylesheet" href="../resources/style/language-changer.css">
-  <link rel="stylesheet" href="../resources/style/story.css">
-  <script src="../js/navbar.js" defer></script>
-  <script src="../js/language-changer.js" defer></script>
-  <script src="../js/story.js" defer></script>
-</head>
-<body class="story-page">
-  <a class="garden-skip" href="#gardenContent"><span data-i18n="garden_skip">Ga direct naar hoofdinhoud</span></a>
-
-  <!-- ==================== MARK: NAVIGATIE ==================== -->
-  <nav>
-    <ul>
-      <li><a href="landing.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
-      <li><a href="story.html" class="active" aria-current="page" data-i18n="nav_story">Story</a></li>
-      <li><a href="bronnen.html" data-i18n="nav_sources">Bronnen</a></li>
-      <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-      <li class="nav-language"><button id="langToggleBtn" type="button" aria-label="Switch to English">NL</button></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#190e08">
+    <title data-i18n="garden_page_title">Country Roots | Mijn muzikale tuin</title>
+    <link rel="stylesheet" href="../resources/style/navbar.css">
+    <link rel="stylesheet" href="../resources/style/language-changer.css">
+    <link rel="stylesheet" href="../resources/style/story.css">
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/language-changer.js" defer></script>
+    <script src="../js/story.js" defer></script>
+  </head>
+  <body class="story-page">
+    <a class="garden-skip" href="#gardenContent" data-i18n="garden_skip">Ga direct naar hoofdinhoud</a>
 
 
 
 
 
-  <!-- ==================== MARK: MIJN TUIN ==================== -->
-  <main id="gardenContent" tabindex="-1">
-    <header class="garden-hero">
-      <div>
-        <p class="garden-eyebrow">Garnet’s Ocean / Digital Garden</p>
-        <h1>Country Roots</h1>
-        <h2 data-i18n="garden_subtitle">Mijn muzikale tuin</h2>
-        <p data-i18n="garden_intro">Country muziek is voor mij meer dan een muziekgenre. Hier verzamel ik mijn startpunten: artiesten, Texas, rodeo en de verbindingen tussen muziekstijlen. Deze tuin blijft groeien en veranderen.</p>
-        <a class="garden-link" href="#gardenNotes"><span data-i18n="garden_explore">Ontdek de eerste notities</span> <span aria-hidden="true">↘</span></a>
-      </div>
-      <figure class="garden-photo">
-        <img src="../resources/images/texasFlag.jpg" alt="" width="600" height="400">
-        <figcaption><span data-i18n="garden_photo">De vlag van Texas — mijn startpunt</span></figcaption>
-      </figure>
-    </header>
-
-    <div class="garden-index">
-      <a href="#gardenRoots"><span data-i18n="garden_roots_link">01 / Mijn wortels</span></a>
-      <a href="#gardenArtists"><span data-i18n="garden_artists_link">02 / Artiesten</span></a>
-      <a href="#gardenNotes"><span data-i18n="garden_notes_link">03 / Verbindingen</span></a>
-    </div>
-
-
-
-
-
-    <!-- ==================== MARK: MIJN WORTELS ==================== -->
-    <section id="gardenRoots" class="garden-section">
-      <p class="garden-eyebrow">01 / Houston, Texas</p>
-      <h2 data-i18n="garden_roots">Hier begint het</h2>
-      <div class="garden-roots-grid">
-        <article class="garden-paper">
-          <h3 data-i18n="garden_home_heading">Country dichtbij huis</h3>
-          <p data-i18n="garden_home_text">Ik ben geboren en opgegroeid in Houston, Texas, waar Country muziek onderdeel is van de cultuur. Je komt het bijvoorbeeld tegen bij Rodeo Day en Country Day.</p>
-          <a href="landing.html"><span data-i18n="garden_home_link">Lees mijn startpunt op de homepage</span></a>
-        </article>
-        <figure class="garden-photo">
-          <img src="../resources/images/CountryDay.jpg" alt="" loading="lazy" width="600" height="400">
-          <figcaption><span data-i18n="garden_country_day">Country Day in Houston, Texas</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-
-
-
-
-    <!-- ==================== MARK: ARTIESTEN ==================== -->
-    <section id="gardenArtists" class="garden-section">
-      <p class="garden-eyebrow">02 / <span data-i18n="garden_collection">Mijn verzameling</span></p>
-      <h2 data-i18n="garden_artists">Artiesten om verder te ontdekken</h2>
-      <p data-i18n="garden_artists_intro">Ik luister graag naar Country muziek. Deze vijf artiesten uit mijn homepage zijn het begin van mijn verzameling.</p>
-      <div class="garden-controls" hidden>
-        <div>
-          <label for="gardenSearch"><span data-i18n="garden_search_label">Zoek een artiest</span></label>
-          <input id="gardenSearch" type="search" aria-describedby="gardenSearchHelp" aria-controls="gardenArtistList">
-          <p id="gardenSearchHelp" class="garden-help"><span data-i18n="garden_search_help">Typ een naam. De lijst wordt tijdens het typen gefilterd.</span></p>
-        </div>
-        <div>
-          <label for="gardenSort"><span data-i18n="garden_sort_label">Sorteer op naam</span></label>
-          <select id="gardenSort" aria-controls="gardenArtistList"><option value="asc">A–Z</option><option value="desc">Z–A</option></select>
-        </div>
-      </div>
-      <p class="garden-help" role="status" aria-atomic="true" id="gardenResults"></p>
-      <ul id="gardenArtistList" class="garden-artists">
-        <li data-artist="Dolly Parton">
-          <figure class="garden-photo">
-            <img src="../resources/images/artist-dolly.jpg" alt="" loading="lazy" width="400" height="400">
-            <figcaption>Dolly Parton</figcaption>
-          </figure>
+    <!-- ==================== MARK: NAVIGATIE ==================== -->
+    <nav aria-label="Hoofdnavigatie">
+      <ul>
+        <li>
+          <a href="landing.html" data-i18n="nav_home">Home</a>
         </li>
-        <li data-artist="Don Williams">
-          <figure class="garden-photo">
-            <img src="../resources/images/artist_don.jpg" alt="" loading="lazy" width="400" height="400">
-            <figcaption>Don Williams</figcaption>
-          </figure>
+        <li>
+          <a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a>
         </li>
-        <li data-artist="Ella Langley">
-          <figure class="garden-photo">
-            <img src="../resources/images/artist_ella.jpg" alt="" loading="lazy" width="400" height="400">
-            <figcaption>Ella Langley</figcaption>
-          </figure>
+        <li>
+          <a href="story.html" class="active" aria-current="page" data-i18n="nav_story">Story</a>
         </li>
-        <li data-artist="Kameron Marlowe">
-          <figure class="garden-photo">
-            <img src="../resources/images/artist_kameron.jpg" alt="" loading="lazy" width="400" height="400">
-            <figcaption>Kameron Marlowe</figcaption>
-          </figure>
+        <li>
+          <a href="bronnen.html" data-i18n="nav_sources">Bronnen</a>
         </li>
-        <li data-artist="Warren Zeiders">
-          <figure class="garden-photo">
-            <img src="../resources/images/artist_warren.jpg" alt="" loading="lazy" width="400" height="400">
-            <figcaption>Warren Zeiders</figcaption>
-          </figure>
+        <li>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        </li>
+        <li class="nav-language">
+          <button id="langToggleBtn" type="button" aria-label="Switch to English">NL</button>
         </li>
       </ul>
-      <p id="gardenEmpty" hidden><span data-i18n="garden_empty">Geen artiest gevonden. Probeer een andere naam.</span></p>
-      <a href="bronnen.html"><span data-i18n="garden_credits">Bekijk de afbeeldingsbronnen en credits</span></a>
-    </section>
+    </nav>
+    <main id="gardenContent" tabindex="-1">
 
 
 
 
 
-    <!-- ==================== MARK: NOTITIES EN VERBINDINGEN ==================== -->
-    <section id="gardenNotes" class="garden-section">
-      <p class="garden-eyebrow">03 / <span data-i18n="garden_growing">In ontwikkeling</span></p>
-      <h2 data-i18n="garden_notes">Van één onderwerp naar het volgende</h2>
-      <p data-i18n="garden_notes_intro">Een nummer of artiest kan leiden naar muziekstijlen, cultuur, geschiedenis en invloeden. Dit zijn mijn eerste notities en vragen om verder uit te zoeken.</p>
-      <div class="garden-notes-grid">
-        <article class="garden-paper">
-          <h3 data-i18n="garden_styles">Muziek die verandert</h3>
-          <p data-i18n="garden_styles_text">Country is door de jaren heen veranderd: van traditionele country tot moderne nummers met invloeden van pop, rock en hiphop.</p>
-          <details><summary><span data-i18n="garden_question">Vraag om verder te onderzoeken</span></summary>
-            <p data-i18n="garden_styles_question">Welke verschillen hoor ik tussen traditional country, bluegrass, country rock en modern country?</p>
-          </details>
-          <a href="#gardenArtists"><span data-i18n="garden_to_artists">Verbinding: mijn artiesten</span></a>
+      <!-- ==================== MARK: MIJN TUIN ==================== -->
+      <header class="garden-hero" id="top">
+        <div class="hero-copy reveal">
+          <h1 class="music-title"> Country<br>Roots <span class="music-title-notes" aria-hidden="true"><span class="music-title-note">♪</span><span class="music-title-note">♫</span><span class="music-title-note">♬</span><span class="music-title-note">♪</span><span class="music-title-note">♫</span><span class="music-title-note">♩</span></span></h1>
+          <h2 data-i18n="garden_subtitle">Waar verhalen muziek worden</h2>
+          <p class="hero-intro" data-i18n="garden_intro">Van oude volksmelodieën en Afrikaanse muzikale tradities tot bluegrass, honky-tonk en moderne country. Ontdek de muzikale wortels van een genre dat voortdurend blijft groeien.</p>
+          <a class="hero-cta" href="#gardenRoots"><span data-i18n="garden_explore">Ontdek de geschiedenis</span><span aria-hidden="true">↘</span></a>
+        </div>
+
+        <div class="hero-scene reveal" aria-label="Sfeervolle verzameling van countrymuziek">
+          <div class="hero-halo" aria-hidden="true"></div>
+
+          <div class="hero-disc" aria-hidden="true">
+            <div class="hero-disc-label">
+              COUNTRY
+              <br>
+              ROOTS
+            </div>
+          </div>
+
+          <figure class="hero-photo">
+            <img src="../resources/images/texasFlag.jpg" alt="De vlag van Texas in de wind" width="600" height="400">
+            <figcaption data-i18n="garden_photo">Texas — één van de vele verhalen</figcaption>
+          </figure>
+          <span class="hero-spark spark-one" aria-hidden="true">✦</span>
+          <span class="hero-spark spark-two" aria-hidden="true">✧</span>
+        </div>
+      </header>
+
+
+
+
+
+      <!-- ==================== MARK: BESTEMMINGEN ==================== -->
+      <section class="garden-crossroads" aria-label="Kies je volgende bestemming">
+        <div class="section-heading reveal">
+          <span class="eyebrow">THE CROSSROADS</span>
+          <h2>Kies je volgende bestemming</h2>
+          <p>Volg je nieuwsgierigheid. Elk verhaal leidt naar het volgende.</p>
+        </div>
+
+        <div class="garden-index">
+          <a class="destination destination-roots reveal" href="#gardenRoots"><span class="destination-number">01</span><span class="destination-art" aria-hidden="true">♬</span><span class="destination-copy"><strong data-i18n="garden_roots_link">Mijn wortels</strong><small>De oorsprong van countrymuziek</small></span><span class="destination-arrow" aria-hidden="true">➜</span></a>
+          <a class="destination destination-artists reveal" href="#musicalRoots"><span class="destination-number">02</span><span class="destination-art" aria-hidden="true">★</span><span class="destination-copy"><strong>Muzikale wortels</strong><small>De invloeden achter het genre</small></span><span class="destination-arrow" aria-hidden="true">➜</span></a>
+          <a class="destination destination-notes reveal" href="#gardenStyles"><span class="destination-number">03</span><span class="destination-art" aria-hidden="true">✎</span><span class="destination-copy"><strong>Muziekstijlen</strong><small>De vertakkingen van country</small></span><span class="destination-arrow" aria-hidden="true">➜</span></a>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: GITAARTIJDLIJN ==================== -->
+      <!-- De begininhoud is leesbaar zonder JavaScript. story.js neemt de bediening over. -->
+      <section class="country-history" id="gardenRoots" aria-labelledby="history-title" data-initial-era="radio" lang="nl">
+        <header class="section-heading reveal">
+          <span class="eyebrow">01 / THE GUITAR OF TIME</span>
+          <h2 id="history-title">Stem af op de geschiedenis</h2>
+          <p>Draai aan de stemknoppen. Volg de snaren. Ontdek de verhalen.</p>
+        </header>
+
+        <div class="history-layout">
+          <div class="guitar-stage reveal">
+            <div class="guitar" role="group" aria-label="Interactieve gitaartijdlijn van de countrygeschiedenis">
+              <div class="head-area">
+                <div class="headstock" aria-hidden="true">
+                  <div class="headstock-inlay">
+                    ✦
+                  </div>
+
+                  <div class="machine-posts" id="machine-posts">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="tuning-keys" id="tuning-keys" role="group" aria-label="Kies een historische periode">
+                  <button class="tuner left" type="button" aria-label="Kies 19e eeuw: Wortels" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>19e eeuw</strong><small>Wortels</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 1970–1989: Outlaw en pop" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1970–1989</strong><small>Outlaw en pop</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left active" type="button" aria-label="Kies 1920–1949: Radio en pioniers" aria-pressed="true" aria-controls="history-card"><span class="key-label"><strong>1920–1949</strong><small>Radio en pioniers</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 1990–2009: Supersterren" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1990–2009</strong><small>Supersterren</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left" type="button" aria-label="Kies 1950–1969: Nashville-sound" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1950–1969</strong><small>Nashville-sound</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 2010–heden: Moderne country" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>2010–heden</strong><small>Moderne country</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                </div>
+              </div>
+
+              <div class="nut" aria-hidden="true"></div>
+
+              <div class="fretboard" id="fretboard">
+                <div class="frets" aria-hidden="true"></div>
+
+                <div class="strings" aria-hidden="true"></div>
+
+                <div class="fret-dots" aria-hidden="true">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+
+                <div class="event-markers" id="event-markers">
+                  <div class="timeline-event">
+                    <button class="event-marker active" type="button" aria-label="1925: Uitzendingen van de Grand Ole Opry" aria-pressed="true" aria-controls="history-card">♬</button>
+                    <div class="marker-label" aria-hidden="true">
+                      <strong>1925</strong>
+                      Uitzendingen van de Grand Ole Opry
+                    </div>
+                  </div>
+
+                  <div class="timeline-event">
+                    <button class="event-marker" type="button" aria-label="1927: De Bristol Sessions" aria-pressed="false" aria-controls="history-card">◉</button>
+                    <div class="marker-label" aria-hidden="true">
+                      <strong>1927</strong>
+                      De Bristol Sessions
+                    </div>
+                  </div>
+
+                  <div class="timeline-event">
+                    <button class="event-marker" type="button" aria-label="1935: Het tijdperk van de zingende cowboy" aria-pressed="false" aria-controls="history-card">★</button>
+                    <div class="marker-label" aria-hidden="true">
+                      <strong>1935</strong>
+                      Het tijdperk van de zingende cowboy
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="guitar-body" aria-hidden="true">
+                <div class="body-rosette">
+                </div>
+
+                <div class="bridge">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="history-details reveal">
+            <article class="parchment" id="history-card" aria-live="polite" aria-atomic="true">
+              <p class="paper-era" id="card-era">1920–1949</p>
+              <h3 id="card-heading">RADIO EN PIONIERS</h3>
+              <div class="archive-art" aria-hidden="true">
+                <span id="archive-symbol">♬</span>
+                <small id="archive-year">ARCHIEF · 1925</small>
+              </div>
+              <p class="event-year" id="card-year">1925</p>
+              <h4 id="card-title">Uitzendingen van de Grand Ole Opry</h4>
+              <p class="event-description" id="card-description">Het radioprogramma dat later de Grand Ole Opry werd, begon in Nashville en bracht regionale muziek naar een groeiend publiek.</p>
+              <a class="history-source" href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer">Historische bron: Library of Congress ↗</a>
+              <div class="paper-flourish" aria-hidden="true">
+                ── ✦ ──
+              </div>
+            </article>
+            <p class="other-heading">✦ MEER VERHALEN UIT DEZE PERIODE ✦</p>
+            <div class="event-shortcuts" id="event-shortcuts" role="group" aria-label="Gebeurtenissen">
+              <button class="active" type="button" aria-pressed="true" aria-controls="history-card"><strong>1925 · Uitzendingen van de Grand Ole Opry</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
+              <button type="button" aria-pressed="false" aria-controls="history-card"><strong>1927 · De Bristol Sessions</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
+              <button type="button" aria-pressed="false" aria-controls="history-card"><strong>1935 · Het tijdperk van de zingende cowboy</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
+            </div>
+            <p class="history-quote">“Elke snaar vertelt een verhaal.”</p>
+            <noscript>
+              <p>Schakel JavaScript in om andere perioden en gebeurtenissen te selecteren.</p>
+            </noscript>
+          </aside>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: MUZIKALE WORTELS ==================== -->
+      <section class="garden-section research-section" id="musicalRoots" aria-labelledby="roots-research-title">
+        <header class="section-heading reveal">
+          <span class="eyebrow">02 / THE ROOTS</span>
+          <h2 id="roots-research-title">Country heeft niet één oorsprong</h2>
+          <p>De muziek ontstond door ontmoetingen tussen verschillende tradities. Kies een wortel en ontdek wat die bijdroeg.</p>
+        </header>
+
+        <div class="research-intro reveal">
+          <p>Countrymuziek groeide uit ballades, dansmuziek, kerkliederen, blues en andere tradities. De geschiedenis is zowel Europees als Afrikaans-Amerikaans, en werd gevormd door uitwisseling tussen gemeenschappen. Het genre is dus veel meer dan alleen de muziek van cowboys.</p>
+          <a href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">Bron: PBS — Roots &amp; Branches ↗</a>
+        </div>
+
+        <div class="research-explorer reveal">
+          <div class="research-tabs" id="roots-tabs" role="group" aria-label="Muzikale invloeden">
+            <button type="button" data-root="0" aria-pressed="true">♬ Ballades &amp; folk</button>
+            <button type="button" data-root="1" aria-pressed="false">✦ Banjo &amp; fiddle</button>
+            <button type="button" data-root="2" aria-pressed="false">♫ Blues</button>
+            <button type="button" data-root="3" aria-pressed="false">✧ Gospel</button>
+            <button type="button" data-root="4" aria-pressed="false">★ Grensgebieden</button>
+          </div>
+
+          <article class="research-display" id="roots-display" aria-live="polite">
+            <span class="research-stamp">MUZIKALE WORTEL / 01</span>
+            <h3 id="root-title">Ballades en volksmuziek</h3>
+            <p id="root-description">Ballades en melodieën uit Europese tradities werden in Amerika doorgegeven, aangepast en vermengd met lokale verhalen.</p>
+            <p class="research-connection" id="root-connection">Verbinding: verhalende liedteksten blijven belangrijk in countrymuziek.</p>
+            <a id="root-source" href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+          </article>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: MUZIEKSTIJLEN ==================== -->
+      <section class="garden-section research-section" id="gardenStyles" aria-labelledby="styles-title">
+        <header class="section-heading reveal">
+          <span class="eyebrow">03 / THE BRANCHES</span>
+          <h2 id="styles-title">Eén genre, verschillende geluiden</h2>
+          <p>Vergelijk hoe instrumenten, ritme en productie door de tijd veranderden. Selecteer een stijl voor het verhaal erachter.</p>
+        </header>
+
+        <div class="style-grid" id="style-grid">
+          <button class="style-card" data-style="0" aria-pressed="true" type="button"><span>01</span><strong>Bluegrass</strong><small>Snelle akoestische snaren</small></button>
+          <button class="style-card" data-style="1" aria-pressed="false" type="button"><span>02</span><strong>Western swing</strong><small>Country ontmoet jazz</small></button>
+          <button class="style-card" data-style="2" aria-pressed="false" type="button"><span>03</span><strong>Honky-tonk</strong><small>Danszalen en levensverhalen</small></button>
+          <button class="style-card" data-style="3" aria-pressed="false" type="button"><span>04</span><strong>Nashville Sound</strong><small>Een gepolijste productie</small></button>
+        </div>
+
+        <article class="style-detail reveal" id="style-detail" aria-live="polite">
+          <span class="research-stamp">STIJL / 01</span>
+          <h3 id="style-title">Bluegrass</h3>
+          <p id="style-description">Bluegrass kreeg in de jaren 1940 vorm rond Bill Monroe en zijn Blue Grass Boys. Banjo, mandoline, fiddle, gitaar en contrabas zorgen voor een herkenbaar akoestisch geluid.</p>
+          <p id="style-listen" class="research-connection">Luister naar: snelle instrumentale solo's en samenzang.</p>
+          <a id="style-source" href="https://www.britannica.com/art/bluegrass-music" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
         </article>
-        <article class="garden-paper">
-          <h3 data-i18n="garden_culture">Muziek en cultuur</h3>
-          <p data-i18n="garden_culture_text">Texas, rodeo, cowboys en honky-tonk zijn onderwerpen die ik vanuit Country muziek verder kan ontdekken. Houston is daarbij mijn persoonlijke startpunt.</p>
-          <details><summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
-            <p data-i18n="garden_culture_question">Hoe komen muziek en de cultuur van Texas samen bij de rodeo?</p>
-          </details>
-          <a href="#gardenRoots"><span data-i18n="garden_to_roots">Verbinding: Houston en mijn wortels</span></a>
-        </article>
-        <article class="garden-paper">
-          <h3 data-i18n="garden_history">Wortels en invloeden</h3>
-          <p data-i18n="garden_history_text">Folk, blues, gospel, rock, pop en hiphop zijn aanknopingspunten om de oorsprong en ontwikkeling van Country muziek verder te onderzoeken.</p>
-          <details><summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
-            <p data-i18n="garden_history_question">Welke verbindingen vind ik terug in de historische bronnen die ik heb verzameld?</p>
-          </details>
-          <a href="bronnen.html"><span data-i18n="garden_to_sources">Verbinding: onderzoek en literatuur</span></a>
-        </article>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: ONTDEKKINGEN ==================== -->
+      <section class="garden-section discoveries" id="gardenDiscoveries">
+        <header class="section-heading reveal">
+          <span class="eyebrow">04 / ARCHIVE NOTES</span>
+          <h2>Drie ontdekkingen uit mijn bronnen</h2>
+          <p>Historische feiten die laten zien hoe countrymuziek zich verspreidde en veranderde.</p>
+        </header>
+
+        <div class="discovery-grid">
+          <article class="discovery-card reveal">
+            <span>1922</span>
+            <h3>Country op plaat</h3>
+            <p>Fiddler Eck Robertson maakte opnamen voor Victor Records. De opkomst van geluidsopnamen veranderde hoe regionale muziek een publiek kon bereiken.</p>
+            <a href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer">Library of Congress ↗</a>
+          </article>
+
+          <article class="discovery-card reveal">
+            <span>1927</span>
+            <h3>De Bristol Sessions</h3>
+            <p>De Carter Family en Jimmie Rodgers maakten invloedrijke opnamen in Bristol. Hun muziek hielp de commerciële ontwikkeling van country vormgeven.</p>
+            <a href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer">Library of Congress ↗</a>
+          </article>
+
+          <article class="discovery-card reveal">
+            <span>1970s</span>
+            <h3>Oklahoma en country</h3>
+            <p>Oklahoma leverde belangrijke artiesten en tradities, van western swing tot de latere stadioncountry van Garth Brooks en Reba McEntire.</p>
+            <a href="https://www.okhistory.org/publications/enc/entry?entry=CO072" target="_blank" rel="noopener noreferrer">Oklahoma Historical Society ↗</a>
+          </article>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: ARTIESTEN ==================== -->
+      <section class="garden-section artist-section" id="gardenArtists" aria-labelledby="artists-title">
+        <header class="section-heading reveal">
+          <span class="eyebrow">02 / THE RECORD COLLECTION</span>
+          <h2 id="artists-title" data-i18n="garden_artists">Artiesten om verder te ontdekken</h2>
+          <p data-i18n="garden_artists_intro">Vijf artiesten vormen het begin van mijn verzameling. Beweeg over een plaat en klik om hun verhaal te ontdekken.</p>
+        </header>
+
+        <div class="garden-controls reveal" hidden>
+          <div>
+            <label for="gardenSearch" data-i18n="garden_search_label">Zoek een artiest</label>
+            <input id="gardenSearch" type="search" aria-describedby="gardenSearchHelp" aria-controls="gardenArtistList" placeholder="Bijvoorbeeld: Dolly">
+            <p id="gardenSearchHelp" class="garden-help" data-i18n="garden_search_help">Typ een naam om de collectie te filteren.</p>
+          </div>
+
+          <div>
+            <label for="gardenSort" data-i18n="garden_sort_label">Sorteer op naam</label>
+            <select id="gardenSort" aria-controls="gardenArtistList">
+              <option value="asc">A–Z</option>
+              <option value="desc">Z–A</option>
+            </select>
+          </div>
+        </div>
+        <p class="garden-help" role="status" aria-atomic="true" id="gardenResults"></p>
+        <ul id="gardenArtistList" class="garden-artists">
+          <li data-artist="dolly">
+            <button class="record-card" type="button" data-artist-open="Dolly Parton" aria-label="Ontdek Dolly Parton"><span class="record-vinyl" data-name="Dolly Parton" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist-dolly.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Dolly Parton</span></span><span class="record-hint">BEKIJK DE ARTIEST ↗</span></button>
+          </li>
+          <li data-artist="don">
+            <button class="record-card" type="button" data-artist-open="Don Williams" aria-label="Ontdek Don Williams"><span class="record-vinyl" data-name="Don Williams" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_don.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Don Williams</span></span><span class="record-hint">BEKIJK DE ARTIEST ↗</span></button>
+          </li>
+          <li data-artist="ella">
+            <button class="record-card" type="button" data-artist-open="Ella Langley" aria-label="Ontdek Ella Langley"><span class="record-vinyl" data-name="Ella Langley" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_ella.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Ella Langley</span></span><span class="record-hint">BEKIJK DE ARTIEST ↗</span></button>
+          </li>
+          <li data-artist="kameron">
+            <button class="record-card" type="button" data-artist-open="Kameron Marlowe" aria-label="Ontdek Kameron Marlowe"><span class="record-vinyl" data-name="Kameron Marlowe" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_kameron.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Kameron Marlowe</span></span><span class="record-hint">BEKIJK DE ARTIEST ↗</span></button>
+          </li>
+          <li data-artist="warren">
+            <button class="record-card" type="button" data-artist-open="Warren Zeiders" aria-label="Ontdek Warren Zeiders"><span class="record-vinyl" data-name="Warren Zeiders" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_warren.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Warren Zeiders</span></span><span class="record-hint">BEKIJK DE ARTIEST ↗</span></button>
+          </li>
+        </ul>
+        <p id="gardenEmpty" hidden data-i18n="garden_empty">Geen artiest gevonden. Probeer een andere naam.</p>
+        <p class="artist-credits"><a href="bronnen.html" data-i18n="garden_credits">Bekijk de afbeeldingsbronnen en credits ↗</a></p>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: NOTITIES EN VERBINDINGEN ==================== -->
+      <section id="gardenNotes" class="garden-section connections-section" aria-labelledby="notes-title">
+        <header class="section-heading reveal">
+          <span class="eyebrow">03 / THE RESEARCH BOARD</span>
+          <h2 id="notes-title" data-i18n="garden_notes">Van één onderwerp naar het volgende</h2>
+          <p data-i18n="garden_notes_intro">Een nummer of artiest kan leiden naar muziekstijlen, cultuur, geschiedenis en invloeden. Open de notities om mijn onderzoeksvragen te ontdekken.</p>
+        </header>
+
+        <div class="pinboard">
+          <div class="pinboard-string" aria-hidden="true"></div>
+
+          <div class="garden-notes-grid">
+            <article class="garden-paper reveal">
+              <span class="paper-pin" aria-hidden="true"></span>
+              <span class="note-stamp">NOTITIE 001</span>
+              <h3 data-i18n="garden_styles">Muziek die verandert</h3>
+              <p data-i18n="garden_styles_text">Country is door de jaren heen veranderd: van traditionele country tot moderne nummers met invloeden van pop, rock en hiphop.</p>
+              <details>
+                <summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
+                <p data-i18n="garden_styles_question">Welke verschillen hoor ik tussen traditional country, bluegrass, countryrock en moderne country?</p>
+              </details>
+              <a href="#gardenArtists" data-i18n="garden_to_artists">Verbinding: mijn artiesten ↗</a>
+            </article>
+
+            <article class="garden-paper reveal">
+              <span class="paper-pin" aria-hidden="true"></span>
+              <span class="note-stamp">NOTITIE 002</span>
+              <h3 data-i18n="garden_culture">Muziek en cultuur</h3>
+              <p data-i18n="garden_culture_text">Texas, rodeo, cowboys en honky-tonk zijn onderwerpen die ik vanuit countrymuziek verder wil ontdekken.</p>
+              <details>
+                <summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
+                <p data-i18n="garden_culture_question">Hoe komen muziek en de cultuur van Texas samen bij de rodeo?</p>
+              </details>
+              <a href="#gardenRoots" data-i18n="garden_to_roots">Verbinding: de geschiedenis ↗</a>
+            </article>
+
+            <article class="garden-paper reveal">
+              <span class="paper-pin" aria-hidden="true"></span>
+              <span class="note-stamp">NOTITIE 003</span>
+              <h3 data-i18n="garden_history">Wortels en invloeden</h3>
+              <p data-i18n="garden_history_text">Folk, blues, gospel, rock, pop en hiphop zijn aanknopingspunten om de oorsprong en ontwikkeling van countrymuziek te onderzoeken.</p>
+              <details>
+                <summary data-i18n="garden_question">Vraag om verder te onderzoeken</summary>
+                <p data-i18n="garden_history_question">Welke verbindingen vind ik terug in mijn historische bronnen?</p>
+              </details>
+              <a href="bronnen.html" data-i18n="garden_to_sources">Verbinding: onderzoek en literatuur ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- ==================== MARK: BRONNEN ==================== -->
+      <section class="garden-section source-shelf" id="researchSources">
+        <header class="section-heading">
+          <span class="eyebrow">THE READING SHELF</span>
+          <h2>Mijn bronnenverzameling</h2>
+          <p>De tien startpunten van dit onderzoek. Sommige bronnen gebruik ik voor feiten, andere als inspiratie om verder te lezen.</p>
+        </header>
+
+        <div class="source-list">
+          <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer">Country Music Hall of Fame <span aria-hidden="true">↗</span></a>
+          <a href="https://plumrosepublishing.com/the-history-of-country-music/" target="_blank" rel="noopener noreferrer">Plum Rose Publishing <span aria-hidden="true">↗</span></a>
+          <a href="https://www.britannica.com/art/bluegrass-music" target="_blank" rel="noopener noreferrer">Britannica — Bluegrass <span aria-hidden="true">↗</span></a>
+          <a href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">PBS — Roots &amp; Branches <span aria-hidden="true">↗</span></a>
+          <a href="https://grizzlyrose.com/history-of-country-music/" target="_blank" rel="noopener noreferrer">Grizzly Rose <span aria-hidden="true">↗</span></a>
+          <a href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Tulane — Music Rising <span aria-hidden="true">↗</span></a>
+          <a href="https://midweekcrisis.medium.com/a-brief-history-of-country-music-ca72e8fff803" target="_blank" rel="noopener noreferrer">Midweek Crisis — A Brief History <span aria-hidden="true">↗</span></a>
+          <a href="https://www.musicnotes.com/blog/an-american-tradition-the-history-of-country-music-influences/" target="_blank" rel="noopener noreferrer">Musicnotes — Influences <span aria-hidden="true">↗</span></a>
+          <a href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer">Library of Congress — Timeline <span aria-hidden="true">↗</span></a>
+          <a href="https://www.okhistory.org/publications/enc/entry?entry=CO072" target="_blank" rel="noopener noreferrer">Oklahoma Historical Society <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+
+
+
+
+    <!-- ==================== MARK: FOOTER ==================== -->
+    <footer class="garden-footer">
+      <p>Garnet’s Ocean / Country Roots</p>
+      <a href="#gardenContent" data-i18n="garden_top">Terug naar het begin ↑</a>
+    </footer>
+
+
+
+
+
+    <!-- ==================== MARK: ARTIESTENDIALOOG ==================== -->
+    <dialog class="artist-dialog" id="artistDialog" aria-labelledby="artistDialogTitle">
+      <button type="button" class="dialog-close" id="artistDialogClose" aria-label="Sluiten">×</button>
+      <div class="dialog-grid">
+        <div class="dialog-image">
+          <img id="artistDialogImage" src="../resources/images/artist-dolly.jpg" alt="">
+        </div>
+
+        <div class="dialog-copy">
+          <p class="eyebrow">THE RECORD COLLECTION</p>
+          <h2 id="artistDialogTitle"></h2>
+          <p id="artistDialogText"></p>
+          <p class="dialog-label">MUZIEKSTIJL</p>
+          <div class="dialog-tags" id="artistDialogTags"></div>
+          <a href="bronnen.html">Bekijk mijn bronnen ↗</a>
+        </div>
       </div>
-    </section>
-  </main>
-
-
-
-
-
-  <!-- ==================== MARK: FOOTER ==================== -->
-  <footer class="garden-footer">
-    <p>Garnet’s Ocean / Country Roots</p>
-    <a href="#gardenContent"><span data-i18n="garden_top">Terug naar het begin</span></a>
-  </footer>
-</body>
+    </dialog>
+  </body>
 </html>
