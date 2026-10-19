@@ -300,12 +300,24 @@ De startpagina zelf is bewust overzichtelijk en rustig gehouden, zodat de versch
 
   *De uiteindelijke bronnenpagina.*
 
-### Retrospective
-![Retro1](readMeImages/Retro_1_1.png)
+### Retrospective 1
 
-![Retro2](readMeImages/Retro_1_2.png)
+| 1. Opwarmen | 2. Basisvormen |
+| :---: | :---: |
+| <img src="readMeImages/Retro_1_1.png" alt="Retro 1.1"> | <img src="readMeImages/Retro_1_2.png" alt="Retro 1.2"> |
 
-![Retro3](readMeImages/Retro_1_3.png)
+| 3. Piek en daltekening | 4. Metafoor |
+| :---: | :---: |
+| <img src="readMeImages/Retro_1_3.png" alt="Retro 1.1"> | <img src="readMeImages/Retro_1_4.png" alt="Retro 1.2"> |
+
+### Retrospective 2
+| 1. Opwarmen | 2. Variëren met lettertypes | 3. Iconen |
+| :---: | :---: | :---: |
+| ![Retro2_1](readMeImages/retro_2_1.jpg) | ![Retro2_2](readMeImages/retro_2_2.jpg) | ![Retro2_3](readMeImages/retro_2_3.jpg) |
+
+![Retro2_4](readMeImages/retro_2_4.jpg)
+
+![Retro2_5](readMeImages/retro_2_5.jpg)
 
 
 
