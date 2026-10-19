@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Y.M.C.A. — Lyrics</title>
+  <link rel="stylesheet" href="ymca.css">
+</head>
+<body>
+  <main class="lyrics">
+    <!-- MARK: LARGE -->
+    <!-- Grote opening van de songtekst. -->
+    <section class="large">
+      <div>
+        <h2>YOUNG</h2>
+        <h2>MAN</h2>
+        <p>there's no need<br>
+           to feel down<br>
+           pick yourself<br>
+           off the ground</p>
+      </div>
+    </section>
+    <!-- MARK: BUILD UP -->
+    <!-- De herhaling bouwt op van klein en licht naar groot en zwaar. -->
+    <section class="crescendo">
+      <div>
+        <p>YOUNG MAN</p>
+        <p>YOUNG MAN</p>
+        <p>YOUNG MAN</p>
+        <p>YOUNG MAN</p>
+        <p>YOUNG MAN</p>
+        <p>YOUNG MAN</p>
+      </div>
+    </section>
+    <!-- MARK: FADING AWAY -->
+    <!-- Losse letters, zodat elke letter een eigen positie en vervaging kan krijgen. -->
+    <section class="falling">
+      <p>there's no need<br>to feel</p>
+      <div>
+        <span data-letter="D">D</span>
+        <span data-letter="O">O</span>
+        <span data-letter="W">W</span>
+        <span data-letter="N">N</span>
+      </div>
+    </section>
+    <!-- MARK: RISING -->
+    <!-- GROUND loopt schuin omhoog. De pijl wordt in CSS gemaakt. -->
+    <section class="rising">
+      <p>pick yourself<br>off the</p>
+      <div>
+        <span>G</span>
+        <span>R</span>
+        <span>O</span>
+        <span>U</span>
+        <span>N</span>
+        <span>D</span>
+      </div>
+    </section>
+    <!-- MARK: REPEAT -->
+    <!-- Drie herhalingen van het refrein. -->
+    <section class="chorus">
+      <div>
+        <div>
+          <p>It's fun to stay at the</p>
+          <h2>Y.M.C.A.</h2>
+        </div>
+        <div>
+          <p>It's fun to stay at the</p>
+          <h2>Y.M.C.A.</h2>
+        </div>
+        <div>
+          <p>It's fun to stay at the</p>
+          <h2>Y.M.C.A.</h2>
+        </div>
+      </div>
+    </section>
+    <!-- MARK: EXPLOSION -->
+    <!-- De lege spans zijn alleen decoratie: de strepen rondom de woorden. -->
+    <section class="explosion">
+      <p>I said,</p>
+      <div>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <h2>YOUNG</h2>
+        <h2>MAN!</h2>
+      </div>
+    </section>
+    <!-- MARK: LAYERS -->
+    <!-- Dezelfde tekst meerdere keren, voor het effect van overlappende lagen. -->
+    <section class="layers">
+      <p>there's no need<br>to be unhappy</p>
+      <div>
+        <span>UNHAPPY</span>
+        <span>UNHAPPY</span>
+        <span>UNHAPPY</span>
+        <span>UNHAPPY</span>
+        <span>UNHAPPY</span>
+      </div>
+    </section>
+    <!-- MARK: MINIMALISTIC -->
+    <!-- Een rustig stukje met twee decoratieve lijnen. -->
+    <section class="minimal">
+      <div>
+        <div aria-hidden="true"></div>
+        <h2>YOUNG<br>MAN</h2>
+        <p>there's a place<br>you can go</p>
+        <div aria-hidden="true"></div>
+      </div>
+    </section>
+    <!-- MARK: WAVES -->
+    <!-- De tekst volgt de gebogen SVG-paden via textPath. -->
+    <section class="wave">
+      <svg viewBox="0 0 300 400"
+           role="img" aria-label="Wavy Y.M.C.A. typography">
+        <defs>
+          <path id="wave-top"
+                d="M 10 95 Q 80 35 150 90 T 290 90"/>
+          <path id="wave-bottom"
+                d="M 18 242 Q 85 268 150 242 T 282 242"/>
+        </defs>
+        <text>
+          <textPath href="#wave-top">
+            It's fun to stay at the
+          </textPath>
+        </text>
+        <path
+              d="M 18 158 Q 85 184 150 158 T 282 158"/>
+        <text>
+          <textPath href="#wave-bottom" textLength="255" lengthAdjust="spacingAndGlyphs">Y.M.C.A.</textPath>
+        </text>
+        <path
+              d="M 18 282 Q 85 308 150 282 T 282 282"/>
+      </svg>
+    </section>
+    <!-- MARK: BENDY ROAD -->
+    <!-- Een slingerende weg met een deel van de tekst erop. -->
+    <section class="road">
+      <h2>YOUNG MAN</h2>
+      <svg viewBox="0 0 300 400"
+           role="img" aria-label="Winding path with song lyrics">
+        <path
+          d="M 65 0 C 35 24, 24 28, 77 37 C 300 55, 304 79, 126 113 C -25 148, 5 185, 106 212 C 220 247, 60 289, 0 310 L 0 400 L 155 400 C 350 302, 340 255, 214 225 C 173 215, 233 158, 144 144 C 76 133, 318 107, 278 75 C 245 45, 26 42, 65 0 Z"/>
+        <text x="169" y="28">
+          there's no need
+        </text>
+        <text x="169" y="49">
+          to feel down
+        </text>
+        <text x="64" y="165">
+          pick yourself
+        </text>
+        <text x="64" y="184">
+          off the ground
+        </text>
+        <text x="132" y="278">
+          and find a place
+        </text>
+        <text x="132" y="297">
+          you can go
+        </text>
+      </svg>
+    </section>
+  </main>
+</body>
+</html>
