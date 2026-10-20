@@ -14,6 +14,7 @@
   const settings = {
     announcementDelay: 300,
     revealThreshold: 0.08,
+    timelineImagePath: '../resources/images/',
   };
 
 
@@ -29,6 +30,8 @@
     chooseEra: 'Kies {name}: {subtitle}',
     eventHint: 'Ontdek dit moment in de countrygeschiedenis',
     archive: 'ARCHIEF · {year}',
+    timelineVideoTitle: '{title} — YouTube-video',
+    timelineImageUnavailable: 'De afbeelding is niet beschikbaar.',
   };
 
   // Stabiele IDs bepalen de selectie; de volgorde bepaalt de plaats op de gitaar.
@@ -52,18 +55,21 @@
           year: '19e eeuw',
           title: 'Traditionele volksmuziek',
           icon: '♫',
+          media: { type: 'image', file: 'roots_1.jpg' },
           description: 'Europese ballades, Afro-Amerikaanse muziektradities en regionale vioolmuziek hielpen de basis van countrymuziek te vormen.',
         },
         {
           year: 'Jaren 1830',
           title: 'Banjotradities',
           icon: '♬',
+          media: { type: 'image', file: 'roots_2.jpg' },
           description: 'De banjo, met wortels in Afrikaanse instrumenten, kreeg een steeds prominentere plaats in de Amerikaanse populaire muziek.',
         },
         {
           year: 'Eind 19e eeuw',
           title: 'Snaargroepen op het platteland',
           icon: '♪',
+          media: { type: 'image', file: 'roots_3.png' },
           description: 'Regionale tradities van snaargroepen, vioolmuziek en volksmuziek bloeiden in het zuiden van de Verenigde Staten.',
         },
       ],
@@ -78,18 +84,21 @@
           year: '1973',
           title: 'Outlaw country',
           icon: '★',
+          media: { type: 'image', file: 'outlaw_1.jpg' },
           description: 'Willie Nelson en Waylon Jennings hielpen countrymuziek te vernieuwen met een onafhankelijkere aanpak.',
         },
         {
           year: '1974',
           title: 'Jolene',
           icon: '♫',
+          media: { type: 'image', file: 'outlaw_2.jpg' },
           description: 'Dolly Parton bracht een van haar meest geliefde en blijvende nummers uit.',
         },
         {
           year: '1980',
           title: 'Urban Cowboy',
           icon: '▣',
+          media: { type: 'image', file: 'outlaw_3.jpg' },
           description: 'De film Urban Cowboy hielp countrymuziek en de westerncultuur onder de aandacht van een breed publiek te brengen.',
         },
       ],
@@ -104,18 +113,21 @@
           year: '1925',
           title: 'Uitzendingen van de Grand Ole Opry',
           icon: '♬',
+          media: { type: 'image', file: 'radio_1.jpg' },
           description: 'Het radioprogramma dat later de Grand Ole Opry werd, begon in Nashville en bracht regionale muziek naar een groeiend publiek.',
         },
         {
           year: '1927',
           title: 'De Bristol Sessions',
           icon: '◉',
+          media: { type: 'image', file: 'radio_2.jpg' },
           description: 'The Carter Family en Jimmie Rodgers maakten belangrijke opnamen die de commerciële countrymuziek hielpen vormgeven.',
         },
         {
           year: '1935',
           title: 'Het tijdperk van de zingende cowboy',
           icon: '★',
+          media: { type: 'image', file: 'radio_3.jpg' },
           description: 'Gene Autry hielp de zingende cowboy populair te maken via films en muziekopnamen.',
         },
       ],
@@ -128,21 +140,24 @@
       events: [
         {
           year: '1990',
-          title: 'Friends in Low Places',
+          title: 'If Tomorrow Never Comes',
           icon: '♫',
+          media: { type: 'youtube', videoId: 'M9r0XxLsgic' },
           description: 'Garth Brooks hielp countrymuziek naar een enorm publiek in grote concertarena’s te brengen.',
         },
         {
-          year: '1997',
-          title: 'Come On Over',
+          year: '1994',
+          title: 'American Recordings',
           icon: '◉',
-          description: 'Shania Twain bracht een bijzonder succesvol album uit dat country en pop samenbracht.',
+          media: { type: 'image', file: 'superstars_2.jpg' },
+          description: 'Samen met hiphopproducent Rick Rubin brengt Johnny Cash de LP "American Recordings" uit. Het album kenmerkt zich door sobere arrangementen, de nog altijd indrukwekkende stem van Cash en een eclectische keuze aan nummers; critici bestempelen het als een mijlpaal.De daaropvolgende albums uit de "American Recordings"-reeks worden grote successen en herstellen de positie van Cash in de muziekindustrie die hij mede heeft vormgegeven.',        
         },
         {
-          year: '2006',
-          title: 'Het debuut van Taylor Swift',
+          year: '2005',
+          title: 'Before He Cheats',
           icon: '★',
-          description: 'Taylor Swift bracht haar eerste countryalbum uit, dat haar eigen naam droeg.',
+          media: { type: 'youtube', videoId: 'b3Kd15TVNCY' },
+          description: 'In “Before He Cheats” leert Carrie Underwood een ontrouwe geliefde een lesje. Als derde single van het album *Some Hearts* (2005) werd het nummer het eerste countrynummer in de geschiedenis waarvan meer dan twee miljoen digitale exemplaren werden verkocht. Het won bovendien twee Grammy Awards: een voor ‘Best Female Country Vocal Performance’ en een voor ‘Best Country Song’. Sinds de release is het door de RIAA vijfmaal met platina bekroond, met een verkoop van vijf miljoen exemplaren.',
         },
       ],
     },
@@ -156,19 +171,22 @@
           year: '1952',
           title: 'Jambalaya',
           icon: '♫',
+          media: { type: 'youtube', videoId: 'Mc_2sOWVTxI' },
           description: 'Hank Williams bracht Jambalaya (On the Bayou) uit, een blijvende countryklassieker.',
         },
         {
           year: '1957',
           title: 'Walkin’ After Midnight',
           icon: '◉',
+          media: { type: 'youtube', videoId: 'lgGI-HOQZBk' },
           description: 'Patsy Cline bereikte met Walkin’ After Midnight ook een publiek buiten de countrymuziek.',
         },
         {
-          year: '1961',
-          title: 'Crazy',
+          year: '1968',
+          title: 'Harper Valley, P.T.A.',
           icon: '♪',
-          description: 'Patsy Cline nam Crazy van Willie Nelson op. Het nummer groeide uit tot een countryklassieker.',
+          media: { type: 'youtube', videoId: 'aOZPBUu7Fro' },
+          description: 'Jeannie C. Riley neemt “Harper Valley, P.T.A.” ​​op, een van de zeven country-singles die de eerste plaats in de hitlijsten bereikten en door Tom T. Hall werden geschreven. De plaat verkoopt meer dan zes miljoen exemplaren als single, en Riley is de eerste vrouw die tegelijkertijd een nummer 1-hit heeft in zowel de pop- als de country-hitlijsten van Billboard.',
         },
       ],
     },
@@ -182,18 +200,21 @@
           year: '2013',
           title: 'Cruise',
           icon: '♫',
+          media: { type: 'youtube', videoId: '8PvebsWcpto' },
           description: 'Florida Georgia Line hielp de bro-country-stijl populair te maken.',
         },
         {
           year: '2018',
           title: 'Golden Hour',
           icon: '◉',
+          media: { type: 'youtube', videoId: 'maONL_HfI20' },
           description: 'Kacey Musgraves bracht Golden Hour uit, een album dat verschillende muziekgenres combineert.',
         },
         {
           year: '2024',
           title: 'Cowboy Carter',
           icon: '★',
+          media: { type: 'image', file: 'modern_3.png' },
           description: 'Beyoncé verkende op Cowboy Carter het erfgoed van countrymuziek en de grenzen tussen muziekgenres.',
         },
       ],
@@ -465,6 +486,54 @@
 
 
   /************************/
+
+
+
+
+
+  /********************************/
+  /* MARK: MEDIA IN DE TIJDLIJN */
+  /******************************/
+
+  function renderTimelineMedia(frame, videoLink, event) {
+    const media = event.media;
+    const isVideo = media.type === 'youtube';
+    frame.classList.toggle('is-video', isVideo);
+    videoLink.hidden = !isVideo;
+
+    if (isVideo) {
+      const player = createElement('iframe', 'history-video');
+      // Geen autoplay; de vorige speler verdwijnt bij een andere gebeurtenis.
+      player.src = `https://www.youtube-nocookie.com/embed/${media.videoId}?rel=0`;
+      player.title = format(labels.timelineVideoTitle, event);
+      player.loading = 'lazy';
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      player.allow = 'encrypted-media; picture-in-picture; fullscreen';
+      player.setAttribute('allowfullscreen', '');
+      frame.replaceChildren(player);
+      videoLink.href = `https://www.youtube.com/watch?v=${media.videoId}`;
+      return;
+    }
+
+    videoLink.removeAttribute('href');
+    const image = createElement('img', 'history-image');
+    image.src = `${settings.timelineImagePath}${media.file}`;
+    image.alt = event.title;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.addEventListener('error', () => {
+      // Een ontbrekend bestand mag de kaart of de gitaarbediening niet breken.
+      if (frame.contains(image)) {
+        frame.replaceChildren(createElement('p', 'history-media-message', labels.timelineImageUnavailable));
+      }
+    }, { once: true });
+    frame.replaceChildren(image);
+  }
+
+
+
+
+
   /* MARK: GITAARTIJDLIJN */
   /**********************/
 
@@ -480,7 +549,8 @@
     const fields = {
       era: find('#card-era'),
       heading: find('#card-heading'),
-      symbol: find('#archive-symbol'),
+      mediaFrame: find('#historyMediaFrame'),
+      mediaLink: find('#historyMediaLink'),
       archive: find('#archive-year'),
       year: find('#card-year'),
       title: find('#card-title'),
@@ -576,7 +646,7 @@
       const current = selectedEra.events[selectedEvent];
       fields.era.textContent = selectedEra.name;
       fields.heading.textContent = selectedEra.heading;
-      fields.symbol.textContent = current.icon;
+      renderTimelineMedia(fields.mediaFrame, fields.mediaLink, current);
       fields.archive.textContent = format(labels.archive, current);
       fields.year.textContent = current.year;
       fields.title.textContent = current.title;
@@ -599,6 +669,93 @@
 
 
 
+  /********************************/
+  /* MARK: PAGINANAVIGATIE */
+  /******************************/
+
+  function initPageNavigation(page) {
+    const ticket = page.querySelector('#concertTicketNav');
+    const paper = page.querySelector('#ticketPaper');
+    const toggle = page.querySelector('#ticketToggle');
+    const backToTop = page.querySelector('#mobileBackToTop');
+    const trigger = page.querySelector('.garden-crossroads')
+      ?? page.querySelector('.garden-hero');
+    if (!ticket || !paper || !toggle || !backToTop) return;
+
+    // Houd deze grens gelijk aan de min-width-query van de ticketnavigatie.
+    const desktop = window.matchMedia('(min-width: 48.001rem)');
+    let framePending = false;
+
+    function setTicketOpen(open, restoreFocus = false) {
+      const expanded = open && desktop.matches && ticket.classList.contains('is-visible');
+      ticket.classList.toggle('is-open', expanded);
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.setAttribute('aria-label', expanded ? 'Sluit paginanavigatie' : 'Open paginanavigatie');
+      // Inert voorkomt tabben naar links op het ingeschoven papier.
+      paper.inert = !expanded;
+      paper.setAttribute('aria-hidden', String(!expanded));
+      if (restoreFocus) toggle.focus({ preventScroll: true });
+    }
+
+    function updateNavigation() {
+      framePending = false;
+      const passedTrigger = trigger
+        ? trigger.getBoundingClientRect().bottom < 0
+        : window.scrollY > window.innerHeight;
+      ticket.classList.toggle('is-visible', passedTrigger && desktop.matches);
+      backToTop.classList.toggle('is-visible', passedTrigger && !desktop.matches);
+      if (!passedTrigger || !desktop.matches) setTicketOpen(false);
+    }
+
+    function scheduleUpdate() {
+      if (framePending) return;
+      framePending = true;
+      window.requestAnimationFrame(updateNavigation);
+    }
+
+    toggle.addEventListener('click', () => {
+      setTicketOpen(!ticket.classList.contains('is-open'));
+    });
+
+    ticket.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        setTicketOpen(false);
+        // Verplaats ook de toetsenbordfocus naar de gekozen inhoud.
+        const destination = document.getElementById(link.hash.slice(1));
+        if (!destination) return;
+        if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
+        destination.focus({ preventScroll: true });
+      });
+    });
+
+    document.addEventListener('click', event => {
+      if (!ticket.contains(event.target)) setTicketOpen(false);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !ticket.classList.contains('is-open')) return;
+      event.preventDefault();
+      setTicketOpen(false, true);
+    });
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    desktop.addEventListener('change', () => {
+      setTicketOpen(false);
+      scheduleUpdate();
+    });
+
+    // Zonder JavaScript blijven de gewone inhoudslinks op de pagina beschikbaar.
+    ticket.hidden = false;
+    backToTop.hidden = false;
+    setTicketOpen(false);
+    updateNavigation();
+  }
+
+
+
+
+
   /************************/
   /* MARK: PAGINA STARTEN */
   /**********************/
@@ -606,6 +763,7 @@
   function initPage() {
     const page = document.querySelector('.story-page');
     if (!page) return;
+    initPageNavigation(page);
     initArtistSearch(page);
     initArtistDialog(page);
     initTimeline(page);

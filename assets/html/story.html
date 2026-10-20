@@ -51,7 +51,26 @@
       <!-- ==================== MARK: MIJN TUIN ==================== -->
       <header class="garden-hero" id="top">
         <div class="hero-copy reveal">
-          <h1 class="music-title"> Country<br>Roots <span class="music-title-notes" aria-hidden="true"><span class="music-title-note">♪</span><span class="music-title-note">♫</span><span class="music-title-note">♬</span><span class="music-title-note">♪</span><span class="music-title-note">♫</span><span class="music-title-note">♩</span></span></h1>
+          <!-- De extra lagen zijn uitsluitend decoratief en staan los van de titeltekst. -->
+          <div class="country-title-effect">
+            <h1 class="music-title">Country<br>Roots</h1>
+
+            <!-- Spotlights blijven binnen het titelvlak om horizontale overflow te voorkomen. -->
+            <span class="title-spotlights" aria-hidden="true">
+              <span class="title-spotlight spotlight-left"></span>
+              <span class="title-spotlight spotlight-right"></span>
+            </span>
+
+            <!-- De noten worden overgeslagen door schermlezers. -->
+            <span class="title-notes" aria-hidden="true">
+              <span class="title-note note-1">♪</span>
+              <span class="title-note note-2">♫</span>
+              <span class="title-note note-3">♬</span>
+              <span class="title-note note-4">♪</span>
+              <span class="title-note note-5">♫</span>
+              <span class="title-note note-6">♩</span>
+            </span>
+          </div>
           <h2 data-i18n="garden_subtitle">Waar verhalen muziek worden</h2>
           <p class="hero-intro" data-i18n="garden_intro">Van oude volksmelodieën en Afrikaanse muzikale tradities tot bluegrass, honky-tonk en moderne country. Ontdek de muzikale wortels van een genre dat voortdurend blijft groeien.</p>
           <a class="hero-cta" href="#gardenRoots"><span data-i18n="garden_explore">Ontdek de geschiedenis</span><span aria-hidden="true">↘</span></a>
@@ -192,10 +211,13 @@
             <article class="parchment" id="history-card" aria-live="polite" aria-atomic="true">
               <p class="paper-era" id="card-era">1920–1949</p>
               <h3 id="card-heading">RADIO EN PIONIERS</h3>
-              <div class="archive-art" aria-hidden="true">
-                <span id="archive-symbol">♬</span>
-                <small id="archive-year">ARCHIEF · 1925</small>
-              </div>
+              <figure class="history-media">
+                <div class="history-media-frame" id="historyMediaFrame">
+                  <img class="history-image" src="../resources/images/radio_1.jpg" alt="Uitzendingen van de Grand Ole Opry" loading="lazy" decoding="async">
+                </div>
+                <figcaption id="archive-year">ARCHIEF · 1925</figcaption>
+              </figure>
+              <a class="history-media-link" id="historyMediaLink" target="_blank" rel="noopener noreferrer" hidden>Bekijk op YouTube ↗</a>
               <p class="event-year" id="card-year">1925</p>
               <h4 id="card-title">Uitzendingen van de Grand Ole Opry</h4>
               <p class="event-description" id="card-description">Het radioprogramma dat later de Grand Ole Opry werd, begon in Nashville en bracht regionale muziek naar een groeiend publiek.</p>
@@ -481,5 +503,38 @@
         </div>
       </div>
     </dialog>
+
+
+
+
+
+
+    <!-- ==================== MARK: PAGINANAVIGATIE ==================== -->
+    <!-- Vaste positionering is hier bedoeld voor navigatie tijdens het scrollen. -->
+    <nav class="concert-ticket-nav" id="concertTicketNav" aria-label="Navigatie binnen Country Roots" hidden>
+      <div class="ticket-paper" id="ticketPaper" inert aria-hidden="true">
+        <div class="ticket-heading">
+          <span>✦ ADMIT ONE ✦</span>
+          <h2>Country Roots</h2>
+          <p>YOUR BACKSTAGE PASS</p>
+        </div>
+
+        <div class="ticket-destinations">
+          <a href="#gardenContent">01 / Introductie</a>
+          <a href="#gardenRoots">02 / Geschiedenis</a>
+          <a href="#musicalRoots">03 / Muzikale wortels</a>
+          <a href="#gardenStyles">04 / Muziekstijlen</a>
+          <a href="#gardenArtists">05 / Artiesten</a>
+          <a href="#researchSources">06 / Bronnen</a>
+        </div>
+
+        <a href="#gardenContent" class="ticket-top-link">↑ Terug naar boven</a>
+        <span class="ticket-serial">TICKET NO. 001284</span>
+      </div>
+
+      <button class="ticket-handle" id="ticketToggle" type="button" aria-expanded="false" aria-controls="ticketPaper" aria-label="Open paginanavigatie">✦ NAVIGATIE ✦</button>
+    </nav>
+
+    <a href="#gardenContent" class="mobile-back-to-top" id="mobileBackToTop" aria-label="Terug naar boven" title="Terug naar boven" hidden>↑</a>
   </body>
 </html>
