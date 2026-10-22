@@ -104,6 +104,138 @@ const imageSources = [
     "url": "https://en.wikipedia.org/wiki/Warren_Zeiders",
     "titleKey": "sources_image_8_title",
     "categoryKey": "sources_category_2"
+  },
+  {
+    "title": "Johnny Cash — American Recordings",
+    "filename": "superstars_2.jpg",
+    "filepath": "../resources/images/superstars_2.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Wikipedia — American Recordings",
+    "secondaryCredit": null,
+    "url": "https://en.wikipedia.org/wiki/American_Recordings_(album)",
+    "titleKey": "sources_timeline_superstars_2_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "cover"
+  },
+  {
+    "title": "Beyoncé — Cowboy Carter",
+    "filename": "modern_3.png",
+    "filepath": "../resources/images/modern_3.png",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Wikipedia — Cowboy Carter",
+    "secondaryCredit": null,
+    "url": "https://en.wikipedia.org/wiki/Cowboy_Carter",
+    "titleKey": "sources_timeline_modern_3_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "cover"
+  },
+  {
+    "title": "De zingende cowboy — filmafbeelding",
+    "filename": "radio_3.jpg",
+    "filepath": "../resources/images/radio_3.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "IMDb",
+    "secondaryCredit": null,
+    "url": "https://www.imdb.com/title/tt0045305/",
+    "titleKey": "sources_timeline_radio_3_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "The Carter Family",
+    "filename": "radio_2.jpg",
+    "filepath": "../resources/images/radio_2.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Country Music Hall of Fame and Museum",
+    "secondaryCredit": null,
+    "url": "https://www.countrymusichalloffame.org/hall-of-fame/carter-family",
+    "titleKey": "sources_timeline_radio_2_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Grand Ole Opry",
+    "filename": "radio_1.jpg",
+    "filepath": "../resources/images/radio_1.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Grand Ole Opry",
+    "secondaryCredit": null,
+    "url": "https://www.opry.com/about/history",
+    "titleKey": "sources_timeline_radio_1_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Urban Cowboy",
+    "filename": "outlaw_3.jpg",
+    "filepath": "../resources/images/outlaw_3.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "IMDb",
+    "secondaryCredit": null,
+    "url": "https://www.imdb.com/title/tt0081696/",
+    "titleKey": "sources_timeline_outlaw_3_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Dolly Parton — Jolene",
+    "filename": "outlaw_2.jpg",
+    "filepath": "../resources/images/outlaw_2.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Oluwaseyi Davies",
+    "secondaryCredit": null,
+    "url": null,
+    "titleKey": "sources_timeline_outlaw_2_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Waylon & Willie",
+    "filename": "outlaw_1.jpg",
+    "filepath": "../resources/images/outlaw_1.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Wikipedia — Waylon & Willie",
+    "secondaryCredit": null,
+    "url": "https://en.wikipedia.org/wiki/Waylon_%26_Willie",
+    "titleKey": "sources_timeline_outlaw_1_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "cover"
+  },
+  {
+    "title": "Snaargroepen op het platteland",
+    "filename": "roots_3.png",
+    "filepath": "../resources/images/roots_3.png",
+    "category": "Tijdlijn",
+    "sourceAuthor": "NCpedia",
+    "secondaryCredit": null,
+    "url": "https://www.ncpedia.org/country-music",
+    "titleKey": "sources_timeline_roots_3_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Banjotradities",
+    "filename": "roots_2.jpg",
+    "filepath": "../resources/images/roots_2.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Wellcome Collection",
+    "secondaryCredit": null,
+    "url": "https://wellcomecollection.org/works/n3733yh6",
+    "titleKey": "sources_timeline_roots_2_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
+  },
+  {
+    "title": "Afro-Amerikaanse muzikale wortels",
+    "filename": "roots_1.jpg",
+    "filepath": "../resources/images/roots_1.jpg",
+    "category": "Tijdlijn",
+    "sourceAuthor": "Wood & Steel — Taylor Guitars",
+    "secondaryCredit": null,
+    "url": "https://woodandsteel.taylorguitars.com/issue/2021-issue-2/feature-story/deep-roots-the-national-museum-of-african-american-music/",
+    "titleKey": "sources_timeline_roots_1_title",
+    "categoryKey": "sources_category_timeline",
+    "mediaKind": "image"
   }
 ];
 
@@ -222,6 +354,75 @@ const researchSources = [
 
 // ==================== MARK: VERTALINGEN ====================
 
+/******************************/
+/* MARK: YOUTUBE-VIDEOBRONNEN */
+/****************************/
+
+// Alleen bronlinks; deze pagina laadt geen YouTube-spelers of thumbnails.
+// De artiest is afkomstig uit de tijdlijn, niet een veronderstelde uploader.
+const videoSources = [
+  {
+    "title": "If Tomorrow Never Comes",
+    "videoId": "M9r0XxLsgic",
+    "performer": "Garth Brooks",
+    "period": "1990–2009",
+    "periodKey": "story_era_superstars_name",
+    "url": "https://www.youtube.com/watch?v=M9r0XxLsgic"
+  },
+  {
+    "title": "Before He Cheats",
+    "videoId": "b3Kd15TVNCY",
+    "performer": "Carrie Underwood",
+    "period": "1990–2009",
+    "periodKey": "story_era_superstars_name",
+    "url": "https://www.youtube.com/watch?v=b3Kd15TVNCY"
+  },
+  {
+    "title": "Jambalaya",
+    "videoId": "Mc_2sOWVTxI",
+    "performer": "Hank Williams",
+    "period": "1950–1969",
+    "periodKey": "story_era_nashville_name",
+    "url": "https://www.youtube.com/watch?v=Mc_2sOWVTxI"
+  },
+  {
+    "title": "Walkin’ After Midnight",
+    "videoId": "lgGI-HOQZBk",
+    "performer": "Patsy Cline",
+    "period": "1950–1969",
+    "periodKey": "story_era_nashville_name",
+    "url": "https://www.youtube.com/watch?v=lgGI-HOQZBk"
+  },
+  {
+    "title": "Harper Valley, P.T.A.",
+    "videoId": "aOZPBUu7Fro",
+    "performer": "Jeannie C. Riley",
+    "period": "1950–1969",
+    "periodKey": "story_era_nashville_name",
+    "url": "https://www.youtube.com/watch?v=aOZPBUu7Fro"
+  },
+  {
+    "title": "Cruise",
+    "videoId": "8PvebsWcpto",
+    "performer": "Florida Georgia Line",
+    "period": "2010–heden",
+    "periodKey": "story_era_modern_name",
+    "url": "https://www.youtube.com/watch?v=8PvebsWcpto"
+  },
+  {
+    "title": "Tennessee Whiskey",
+    "videoId": "IBLruNfUqUs",
+    "performer": "Chris Stapleton",
+    "period": "2010–heden",
+    "periodKey": "story_era_modern_name",
+    "url": "https://www.youtube.com/watch?v=IBLruNfUqUs"
+  }
+];
+
+
+
+
+
 function translated(key, fallback) {
   return window.siteI18n ? window.siteI18n.t(key, fallback) : fallback;
 }
@@ -242,31 +443,21 @@ let resultTimer;
 // ==================== MARK: WISSELEN TUSSEN OVERZICHTEN ====================
 
 function switchView(view) {
-  const visualView = document.getElementById('visualView');
-  const researchView = document.getElementById('researchView');
-  const tabVisualBtn = document.getElementById('tabVisualBtn');
-  const tabResearchBtn = document.getElementById('tabResearchBtn');
-
-  if (view === 'visual') {
-    visualView.classList.remove('hidden');
-    researchView.classList.add('hidden');
-    tabVisualBtn.classList.toggle("tab-btn-active", true);
-    tabVisualBtn.classList.toggle("tab-btn-inactive", false);
-    tabVisualBtn.setAttribute("aria-pressed", "true");
-    tabResearchBtn.classList.toggle("tab-btn-active", false);
-    tabResearchBtn.classList.toggle("tab-btn-inactive", true);
-    tabResearchBtn.setAttribute("aria-pressed", "false");
-  } else if (view === 'research') {
-    visualView.classList.add('hidden');
-    researchView.classList.remove('hidden');
-    tabVisualBtn.classList.toggle("tab-btn-active", false);
-    tabVisualBtn.classList.toggle("tab-btn-inactive", true);
-    tabVisualBtn.setAttribute("aria-pressed", "false");
-    tabResearchBtn.classList.toggle("tab-btn-active", true);
-    tabResearchBtn.classList.toggle("tab-btn-inactive", false);
-    tabResearchBtn.setAttribute("aria-pressed", "true");
-    renderResearchList(researchSources);
-  }
+  const views = [
+    ['visual', 'visualView', 'tabVisualBtn'],
+    ['research', 'researchView', 'tabResearchBtn'],
+    ['video', 'videoView', 'tabVideoBtn'],
+  ];
+  if (!views.some(([name]) => name === view)) return;
+  views.forEach(([name, sectionId, buttonId]) => {
+    const active = name === view;
+    const section = document.getElementById(sectionId);
+    const button = document.getElementById(buttonId);
+    section.classList.toggle('hidden', !active);
+    button.classList.toggle('tab-btn-active', active);
+    button.classList.toggle('tab-btn-inactive', !active);
+    button.setAttribute('aria-pressed', String(active));
+  });
 }
 
 
@@ -274,6 +465,16 @@ function switchView(view) {
 
 
 // ==================== MARK: FILTEREN EN ZOEKEN ====================
+
+function updateCategoryCounts() {
+  document.querySelectorAll('#filterContainer button[data-category]').forEach(button => {
+    const category = button.dataset.category;
+    const count = category === 'Alle' ? imageSources.length
+      : imageSources.filter(item => item.category === category).length;
+    const label = button.querySelector('.filter-count');
+    if (label) label.textContent = String(count);
+  });
+}
 
 function setCategory(category) {
   currentCategory = category;
@@ -290,7 +491,7 @@ function filterSources() {
   const query = document.querySelector("#searchInput").value.trim().toLowerCase();
   const filtered = imageSources.filter(item => {
     const matchesCat = currentCategory === "Alle" || item.category === currentCategory;
-    const matchesQuery = translated(item.titleKey, item.title).toLowerCase().includes(query) || item.title.toLowerCase().includes(query) || item.filename.toLowerCase().includes(query) || item.sourceAuthor.toLowerCase().includes(query);
+    const matchesQuery = translated(item.titleKey, item.title).toLowerCase().includes(query) || item.title.toLowerCase().includes(query) || item.filename.toLowerCase().includes(query) || item.sourceAuthor.toLowerCase().includes(query) || (item.secondaryCredit || "").toLowerCase().includes(query);
     return matchesCat && matchesQuery;
   });
   renderSourcesGrid(filtered);
@@ -322,10 +523,10 @@ function renderSourcesGrid(items) {
   }
 
   grid.innerHTML = items.map(item => `
-    <div class="parchment-bg source-card">
+    <div class="parchment-bg source-card" data-media-kind="${escapeHTML(item.mediaKind || 'image')}">
     <div>
       <div class="card-img-container">
-      <img src="${escapeHTML(item.filepath)}" alt="${escapeHTML(translated(item.titleKey, item.title))}">
+      <img loading="lazy" decoding="async" src="${escapeHTML(item.filepath)}" alt="${escapeHTML(translated(item.titleKey, item.title))}">
       <span class="category-badge">${escapeHTML(translated(item.categoryKey, item.category))}</span>
       </div>
       <div class="card-body">
@@ -343,7 +544,7 @@ function renderSourcesGrid(items) {
     </p>
     <div class="card-footer">
       ${item.url ? `
-      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" class="card-btn" aria-describedby="image-file-${imageSources.indexOf(item)} ${item.secondaryCredit ? `image-credit-${imageSources.indexOf(item)} ` : ''}image-context-${imageSources.indexOf(item)}">
+      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-${imageSources.indexOf(item)} ${item.secondaryCredit ? `image-credit-${imageSources.indexOf(item)} ` : ''}image-context-${imageSources.indexOf(item)}">
         <span>${escapeHTML(translated("sources_original", "Bekijk Originele Bron"))}</span>
         <span class="visually-hidden"> — ${escapeHTML(translated(item.titleKey, item.title))} — ${escapeHTML(translated("sources_source", "Bron:"))} ${escapeHTML(item.sourceAuthor)}</span>
         <span aria-hidden="true">↗</span>
@@ -377,7 +578,7 @@ function renderResearchList(items) {
     <p id="research-description-${researchSources.indexOf(item)}" class="research-description">${escapeHTML(translated(item.descriptionKey, item.description))}</p>
     <div class="research-source-footer">
       <span id="research-author-${researchSources.indexOf(item)}"><strong>${escapeHTML(translated("sources_author", "Auteur/Instituut:"))}</strong> ${escapeHTML(item.author)}</span>
-      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener" aria-describedby="research-description-${researchSources.indexOf(item)} research-author-${researchSources.indexOf(item)} research-context-${researchSources.indexOf(item)}">
+      <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-${researchSources.indexOf(item)} research-author-${researchSources.indexOf(item)} research-context-${researchSources.indexOf(item)}">
         ${escapeHTML(translated("sources_visit", "Bezoek Bron"))}
         <span class="visually-hidden"> — ${escapeHTML(translated(item.titleKey, item.title))}</span>
         <span aria-hidden="true">↗</span>
@@ -394,6 +595,40 @@ function renderResearchList(items) {
 
 // ==================== MARK: PAGINA STARTEN ====================
 
+/******************************/
+/* MARK: VIDEOBRONNEN TONEN */
+/****************************/
+
+function renderVideoList() {
+  const container = document.getElementById('videoList');
+  if (!container) return;
+  container.innerHTML = videoSources.map((item, index) => {
+    const period = translated(item.periodKey, item.period);
+    const context = translated('sources_video_context', 'Gebruikt in Story · {period}').replace('{period}', period);
+    return `
+      <article class="parchment-bg source-card">
+        <div class="research-source-heading">
+          <h3>${escapeHTML(item.title)}</h3>
+          <span class="category-badge">YouTube</span>
+        </div>
+        <p id="video-credit-${index}" class="research-description"><strong>${escapeHTML(translated('sources_video_performer', 'Artiest:'))}</strong> ${escapeHTML(item.performer)}</p>
+        <div class="research-source-footer">
+          <span>${escapeHTML(context)}</span>
+          <a href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-${index} video-context-${index}">
+            ${escapeHTML(translated('sources_video_open', 'Bekijk op YouTube'))}
+            <span class="visually-hidden"> — ${escapeHTML(item.performer)} — ${escapeHTML(item.title)}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <span id="video-context-${index}" class="visually-hidden">${escapeHTML(translated('sources_new_tab', 'Opent in een nieuw tabblad.'))}</span>
+        </div>
+      </article>`;
+  }).join('');
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // De knoppen gebruiken de functies hierboven, zonder onclick in de HTML.
   document.querySelector("#tabVisualBtn").addEventListener("click", () => {
@@ -404,6 +639,12 @@ document.addEventListener("DOMContentLoaded", () => {
     switchView("research");
   });
 
+  document.querySelector('#tabVideoBtn').addEventListener('click', () => {
+    switchView('video');
+  });
+
+  updateCategoryCounts();
+  renderVideoList();
   document.querySelectorAll("#filterContainer button[data-category]").forEach((button) => {
     button.addEventListener("click", () => {
       setCategory(button.dataset.category);
@@ -420,6 +661,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // Bij een andere taal worden de kaartjes opnieuw ingevuld.
 // Het zoekveld, de categorie en het gekozen overzicht blijven staan.
 document.addEventListener("languagechange", () => {
+  updateCategoryCounts();
+  renderVideoList();
   filterSources();
   renderResearchList(researchSources);
 });

@@ -1,115 +1,129 @@
 <!DOCTYPE html>
 <html lang="nl" data-theme="dark" data-translations-path="../../translations.json">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#190e08">
-    <title data-i18n="sources_page_title">Wilde Westen &amp; Country Bronnen Ledger</title>
-    <link rel="stylesheet" href="../resources/style/landing.css">
-    <link rel="stylesheet" href="../resources/style/navbar.css">
-    <link rel="stylesheet" href="../resources/style/bronnen.css">
-    <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
-    <link rel="stylesheet" href="../resources/style/language-changer.css">
-    <link rel="stylesheet" href="../resources/style/lightDark.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#190e08">
+  <title data-i18n="sources_page_title">Wilde Westen &amp; Country Bronnen Ledger</title>
+  <link rel="stylesheet" href="../resources/style/landing.css">
+  <link rel="stylesheet" href="../resources/style/navbar.css">
+  <link rel="stylesheet" href="../resources/style/bronnen.css">
+  <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
+  <link rel="stylesheet" href="../resources/style/language-changer.css">
+  <link rel="stylesheet" href="../resources/style/lightDark.css">
 </head>
 
 <body class="page-body">
-    <!-- Met Tab verschijnt deze link linksboven. -->
-    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a> 
+  <!-- Met Tab verschijnt deze link linksboven. -->
+  <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a> 
 
-    <!-- ==================== MARK: NAVIGATIE ==================== -->
-    <nav class="western-nav nav-margin">
-        <ul>
-            <li><a href="../html/landing.html" data-i18n="nav_home">Home</a></li>
-            <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" target="_blank" rel="noopener" data-i18n="nav_readme">Read Me</a></li>
-            <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
-            <li><a href="../html/bronnen.html" class="active" aria-current="page" data-i18n="nav_sources">Bronnen</a></li>
-            <li><a href="../html/privacy.html" data-i18n="nav_privacy">Privacy Beleid</a></li>
-            <li><a href="../typografie_opdr/ymca.html" data-i18n="nav_song">Song Opdracht</a></li>
-            <li class="nav-theme">
-                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Lichte modus" aria-pressed="false" hidden>
-                    <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
-                    <circle cx="12" cy="12" r="4"/>
-                    <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
-                    </svg>
-                    <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                    <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/>
-                    </svg>
-                </button>
-                </li>
-                <li class="nav-language">
-                <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">
-                    <span class="language-option language-nl" aria-hidden="true">NL</span>
-                    <span class="language-option language-eng" aria-hidden="true">ENG</span>
-                </button>
-            </li>
-        </ul>
-    </nav>
-
-
+  <!-- ==================== MARK: NAVIGATIE ==================== -->
+  <nav class="western-nav nav-margin">
+    <ul>
+      <li><a href="../html/landing.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" target="_blank" rel="noopener" data-i18n="nav_readme">Read Me</a></li>
+      <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
+      <li><a href="../html/bronnen.html" class="active" aria-current="page" data-i18n="nav_sources">Bronnen</a></li>
+      <li><a href="../html/privacy.html" data-i18n="nav_privacy">Privacy Beleid</a></li>
+      <li><a href="../typografie_opdr/ymca.html" data-i18n="nav_song">Song Opdracht</a></li>
+      <li class="nav-theme">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Lichte modus" aria-pressed="false" hidden>
+          <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+          </svg>
+          <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/>
+          </svg>
+        </button>
+        </li>
+        <li class="nav-language">
+        <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">
+          <span class="language-option language-nl" aria-hidden="true">NL</span>
+          <span class="language-option language-eng" aria-hidden="true">ENG</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
 
 
 
-    <!-- ==================== MARK: PAGINATITEL EN KNOPPEN ==================== -->
-    <header class="page-container header-margin text-center">
-        <div class="wooden-plank header-card">
-            <h1 data-i18n="sources_heading">BRONVERMELDINGEN</h1>
-            <div class="tab-container">
-                <button type="button" aria-controls="visualView" id="tabVisualBtn" class="tab-btn tab-btn-active" data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</button>
-                <button type="button" aria-controls="researchView" id="tabResearchBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_research">📚 Onderzoek &amp; Literatuur</button>
-            </div>
+
+
+  <!-- ==================== MARK: PAGINATITEL EN KNOPPEN ==================== -->
+  <header class="page-container header-margin text-center">
+    <div class="wooden-plank header-card">
+      <h1 data-i18n="sources_heading">BRONVERMELDINGEN</h1>
+      <div class="tab-container">
+        <button type="button" aria-controls="visualView" id="tabVisualBtn" class="tab-btn tab-btn-active" data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</button>
+        <button type="button" aria-controls="researchView" id="tabResearchBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_research">📚 Onderzoek &amp; Literatuur</button>
+        <button type="button" aria-controls="videoView" id="tabVideoBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_video">🎬 YouTube-video’s</button>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+  <!-- ==================== MARK: BRONNEN ==================== -->
+  <main id="mainContent" class="page-container" tabindex="-1">
+    <!-- MARK: AFBEELDINGSBRONNEN -->
+    <section id="visualView" class="view-section">
+      <h2 data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</h2>
+      <div class="parchment-bg filter-bar">
+        <!-- Het zoekveld krijgt een label zonder de indeling te veranderen. -->
+        <label for="searchInput" class="visually-hidden" data-i18n="sources_search_label">Zoek in afbeeldingsbronnen</label>
+        <input type="search" id="searchInput" placeholder="Zoek bestand, artiest, uitgever..." aria-describedby="sourcesSearchHelp" data-i18n-placeholder="sources_search" class="search-input">
+        <p id="sourcesSearchHelp" class="visually-hidden" data-i18n="sources_search_help">Typ een titel, bestandsnaam of uitgever. De afbeeldingen worden tijdens het typen gefilterd, binnen de gekozen categorie.</p>
+        <p id="sourcesFilterHelp" class="visually-hidden" data-i18n="sources_filter_help">Toon afbeeldingen uit deze categorie. Alle toont alle categorieën. Je zoekterm blijft van toepassing.</p>
+        <!-- De categoriewaaarden blijven hetzelfde bij het wisselen van taal -->
+        <div id="filterContainer" class="filter-group">
+          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Alle" class="filter-btn filter-btn-active"><span data-i18n="sources_filter_all">Alle</span> (<span class="filter-count">20</span>)</button>
+          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Artiesten" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_artists">Artiesten</span> (<span class="filter-count">5</span>)</button>
+          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Evenementen &amp; Posters" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_events">Evenementen</span> (<span class="filter-count">3</span>)</button>
+          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Landschap" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_landscape">Landschap</span> (<span class="filter-count">1</span>)</button>
+          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Tijdlijn" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_timeline">Tijdlijn</span> (<span class="filter-count">11</span>)</button>
         </div>
-    </header>
+      </div>
+      <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
+      <p id="sourcesResults" class="visually-hidden" role="status" aria-atomic="true"></p>
+      <div id="sourcesGrid" class="sources-grid"></div>
+    </section>
+
+    <!-- MARK: ONDERZOEK EN LITERATUUR -->
+    <section id="researchView" class="view-section hidden">
+      <div class="parchment-bg research-card">
+        <div class="research-header">
+        <h2 data-i18n="sources_research_heading">📚 Literatuur &amp; Historische Bronnen</h2>
+        <p class="research-subtitle" data-i18n="sources_research_subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
+        </div>
+        <div id="researchList" class="research-list"></div>
+      </div>
+    </section>
+
+
+    <!-- MARK: YOUTUBE-VIDEOBRONNEN -->
+    <section id="videoView" class="view-section hidden" aria-labelledby="videoSourcesTitle">
+      <div class="parchment-bg research-card">
+        <div class="research-header">
+          <h2 id="videoSourcesTitle" data-i18n="sources_video_heading">🎬 Videobronnen uit de Story-tijdlijn</h2>
+          <p class="research-subtitle" data-i18n="sources_video_intro">De YouTube-video’s die bij de gebeurtenissen op de Story-pagina worden gebruikt. Open de oorspronkelijke video via de bijbehorende link.</p>
+        </div>
+        <div id="videoList" class="research-list"></div>
+      </div>
+    </section>
+  </main>
 
 
 
 
- 
-    <!-- ==================== MARK: BRONNEN ==================== -->
-    <main id="mainContent" class="page-container" tabindex="-1">
-        <!-- MARK: AFBEELDINGSBRONNEN -->
-        <section id="visualView" class="view-section">
-            <h2 data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</h2>
-            <div class="parchment-bg filter-bar">
-                <!-- Het zoekveld krijgt een label zonder de indeling te veranderen. -->
-                <label for="search-input" class="visually-hidden" data-i18n="sources_search_label">Zoek in afbeeldingsbronnen</label>
-                <input type="text" id="searchInput" placeholder="Zoek bestand, artiest, uitgever..." aria-describedby="sourcesSearchHelp" data-i18n-placeholder="sources_search" class="search-input">
-                <p id="sourcesSearchHelp" class="visually-hidden" data-i18n="sources_search_help">Typ een titel, bestandsnaam of uitgever. De afbeeldingen worden tijdens het typen gefilterd, binnen de gekozen categorie.</p>
-                <p id="sourcesFilterHelp" class="visually-hidden" data-i18n="sources_filter_help">Toon afbeeldingen uit deze categorie. Alle toont alle categorieën. Je zoekterm blijft van toepassing.</p>
-                <!-- De categoriewaaarden blijven hetzelfde bij het wisselen van taal -->
-                <div id="filterContainer" class="filter-group">
-                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Alle" class="filter-btn filter-btn-active"><span data-i18n="sources_filter_all">Alle</span> (9)</button>
-                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Artiesten" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_artists">Artiesten</span> (5)</button>
-                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Evenementen &amp; Posters" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_events">Evenementen</span> (3)</button>
-                    <button type="button" aria-describedby="sourcesFilterHelp" data-category="Landschap" class="filter-btn filter-btn-inactive"><span data-i18n="sources_filter_landscape">Landschap</span> (1)</button>
-                </div>
-            </div>
-            <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
-            <p id="sourcesResults" class="visually-hidden" role="status" aria-atomic="true"></p>
-            <div id="sourcesGrid" class="sources-grid"></div>
-        </section>
-
-        <!-- MARK: ONDERZOEK EN LITERATUUR -->
-        <section id="researchView" class="view-section hidden">
-            <div class="parchment-bg research-card">
-                <div class="research-header">
-                <h2 data-i18n="sources_research_heading">📚 Literatuur &amp; Historische Bronnen</h2>
-                <p class="research-subtitle" data-i18n="sources_research_subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
-                </div>
-                <div id="researchList" class="research-list"></div>
-            </div>
-        </section>
-    </main>
-
-
-
-
-    
-    <!-- ==================== MARK: SCRIPTS ==================== -->
-    <script src="../js/bronnen.js" defer></script>
-    <script src="../js/custom-scrollbar.js" defer></script>
-    <script src="../js/navbar.js" defer></script>
-    <script src="../js/language-changer.js" defer></script>
-    <script src="../js/lightDark.js" defer></script>
+  
+  <!-- ==================== MARK: SCRIPTS ==================== -->
+  <script src="../js/bronnen.js" defer></script>
+  <script src="../js/custom-scrollbar.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/language-changer.js" defer></script>
+  <script src="../js/lightDark.js" defer></script>
 </body>
 </html>

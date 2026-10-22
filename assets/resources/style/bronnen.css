@@ -699,3 +699,30 @@ h3 {
     -webkit-text-fill-color: CanvasText;
   }
 }
+
+
+
+
+
+
+/******************************/
+/* MARK: AANVULLENDE MEDIA */
+/****************************/
+
+.source-card[data-media-kind="cover"] .card-img-container img {
+  object-fit: contain;
+}
+
+.card-filename {
+  overflow-wrap: anywhere;
+}
+
+.tab-container .tab-btn {
+  min-height: 2.75rem;
+}
+
+@media (min-width: 40rem) {
+  .tab-container {
+    grid-template-columns: repeat(3, minmax(0, max-content));
+  }
+}
