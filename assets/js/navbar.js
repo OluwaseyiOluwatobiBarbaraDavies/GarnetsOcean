@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const button = document.createElement('button');
   button.type = 'button';
   button.classList.add('guitar-menu-toggle');
-  button.setAttribute('aria-label', 'Menu');
+  function updateMenuLabel() {
+    button.setAttribute('aria-label', window.siteI18n?.t('a11y_navigation_menu', 'Navigatiemenu') ?? 'Navigatiemenu');
+  }
+  updateMenuLabel();
+  document.addEventListener('languagechange', updateMenuLabel);
   if (!list.id) list.id = 'mainNavigation';
   button.setAttribute('aria-controls', list.id);
 

@@ -6,12 +6,13 @@
     <meta name="author" content="Oluwaseyi Davies" />
     <meta name="theme-color" content="#190e08">
 
-    <title>Garnet's Ocean - Country Music Digital Garden</title>
+    <title data-i18n="a11y_landing_title">Garnet's Ocean - Country Music Digital Garden</title>
     <link rel="stylesheet" href="../resources/style/landing.css">
     <link rel="stylesheet" href="../resources/style/navbar.css">
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
     <link rel="stylesheet" href="../resources/style/language-changer.css">
     <link rel="stylesheet" href="../resources/style/lightDark.css">
+    <link rel="stylesheet" href="../resources/style/accessibility.css">
 
     <!-- Bron webring: "https://digitaaltuintje.nl/webring.js" -->
     <script
@@ -26,7 +27,7 @@
     <script src="../js/lightDark.js" defer></script>
   </head>
 
-  <body class="landing-page">
+  <body class="landing-page" id="landingPage">
     <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a>
     <!--
       De classes en id's worden ook gebruikt in de CSS en Javascript.
@@ -35,7 +36,7 @@
     -->
     
     <!-- ==================== MARK: NAVIGATIE ==================== -->
-    <nav>
+    <nav aria-label="Hoofdnavigatie" data-i18n-aria-label="a11y_main_navigation">
       <ul>
         <li><a href="../html/landing.html" class="active" aria-current="page" data-i18n="nav_home">Home</a></li>
         <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" data-i18n="nav_readme">Read Me</a></li>
@@ -65,7 +66,7 @@
 
     <!-- ==================== MARK: INTRO ==================== -->
     <header class="hero">
-      <h1 data-i18n="hero_title">Country Music</h1>
+      <h1 id="pageTitle" data-i18n="hero_title">Country Music</h1>
       <p class="subtitle" data-i18n="hero_subtitle">
         Dit is de model repository,
         <a href="https://github.com/CMDA/model" target="_blank" rel="noopener">fork deze repository op GitHub.</a>
@@ -73,7 +74,7 @@
     </header>
 
     <!-- ==================== MARK: INHOUD ==================== -->
-    <main id="mainContent" class="container" tabindex="-1">
+    <main aria-labelledby="pageTitle" id="mainContent" class="container" tabindex="-1">
       <!-- MARK: MIJN STARPUNT -->
       <article class="card">
         <h2 data-i18n="art1_title">Mijn startpunt</h2>
@@ -85,29 +86,42 @@
           <div class="gallery-container1">
             <div class="resp-item">
               <div class="gallery">
-                <a class="gallery-image-link" href="../resources/images/texasFlag.jpg"><img src="../resources/images/texasFlag.jpg" alt="Texas Flag"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
+                <a class="gallery-image-link" href="../resources/images/texasFlag.jpg"><img src="../resources/images/texasFlag.jpg" alt="De vlag van Texas in de wind." data-i18n-alt="a11y_alt_texas"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_texas_flag">De vlag van de staat Texas</div>
               </div>
             </div>
             
             <div class="resp-item">
               <div class="gallery">
-                <a class="gallery-image-link" href="../resources/images/rodeo.jpg"><img src="../resources/images/rodeo.jpg" alt="Rodeo Day"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
+                <a class="gallery-image-link" href="../resources/images/rodeo.jpg"><img src="../resources/images/rodeo.jpg" alt="Een ruiter tijdens een rodeowedstrijd." data-i18n-alt="a11y_alt_rodeo"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_rodeo_day">Rodeo Day in Houston, Texas</div>
               </div>
             </div>
 
             <div class="resp-item">
               <div class="gallery">
-                <a class="gallery-image-link" href="../resources/images/CountryDay.jpg"><img src="../resources/images/CountryDay.jpg" alt="Country Day"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
+                <a class="gallery-image-link" href="../resources/images/CountryDay.jpg"><img src="../resources/images/CountryDay.jpg" alt="Dansende bezoekers op een country-evenement." data-i18n-alt="a11y_alt_country_day"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_country_day">Country Day in Houston, Texas</div>
               </div>
             </div>
             
             <div class="resp-item main-poster">
               <div class="gallery">
-                <a class="gallery-image-link" href="../resources/images/FestivalPoster.jpg"><img src="../resources/images/FestivalPoster.jpg" alt="Festival Poster"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
+                <a class="gallery-image-link" href="../resources/images/FestivalPoster.jpg"><img src="../resources/images/FestivalPoster.jpg" alt="RodeoHouston-poster met de genreplanning van 4 tot en met 23 maart 2025. Het tekstprogramma staat onder de afbeelding." data-i18n-alt="a11y_alt_poster"><span class="visually-hidden" data-i18n="image_enlarge"> — Vergroot afbeelding</span></a>
                 <div class="desc" data-i18n="img_festival_poster">Festival Poster voor Rodeo Day in Houston, Texas</div>
+                <details class="poster-transcript">
+                  <summary data-i18n="a11y_poster_summary">Lees de genreplanning als tekst</summary>
+                  <p data-i18n="a11y_poster_intro">RodeoHouston 2025 — genreplanning, 4 tot en met 23 maart:</p>
+                  <ul>
+                    <li data-i18n="a11y_poster_country">Country: 4, 5, 8, 10, 13, 15, 17, 19, 20, 21, 22 en 23 maart.</li>
+                    <li data-i18n="a11y_poster_pop">Pop: 6 en 11 maart.</li>
+                    <li data-i18n="a11y_poster_rnb">R&amp;B/hiphop: 7 maart.</li>
+                    <li data-i18n="a11y_poster_mexican">Regional Mexican: 9 en 16 maart.</li>
+                    <li data-i18n="a11y_poster_christian">Christian: 12 maart.</li>
+                    <li data-i18n="a11y_poster_rock">Rock: 14 maart.</li>
+                    <li data-i18n="a11y_poster_wildcard">Wild Card: 18 maart.</li>
+                  </ul>
+                </details>
               </div>
             </div>
           </div> 
@@ -177,13 +191,13 @@
 
     <!-- ==================== MARK: VERGOTE AFBEELDING ==================== -->
     <!-- De browser regelt de focus binnen het geopende venster. -->
-    <dialog id="imageModal" class="modal" aria-labelledby="imageModalTitle">
+    <dialog id="imageModal" class="modal" aria-labelledby="imageModalTitle" aria-describedby="modalCaption">
       <h2 id="imageModalTitle" class="visually-hidden" data-i18n="image_title">Vergrote afbeelding</h2>
-      <button type="button" class="modal-close">
+      <button type="button" class="modal-close" autofocus>
         <span aria-hidden="true">X</span>
         <span class="visually-hidden" data-i18n="privacy_close">Sluiten</span>
       </button>
-      <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="Texas Flag">
+      <img src="../resources/images/texasFlag.jpg" class="modal-content" id="modalImg" alt="De vlag van Texas in de wind." data-i18n-alt="a11y_alt_texas">
       <p id="modalCaption" class="modal-caption"></p>
     </dialog>
 

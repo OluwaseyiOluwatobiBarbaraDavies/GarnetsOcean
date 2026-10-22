@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../resources/style/language-changer.css">
     <link rel="stylesheet" href="../resources/style/story.css">
     <link rel="stylesheet" href="../resources/style/lightDark.css">
+    <link rel="stylesheet" href="../resources/style/accessibility.css">
     <script src="../js/navbar.js" defer></script>
     <script src="../js/language-changer.js" defer></script>
     <script src="../js/story.js" defer></script>
@@ -61,7 +62,7 @@
         </li>
       </ul>
     </nav>
-    <main id="gardenContent" tabindex="-1">
+    <main id="gardenContent" tabindex="-1" aria-labelledby="storyPageTitle">
 
 
 
@@ -72,7 +73,7 @@
         <div class="hero-copy reveal">
           <!-- De extra lagen zijn uitsluitend decoratief en staan los van de titeltekst. -->
           <div class="country-title-effect">
-            <h1 class="music-title">Country<br>Roots</h1>
+            <h1 class="music-title" id="storyPageTitle">Country<br>Roots</h1>
 
             <!-- Spotlights blijven binnen het titelvlak om horizontale overflow te voorkomen. -->
             <span class="title-spotlights" aria-hidden="true">
@@ -95,7 +96,7 @@
           <a class="hero-cta" href="#gardenRoots"><span data-i18n="garden_explore">Ontdek de geschiedenis</span><span aria-hidden="true">↘</span></a>
         </div>
 
-        <div class="hero-scene reveal" aria-label="Sfeervolle verzameling van countrymuziek" data-i18n-aria-label="story_hero_scene">
+        <div class="hero-scene reveal" role="group" aria-label="Sfeervolle verzameling van countrymuziek" data-i18n-aria-label="story_hero_scene">
           <div class="hero-halo" aria-hidden="true"></div>
 
           <div class="hero-disc" aria-hidden="true">
@@ -171,12 +172,16 @@
 
       <!-- ==================== MARK: GITAARTIJDLIJN ==================== -->
       <!-- De begininhoud is leesbaar zonder JavaScript. story.js neemt de bediening over. -->
-      <section class="country-history" id="gardenRoots" aria-labelledby="history-title" data-initial-era="roots" lang="nl">
+      <section class="country-history" id="gardenRoots" aria-labelledby="history-title" data-initial-era="roots">
         <header class="section-heading reveal">
           <span class="eyebrow" data-i18n="story_history_kicker">02 / THE GUITAR OF TIME</span>
           <h2 id="history-title" data-i18n="story_history_title">Stem af op de geschiedenis</h2>
           <p data-i18n="story_history_intro">Draai aan de stemknoppen. Volg de snaren. Ontdek de verhalen.</p>
         </header>
+
+        <p class="story-interaction-help" id="timelineHelp" data-i18n="a11y_story_timeline_help">Kies een periode en een gebeurtenis met de knoppen. Lees daarna het geselecteerde verhaal. Enter of Spatie activeert een knop.</p>
+        <a class="story-read-link" href="#card-title" data-i18n="a11y_story_read_event">Lees het geselecteerde verhaal</a>
+        <p id="historyStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
 
         <div class="history-layout">
           <div class="guitar-stage reveal">
@@ -197,13 +202,13 @@
                   </div>
                 </div>
 
-                <div class="tuning-keys" id="tuning-keys" role="group" aria-label="Kies een historische periode" data-i18n-aria-label="story_era_group">
-                  <button class="tuner left active" type="button" aria-label="Kies 19e eeuw: Wortels" aria-pressed="true" aria-controls="history-card"><span class="key-label"><strong>19e eeuw</strong><small>Wortels</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner right" type="button" aria-label="Kies 1970–1989: Outlaw en pop" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1970–1989</strong><small>Outlaw en pop</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner left" type="button" aria-label="Kies 1920–1949: Radio en pioniers" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1920–1949</strong><small>Radio en pioniers</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner right" type="button" aria-label="Kies 1990–2009: Supersterren" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1990–2009</strong><small>Supersterren</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner left" type="button" aria-label="Kies 1950–1969: Nashville-sound" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1950–1969</strong><small>Nashville-sound</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner right" type="button" aria-label="Kies 2010–heden: Moderne country" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>2010–heden</strong><small>Moderne country</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                <div class="tuning-keys" id="tuning-keys" role="group" aria-describedby="timelineHelp" aria-label="Kies een historische periode" data-i18n-aria-label="story_era_group">
+                  <button class="tuner left active" type="button" aria-label="Kies 19e eeuw: Wortels" aria-pressed="true" aria-controls="history-card" disabled><span class="key-label"><strong>19e eeuw</strong><small>Wortels</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 1970–1989: Outlaw en pop" aria-pressed="false" aria-controls="history-card" disabled><span class="key-label"><strong>1970–1989</strong><small>Outlaw en pop</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left" type="button" aria-label="Kies 1920–1949: Radio en pioniers" aria-pressed="false" aria-controls="history-card" disabled><span class="key-label"><strong>1920–1949</strong><small>Radio en pioniers</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 1990–2009: Supersterren" aria-pressed="false" aria-controls="history-card" disabled><span class="key-label"><strong>1990–2009</strong><small>Supersterren</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left" type="button" aria-label="Kies 1950–1969: Nashville-sound" aria-pressed="false" aria-controls="history-card" disabled><span class="key-label"><strong>1950–1969</strong><small>Nashville-sound</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner right" type="button" aria-label="Kies 2010–heden: Moderne country" aria-pressed="false" aria-controls="history-card" disabled><span class="key-label"><strong>2010–heden</strong><small>Moderne country</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
                 </div>
               </div>
 
@@ -222,17 +227,17 @@
 
                 <div class="event-markers" id="event-markers">
                   <div class="timeline-event">
-                    <button class="event-marker active" type="button" aria-label="19e eeuw: Traditionele volksmuziek" aria-pressed="true" aria-controls="history-card">♫</button>
+                    <button class="event-marker active" type="button" aria-label="19e eeuw: Traditionele volksmuziek" aria-pressed="true" aria-controls="history-card" disabled>♫</button>
                     <div class="marker-label" aria-hidden="true"><strong>19e eeuw</strong>Traditionele volksmuziek</div>
                   </div>
 
                   <div class="timeline-event">
-                    <button class="event-marker" type="button" aria-label="Jaren 1830: Banjotradities" aria-pressed="false" aria-controls="history-card">♬</button>
+                    <button class="event-marker" type="button" aria-label="Jaren 1830: Banjotradities" aria-pressed="false" aria-controls="history-card" disabled>♬</button>
                     <div class="marker-label" aria-hidden="true"><strong>Jaren 1830</strong>Banjotradities</div>
                   </div>
 
                   <div class="timeline-event">
-                    <button class="event-marker" type="button" aria-label="Eind 19e eeuw: Snaargroepen op het platteland" aria-pressed="false" aria-controls="history-card">♪</button>
+                    <button class="event-marker" type="button" aria-label="Eind 19e eeuw: Snaargroepen op het platteland" aria-pressed="false" aria-controls="history-card" disabled>♪</button>
                     <div class="marker-label" aria-hidden="true"><strong>Eind 19e eeuw</strong>Snaargroepen op het platteland</div>
                   </div>
                 </div>
@@ -249,7 +254,7 @@
             </div>
           </div>
           <aside class="history-details reveal">
-            <article class="parchment" id="history-card" aria-live="polite" aria-atomic="true">
+            <article class="parchment" id="history-card" aria-labelledby="card-title">
               <p class="paper-era" id="card-era">19e eeuw</p>
               <h3 id="card-heading">FOLK EN DE MUZIKALE WORTELS</h3>
               <figure class="history-media">
@@ -258,9 +263,9 @@
                 </div>
                 <figcaption id="archive-year">ARCHIEF · 19e eeuw</figcaption>
               </figure>
-              <a class="history-media-link" id="historyMediaLink" target="_blank" rel="noopener noreferrer" hidden>Bekijk op YouTube ↗</a>
+              <a class="history-media-link" id="historyMediaLink" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" hidden>Bekijk op YouTube ↗</a>
               <p class="event-year" id="card-year">19e eeuw</p>
-              <h4 id="card-title">Traditionele volksmuziek</h4>
+              <h4 id="card-title" tabindex="-1">Traditionele volksmuziek</h4>
               <p class="event-description" id="card-description">De wortels van Country muziek liggen in verschillende muzikale tradities. Europese immigranten brachten volksliederen en ballades mee, terwijl Afro-Amerikaanse gemeenschappen blues, ritmes en zangtechnieken ontwiikkelden. Deze invloeden kwamen samen in het zuiden van de Verenigde Staten en vormden de basis voor Country muziek.</p>
               <a class="history-source" href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Historische bron: Tulane — Music Rising ↗</a>
               <div class="paper-flourish" aria-hidden="true">
@@ -269,15 +274,15 @@
             </article>
             <p class="other-heading" data-i18n="story_more_events">✦ MEER VERHALEN UIT DEZE PERIODE ✦</p>
             <div class="event-shortcuts" id="event-shortcuts" role="group" aria-label="Gebeurtenissen" data-i18n-aria-label="story_events_group">
-              <button class="active" type="button" aria-pressed="true" aria-controls="history-card">
+              <button disabled class="active" type="button" aria-pressed="true" aria-controls="history-card">
                 <strong>19e eeuw · Traditionele volksmuziek</strong>
                 <small>Ontdek dit moment in de countrygeschiedenis</small>
               </button>
-              <button type="button" aria-pressed="false" aria-controls="history-card">
+              <button disabled type="button" aria-pressed="false" aria-controls="history-card">
                 <strong>Jaren 1830 · Banjotradities</strong>
                 <small>Ontdek dit moment in de countrygeschiedenis</small>
               </button>
-              <button type="button" aria-pressed="false" aria-controls="history-card">
+              <button disabled type="button" aria-pressed="false" aria-controls="history-card">
                 <strong>Eind 19e eeuw · Snaargroepen op het platteland</strong>
                 <small>Ontdek dit moment in de countrygeschiedenis</small>
               </button>
@@ -308,11 +313,13 @@
         </div>
 
         <!-- De onderdelen zijn een visuele metafoor voor muzikale invloeden. -->
+        <p id="violinHelp" class="story-interaction-help" data-i18n="a11y_story_violin_help">Vink de checkbox aan om de onderdelen en de vijf onderwerpknoppen te tonen. Met Spatie wijzig je de checkbox; met Tab ga je naar de knoppen.</p>
+        <p id="violinStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
         <div class="violin-explorer" data-violin>
           <div class="violin-workbench">
             <div class="violin-toolbar">
               <p class="eyebrow" data-i18n="story_violin_kicker">VIJF WORTELS / ÉÉN GELUID</p>
-              <input class="violin-toggle" id="violinExploded" type="checkbox" aria-controls="violinDrawing" aria-label="Onderdelen uit elkaar halen" data-i18n-aria-label="story_violin_toggle_label">
+              <input class="violin-toggle" id="violinExploded" type="checkbox" aria-controls="violinDrawing violinTopics" aria-describedby="violinHelp" aria-label="Onderdelen uit elkaar halen" data-i18n-aria-label="story_violin_toggle_label">
               <label class="violin-toggle-label" for="violinExploded">
                 <span class="violin-open-label" data-i18n="story_violin_explode">Onderdelen uit elkaar halen ↗</span>
                 <span class="violin-close-label" data-i18n="story_violin_assemble">Viool samenvoegen ↙</span>
@@ -378,12 +385,12 @@
                 </g>
               </svg>
 
-              <div class="violin-topics" role="group" aria-label="Ontdek de muzikale wortels via de viool" data-i18n-aria-label="story_artist_open_de_muzikale_wortels_via_de_viool">
-                <button class="violin-topic topic-folk" type="button" data-violin-topic="folk" aria-controls="violin-folk" aria-pressed="true"><span data-i18n="story_violin_folk_part">01 / HALS &amp; KRUL</span><strong data-i18n="story_violin_folk_label">Ballades &amp; folk</strong></button>
-                <button class="violin-topic topic-fiddle" type="button" data-violin-topic="fiddle" aria-controls="violin-fiddle" aria-pressed="false"><span data-i18n="story_violin_fiddle_part">02 / SNAREN &amp; BRUG</span><strong data-i18n="story_violin_fiddle_label">Banjo &amp; fiddle</strong></button>
-                <button class="violin-topic topic-blues" type="button" data-violin-topic="blues" aria-controls="violin-blues" aria-pressed="false"><span data-i18n="story_violin_blues_part">03 / BOVENBLAD</span><strong data-i18n="story_violin_blues_label">Blues</strong></button>
-                <button class="violin-topic topic-gospel" type="button" data-violin-topic="gospel" aria-controls="violin-gospel" aria-pressed="false"><span data-i18n="story_violin_gospel_part">04 / ACHTERBLAD</span><strong data-i18n="story_violin_gospel_label">Gospel</strong></button>
-                <button class="violin-topic topic-border" type="button" data-violin-topic="border" aria-controls="violin-border" aria-pressed="false"><span data-i18n="story_violin_border_part">05 / STRIJKSTOK</span><strong data-i18n="story_violin_border_label">Grensgebieden</strong></button>
+              <div class="violin-topics" id="violinTopics" role="group" aria-label="Ontdek de muzikale wortels via de viool" data-i18n-aria-label="story_artist_open_de_muzikale_wortels_via_de_viool">
+                <button class="violin-topic topic-folk" type="button" data-violin-topic="folk" aria-controls="violin-folk" aria-pressed="true" disabled><span data-i18n="story_violin_folk_part">01 / HALS &amp; KRUL</span><strong data-i18n="story_violin_folk_label">Ballades &amp; folk</strong></button>
+                <button class="violin-topic topic-fiddle" type="button" data-violin-topic="fiddle" aria-controls="violin-fiddle" aria-pressed="false" disabled><span data-i18n="story_violin_fiddle_part">02 / SNAREN &amp; BRUG</span><strong data-i18n="story_violin_fiddle_label">Banjo &amp; fiddle</strong></button>
+                <button class="violin-topic topic-blues" type="button" data-violin-topic="blues" aria-controls="violin-blues" aria-pressed="false" disabled><span data-i18n="story_violin_blues_part">03 / BOVENBLAD</span><strong data-i18n="story_violin_blues_label">Blues</strong></button>
+                <button class="violin-topic topic-gospel" type="button" data-violin-topic="gospel" aria-controls="violin-gospel" aria-pressed="false" disabled><span data-i18n="story_violin_gospel_part">04 / ACHTERBLAD</span><strong data-i18n="story_violin_gospel_label">Gospel</strong></button>
+                <button class="violin-topic topic-border" type="button" data-violin-topic="border" aria-controls="violin-border" aria-pressed="false" disabled><span data-i18n="story_violin_border_part">05 / STRIJKSTOK</span><strong data-i18n="story_violin_border_label">Grensgebieden</strong></button>
               </div>
             </div>
             <p class="violin-caption" data-i18n="story_violin_caption">Elk onderdeel opent een verhaal. Samen vormen de invloeden één geluid.</p>
@@ -447,19 +454,41 @@
           <p data-i18n="story_styles_intro">Vergelijk hoe instrumenten, ritme en productie door de tijd veranderden. Selecteer een stijl voor het verhaal erachter.</p>
         </header>
 
-        <div class="style-grid" id="style-grid">
-          <button class="style-card" data-style="0" aria-pressed="true" type="button"><span>01</span><strong data-i18n="story_style_bluegrass_title">Bluegrass</strong><small data-i18n="story_style_bluegrass_subtitle">Snelle akoestische snaren</small></button>
-          <button class="style-card" data-style="1" aria-pressed="false" type="button"><span>02</span><strong data-i18n="story_style_western_title">Western swing</strong><small data-i18n="story_style_western_subtitle">Country ontmoet jazz</small></button>
-          <button class="style-card" data-style="2" aria-pressed="false" type="button"><span>03</span><strong data-i18n="story_style_honkytonk_title">Honky-tonk</strong><small data-i18n="story_style_honkytonk_subtitle">Danszalen en levensverhalen</small></button>
-          <button class="style-card" data-style="3" aria-pressed="false" type="button"><span>04</span><strong data-i18n="story_style_nashville_title">Nashville Sound</strong><small data-i18n="story_style_nashville_subtitle">Een gepolijste productie</small></button>
+        <p id="styleStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
+        <a id="styleReadLink" class="story-read-link" href="#style-title" data-i18n="a11y_story_read_style">Lees de geselecteerde muziekstijl</a>
+        <div class="style-grid" id="style-grid" role="group" aria-labelledby="styles-title">
+          <button class="style-card" data-style="0" aria-pressed="true" type="button" disabled><span>01</span><strong data-i18n="story_style_bluegrass_title">Bluegrass</strong><small data-i18n="story_style_bluegrass_subtitle">Snelle akoestische snaren</small></button>
+          <button class="style-card" data-style="1" aria-pressed="false" type="button" disabled><span>02</span><strong data-i18n="story_style_western_title">Western swing</strong><small data-i18n="story_style_western_subtitle">Country ontmoet jazz</small></button>
+          <button class="style-card" data-style="2" aria-pressed="false" type="button" disabled><span>03</span><strong data-i18n="story_style_honkytonk_title">Honky-tonk</strong><small data-i18n="story_style_honkytonk_subtitle">Danszalen en levensverhalen</small></button>
+          <button class="style-card" data-style="3" aria-pressed="false" type="button" disabled><span>04</span><strong data-i18n="story_style_nashville_title">Nashville Sound</strong><small data-i18n="story_style_nashville_subtitle">Een gepolijste productie</small></button>
         </div>
 
-        <article class="style-detail reveal" id="style-detail" aria-live="polite">
+        <article class="style-detail reveal" id="style-detail" data-style-panel="0" aria-labelledby="style-title">
           <span class="research-stamp" data-i18n="story_style_stamp">STIJL / 01</span>
-          <h3 id="style-title" data-i18n="story_style_bluegrass_title">Bluegrass</h3>
+          <h3 id="style-title" tabindex="-1" data-i18n="story_style_bluegrass_title">Bluegrass</h3>
           <p id="style-description" data-i18n="story_style_bluegrass_description">Bluegrass kreeg in de jaren 1940 vorm rond Bill Monroe en zijn Blue Grass Boys. Banjo, mandoline, fiddle, gitaar en contrabas zorgen voor een herkenbaar akoestisch geluid.</p>
           <p id="style-listen" class="research-connection" data-i18n="story_style_bluegrass_listen">Luister naar: snelle instrumentale solo's en samenzang.</p>
           <a id="style-source" href="https://www.britannica.com/art/bluegrass-music" target="_blank" rel="noopener noreferrer" data-i18n="story_read_source">Lees de bron ↗</a>
+        </article>
+        <article class="style-detail" id="style-western" data-style-panel="1" aria-labelledby="style-western-title">
+          <h3 id="style-western-title" tabindex="-1" data-i18n="story_style_western_title">Western swing</h3>
+          <p data-i18n="story_style_western_description">Western swing brengt country samen met jazz en andere dansmuziek. Het ritme en het samenspel geven de muziek een swingend karakter.</p>
+          <p class="research-connection" data-i18n="story_style_western_listen">Luister naar: het dansritme en de afwisseling tussen instrumenten.</p>
+          <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer" data-i18n="story_read_source">Lees de bron ↗</a>
+        </article>
+
+        <article class="style-detail" id="style-honkytonk" data-style-panel="2" aria-labelledby="style-honkytonk-title">
+          <h3 id="style-honkytonk-title" tabindex="-1" data-i18n="story_style_honkytonk_title">Honky-tonk</h3>
+          <p data-i18n="story_style_honkytonk_description">Honky-tonk is verbonden met danszalen, bars en verhalen over het dagelijks leven. De zang en het herkenbare ritme geven deze country een directe uitstraling.</p>
+          <p class="research-connection" data-i18n="story_style_honkytonk_listen">Luister naar: het vaste ritme en de verhalende zang.</p>
+          <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer" data-i18n="story_read_source">Lees de bron ↗</a>
+        </article>
+
+        <article class="style-detail" id="style-nashville" data-style-panel="3" aria-labelledby="style-nashville-title">
+          <h3 id="style-nashville-title" tabindex="-1" data-i18n="story_style_nashville_title">Nashville Sound</h3>
+          <p data-i18n="story_style_nashville_description">De Nashville Sound legt de nadruk op een gepolijste productie en een toegankelijke zangstijl. Country en popinvloeden komen samen in het geluid van de opname.</p>
+          <p class="research-connection" data-i18n="story_style_nashville_listen">Luister naar: de zang, begeleiding en verzorgde productie.</p>
+          <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer" data-i18n="story_read_source">Lees de bron ↗</a>
         </article>
       </section>
 
@@ -529,21 +558,22 @@
         <p class="garden-help" role="status" aria-atomic="true" id="gardenResults"></p>
         <ul id="gardenArtistList" class="garden-artists">
           <li data-artist="dolly">
-            <button class="record-card" type="button" data-artist-open="Dolly Parton" aria-label="Ontdek Dolly Parton" data-i18n-aria-label="story_artist_open_dolly_parton"><span class="record-vinyl" data-name="Dolly Parton" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist-dolly.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Dolly Parton</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
+            <button class="record-card" type="button" data-artist-open="Dolly Parton" aria-label="Ontdek Dolly Parton" data-i18n-aria-label="story_artist_open_dolly_parton" disabled aria-haspopup="dialog" aria-controls="artistDialog"><span class="record-vinyl" data-name="Dolly Parton" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist-dolly.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Dolly Parton</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
           </li>
           <li data-artist="don">
-            <button class="record-card" type="button" data-artist-open="Don Williams" aria-label="Ontdek Don Williams" data-i18n-aria-label="story_artist_open_don_williams"><span class="record-vinyl" data-name="Don Williams" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_don.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Don Williams</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
+            <button class="record-card" type="button" data-artist-open="Don Williams" aria-label="Ontdek Don Williams" data-i18n-aria-label="story_artist_open_don_williams" disabled aria-haspopup="dialog" aria-controls="artistDialog"><span class="record-vinyl" data-name="Don Williams" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_don.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Don Williams</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
           </li>
           <li data-artist="ella">
-            <button class="record-card" type="button" data-artist-open="Ella Langley" aria-label="Ontdek Ella Langley" data-i18n-aria-label="story_artist_open_ella_langley"><span class="record-vinyl" data-name="Ella Langley" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_ella.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Ella Langley</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
+            <button class="record-card" type="button" data-artist-open="Ella Langley" aria-label="Ontdek Ella Langley" data-i18n-aria-label="story_artist_open_ella_langley" disabled aria-haspopup="dialog" aria-controls="artistDialog"><span class="record-vinyl" data-name="Ella Langley" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_ella.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Ella Langley</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
           </li>
           <li data-artist="kameron">
-            <button class="record-card" type="button" data-artist-open="Kameron Marlowe" aria-label="Ontdek Kameron Marlowe" data-i18n-aria-label="story_artist_open_kameron_marlowe"><span class="record-vinyl" data-name="Kameron Marlowe" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_kameron.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Kameron Marlowe</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
+            <button class="record-card" type="button" data-artist-open="Kameron Marlowe" aria-label="Ontdek Kameron Marlowe" data-i18n-aria-label="story_artist_open_kameron_marlowe" disabled aria-haspopup="dialog" aria-controls="artistDialog"><span class="record-vinyl" data-name="Kameron Marlowe" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_kameron.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Kameron Marlowe</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
           </li>
           <li data-artist="warren">
-            <button class="record-card" type="button" data-artist-open="Warren Zeiders" aria-label="Ontdek Warren Zeiders" data-i18n-aria-label="story_artist_open_warren_zeiders"><span class="record-vinyl" data-name="Warren Zeiders" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_warren.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Warren Zeiders</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
+            <button class="record-card" type="button" data-artist-open="Warren Zeiders" aria-label="Ontdek Warren Zeiders" data-i18n-aria-label="story_artist_open_warren_zeiders" disabled aria-haspopup="dialog" aria-controls="artistDialog"><span class="record-vinyl" data-name="Warren Zeiders" aria-hidden="true"></span><span class="record-sleeve"><img src="../resources/images/artist_warren.jpg" alt="" loading="lazy" width="400" height="400"><span class="record-title">Warren Zeiders</span></span><span class="record-hint" data-i18n="story_record_hint">BEKIJK DE ARTIEST ↗</span></button>
           </li>
         </ul>
+        <noscript><div class="story-nojs-artists"><h3>Over de artiesten</h3><p><strong>Dolly Parton</strong> — Dolly Parton is een invloedrijke singer-songwriter binnen de countrymuziek. Ze staat bekend om haar verhalen, herkenbare stem en nummers als Jolene en Coat of Many Colors.</p><p><strong>Don Williams</strong> — Don Williams kreeg de bijnaam The Gentle Giant. Zijn warme stem en rustige, verhalende nummers maakten hem een geliefde countryartiest.</p><p><strong>Ella Langley</strong> — Ella Langley vertegenwoordigt een nieuwe generatie countryartiesten. Haar muziek combineert moderne country met een rauwe, persoonlijke vertelstijl.</p><p><strong>Kameron Marlowe</strong> — Kameron Marlowe is een hedendaagse countryzanger met een krachtige stem en invloeden uit countryrock en soul.</p><p><strong>Warren Zeiders</strong> — Warren Zeiders combineert moderne country met een ruiger rockgeluid en emotionele teksten.</p></div></noscript>
         <p id="gardenEmpty" hidden data-i18n="garden_empty">Geen artiest gevonden. Probeer een andere naam.</p>
         <p class="artist-credits"><a href="bronnen.html" data-i18n="garden_credits">Bekijk de afbeeldingsbronnen en credits ↗</a></p>
       </section>
@@ -619,8 +649,8 @@
 
 
     <!-- ==================== MARK: ARTIESTENDIALOOG ==================== -->
-    <dialog class="artist-dialog" id="artistDialog" aria-labelledby="artistDialogTitle">
-      <button type="button" class="dialog-close" id="artistDialogClose" aria-label="Sluiten" data-i18n-aria-label="story_artist_close">×</button>
+    <dialog class="artist-dialog" id="artistDialog" aria-labelledby="artistDialogTitle" aria-describedby="artistDialogText">
+      <button type="button" class="dialog-close" id="artistDialogClose" autofocus aria-label="Sluiten" data-i18n-aria-label="story_artist_close">×</button>
       <div class="dialog-grid">
         <div class="dialog-image">
           <img id="artistDialogImage" src="../resources/images/artist-dolly.jpg" alt="">
@@ -628,7 +658,7 @@
 
         <div class="dialog-copy">
           <p class="eyebrow" data-i18n="story_record_collection">THE RECORD COLLECTION</p>
-          <h2 id="artistDialogTitle"></h2>
+          <h2 id="artistDialogTitle">Artiest</h2>
           <p id="artistDialogText"></p>
           <p class="dialog-label" data-i18n="story_artist_style">MUZIEKSTIJL</p>
           <div class="dialog-tags" id="artistDialogTags"></div>
@@ -645,6 +675,7 @@
     <!-- ==================== MARK: PAGINANAVIGATIE ==================== -->
     <!-- Vaste positionering is hier bedoeld voor navigatie tijdens het scrollen. -->
     <nav class="concert-ticket-nav" id="concertTicketNav" aria-label="Navigatie binnen Country Roots" hidden data-i18n-aria-label="story_ticket_label">
+      <button class="ticket-handle" id="ticketToggle" type="button" aria-expanded="false" aria-controls="ticketPaper" aria-label="Open paginanavigatie" data-i18n-aria-label="story_ticket_open" data-i18n="story_ticket_handle">✦ NAVIGATIE ✦</button>
       <div class="ticket-paper" id="ticketPaper" inert aria-hidden="true">
         <div class="ticket-heading">
           <span>✦ ADMIT ONE ✦</span>
@@ -658,14 +689,14 @@
           <a href="#musicalRoots" data-i18n="story_ticket_roots">03 / Muzikale wortels</a>
           <a href="#gardenStyles" data-i18n="story_ticket_styles">04 / Muziekstijlen</a>
           <a href="#gardenArtists" data-i18n="story_ticket_artists">05 / Artiesten</a>
-          <a href="#researchSources" data-i18n="story_ticket_sources">06 / Bronnen</a>
+          <a href="bronnen.html" data-i18n="story_ticket_sources">06 / Bronnen</a>
         </div>
 
         <a href="#gardenContent" class="ticket-top-link" data-i18n="story_back_top_link">↑ Terug naar boven</a>
         <span class="ticket-serial">TICKET NO. 001284</span>
       </div>
 
-      <button class="ticket-handle" id="ticketToggle" type="button" aria-expanded="false" aria-controls="ticketPaper" aria-label="Open paginanavigatie" data-i18n-aria-label="story_ticket_open" data-i18n="story_ticket_handle">✦ NAVIGATIE ✦</button>
+
     </nav>
 
     <a href="#gardenContent" class="mobile-back-to-top" id="mobileBackToTop" aria-label="Terug naar boven" title="Terug naar boven" hidden data-i18n-aria-label="story_back_top" data-i18n-title="story_back_top">↑</a>

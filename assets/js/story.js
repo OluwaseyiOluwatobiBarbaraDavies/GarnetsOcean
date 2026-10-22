@@ -479,6 +479,12 @@
     const close = dialog.querySelector('#artistDialogClose');
     if (!title || !text || !imageContainer || !tags || !close) return;
 
+    let dialogOpener = null;
+    page.querySelectorAll('[data-artist-open]').forEach(button => { button.disabled = false; });
+    dialog.addEventListener('close', () => {
+      if (dialogOpener?.isConnected) dialogOpener.focus({ preventScroll: true });
+    });
+
     page.addEventListener('click', event => {
       const button = event.target.closest('[data-artist-open]');
       if (!button) return;
@@ -489,6 +495,7 @@
       const name = card?.querySelector('.record-title')?.textContent.trim();
       if (!info || !cardImage || !name) return;
 
+      dialogOpener = button;
       title.textContent = name;
       dialog.dataset.artist = card.dataset.artist;
       updateArtistText();
@@ -498,6 +505,7 @@
       imageContainer.replaceChildren(image);
 
       if (!dialog.open) dialog.showModal();
+      close.focus();
     });
 
     function updateArtistText() {
@@ -609,7 +617,7 @@
       return;
     }
 
-    videoLink.removeAttribute('href');
+    videoLink.href = 'https://www.youtube.com/';
     const image = createElement('img', 'history-image');
     image.src = `${settings.timelineImagePath}${media.file}`;
     image.alt = event.title;
@@ -655,6 +663,7 @@
     if (!keys || !posts || !markers || !shortcuts || !card || !eras.length
       || Object.values(fields).some(field => !field)) return;
 
+    const selectionStatus = find('#historyStatus');
     let selectedEra = eras.find(era => era.id === section.dataset.initialEra) ?? eras[0];
     let selectedEvent = 0;
     let eventButtons = [];
@@ -737,7 +746,7 @@
       updateEvent();
     }
 
-    function updateEvent(refreshMedia = true) {
+    function updateEvent(refreshMedia = true, announce = true) {
       eventButtons.forEach((button, index) => setPressed(button, index === selectedEvent));
       shortcutButtons.forEach((button, index) => setPressed(button, index === selectedEvent));
       const current = translatedEvent(selectedEra, selectedEvent);
@@ -759,6 +768,9 @@
       fields.year.textContent = current.year;
       fields.title.textContent = current.title;
       fields.description.textContent = current.description;
+      if (announce && selectionStatus) {
+        selectionStatus.textContent = translate('a11y_story_selection', 'Geselecteerd: {year} — {title}.', current);
+      }
 
       // De bron volgt de geselecteerde gebeurtenis, ook binnen dezelfde periode.
       const source = timelineSources[current.source];
@@ -786,7 +798,7 @@
 
     updateTuners();
     buildEvents();
-    updateEvent();
+    updateEvent(true, false);
   }
 
 
@@ -848,6 +860,9 @@
         ? translate('story_ticket_close', 'Sluit paginanavigatie')
         : translate('story_ticket_open', 'Open paginanavigatie'));
       // Inert voorkomt tabben naar links op het ingeschoven papier.
+      if (!expanded && paper.contains(document.activeElement)) {
+        toggle.focus({ preventScroll: true });
+      }
       paper.inert = !expanded;
       paper.setAttribute('aria-hidden', String(!expanded));
       if (restoreFocus) toggle.focus({ preventScroll: true });
@@ -859,7 +874,15 @@
       const passedTrigger = trigger
         ? trigger.getBoundingClientRect().bottom < 0
         : window.scrollY > window.innerHeight;
-      ticket.classList.toggle('is-visible', passedTrigger && desktop.matches);
+      const showTicket = passedTrigger && desktop.matches;
+      const showBack = passedTrigger && !desktop.matches;
+      if ((!showTicket && ticket.contains(document.activeElement))
+        || (!showBack && document.activeElement === backToTop)) {
+        page.querySelector('#gardenContent')?.focus({ preventScroll: true });
+      }
+      ticket.hidden = !showTicket;
+      backToTop.hidden = !showBack;
+      ticket.classList.toggle('is-visible', showTicket);
       backToTop.classList.toggle('is-visible', passedTrigger && !desktop.matches);
       if (!passedTrigger || !desktop.matches) setTicketOpen(false);
     }
@@ -875,14 +898,12 @@
     });
 
     ticket.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        setTicketOpen(false);
-        // Verplaats ook de toetsenbordfocus naar de gekozen inhoud.
-        const destination = document.getElementById(link.hash.slice(1));
-        if (!destination) return;
-        if (!destination.hasAttribute('tabindex')) destination.setAttribute('tabindex', '-1');
-        destination.focus({ preventScroll: true });
-      });
+      link.addEventListener('click', () => setTicketOpen(false));
+    });
+    ticket.addEventListener('focusout', () => {
+      window.setTimeout(() => {
+        if (!ticket.contains(document.activeElement)) setTicketOpen(false);
+      }, 0);
     });
 
     document.addEventListener('click', event => {
@@ -903,6 +924,7 @@
     window.addEventListener('load', scheduleUpdate);
     window.addEventListener('hashchange', scheduleUpdate);
     desktop.addEventListener('change', () => {
+      if (ticket.contains(document.activeElement)) page.querySelector('#gardenContent')?.focus({ preventScroll: true });
       setTicketOpen(false);
       scheduleUpdate();
     });
@@ -930,7 +952,21 @@
     const parts = Array.from(explorer.querySelectorAll('[data-violin-part]'));
     if (!buttons.length || !stories.length) return;
 
-    function selectTopic(topic) {
+    const checkbox = explorer.querySelector('#violinExploded');
+    const topics = explorer.querySelector('#violinTopics');
+    const status = page.querySelector('#violinStatus');
+
+    function syncViolin() {
+      if (!checkbox || !topics) return;
+      const expanded = checkbox.checked;
+      if (!expanded && topics.contains(document.activeElement)) checkbox.focus();
+      topics.inert = !expanded;
+      explorer.classList.toggle('violin-is-open', expanded);
+    }
+    checkbox?.addEventListener('change', syncViolin);
+    syncViolin();
+
+    function selectTopic(topic, announce = true) {
       buttons.forEach(button => {
         setPressed(button, button.dataset.violinTopic === topic);
       });
@@ -940,17 +976,20 @@
       parts.forEach(part => {
         part.classList.toggle('is-selected', part.dataset.violinPart === topic);
       });
+      if (announce && status) {
+        const heading = stories.find(story => story.dataset.violinStory === topic)?.querySelector('h3');
+        status.textContent = translate('a11y_story_topic', 'Geselecteerd: {title}. Lees het verhaal na de viool.', { title: heading?.textContent ?? topic });
+      }
     }
 
     buttons.forEach(button => {
       button.addEventListener('click', () => selectTopic(button.dataset.violinTopic));
+      button.disabled = false;
     });
 
     // Behoud de focus op de gekozen knop; kondig alleen de nieuwe inhoud aan.
     const storyGroup = explorer.querySelector('.violin-stories');
-    storyGroup.setAttribute('aria-live', 'polite');
-    storyGroup.setAttribute('aria-atomic', 'true');
-    selectTopic(buttons[0].dataset.violinTopic);
+    selectTopic(buttons[0].dataset.violinTopic, false);
   }
 
 
@@ -961,9 +1000,58 @@
   /* MARK: PAGINA STARTEN */
   /**********************/
 
+  /******************************/
+  /* MARK: ANKERS EN MUZIEKSTIJLEN */
+  /****************************/
+
+  function initAnchorFocus(page) {
+    page.addEventListener('click', event => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      // De normale ankeractie blijft de URL en scrollpositie verzorgen.
+    });
+  }
+
+  function initStyles(page) {
+    const buttons = Array.from(page.querySelectorAll('.style-card[data-style]'));
+    const panels = Array.from(page.querySelectorAll('[data-style-panel]'));
+    const status = page.querySelector('#styleStatus');
+    const readLink = page.querySelector('#styleReadLink');
+    if (!buttons.length || buttons.length !== panels.length || !readLink) return;
+    let selected = 0;
+
+    function selectStyle(index, announce = true) {
+      selected = index;
+      panels.forEach((panel, position) => { panel.hidden = position !== index; });
+      buttons.forEach((button, position) => setPressed(button, position === index));
+      const heading = panels[index].querySelector('h3');
+      readLink.href = `#${heading.id}`;
+      if (announce && status) status.textContent = translate('a11y_story_style', 'Geselecteerde muziekstijl: {title}.', { title: heading.textContent });
+    }
+
+    buttons.forEach((button, index) => {
+      button.setAttribute('aria-controls', panels[index].id);
+      button.addEventListener('click', () => selectStyle(index));
+      button.disabled = false;
+    });
+    document.addEventListener('languagechange', () => selectStyle(selected, false));
+    selectStyle(0, false);
+  }
+
+
+
+
+
   function initPage() {
     const page = document.querySelector('.story-page');
     if (!page) return;
+    initAnchorFocus(page);
+    initStyles(page);
     initPageNavigation(page);
     initArtistSearch(page);
     initArtistDialog(page);

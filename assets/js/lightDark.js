@@ -17,6 +17,7 @@
   /******************************/
 
   function updateToggle(toggle) {
+    toggle.setAttribute('aria-label', window.siteI18n?.t('a11y_light_mode', 'Lichte modus') ?? 'Lichte modus');
     toggle.setAttribute('aria-pressed', String(root.dataset.theme === 'light'));
     toggle.hidden = false;
   }
@@ -56,6 +57,10 @@
     } catch {
       // De keuze blijft voor deze pagina geldig als opslaan geblokkeerd is.
     }
+  });
+
+  document.addEventListener('languagechange', () => {
+    document.querySelectorAll('#themeToggle').forEach(updateToggle);
   });
 
   window.addEventListener('storage', event => {

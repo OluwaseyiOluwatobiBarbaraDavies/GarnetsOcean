@@ -7,12 +7,13 @@
     <title data-i18n="privacy_v2_document_title">Privacy en opslag | Garnet’s Ocean</title>
     <link rel="stylesheet" href="../resources/style/landing.css">
     <link rel="stylesheet" href="../resources/style/navbar.css">
-    <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
+
     <link rel="stylesheet" href="../resources/style/language-changer.css">
     <link rel="stylesheet" href="../resources/style/privacy.css">
     <link rel="stylesheet" href="../resources/style/lightDark.css">
+    <link rel="stylesheet" href="../resources/style/accessibility.css">
     <script src="../js/navbar.js" defer></script>
-    <script src="../js/custom-scrollbar.js" defer></script>
+
     <script src="../js/language-changer.js" defer></script>
     <script src="../js/lightDark.js" defer></script>
     <script src="../js/privacy.js" defer></script>
@@ -25,7 +26,7 @@
 
 
     <!-- ==================== MARK: NAVIGATIE ==================== -->
-    <nav aria-label="Hoofdnavigatie">
+    <nav aria-label="Hoofdnavigatie" data-i18n-aria-label="a11y_privacy_navigation">
       <ul>
         <li>
           <a href="landing.html" data-i18n="nav_home">Home</a>
@@ -41,9 +42,6 @@
         </li>
         <li>
           <a href="privacy.html" class="active" aria-current="page" data-i18n="nav_privacy">Privacy Beleid</a>
-        </li>
-        <li>
-          <a href="../typografie_opdr/ymca.html" data-i18n="nav_song">Song Opdracht</a>
         </li>
         <li class="nav-theme">
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Lichte modus" aria-pressed="false" hidden>
@@ -70,8 +68,8 @@
 
 
     <!-- ==================== MARK: PRIVACY, COOKIES EN OPSLAG ==================== -->
-    <main id="mainContent" tabindex="-1">
-      <h1 data-i18n="privacy_v2_title">Privacy, cookies en opslag</h1>
+    <main id="mainContent" tabindex="-1" aria-labelledby="privacyPageTitle">
+      <h1 id="privacyPageTitle" data-i18n="privacy_v2_title">Privacy, cookies en opslag</h1>
       <p data-i18n="privacy_v2_updated">Bijgewerkt op 22 oktober 2026.</p>
 
       <section aria-labelledby="privacy-scope-heading">
@@ -142,11 +140,11 @@
         <h2 id="privacyQuestionsTitle" data-i18n="privacy_postcard_heading">Een vraag over privacy?</h2>
         <p id="postcardDemo" data-i18n="privacy_postcard_demo">Schrijf een kaartje in dit demoformulier. Je gegevens worden niet verstuurd of opgeslagen. Gebruik dit formulier niet voor echte privacyverzoeken.</p>
 
-        <form class="privacy-postcard" id="privacyQuestionForm" aria-describedby="postcardDemo" novalidate>
+        <form class="privacy-postcard" id="privacyQuestionForm" aria-labelledby="postcardTitle" aria-describedby="postcardDemo" novalidate>
           <header class="postcard-heading">
             <div>
               <p class="postcard-kicker" data-i18n="privacy_postcard_kicker">POST UIT DE MUZIKALE TUIN</p>
-              <h3 data-i18n="privacy_postcard_title">Een kaartje voor Garnet’s Ocean</h3>
+              <h3 id="postcardTitle" data-i18n="privacy_postcard_title">Een kaartje voor Garnet’s Ocean</h3>
             </div>
             <span class="postcard-stamp" aria-hidden="true">✦<small>GARNET’S<br>OCEAN</small></span>
           </header>
@@ -158,13 +156,13 @@
               <legend data-i18n="privacy_postcard_sender">De afzender</legend>
               <div class="postcard-field">
                 <label for="postcardName" data-i18n="privacy_postcard_name">Je naam (verplicht)</label>
-                <input id="postcardName" type="text" autocomplete="name" required aria-describedby="postcardNameError">
+                <input id="postcardName" type="text" autocomplete="name" required>
                 <p class="postcard-error" id="postcardNameError" data-i18n="privacy_postcard_name_error" hidden>Vul je naam in.</p>
               </div>
 
               <div class="postcard-field">
                 <label for="postcardEmail" data-i18n="privacy_postcard_email">Je e-mailadres (verplicht)</label>
-                <input id="postcardEmail" type="email" autocomplete="email" required aria-describedby="postcardEmailError" spellcheck="false">
+                <input id="postcardEmail" type="email" autocomplete="email" required spellcheck="false">
                 <p class="postcard-error" id="postcardEmailError" data-i18n="privacy_postcard_email_empty" hidden>Vul je e-mailadres in.</p>
               </div>
               <p class="postcard-recipient" aria-hidden="true">AAN / TO<br><strong>Garnet’s Ocean</strong><br>Country Roots · Digital Garden</p>
@@ -173,7 +171,7 @@
             <fieldset class="postcard-message">
               <legend data-i18n="privacy_postcard_message_legend">Jouw bericht</legend>
               <label for="postcardQuestion" data-i18n="privacy_postcard_question">Je vraag (verplicht)</label>
-              <textarea id="postcardQuestion" rows="7" required aria-describedby="postcardQuestionError"></textarea>
+              <textarea id="postcardQuestion" rows="7" required></textarea>
               <p class="postcard-error" id="postcardQuestionError" data-i18n="privacy_postcard_question_error" hidden>Schrijf je vraag op de kaart.</p>
             </fieldset>
           </div>
@@ -196,9 +194,9 @@
     <dialog class="postcard-confirmation" id="postcardConfirmation" aria-labelledby="postcardConfirmationTitle" aria-describedby="postcardConfirmationText">
       <span class="postcard-confirmation-seal" aria-hidden="true">✓</span>
       <p class="postcard-kicker" data-i18n="privacy_postcard_confirmation_kicker">DEMO · DIGITALE POST</p>
-      <h2 id="postcardConfirmationTitle" data-i18n="privacy_postcard_confirmation_title">Je kaartje is verstuurd! (demo)</h2>
+      <h2 id="postcardConfirmationTitle" data-i18n="privacy_postcard_confirmation_title">Demonstratie voltooid — niets verzonden</h2>
       <p id="postcardConfirmationText" data-i18n="privacy_postcard_confirmation_text">Dit is alleen een demonstratie. Je vraag is niet echt verzonden en je gegevens zijn niet opgeslagen.</p>
-      <button type="button" id="postcardConfirmationClose" data-i18n="privacy_postcard_confirmation_close">Begrepen</button>
+      <button type="button" id="postcardConfirmationClose" autofocus data-i18n="privacy_postcard_confirmation_close">Begrepen</button>
     </dialog>
   </body>
 </html>

@@ -442,22 +442,31 @@ let resultTimer;
 
 // ==================== MARK: WISSELEN TUSSEN OVERZICHTEN ====================
 
-function switchView(view) {
+let currentView = "visual";
+
+function switchView(view, announce = true) {
   const views = [
     ['visual', 'visualView', 'tabVisualBtn'],
     ['research', 'researchView', 'tabResearchBtn'],
     ['video', 'videoView', 'tabVideoBtn'],
   ];
   if (!views.some(([name]) => name === view)) return;
+  currentView = view;
   views.forEach(([name, sectionId, buttonId]) => {
     const active = name === view;
     const section = document.getElementById(sectionId);
     const button = document.getElementById(buttonId);
+    if (!active && section.contains(document.activeElement)) document.getElementById(views.find(([name]) => name === view)[2]).focus();
+    section.hidden = !active;
     section.classList.toggle('hidden', !active);
     button.classList.toggle('tab-btn-active', active);
     button.classList.toggle('tab-btn-inactive', !active);
     button.setAttribute('aria-pressed', String(active));
   });
+  const heading = document.getElementById(views.find(([name]) => name === view)[1]).querySelector('h2');
+  document.getElementById('sourcesReadLink').href = `#${heading.id}`;
+  if (announce) document.getElementById('sourcesViewStatus').textContent = translated('a11y_sources_view', 'Getoond: {title}.').replace('{title}', heading.textContent);
+  if (view !== 'visual') window.clearTimeout(resultTimer);
 }
 
 
@@ -500,7 +509,7 @@ function filterSources() {
   window.clearTimeout(resultTimer);
   resultTimer = window.setTimeout(() => {
     const status = document.getElementById('sourcesResults');
-    if (status) {
+    if (status && currentView === 'visual') {
       status.textContent = translated('sources_result_count', 'Aantal gevonden afbeeldingen: {count}.')
         .replace('{count}', String(filtered.length));
     }
@@ -632,7 +641,14 @@ function renderVideoList() {
 document.addEventListener("DOMContentLoaded", () => {
   // De knoppen gebruiken de functies hierboven, zonder onclick in de HTML.
   document.querySelector("#tabVisualBtn").addEventListener("click", () => {
-    switchView("visual");
+    document.querySelectorAll('.tab-btn, .filter-btn, #searchInput').forEach(control => { control.disabled = false; });
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const target = document.getElementById(link.getAttribute('href').slice(1));
+      target?.focus({ preventScroll: true });
+    });
+  });
+  switchView("visual", false);
   });
 
   document.querySelector("#tabResearchBtn").addEventListener("click", () => {
@@ -653,7 +669,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector("#searchInput").addEventListener("input", filterSources);
 
-  switchView("visual");
+  document.querySelectorAll('.tab-btn, .filter-btn, #searchInput').forEach(control => { control.disabled = false; });
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const target = document.getElementById(link.getAttribute('href').slice(1));
+      target?.focus({ preventScroll: true });
+    });
+  });
+  switchView("visual", false);
   setCategory(currentCategory);
   renderResearchList(researchSources);
 });
@@ -661,6 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Bij een andere taal worden de kaartjes opnieuw ingevuld.
 // Het zoekveld, de categorie en het gekozen overzicht blijven staan.
 document.addEventListener("languagechange", () => {
+  switchView(currentView, false);
   updateCategoryCounts();
   renderVideoList();
   filterSources();

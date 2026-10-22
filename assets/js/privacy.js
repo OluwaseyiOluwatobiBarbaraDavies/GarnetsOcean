@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const entrance = document.querySelector('#saloonDoors');
   if (!notice || !closeButton) return;
 
+  let noticeOpener = entrance;
+
   // Dit is een informatiemelding: sluiten wijzigt geen toestemming of opslag.
   closeButton.addEventListener('click', () => notice.close());
-  notice.addEventListener('close', () => entrance?.focus());
+  notice.addEventListener('close', () => noticeOpener?.focus());
 
   document.querySelectorAll('[data-open-privacy]').forEach(button => {
     button.addEventListener('click', () => {
+      noticeOpener = button;
       if (!notice.open) notice.showModal();
       heading?.focus();
     });
@@ -61,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     field.error.textContent = window.siteI18n?.t(key, fallback) ?? fallback;
     field.error.hidden = !invalid;
     field.input.setAttribute('aria-invalid', String(invalid));
+    if (invalid) field.input.setAttribute('aria-describedby', field.error.id);
+    else field.input.removeAttribute('aria-describedby');
     field.input.classList.toggle('has-error', invalid);
     return !invalid;
   }
@@ -89,12 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     if (!confirmation.open) confirmation.showModal();
+    close.focus();
   });
 
   close.addEventListener('click', () => confirmation.close());
   confirmation.addEventListener('close', () => submit.focus());
   document.addEventListener('languagechange', () => {
     if (attempted) validateForm();
+  });
+
+  document.querySelector('.skip-link')?.addEventListener('click', () => {
+    document.querySelector('#mainContent')?.focus({ preventScroll: true });
   });
 
   // Zonder handler blijft de submitknop uitgeschakeld, ook zonder JavaScript.
