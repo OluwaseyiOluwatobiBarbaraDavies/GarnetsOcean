@@ -757,6 +757,36 @@
     const desktop = window.matchMedia('(min-width: 48.001rem)');
     let framePending = false;
 
+    // Gebruik de bestaande menulinks als bron: geen tweede lijst met secties.
+    const destinations = Array.from(ticket.querySelectorAll('.ticket-destinations a'))
+      .map(link => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+      .filter(destination => destination.section);
+    const destinationCards = Array.from(page.querySelectorAll('.garden-index a'));
+
+    function updateCurrentSection() {
+      if (!destinations.length) return;
+      // Een sectie wordt actief wanneer de titel het bovenste schermdeel bereikt.
+      const readingLine = window.innerHeight * 0.3;
+      let current = destinations[0];
+      destinations.forEach(destination => {
+        if (destination.section.getBoundingClientRect().top <= readingLine) {
+          current = destination;
+        }
+      });
+
+      // Ook een korte laatste sectie moet onderaan de pagina actief worden.
+      const pageHeight = document.documentElement.scrollHeight;
+      if (window.scrollY > 0 && window.scrollY + window.innerHeight >= pageHeight - 1) {
+        current = destinations[destinations.length - 1];
+      }
+
+      [...destinations.map(destination => destination.link), ...destinationCards]
+        .forEach(link => {
+          if (link.hash === current.link.hash) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+    }
+
     function setTicketOpen(open, restoreFocus = false) {
       const expanded = open && desktop.matches && ticket.classList.contains('is-visible');
       ticket.classList.toggle('is-open', expanded);
@@ -770,6 +800,7 @@
 
     function updateNavigation() {
       framePending = false;
+      updateCurrentSection();
       const passedTrigger = trigger
         ? trigger.getBoundingClientRect().bottom < 0
         : window.scrollY > window.innerHeight;
@@ -811,6 +842,8 @@
 
     window.addEventListener('scroll', scheduleUpdate, { passive: true });
     window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('hashchange', scheduleUpdate);
     desktop.addEventListener('change', () => {
       setTicketOpen(false);
       scheduleUpdate();
@@ -826,10 +859,6 @@
 
 
 
-
-  /************************/
-  /* MARK: PAGINA STARTEN */
-  /**********************/
 
   /******************************/
   /* MARK: INTERACTIEVE VIOOL */
@@ -869,6 +898,10 @@
 
 
 
+
+  /************************/
+  /* MARK: PAGINA STARTEN */
+  /**********************/
 
   function initPage() {
     const page = document.querySelector('.story-page');
