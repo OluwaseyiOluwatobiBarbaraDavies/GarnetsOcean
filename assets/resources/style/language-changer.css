@@ -45,7 +45,7 @@
   border-radius: 2rem;
   background: var(--language-track);
   color: var(--language-unselected);
-  font: 700 0.75rem/1 Roboto, Arial, sans-serif;
+  font: 700 0.75rem/1 Roboto;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   cursor: pointer;

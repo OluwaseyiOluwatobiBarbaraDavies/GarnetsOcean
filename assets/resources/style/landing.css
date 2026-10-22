@@ -62,28 +62,40 @@
 @font-face {
   font-family: "eastwood";
   src: url(../type/Eastwood.otf);
-  font-weight: 100;
+
+
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "rye";
   src: url(../type/Rye-Regular.ttf);
+
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "roboto";
   src: url(../type/Roboto-Regular.ttf);
+
+
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "roboto";
   src: url(../type/Roboto-Bold.ttf);
+
+
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 
@@ -102,14 +114,14 @@ body {
   background: radial-gradient(circle at top, var(--landing-page-glow) 0%, var(--background-color) 70%);
   background-attachment: fixed;
   color: var(--landing-body-text);
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto";
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
 h1 {
-  font-family: "eastwood", serif;
+  font-family: "Eastwood";
   font-size: clamp(42px, 8vw, 75px);
   background: linear-gradient(180deg, var(--landing-heading-start) 0%, var(--landing-heading-middle) 60%, var(--landing-heading-end) 100%);
   background-clip: text;
@@ -127,7 +139,7 @@ h1:hover {
 }
 
 h2 {
-  font-family: "rye", serif;
+  font-family: "Rye";
   color: var(--secondary-font-color);
   font-size: 24px;
   margin-top: 0;
@@ -179,7 +191,7 @@ nav ul li a {
   display: inline-block;
   padding: 14px 20px;
   color: var(--main-font-color);
-  font-family: "rye", serif;
+  font-family: "Rye";
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -481,7 +493,7 @@ dialog.modal .modal-caption {
   color: var(--landing-dialog-text);
   text-align: center;
   overflow-wrap: anywhere;
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto";
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.4;
@@ -501,7 +513,7 @@ dialog.modal .modal-close {
   border-radius: 0.25rem;
   background: transparent;
   color: var(--landing-dialog-text);
-  font: 2rem/1 sans-serif;
+  font: 2rem/1 Roboto;
   cursor: pointer;
 }
 

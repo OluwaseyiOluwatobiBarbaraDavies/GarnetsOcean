@@ -101,19 +101,19 @@
 
 
   <!-- ==================== MARK: PRIVACYMELDING ==================== -->
-  <dialog id="privacyNotice" aria-labelledby="privacyTitle">
+  <dialog id="privacyNotice" aria-labelledby="privacyTitle" data-translations-extra-path="privacy-translations.json">
     <div class="privacy-title-row">
-      <h2 id="privacyTitle" tabindex="-1" data-i18n="privacy_title">Privacy en opslag</h2>
-      <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">NL</button>
+      <h2 data-i18n="privacy_v2_popup_title" id="privacyTitle" tabindex="-1">Privacy, cookies en opslag</h2>
+      <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">
+        <span class="language-option language-nl" aria-hidden="true">NL</span>
+        <span class="language-option language-eng" aria-hidden="true">ENG</span>
+      </button>
     </div>
-    <p data-i18n="privacy_intro">Je taalkeuze wordt in je browser bewaard. GitHub Pages slaat IP-adressen op voor beveiliging. Op de homepagina wordt ook een extern webring-script geladen van digitaaltuintje.nl.</p>
-    <p data-i18n="privacy_notice">Deze melding geeft informatie. Sluiten geeft geen toestemming voor tracking. De melding zelf plaatst geen cookies en bewaart niet dat je haar hebt gesloten.</p>
+    <p data-i18n="privacy_v2_popup_intro">Je taalkeuze en kleurthema worden in je browser bewaard. GitHub Pages verwerkt IP-adressen voor beveiliging. De homepagina laadt een extern webring-script. Op de Story-pagina kunnen YouTube-spelers verbinding maken met Google en cookies of andere browseropslag gebruiken.</p>
+    <p data-i18n="privacy_v2_popup_notice">Deze melding geeft informatie en blokkeert geen externe diensten. Sluiten geeft geen toestemming voor tracking en wordt niet opgeslagen. Een tijdlijnonderwerp met video kiezen kan de YouTube-speler al laden. Lees de privacyinformatie voordat je video-inhoud opent.</p>
     <div class="privacy-actions">
-      <a href="assets/html/privacy.html">
-        <span data-i18n="privacy_more">Meer informatie</span>
-        <span class="visually-hidden" data-i18n="privacy_more_context"> over privacy en gegevensopslag</span>
-      </a>
-      <button type="button" data-close-privacy data-i18n="privacy_close">Sluiten</button>
+      <a data-i18n="privacy_v2_popup_more" href="assets/html/privacy.html">Lees de volledige privacyinformatie</a>
+      <button data-i18n="privacy_v2_popup_close" type="button" data-close-privacy>Sluiten</button>
     </div>
   </dialog>
 </body>

@@ -1,44 +1,64 @@
-/******************/
-/* MARK: KLEUREN */
-/****************/
+/************************/
+/* MARK: PRIVACYKLEUREN */
+/************************/
 
 :root {
-  --privacy-page-bg: #160a04;
-  --privacy-text: #f4f1ea;
-  --privacy-section-border: #8c4a32;
-  --privacy-heading-color: #f4c468;
-  --privacy-link-color: #ffe1a1;
-  --privacy-notice-bg: #2b1704;
-  --privacy-notice-border: #d4a373;
+  --privacy-page-bg: var(--theme-background, #160a04);
+  --privacy-text: var(--theme-text, #f4f1ea);
+  --privacy-section-border: var(--theme-border, #8c4a32);
+  --privacy-heading-color: var(--theme-accent, #f4c468);
+  --privacy-link-color: var(--theme-accent, #ffe1a1);
+  --privacy-notice-bg: var(--theme-surface, #2b1704);
+  --privacy-notice-border: var(--theme-border, #d4a373);
   --privacy-notice-shadow: #0009;
   --privacy-backdrop: #000b;
-  --privacy-button-bg: #4a2810;
-  --privacy-button-text: #fff3dc;
-  --privacy-focus-color: #ffd700;
+  --privacy-button-bg: var(--theme-cta-background, #4a2810);
+  --privacy-button-text: var(--theme-cta-text, #fff3dc);
+  --privacy-focus-color: var(--theme-focus, #ffd700);
 }
 
 
 
 
 
-/***************************/
+/******************/
 /* MARK: FONTS */
-/*************************/
+/******************/
 
 @font-face {
-  font-family: "roboto";
-  src: url("../type/Roboto-Regular.ttf") format("truetype");
+  font-family: Roboto;
+  src: url('../type/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+/* De gecontroleerde projectbestanden zijn statische fonts zonder variabele assen.
+   Roboto Regular en Bold worden als afzonderlijke gewichten geladen. */
+@font-face {
+  font-family: Roboto;
+  src: url('../type/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rye;
+  src: url('../type/Rye-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 
 
 
 
-/***************************/
+
+/******************/
 /* MARK: BASIS */
-/*************************/
+/******************/
 
 #privacyNotice,
 #privacyNotice *,
@@ -51,31 +71,39 @@
   margin: 0;
   background: var(--privacy-page-bg);
   color: var(--privacy-text);
-  font-family: "roboto", serif;
-  line-height: 1.6;
+  font: 1rem/1.65 Roboto;
 }
 
 .privacy-page main a,
 #privacyNotice a {
   color: var(--privacy-link-color);
   overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.privacy-page main a:hover,
+#privacyNotice a:hover {
+  color: var(--privacy-link-color);
+  text-shadow: none;
 }
 
 
 
 
 
-/***************************/
+/************************/
 /* MARK: PAGINA-INHOUD */
-/*************************/
+/************************/
 
 .privacy-page main {
   width: min(90%, 50rem);
   margin: 2rem auto;
+  scroll-margin-top: 6rem;
 }
 
 .privacy-page main section {
-  padding-block: 1rem;
+  padding-block: 1.25rem;
   border-bottom: 0.0625rem solid var(--privacy-section-border);
 }
 
@@ -85,38 +113,51 @@
   line-height: 1.3;
 }
 
+/* De algemene titelgradient mag de privacytitel niet onleesbaar maken. */
+.privacy-page main h1 {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+  text-shadow: none;
+}
+
+.privacy-page main p {
+  max-width: 75ch;
+}
+
+.privacy-page .skip-link {
+  position: fixed;
+  inset: 0.5rem auto auto 0.5rem;
+  z-index: 5000;
+  padding: 0.75rem 1rem;
+  background: var(--privacy-notice-bg);
+  color: var(--privacy-text);
+  transform: translateY(calc(-100% - 1rem));
+}
+
+.privacy-page .skip-link:focus {
+  transform: none;
+}
 
 
 
 
-/***************************/
-/* MARK: TITEL EN TAALKEUZE */
-/*************************/
 
-/* De titel mag afbreken, de taalknop blijft ernaast staan. */
+/************************/
+/* MARK: PRIVACYMELDING */
+/************************/
+
 .privacy-title-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
 }
 
-.privacy-title-row h1 {
+.privacy-title-row h2 {
   margin: 0;
   overflow-wrap: anywhere;
 }
-
-.privacy-title-row #langToggleBtn {
-  margin: 0;
-}
-
-
-
-
-
-/***************************/
-/* MARK: PRIVACYMELDING */
-/*************************/
 
 #privacyNotice {
   width: min(92vw, 36rem);
@@ -127,7 +168,7 @@
   border-radius: 0.75rem;
   background: var(--privacy-notice-bg);
   color: var(--privacy-text);
-  font: 1rem/1.6 "roboto", serif;
+  font: 1rem/1.6 Roboto;
   box-shadow: 0 1rem 3rem var(--privacy-notice-shadow);
 }
 
@@ -141,11 +182,6 @@
   border: 0;
 }
 
-#privacyNotice .privacy-title-row h2 {
-  margin: 0;
-}
-
-.privacy-languages,
 .privacy-actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
@@ -164,13 +200,19 @@
   cursor: pointer;
 }
 
+@media (min-width: 30rem) {
+  .privacy-title-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
 
 
 
 
-/***************************/
-/* MARK: TOETSENBORDFOCUS */
-/*************************/
+
+/************************/
+/* MARK: TOEGANKELIJKHEID */
+/************************/
 
 .privacy-page main :focus-visible,
 #privacyNotice :focus-visible {
@@ -178,44 +220,15 @@
   outline-offset: 0.2rem;
 }
 
-
-
-
-
-/***************************/
-/* MARK: LICHTE MODUS */
-/*************************/
-
-/* De pagina en melding volgen de kleurvoorkeur van de bezoeker. */
-@media (prefers-color-scheme: light) {
-  :root {
-    --privacy-page-bg: #f7f1e5;
-    --privacy-text: #2b1810;
-    --privacy-section-border: #ba9e73;
-    --privacy-heading-color: #733c08;
-    --privacy-link-color: #7a3e0b;
-    --privacy-notice-bg: #fffaf0;
-    --privacy-notice-border: #a37443;
-    --privacy-notice-shadow: rgba(90, 50, 20, 0.18);
-    --privacy-backdrop: rgba(35, 18, 4, 0.45);
-    --privacy-button-bg: #733c08;
-    --privacy-button-text: #fffaf0;
-    --privacy-focus-color: #733c08;
-  }
-
-  /* De titel krijgt geen tekstverloop uit landing.css. */
+@media (forced-colors: active) {
   .privacy-page main h1 {
-    background: none;
-    color: var(--privacy-heading-color);
-    -webkit-text-fill-color: currentColor;
-    filter: none;
-    text-shadow: none;
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
   }
 
-  .privacy-page main a:hover,
-  #privacyNotice a:hover {
-    color: var(--privacy-link-color);
-    text-shadow: none;
+  .privacy-page main :focus-visible,
+  #privacyNotice :focus-visible {
+    outline-color: Highlight;
   }
 }
 
@@ -223,21 +236,319 @@
 
 
 
-/***************************/
-/* MARK: SYSTEEMKLEUREN */
-/*************************/
 
-@media (forced-colors: active) {
-  .privacy-page main h1 {
-    background: none;
-    color: CanvasText;
-    -webkit-text-fill-color: CanvasText;
-    filter: none;
-    text-shadow: none;
+/******************************/
+/* MARK: VINTAGE VRAGENKAART */
+/******************************/
+
+.privacy-page .privacy-postcard {
+  --postcard-ink: #432b1b;
+  --postcard-muted: #71583d;
+  --postcard-line: #b99a73;
+  position: relative;
+  padding: clamp(1.125rem, 4vw, 2rem);
+  isolation: isolate;
+  border: 0.5rem solid transparent;
+  border-radius: 0.15rem;
+  /* Papierlagen, een vouw en een verbleekte luchtpostrand, zonder externe afbeelding. */
+  background:
+    linear-gradient(90deg, transparent 49.5%, #8a603216 50%, #fff8e32b 50.5%, transparent 51%) padding-box,
+    radial-gradient(ellipse at 0 100%, #a66a2924, transparent 45%) padding-box,
+    radial-gradient(ellipse at 100% 0, #a66a291c, transparent 50%) padding-box,
+    linear-gradient(130deg, #f6ead2, #e8d3ad 75%, #f0dfbf) padding-box,
+    repeating-linear-gradient(135deg, #955346 0 0.75rem, #f2e5c8 0.75rem 1.5rem, #52675e 1.5rem 2.25rem, #f2e5c8 2.25rem 3rem) border-box;
+  color: var(--postcard-ink);
+  box-shadow: 0 0.75rem 2rem #24100630, inset 0 0 2.5rem #8b582b30, inset 0 0 0 0.0625rem #fff6;
+}
+
+.privacy-page .postcard-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.postcard-kicker {
+  margin: 0 0 0.6rem;
+  font: 700 0.65rem/1.5 Roboto;
+  letter-spacing: 0.14em;
+  color: #71583d;
+}
+
+.privacy-page .postcard-heading h3 {
+  margin: 0;
+  font: clamp(1.25rem, 3vw, 1.8rem)/1.35 Rye;
+  color: var(--postcard-ink);
+}
+
+.privacy-page .postcard-stamp {
+  display: grid;
+  place-items: center;
+  gap: 0.25rem;
+  width: 4.5rem;
+  min-height: 5rem;
+  padding: 0.45rem;
+  border: 0.1875rem double #8b5832;
+  outline: 0.125rem dashed #b99a73;
+  outline-offset: 0.2rem;
+  position: relative;
+  background: linear-gradient(145deg, #e1c99a, #cab180);
+  color: #633c21;
+  box-shadow: inset 0 0 0.75rem #8b58322b;
+  font-size: 1.75rem;
+  line-height: 1;
+  transform: rotate(6deg);
+}
+
+/* De stempel en postgolven zijn decoratief en blokkeren geen bediening. */
+.privacy-page .postcard-stamp::before {
+  content: '';
+  position: absolute;
+  width: 4.5rem;
+  height: 4.5rem;
+  top: 0.5rem;
+  right: 1.8rem;
+  border: 0.1875rem double #694c3266;
+  border-radius: 50%;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+
+.privacy-page .postcard-stamp::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: 0.3rem;
+  width: 5.5rem;
+  height: 1.25rem;
+  background: repeating-linear-gradient(0deg, transparent 0 0.28rem, #694c3255 0.28rem 0.34rem);
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.privacy-page .postcard-stamp small {
+  font: 700 0.55rem/1.4 Roboto;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.privacy-page .postcard-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.privacy-page .postcard-fields fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.privacy-page .postcard-fields legend {
+  padding: 0 0 0.75rem;
+  color: var(--postcard-muted);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.privacy-page .postcard-field + .postcard-field {
+  margin-top: 1rem;
+}
+
+.privacy-page .privacy-postcard label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--postcard-ink);
+}
+
+.privacy-page .privacy-postcard input,
+.privacy-page .privacy-postcard textarea {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 0.0625rem solid var(--postcard-line);
+  border-radius: 0;
+  border-color: transparent transparent #a8865d;
+  background: #fffaf04d;
+  color: #432b1b;
+  font: 1rem/1.6 Roboto;
+}
+
+.privacy-page .privacy-postcard textarea {
+  min-height: 13rem;
+  resize: vertical;
+  line-height: 1.9rem;
+  background: repeating-linear-gradient(to bottom, #fffaf033 0, #fffaf033 calc(1.9rem - 0.0625rem), #a8865d80 1.9rem);
+  background-position-y: 0.65rem;
+}
+
+.privacy-page .postcard-recipient {
+  margin: 1.5rem 0 0;
+  color: var(--postcard-muted);
+  font: 0.8rem/1.8 Roboto;
+}
+
+.privacy-page .postcard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 0.0625rem dashed var(--postcard-line);
+  background: transparent;
+  color: var(--postcard-muted);
+  text-align: left;
+}
+
+.privacy-page .postcard-actions p {
+  flex: 1 1 12rem;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.privacy-page .postcard-actions button,
+.postcard-confirmation button {
+  min-height: 2.75rem;
+  padding: 0.75rem 1.125rem;
+  border: 0.1875rem double #f2dfbd;
+  border-radius: 0.15rem;
+  background: #733c08;
+  outline: 0.0625rem solid #733c08;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  box-shadow: 0.125rem 0.1875rem 0.25rem #432b1b26;
+  color: #fffaf0;
+  font: 700 0.9rem/1.4 Roboto;
+  cursor: pointer;
+}
+
+.privacy-page .postcard-actions button:hover,
+.postcard-confirmation button:hover {
+  background: #542905;
+}
+
+.privacy-page .postcard-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+/******************************/
+/* MARK: FOUTEN OP DE KAART */
+/******************************/
+
+.privacy-page .privacy-postcard .has-error {
+  border: 0.125rem solid #9d2b1d;
+  background: #fff1ec;
+}
+
+.privacy-page .privacy-postcard .postcard-error,
+.privacy-page .privacy-postcard .postcard-error-summary {
+  color: #8d2519;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.privacy-page .privacy-postcard .postcard-error {
+  margin: 0.4rem 0 0;
+}
+
+.privacy-page .privacy-postcard .postcard-error-summary {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem;
+  border-left: 0.1875rem solid #9d2b1d;
+  background: #fff1ec;
+}
+
+.privacy-page .privacy-postcard [hidden],
+.postcard-confirmation [hidden] {
+  display: none !important;
+}
+
+.privacy-page .privacy-postcard :focus-visible,
+.postcard-confirmation :focus-visible {
+  outline: 0.1875rem solid #733c08;
+  outline-offset: 0.2rem;
+}
+
+
+
+
+
+/******************************/
+/* MARK: BEVESTIGING EN INDELING */
+/******************************/
+
+.postcard-confirmation {
+  width: min(90vw, 30rem);
+  max-height: 85dvh;
+  overflow-y: auto;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 0.125rem solid #b99a73;
+  border-radius: 0.5rem;
+  background: radial-gradient(ellipse at 0 100%, #c7974c26, transparent 65%), #f6ead2;
+  color: #432b1b;
+  text-align: center;
+  box-shadow: 0 1rem 3rem #0005;
+  font: 1rem/1.65 Roboto;
+}
+
+.postcard-confirmation::backdrop {
+  background: #160a04b3;
+}
+
+.postcard-confirmation h2 {
+  color: #633309;
+  border: 0;
+  font: 1.6rem/1.35 Rye;
+}
+
+.postcard-confirmation-seal {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  border: 0.1875rem double #8b5832;
+  border-radius: 50%;
+  color: #733c08;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 45rem) {
+  .privacy-page .postcard-fields {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 1.75rem;
   }
 
-  .privacy-page main :focus-visible,
-  #privacyNotice :focus-visible {
+  .privacy-page .postcard-message {
+    border-left: 0.0625rem dashed var(--postcard-line);
+    padding-left: 1.75rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .privacy-page .privacy-postcard :focus-visible,
+  .postcard-confirmation :focus-visible {
     outline-color: Highlight;
+  }
+
+  .privacy-page .privacy-postcard .has-error {
+    border-style: dashed;
+    border-color: CanvasText;
   }
 }

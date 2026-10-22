@@ -105,6 +105,30 @@
 
 
 
+/****************/
+/* MARK: FONTS */
+/**************/
+
+@font-face {
+  font-family: Eastwood;
+  src: url('../type/Eastwood.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rye;
+  src: url('../type/Rye-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+
 /***************************/
 /* MARK: PAGINA EN SALOON */
 /*************************/

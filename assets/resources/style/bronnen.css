@@ -53,8 +53,9 @@
 @font-face {
   font-family: 'Eastwood';
   src: url('../type/Eastwood.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -62,6 +63,7 @@
   src: url('../type/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -69,13 +71,15 @@
   src: url('../type/Roboto-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Rye';
   src: url('../type/Rye-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 
@@ -113,7 +117,7 @@
 }
 
 .page-body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   background: radial-gradient(circle at top, var(--page-glow) 0%, var(--background-color) 70%);
   color: var(--amber-950);
   min-height: 100vh;
@@ -123,21 +127,21 @@
 }
 
 h1 {
-  font-family: 'Rye', serif;
+  font-family: 'Rye';
   font-size: 1.75rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-family: 'Rye', 'Eastwood', serif;
+  font-family: 'Rye', 'Eastwood';
   font-size: 1.25rem;
   color: var(--amber-950);
   margin: 0;
 }
 
 h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-weight: 700;
   color: var(--amber-950);
   font-size: 1rem;
@@ -391,7 +395,7 @@ h3 {
 
 .card-filename {
   font-size: 0.6875rem;
-  font-family: monospace;
+  font-family: Roboto;
   color: var(--amber-800);
   margin: 0;
 }
