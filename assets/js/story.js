@@ -831,6 +831,45 @@
   /* MARK: PAGINA STARTEN */
   /**********************/
 
+  /******************************/
+  /* MARK: INTERACTIEVE VIOOL */
+  /******************************/
+
+  function initViolin(page) {
+    const explorer = page.querySelector('[data-violin]');
+    if (!explorer) return;
+    const buttons = Array.from(explorer.querySelectorAll('[data-violin-topic]'));
+    const stories = Array.from(explorer.querySelectorAll('[data-violin-story]'));
+    const parts = Array.from(explorer.querySelectorAll('[data-violin-part]'));
+    if (!buttons.length || !stories.length) return;
+
+    function selectTopic(topic) {
+      buttons.forEach(button => {
+        setPressed(button, button.dataset.violinTopic === topic);
+      });
+      stories.forEach(story => {
+        story.hidden = story.dataset.violinStory !== topic;
+      });
+      parts.forEach(part => {
+        part.classList.toggle('is-selected', part.dataset.violinPart === topic);
+      });
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => selectTopic(button.dataset.violinTopic));
+    });
+
+    // Behoud de focus op de gekozen knop; kondig alleen de nieuwe inhoud aan.
+    const storyGroup = explorer.querySelector('.violin-stories');
+    storyGroup.setAttribute('aria-live', 'polite');
+    storyGroup.setAttribute('aria-atomic', 'true');
+    selectTopic(buttons[0].dataset.violinTopic);
+  }
+
+
+
+
+
   function initPage() {
     const page = document.querySelector('.story-page');
     if (!page) return;
@@ -838,6 +877,7 @@
     initArtistSearch(page);
     initArtistDialog(page);
     initTimeline(page);
+    initViolin(page);
     page.querySelectorAll('[data-explorer]').forEach(initExplorer);
     initReveals(page);
   }

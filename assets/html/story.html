@@ -257,23 +257,132 @@
           <a href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">Bron: PBS — Roots &amp; Branches ↗</a>
         </div>
 
-        <div class="research-explorer reveal">
-          <div class="research-tabs" id="roots-tabs" role="group" aria-label="Muzikale invloeden">
-            <button type="button" data-root="0" aria-pressed="true">♬ Ballades &amp; folk</button>
-            <button type="button" data-root="1" aria-pressed="false">✦ Banjo &amp; fiddle</button>
-            <button type="button" data-root="2" aria-pressed="false">♫ Blues</button>
-            <button type="button" data-root="3" aria-pressed="false">✧ Gospel</button>
-            <button type="button" data-root="4" aria-pressed="false">★ Grensgebieden</button>
+        <!-- De onderdelen zijn een visuele metafoor voor muzikale invloeden. -->
+        <div class="violin-explorer" data-violin>
+          <div class="violin-workbench">
+            <div class="violin-toolbar">
+              <p class="eyebrow">VIJF WORTELS / ÉÉN GELUID</p>
+              <input class="violin-toggle" id="violinExploded" type="checkbox" aria-controls="violinDrawing" aria-label="Onderdelen uit elkaar halen">
+              <label class="violin-toggle-label" for="violinExploded">
+                <span class="violin-open-label">Onderdelen uit elkaar halen ↗</span>
+                <span class="violin-close-label">Viool samenvoegen ↙</span>
+              </label>
+            </div>
+
+            <div class="violin-stage" id="violinDrawing">
+              <!-- Eigen SVG-illustratie: losse lagen bewegen uitsluitend via CSS. -->
+              <svg class="violin-drawing" viewBox="0 0 760 700" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="violinWood" x1="0" x2="1">
+                    <stop offset="0" stop-color="#703617"/>
+                    <stop offset=".35" stop-color="#ce8b42"/>
+                    <stop offset=".65" stop-color="#a85c27"/>
+                    <stop offset="1" stop-color="#592710"/>
+                  </linearGradient>
+                  <linearGradient id="violinFace" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#e0a15b"/>
+                    <stop offset=".5" stop-color="#a35d29"/>
+                    <stop offset="1" stop-color="#dd9749"/>
+                  </linearGradient>
+                  <pattern id="violinGrain" width="14" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M3 0 Q10 20 3 40 M11 0 Q4 20 11 40" fill="none" stroke="#f4ca85" stroke-opacity=".12"/>
+                  </pattern>
+                  <path id="violinOutline" d="M350 275 C305 245 268 276 276 321 C280 343 300 347 297 371 C295 391 271 401 265 437 C254 497 293 535 350 535 C407 535 446 497 435 437 C429 401 405 391 403 371 C400 347 420 343 424 321 C432 276 395 245 350 275 Z"/>
+                </defs>
+                <ellipse class="violin-shadow" cx="350" cy="570" rx="145" ry="20" fill="#000" opacity=".3"/>
+                <g class="violin-guides" fill="none" stroke="#c39b62" stroke-dasharray="4 8" opacity=".4">
+                  <path d="M220 425 470 350 M215 465 470 390 M350 250 350 125"/>
+                </g>
+                <g class="violin-part violin-back" data-violin-part="gospel">
+                  <use href="#violinOutline" fill="url(#violinWood)" stroke="#e1af6b" stroke-width="3"/>
+                  <use href="#violinOutline" fill="url(#violinGrain)"/>
+                  <path d="M350 280 350 528" stroke="#633516" opacity=".5"/>
+                </g>
+                <g class="violin-part violin-ribs" fill="none" stroke="url(#violinWood)" stroke-width="17">
+                  <use href="#violinOutline"/>
+                  <use href="#violinOutline" stroke="#e2ac65" stroke-width="2"/>
+                </g>
+                <g class="violin-part violin-neck" data-violin-part="folk">
+                  <path d="M337 291 339 139 Q316 119 332 99 Q352 83 367 102 Q375 119 360 129 L363 291Z" fill="url(#violinWood)" stroke="#dfac69" stroke-width="2"/>
+                  <path d="M345 109 C330 92 369 94 359 114 C353 123 341 115 346 108" fill="none" stroke="#472515" stroke-width="4"/>
+                  <path d="M338 154 362 154 367 341 333 341Z" fill="#211a14" stroke="#785d40" stroke-width="2"/>
+                  <path d="M326 136 373 136 M326 151 373 151" stroke="#50301c" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M338 158 362 158" stroke="#f1d8a3" stroke-width="4"/>
+                </g>
+                <g class="violin-part violin-top" data-violin-part="blues">
+                  <use href="#violinOutline" fill="url(#violinFace)" stroke="#f0c487" stroke-width="3"/>
+                  <use href="#violinOutline" fill="url(#violinGrain)"/>
+                  <use href="#violinOutline" fill="none" stroke="#582c17" stroke-width="2" transform="translate(350 400) scale(.94) translate(-350 -400)"/>
+                  <path d="M315 350 C292 348 321 410 300 419 M385 350 C408 348 379 410 400 419" fill="none" stroke="#3b2217" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M335 473 365 473 356 522 344 522Z" fill="#2d2117" stroke="#6c492c" stroke-width="2"/>
+                </g>
+                <g class="violin-part violin-strings" data-violin-part="fiddle">
+                  <path d="M329 419 Q350 406 371 419 L367 438 333 438Z" fill="#eed0a0" stroke="#b2844c" stroke-width="2"/>
+                  <path d="M342 157 342 484 M347 157 347 489 M353 157 353 489 M358 157 358 484" fill="none" stroke="#eee0ba" stroke-width="1.4"/>
+                </g>
+                <g class="violin-part violin-bow" data-violin-part="border">
+                  <path d="M235 170 Q226 340 237 531" fill="none" stroke="#a46b36" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M246 179 246 516" stroke="#e7d6ad" stroke-width="4"/>
+                  <path d="M233 501 250 501 250 528 233 528Z" fill="#282018" stroke="#c9a66b" stroke-width="2"/>
+                  <path d="M235 170 247 180" stroke="#c9a66b" stroke-width="3"/>
+                </g>
+              </svg>
+
+              <div class="violin-topics" role="group" aria-label="Ontdek de muzikale wortels via de viool">
+                <button class="violin-topic topic-folk" type="button" data-violin-topic="folk" aria-controls="violin-folk" aria-pressed="true"><span>01 / HALS &amp; KRUL</span><strong>Ballades &amp; folk</strong></button>
+                <button class="violin-topic topic-fiddle" type="button" data-violin-topic="fiddle" aria-controls="violin-fiddle" aria-pressed="false"><span>02 / SNAREN &amp; BRUG</span><strong>Banjo &amp; fiddle</strong></button>
+                <button class="violin-topic topic-blues" type="button" data-violin-topic="blues" aria-controls="violin-blues" aria-pressed="false"><span>03 / BOVENBLAD</span><strong>Blues</strong></button>
+                <button class="violin-topic topic-gospel" type="button" data-violin-topic="gospel" aria-controls="violin-gospel" aria-pressed="false"><span>04 / ACHTERBLAD</span><strong>Gospel</strong></button>
+                <button class="violin-topic topic-border" type="button" data-violin-topic="border" aria-controls="violin-border" aria-pressed="false"><span>05 / STRIJKSTOK</span><strong>Grensgebieden</strong></button>
+              </div>
+            </div>
+            <p class="violin-caption">Elk onderdeel opent een verhaal. Samen vormen de invloeden één geluid.</p>
           </div>
 
-          <article class="research-display" id="roots-display" aria-live="polite">
-            <span class="research-stamp">MUZIKALE WORTEL / 01</span>
-            <h3 id="root-title">Ballades en volksmuziek</h3>
-            <p id="root-description">Ballades en melodieën uit Europese tradities werden in Amerika doorgegeven, aangepast en vermengd met lokale verhalen.</p>
-            <p class="research-connection" id="root-connection">Verbinding: verhalende liedteksten blijven belangrijk in countrymuziek.</p>
-            <a id="root-source" href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
-          </article>
+          <!-- Zonder JavaScript blijven alle verhalen onder elkaar leesbaar. -->
+          <div class="violin-stories">
+            <article class="research-display" id="violin-folk" data-violin-story="folk" aria-labelledby="violin-folk-title">
+              <p class="research-stamp">MUZIKALE WORTEL / 01</p>
+              <h3 id="violin-folk-title">Ballades en volksmuziek</h3>
+              <p>Ballades en melodieën uit Europese tradities werden in Amerika doorgegeven, aangepast en vermengd met lokale verhalen.</p>
+              <p class="research-connection">Verbinding: verhalende liedteksten blijven belangrijk in countrymuziek.</p>
+              <a href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+            </article>
+
+            <article class="research-display" id="violin-fiddle" data-violin-story="fiddle" aria-labelledby="violin-fiddle-title">
+              <p class="research-stamp">MUZIKALE WORTEL / 02</p>
+              <h3 id="violin-fiddle-title">Banjo en fiddle</h3>
+              <p>De banjo heeft Afrikaanse wortels. De fiddle, een viool die in volksmuziek wordt bespeeld, kwam mee met Europese muziektradities. Samen met de gitaar kregen deze instrumenten een belangrijke plaats in snaargroepen.</p>
+              <p class="research-connection">Verbinding: country ontstond door uitwisseling tussen muzikanten en gemeenschappen.</p>
+              <a href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+            </article>
+
+            <article class="research-display" id="violin-blues" data-violin-story="blues" aria-labelledby="violin-blues-title">
+              <p class="research-stamp">MUZIKALE WORTEL / 03</p>
+              <h3 id="violin-blues-title">Blues en expressie</h3>
+              <p>Afro-Amerikaanse muziektradities droegen bij aan het ritme, de zang en de expressie van country. Blues en country ontwikkelden zich in gemeenschappen die muzikale ideeën met elkaar uitwisselden.</p>
+              <p class="research-connection">Verbinding: persoonlijke verhalen en expressieve zang verbinden de genres.</p>
+              <a href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+            </article>
+
+            <article class="research-display" id="violin-gospel" data-violin-story="gospel" aria-labelledby="violin-gospel-title">
+              <p class="research-stamp">MUZIKALE WORTEL / 04</p>
+              <h3 id="violin-gospel-title">Gospel en samenzang</h3>
+              <p>Kerkliederen, hymnes en spirituele zang maakten deel uit van de muzikale omgeving waaruit country groeide. Samen zingen gaf melodieën en verhalen een plek binnen de gemeenschap.</p>
+              <p class="research-connection">Verbinding: geloof, hoop en samenzang keren terug in countrymuziek.</p>
+              <a href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+            </article>
+
+            <article class="research-display" id="violin-border" data-violin-story="border" aria-labelledby="violin-border-title">
+              <p class="research-stamp">MUZIKALE WORTEL / 05</p>
+              <h3 id="violin-border-title">Muziek uit grensgebieden</h3>
+              <p>Ook in Texas en andere grensgebieden ontmoetten muzikale tradities elkaar. Western swing vermengde country met onder meer jazz, blues en Mexicaanse muzikale invloeden.</p>
+              <p class="research-connection">Verbinding: country blijft groeien doordat muzikanten over grenzen heen luisteren.</p>
+              <a href="https://www.okhistory.org/publications/enc/entry?entry=CO072" target="_blank" rel="noopener noreferrer">Lees de bron ↗</a>
+            </article>
+          </div>
         </div>
+
       </section>
 
 
