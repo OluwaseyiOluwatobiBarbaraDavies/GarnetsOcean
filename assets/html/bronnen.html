@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="dark" data-translations-path="../../translations.json">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#190e08">
     <title data-i18n="sources_page_title">Wilde Westen &amp; Country Bronnen Ledger</title>
     <link rel="stylesheet" href="../resources/style/landing.css">
     <link rel="stylesheet" href="../resources/style/navbar.css">
     <link rel="stylesheet" href="../resources/style/bronnen.css">
     <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
     <link rel="stylesheet" href="../resources/style/language-changer.css">
+    <link rel="stylesheet" href="../resources/style/lightDark.css">
 </head>
 
 <body class="page-body">
@@ -23,7 +25,23 @@
             <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
             <li><a href="../html/bronnen.html" class="active" aria-current="page" data-i18n="nav_sources">Bronnen</a></li>
             <li><a href="../html/privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-            <li class="nav-language"><button id="langToggleBtn" type="button">NL / ENG</button></li>
+            <li class="nav-theme">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Lichte modus" aria-pressed="false" hidden>
+                    <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+                    </svg>
+                    <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/>
+                    </svg>
+                </button>
+                </li>
+                <li class="nav-language">
+                <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">
+                    <span class="language-option language-nl" aria-hidden="true">NL</span>
+                    <span class="language-option language-eng" aria-hidden="true">ENG</span>
+                </button>
+            </li>
         </ul>
     </nav>
 
@@ -91,5 +109,6 @@
     <script src="../js/custom-scrollbar.js" defer></script>
     <script src="../js/navbar.js" defer></script>
     <script src="../js/language-changer.js" defer></script>
+    <script src="../js/lightDark.js" defer></script>
 </body>
 </html>

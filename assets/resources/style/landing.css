@@ -629,55 +629,9 @@ input:focus-visible {
 /* MARK: MEDIA QUERIES */
 /**********************/
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --main-font-color: #2b1810;
-    --landing-body-text: #2b1810;
-    --landing-content-hover: #733c08;
-    --secondary-font-color: #8c4a11;
-    --background-color: #f7f1e5;
-    --card-bg: linear-gradient(145deg, #ffffff, #f2e7d5);
-    --wood-dark: #e8d7c3;
-    --wood-light: #dac4aa;
-    --leather-accent: #a35d25;
-    --text-gold: #733c08;
-    --stitching: #b57a44;
-    --gold-glow: rgba(163, 93, 37, 0.25);
-  }
-}
 
-@media (prefers-color-scheme: light) {
-  body {
-    background: radial-gradient(circle at top, var(--landing-light-page-glow) 0%, var(--background-color) 70%);
-  }
 
-  h1 {
-    background: linear-gradient(180deg, var(--landing-light-heading-start) 0%, var(--landing-light-heading-middle) 60%, var(--landing-light-heading-end) 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(1px 2px 3px var(--landing-light-heading-shadow));
-  }
 
-  .card {
-    box-shadow: 0 6px 16px var(--landing-light-card-shadow);
-  }
-
-  .card:hover {
-    box-shadow: 0 12px 24px var(--landing-light-card-hover-shadow), 0 0 15px var(--landing-light-card-hover-glow);
-  }
-
-  .desc {
-  color: var(--landing-body-text);
-    background: linear-gradient(180deg, var(--landing-light-caption-start) 0%, var(--landing-light-caption-end) 100%);
-  }
-
-  .garden-list {
-    background: linear-gradient(90deg, var(--landing-light-garden-start) 0%, var(--landing-light-garden-end) 100%);
-    box-shadow: inset 2px 0 6px var(--landing-light-garden-shadow);
-  }
-}
 
 @media only screen and (max-width: 650px) {
   .gallery-container1 {

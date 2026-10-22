@@ -1,0 +1,413 @@
+/******************************/
+/* MARK: GEDEELDE THEMAKLEUREN */
+/******************************/
+
+/* Donker is standaard. Iedere pagina kan deze variabelen gebruiken. */
+:root {
+  color-scheme: dark;
+  --theme-background: #160a04;
+  --theme-surface: #2b1b11;
+  --theme-text: #f5ebd6;
+  --theme-muted: #dfc7a8;
+  --theme-accent: #f4c468;
+  --theme-border: #a97948;
+  --theme-focus: #ffe391;
+  --theme-card: linear-gradient(145deg, #2e1a12, #21110a);
+  --theme-wood-dark: #22120a;
+  --theme-wood-light: #3d2314;
+  --theme-leather: #c68a4c;
+  --theme-glow: rgba(244, 196, 104, 0.4);
+  --theme-stitching: #8d5b28;
+  --language-track: #2b1b11;
+  --language-border: #a97948;
+  --language-highlight: #f4c468;
+  --language-selected: #382113;
+  --language-unselected: #f4c468;
+  --language-focus: #ffe391;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --theme-background: #f7f1e5;
+  --theme-surface: #ffffff;
+  --theme-text: #2b1810;
+  --theme-muted: #6c5140;
+  --theme-accent: #8c4a11;
+  --theme-border: #b57a44;
+  --theme-focus: #733c08;
+  --theme-card: linear-gradient(145deg, #ffffff, #f2e7d5);
+  --theme-wood-dark: #e8d7c3;
+  --theme-wood-light: #dac4aa;
+  --theme-leather: #a35d25;
+  --theme-glow: rgba(163, 93, 37, 0.25);
+  --theme-stitching: #b57a44;
+  --language-track: #e8d7c3;
+  --language-border: #b57a44;
+  --language-highlight: #8c4a11;
+  --language-selected: #ffffff;
+  --language-unselected: #733c08;
+  --language-focus: #733c08;
+}
+
+
+
+
+
+/******************************/
+/* MARK: GEDEELDE OPPERVLAKKEN */
+/******************************/
+
+:root {
+  --theme-page-gradient: radial-gradient(ellipse at 50% 8%, #3c2314 0, #190e08 40%, #110905 100%);
+  --theme-stage-background: radial-gradient(ellipse at 42% 35%, #402617 0%, #1b0d08 65%, #100806 100%);
+  --theme-workbench-background: radial-gradient(ellipse at center, #75431d30, transparent 70%), #1c110b;
+  --theme-floating-background: #21150ef5;
+  --theme-control-background: #362012;
+  --theme-hover-background: #382012;
+  --theme-selected-background: #492b16;
+  --theme-selected-text: #ffe4a9;
+  --theme-list-background: #1e100b;
+  --theme-list-text: #e8c48a;
+  --theme-list-border: #51341e;
+  --theme-list-muted: #a98051;
+  --theme-stage-caption: #c5985a;
+  --theme-quote-text: #bc8c55;
+  --theme-peg-text: #f0c587;
+  --theme-peg-muted: #b99770;
+  --theme-peg-active: #fff1c6;
+  --theme-peg-glow: 0 0 0.75rem #ffd16d;
+  --theme-title-shadow: 0.25rem 0.3125rem 0 #3b1d0d;
+  --theme-title-hover: #ffffff;
+  --theme-title-hover-shadow: 0 0 0.75rem #ffffff99, 0 0 1.875rem #ffdc9659, 0.25rem 0.3125rem 0 #3b1d0d;
+  --theme-note-color: #ffd47a;
+  --theme-note-shadow: 0 0 0.625rem #ffbe46cc;
+  --theme-cta-background: #f4c468;
+  --theme-cta-text: #382113;
+  --theme-cta-hover: #f5ebd6;
+  --theme-dialog-background: linear-gradient(145deg, #2f1c11, #140b07);
+  --theme-tag-text: #e9c18c;
+  --theme-art-icon: #f4c468;
+}
+
+:root[data-theme='light'] {
+  --theme-page-gradient: radial-gradient(ellipse at 50% 8%, #ffffff 0, #f7f1e5 45%, #ebe0d0 100%);
+  --theme-stage-background: radial-gradient(ellipse at 42% 35%, #fff8ec, #eee3d3 70%, #e8d7c3);
+  --theme-workbench-background: radial-gradient(ellipse at center, #e2bc8155, transparent 70%), #eee3d3;
+  --theme-floating-background: #fffdf8f5;
+  --theme-control-background: #ffffff;
+  --theme-hover-background: #eee3d3;
+  --theme-selected-background: #e8d7c3;
+  --theme-selected-text: #451a03;
+  --theme-list-background: #ffffff;
+  --theme-list-text: #451a03;
+  --theme-list-border: #d1b18c;
+  --theme-list-muted: #795237;
+  --theme-stage-caption: #733c08;
+  --theme-quote-text: #795237;
+  --theme-peg-text: #633309;
+  --theme-peg-muted: #795237;
+  --theme-peg-active: #451a03;
+  --theme-peg-glow: none;
+  --theme-title-shadow: 0.12rem 0.16rem 0 #dac4aa;
+  --theme-title-hover: #733c08;
+  --theme-title-hover-shadow: 0 0 1.2rem #bd803055, 0.12rem 0.16rem 0 #dac4aa;
+  --theme-note-color: #8c4a11;
+  --theme-note-shadow: 0 0 0.6rem #a35d2540;
+  --theme-cta-background: #8c4a11;
+  --theme-cta-text: #ffffff;
+  --theme-cta-hover: #733c08;
+  --theme-dialog-background: linear-gradient(145deg, #ffffff, #f2e7d5);
+  --theme-tag-text: #733c08;
+  --theme-art-icon: #f4c468;
+}
+
+
+
+
+
+/********************************/
+/* MARK: BESTAANDE KLEURNAMEN */
+/********************************/
+
+/* Deze aliassen laten bestaande kleurvariabelen naar het gedeelde palet verwijzen. */
+:root,
+:root[data-theme] {
+  --background-color: var(--theme-background);
+  --main-font-color: var(--theme-text);
+  --secondary-font-color: var(--theme-accent);
+  --card-bg: var(--theme-card);
+  --wood-dark: var(--theme-wood-dark);
+  --wood-light: var(--theme-wood-light);
+  --leather-accent: var(--theme-leather);
+  --text-gold: var(--theme-accent);
+  --stitching: var(--theme-stitching);
+  --gold-glow: var(--theme-glow);
+  --bg: var(--theme-background);
+  --panel: var(--theme-surface);
+  --text: var(--theme-text);
+  --muted: var(--theme-muted);
+  --gold: var(--theme-accent);
+  --line: var(--theme-border);
+  --focus: var(--theme-focus);
+}
+
+
+
+
+
+/******************************/
+/* MARK: ALGEMENE LICHTE BASIS */
+/******************************/
+
+/* Alleen de paginabasis verandert hier. Componenten gebruiken de variabelen hierboven. */
+html[data-theme='light'] body {
+  background: var(--theme-background);
+  color: var(--theme-text);
+}
+
+html[data-theme='light'] :focus-visible {
+  outline-color: var(--theme-focus);
+}
+
+
+
+
+
+/******************************/
+/* MARK: ZON EN MAAN SCHAKELAAR */
+/******************************/
+
+.theme-toggle {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  width: 5.5rem;
+  height: 2.75rem;
+  padding: 0.25rem;
+  border: 0.0625rem solid #a97948;
+  border-radius: 2rem;
+  background: #2b1b11;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Het schuifvlak volgt aria-pressed; hiervoor is geen extra JavaScript nodig. */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset-block: 0.25rem;
+  left: 0.25rem;
+  width: calc(50% - 0.25rem);
+  border-radius: 2rem;
+  background: #f4c468;
+  transform: translateX(100%);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.theme-icon {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  pointer-events: none;
+}
+
+.theme-sun {
+  color: #f4c468;
+}
+
+.theme-moon {
+  color: #382113;
+}
+
+.theme-toggle:hover {
+  border-color: #f4c468;
+}
+
+.theme-toggle[aria-pressed='true'] {
+  background: #e8d7c3;
+  border-color: #8c4a11;
+}
+
+.theme-toggle[aria-pressed='true']::before {
+  background: #8c4a11;
+  transform: translateX(0);
+}
+
+.theme-toggle[aria-pressed='true'] .theme-sun {
+  color: #ffffff;
+}
+
+.theme-toggle[aria-pressed='true'] .theme-moon {
+  color: #733c08;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle::before {
+    transition: none;
+  }
+}
+
+
+
+
+
+/******************************/
+/* MARK: HOOG CONTRAST */
+/******************************/
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+
+
+
+
+/******************************/
+/* MARK: PAGINARAND */
+/******************************/
+
+html,
+body {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html:focus,
+body:focus {
+  outline: none;
+}
+
+/******************************/
+/* MARK: PAPIER EN PRIKBORD */
+/******************************/
+
+:root {
+  --theme-paper-ink: #362012;
+  --theme-paper-background: linear-gradient(140deg, #f1d8ab, #c69b65);
+  --theme-paper-shadow: 0.3125rem 0.75rem 1.125rem #0009;
+  --theme-board-background: repeating-linear-gradient(0deg, #26160c 0 0.3125rem, #2f1a0e 0.375rem 0.625rem, #231309 0.6875rem 0.875rem);
+  --theme-board-border: #4b2b15;
+  --theme-board-shadow: inset 0 0 2.1875rem #0009, 0 0.9375rem 1.875rem #0007;
+}
+
+:root[data-theme='light'] {
+  --theme-paper-ink: #362012;
+  --theme-paper-background: linear-gradient(140deg, #fffaf0, #f2e4cc);
+  --theme-paper-shadow: 0.1875rem 0.375rem 0.875rem #451a0326;
+  --theme-board-background: repeating-linear-gradient(0deg, #debd94 0 0.3125rem, #d9b58a 0.375rem 0.625rem, #e2c39f 0.6875rem 0.875rem);
+  --theme-board-border: #b88a5c;
+  --theme-board-shadow: inset 0 0 1.5rem #733c081a, 0 0.5rem 1.25rem #451a0326;
+}
+
+
+
+
+
+/********************************/
+/* MARK: NAVIGATIE THEMAKLEUREN */
+/********************************/
+
+/* navbar.css bepaalt alle vormen, afmetingen, texturen en animaties.
+   Deze lokale variabelen veranderen uitsluitend het kleurenpalet. */
+nav:has(a[href$='landing.html']) {
+  --wood-dark: #2b1704;
+  --wood-light: #4a2810;
+  --leather-accent: #8c4a32;
+  --stitching: #d4a373;
+  --main-font-color: #f4f1ea;
+  --text-gold: #ffd700;
+  --gold-glow: rgba(255, 215, 0, 0.5);
+  --nav-wood-grain: rgba(255, 255, 255, 0.03);
+  --nav-shadow: rgba(0, 0, 0, 0.7);
+  --nav-link-gradient-end: rgba(61, 35, 20, 0.4);
+}
+
+html[data-theme='light'] nav:has(a[href$='landing.html']) {
+  --wood-dark: #e8d7c3;
+  --wood-light: #dac4aa;
+  --leather-accent: #a35d25;
+  --stitching: #b57a44;
+  --main-font-color: #633309;
+  --text-gold: #451a03;
+  --gold-glow: rgba(163, 93, 37, 0.16);
+  --nav-wood-grain: rgba(115, 60, 8, 0.035);
+  --nav-shadow: rgba(69, 26, 3, 0.18);
+  --nav-link-gradient-end: rgba(218, 196, 170, 0.4);
+  --guitar-bg: #fffaf0;
+  --parchment-base: #f4e8d5;
+  --parchment-grad-1: rgba(163, 93, 37, 0.08);
+  --parchment-grad-2: rgba(115, 60, 8, 0.12);
+  --parchment-grad-3: rgba(255, 250, 240, 0.6);
+  --parchment-grad-4: rgba(232, 215, 195, 0.55);
+  --line-tint-1: rgba(115, 60, 8, 0.04);
+  --line-tint-2: rgba(115, 60, 8, 0.02);
+  --border-dark: #a35d25;
+  --shadow-heavy: rgba(69, 26, 3, 0.2);
+  --shadow-inset: rgba(115, 60, 8, 0.08);
+  --directory-title-color: #633309;
+  --text-shadow-light: rgba(255, 255, 255, 0.6);
+  --mobile-link-bg: rgba(255, 253, 248, 0.85);
+  --mobile-link-border: #b57a44;
+  --mobile-link-color: #451a03;
+  --mobile-link-shadow: rgba(69, 26, 3, 0.1);
+  --mobile-link-inset: rgba(255, 255, 255, 0.9);
+  --mobile-link-hover-bg: #733c08;
+  --mobile-link-hover-border: #733c08;
+  --mobile-link-hover-color: #fffaf0;
+  --mobile-link-hover-shadow-inset: rgba(69, 26, 3, 0.15);
+  --mobile-link-hover-shadow: rgba(69, 26, 3, 0.12);
+  --mobile-link-hover-text-shadow: rgba(255, 250, 240, 0.15);
+  --banjo-string-glow: rgba(163, 93, 37, 0.45);
+}
+
+
+
+
+
+
+/********************************/
+/* MARK: PANELEN EN KEUZEKNOPPEN */
+/********************************/
+
+:root {
+  --theme-banner-background: linear-gradient(180deg, #3d2314, #2b1506);
+  --theme-heading-color: #f4c468;
+  --theme-surface-shadow: rgba(0, 0, 0, 0.5);
+  --theme-inset-highlight: rgba(255, 255, 255, 0.15);
+  --theme-paper-base: #f5ebd6;
+  --theme-paper-grain: #e3d0ae;
+  --theme-paper-inset: #d4be96;
+  --theme-tab-background: #27272a;
+  --theme-tab-text: #fde68a;
+  --theme-tab-hover: #3f3f46;
+  --theme-tab-selected: #f59e0b;
+  --theme-tab-selected-text: #451a03;
+  --theme-input-background: rgba(254, 243, 199, 0.9);
+  --theme-input-placeholder: rgba(146, 64, 14, 0.6);
+}
+
+:root[data-theme='light'] {
+  --theme-banner-background: linear-gradient(180deg, #f2e7d5, #e8d7c3);
+  --theme-heading-color: #733c08;
+  --theme-surface-shadow: rgba(90, 50, 20, 0.12);
+  --theme-inset-highlight: rgba(255, 255, 255, 0.6);
+  --theme-paper-base: #fffaf0;
+  --theme-paper-grain: #eee3d3;
+  --theme-paper-inset: #efe2cb;
+  --theme-tab-background: #eee3d3;
+  --theme-tab-text: #451a03;
+  --theme-tab-hover: #e1c9a5;
+  --theme-tab-selected: #733c08;
+  --theme-tab-selected-text: #fffaf0;
+  --theme-input-background: #fffdf8;
+  --theme-input-placeholder: #795237;
+}
+
