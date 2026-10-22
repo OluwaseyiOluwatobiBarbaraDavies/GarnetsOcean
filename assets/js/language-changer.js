@@ -28,6 +28,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
+  // Een optionele aanvulling voorkomt dat oude privacyvertalingen terugkomen.
+  const extraPath = document.documentElement.dataset.translationsExtraPath
+    || document.querySelector?.('[data-translations-extra-path]')?.dataset.translationsExtraPath;
+  if (extraPath) {
+    try {
+      const response = await fetch(extraPath);
+      if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+      const extraTranslations = await response.json();
+      ['NL', 'ENG'].forEach(language => {
+        translations[language] = { ...translations[language], ...extraTranslations[language] };
+      });
+    } catch (error) {
+      console.warn('Could not load additional translations; the HTML text remains available.', error);
+    }
+  }
+
   if (!['NL', 'ENG'].includes(currentLang) || !translations[currentLang]) {
     currentLang = config.defaultLang;
   }
@@ -133,6 +149,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
       element.setAttribute('aria-label', t(element.dataset.i18nAriaLabel));
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+      element.alt = t(element.dataset.i18nAlt, element.alt);
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+      element.title = t(element.dataset.i18nTitle, element.title);
     });
     updateToggle();
     document.dispatchEvent(new CustomEvent('languagechange', { detail: { lang: currentLang } }));

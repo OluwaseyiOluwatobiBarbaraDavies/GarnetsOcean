@@ -333,6 +333,24 @@
     return template.replace(/\{(\w+)\}/g, (match, key) => values[key] ?? match);
   }
 
+  function translate(key, fallback, values = {}) {
+    return format(window.siteI18n?.t(key, fallback) ?? fallback, values);
+  }
+
+  function translatedEra(era) {
+    return Object.fromEntries(Object.entries(era).map(([key, value]) => [key,
+      ['name', 'subtitle', 'heading'].includes(key)
+        ? translate(`story_era_${era.id}_${key}`, value) : value]));
+  }
+
+  function translatedEvent(era, index) {
+    const event = era.events[index];
+    return Object.fromEntries(Object.entries(event).map(([key, value]) => [key,
+      ['year', 'title', 'description', 'sourceLabel'].includes(key)
+        ? translate(`story_event_${era.id}_${index + 1}_${key === 'sourceLabel' ? 'source_label' : key}`, value)
+        : value]));
+  }
+
   function createElement(tag, className, text) {
     const element = document.createElement(tag);
     if (className) element.className = className;
@@ -472,15 +490,26 @@
       if (!info || !cardImage || !name) return;
 
       title.textContent = name;
-      text.textContent = info.text;
+      dialog.dataset.artist = card.dataset.artist;
+      updateArtistText();
       const image = cardImage.cloneNode(false);
       image.alt = name;
       image.loading = 'eager';
       imageContainer.replaceChildren(image);
-      tags.replaceChildren(...info.tags.map(tag => createElement('span', '', tag)));
+
       if (!dialog.open) dialog.showModal();
     });
 
+    function updateArtistText() {
+      const id = dialog.dataset.artist;
+      const info = artistInfo[id];
+      if (!info) return;
+      text.textContent = translate(`story_artist_${id}_text`, info.text);
+      tags.replaceChildren(...info.tags.map((tag, index) =>
+        createElement('span', '', translate(`story_artist_${id}_tag_${index + 1}`, tag))));
+    }
+
+    document.addEventListener('languagechange', updateArtistText);
     close.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => {
       if (event.target !== dialog) return;
@@ -570,7 +599,7 @@
       const player = createElement('iframe', 'history-video');
       // Geen autoplay; de vorige speler verdwijnt bij een andere gebeurtenis.
       player.src = `https://www.youtube-nocookie.com/embed/${media.videoId}?rel=0`;
-      player.title = format(labels.timelineVideoTitle, event);
+      player.title = translate('story_video_title', labels.timelineVideoTitle, event);
       player.loading = 'lazy';
       player.referrerPolicy = 'strict-origin-when-cross-origin';
       player.allow = 'encrypted-media; picture-in-picture; fullscreen';
@@ -589,7 +618,7 @@
     image.addEventListener('error', () => {
       // Een ontbrekend bestand mag de kaart of de gitaarbediening niet breken.
       if (frame.contains(image)) {
-        frame.replaceChildren(createElement('p', 'history-media-message', labels.timelineImageUnavailable));
+        frame.replaceChildren(createElement('p', 'history-media-message', translate('story_image_unavailable', labels.timelineImageUnavailable)));
       }
     }, { once: true });
     frame.replaceChildren(image);
@@ -633,13 +662,14 @@
     posts.replaceChildren();
 
     const tunerButtons = eras.map((era, index) => {
+      const displayEra = translatedEra(era);
       const left = index % 2 === 0;
       const button = createButton(`tuner ${left ? 'left' : 'right'}`);
-      button.setAttribute('aria-label', format(labels.chooseEra, era));
+      button.setAttribute('aria-label', translate('story_choose_era', labels.chooseEra, displayEra));
       button.setAttribute('aria-controls', card.id);
 
       const label = createElement('span', 'key-label');
-      label.append(createElement('strong', '', era.name), createElement('small', '', era.subtitle));
+      label.append(createElement('strong', '', displayEra.name), createElement('small', '', displayEra.subtitle));
       const shaft = createElement('span', 'key-shaft');
       const wing = createElement('span', 'key-wing');
       shaft.setAttribute('aria-hidden', 'true');
@@ -672,7 +702,8 @@
     function buildEvents() {
       const markerNodes = [];
       shortcutButtons = [];
-      eventButtons = selectedEra.events.map((event, index) => {
+      eventButtons = selectedEra.events.map((originalEvent, index) => {
+        const event = translatedEvent(selectedEra, index);
         // CSS Grid verdeelt de gebeurtenisgroepen over de beschikbare hals.
         const marker = createButton('event-marker', event.icon);
         marker.setAttribute('aria-label', `${event.year}: ${event.title}`);
@@ -690,7 +721,7 @@
         shortcut.setAttribute('aria-controls', card.id);
         shortcut.append(
           createElement('strong', '', `${event.year} · ${event.title}`),
-          createElement('small', '', labels.eventHint),
+          createElement('small', '', translate('story_event_hint', labels.eventHint)),
         );
         shortcut.addEventListener('click', () => selectEvent(index));
         shortcutButtons.push(shortcut);
@@ -706,14 +737,25 @@
       updateEvent();
     }
 
-    function updateEvent() {
+    function updateEvent(refreshMedia = true) {
       eventButtons.forEach((button, index) => setPressed(button, index === selectedEvent));
       shortcutButtons.forEach((button, index) => setPressed(button, index === selectedEvent));
-      const current = selectedEra.events[selectedEvent];
-      fields.era.textContent = selectedEra.name;
-      fields.heading.textContent = selectedEra.heading;
-      renderTimelineMedia(fields.mediaFrame, fields.mediaLink, current);
-      fields.archive.textContent = format(labels.archive, current);
+      const current = translatedEvent(selectedEra, selectedEvent);
+      const displayEra = translatedEra(selectedEra);
+      fields.era.textContent = displayEra.name;
+      fields.heading.textContent = displayEra.heading;
+      if (refreshMedia) renderTimelineMedia(fields.mediaFrame, fields.mediaLink, current);
+      else {
+        // Een taalwissel onderbreekt een spelende video niet.
+        const player = fields.mediaFrame.querySelector('iframe');
+        const image = fields.mediaFrame.querySelector('img');
+        const message = fields.mediaFrame.querySelector('.history-media-message');
+        if (player) player.title = translate('story_video_title', labels.timelineVideoTitle, current);
+        if (image) image.alt = current.title;
+        if (message) message.textContent = translate('story_image_unavailable', labels.timelineImageUnavailable);
+      }
+      fields.mediaLink.textContent = translate('story_watch_youtube', 'Bekijk op YouTube ↗');
+      fields.archive.textContent = translate('story_archive', labels.archive, current);
       fields.year.textContent = current.year;
       fields.title.textContent = current.title;
       fields.description.textContent = current.description;
@@ -730,6 +772,17 @@
       card.classList.remove('paper-swap');
       window.requestAnimationFrame(() => card.classList.add('paper-swap'));
     }
+
+    document.addEventListener('languagechange', () => {
+      tunerButtons.forEach((button, index) => {
+        const era = translatedEra(eras[index]);
+        button.setAttribute('aria-label', translate('story_choose_era', labels.chooseEra, era));
+        button.querySelector('strong').textContent = era.name;
+        button.querySelector('small').textContent = era.subtitle;
+      });
+      buildEvents();
+      updateEvent(false);
+    });
 
     updateTuners();
     buildEvents();
@@ -791,7 +844,9 @@
       const expanded = open && desktop.matches && ticket.classList.contains('is-visible');
       ticket.classList.toggle('is-open', expanded);
       toggle.setAttribute('aria-expanded', String(expanded));
-      toggle.setAttribute('aria-label', expanded ? 'Sluit paginanavigatie' : 'Open paginanavigatie');
+      toggle.setAttribute('aria-label', expanded
+        ? translate('story_ticket_close', 'Sluit paginanavigatie')
+        : translate('story_ticket_open', 'Open paginanavigatie'));
       // Inert voorkomt tabben naar links op het ingeschoven papier.
       paper.inert = !expanded;
       paper.setAttribute('aria-hidden', String(!expanded));
@@ -840,6 +895,9 @@
       setTicketOpen(false, true);
     });
 
+    document.addEventListener('languagechange', () => {
+      setTicketOpen(ticket.classList.contains('is-open'));
+    });
     window.addEventListener('scroll', scheduleUpdate, { passive: true });
     window.addEventListener('resize', scheduleUpdate);
     window.addEventListener('load', scheduleUpdate);
