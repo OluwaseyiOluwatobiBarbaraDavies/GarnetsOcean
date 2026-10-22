@@ -40,6 +40,35 @@
 
 
 
+  /************************/
+  /* MARK: TIJDLIJNBRONNEN */
+  /************************/
+
+  // Bewaar bronadressen centraal. Een achtergrondbron onderbouwt de context,
+  // maar is geen afzonderlijke publicatie over het getoonde nummer of album.
+  const timelineSources = {
+    tulane: {
+      name: 'Tulane — Music Rising',
+      url: 'https://musicrising.tulane.edu/discover/themes/country-music/',
+    },
+    libraryOfCongress: {
+      name: 'Library of Congress — Timeline',
+      url: 'https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/',
+    },
+    oklahoma: {
+      name: 'Oklahoma Historical Society',
+      url: 'https://www.okhistory.org/publications/enc/entry?entry=CO072',
+    },
+    musicnotes: {
+      name: 'Musicnotes — Influences',
+      url: 'https://www.musicnotes.com/blog/an-american-tradition-the-history-of-country-music-influences/',
+    },
+  };
+
+
+
+
+
   /************************************/
   /* MARK: PERIODEN EN GEBEURTENISSEN */
   /**********************************/
@@ -56,21 +85,27 @@
           title: 'Traditionele volksmuziek',
           icon: '♫',
           media: { type: 'image', file: 'roots_1.jpg' },
-          description: 'Europese ballades, Afro-Amerikaanse muziektradities en regionale vioolmuziek hielpen de basis van countrymuziek te vormen.',
+          source: 'tulane',
+          sourceLabel: 'Historische bron',
+          description: 'De wortels van Country muziek liggen in verschillende muzikale tradities. Europese immigranten brachten volksliederen en ballades mee, terwijl Afro-Amerikaanse gemeenschappen blues, ritmes en zangtechnieken ontwiikkelden. Deze invloeden kwamen samen in het zuiden van de Verenigde Staten en vormden de basis voor Country muziek.',
         },
         {
           year: 'Jaren 1830',
           title: 'Banjotradities',
           icon: '♬',
           media: { type: 'image', file: 'roots_2.jpg' },
-          description: 'De banjo, met wortels in Afrikaanse instrumenten, kreeg een steeds prominentere plaats in de Amerikaanse populaire muziek.',
+          source: 'tulane',
+          sourceLabel: 'Historische achtergrond',
+          description: 'De banjo vindt zijn oorsprong in snaarinstrumenten die door tot slaaf gemaakte Afrikanen naar Amerika werden gebracht. In de 19e eeuwe verspreidde het instrument zich via verschillende muziektradities. De herkenbare klank van de banjo werd later een belangrrijk onderdeel van traditionele Country muziek en bluegrass.',
         },
         {
           year: 'Eind 19e eeuw',
           title: 'Snaargroepen op het platteland',
           icon: '♪',
           media: { type: 'image', file: 'roots_3.png' },
-          description: 'Regionale tradities van snaargroepen, vioolmuziek en volksmuziek bloeiden in het zuiden van de Verenigde Staten.',
+          source: 'tulane',
+          sourceLabel: 'Historische achtergrond',
+          description: 'Op het Amerikaanse platteland speelden muzikanten samen op instrumenten zoals de viool, banjo en gitaar. Deze snaargroepen traden op tijdens feesten, dansavonden en bijeenkomsten. Hun muziek werd van generatie op generatie doorgegeven en groeide later uit tot een belangrijke basis voor de eerste Country opnames.',
         },
       ],
     },
@@ -85,21 +120,27 @@
           title: 'Outlaw country',
           icon: '★',
           media: { type: 'image', file: 'outlaw_1.jpg' },
-          description: 'Willie Nelson en Waylon Jennings hielpen countrymuziek te vernieuwen met een onafhankelijkere aanpak.',
+          source: 'libraryOfCongress',
+          sourceLabel: 'Historische achtergrond',
+          description: 'In de jaren 1970 ontstond outlaw country als reactie op het gepolijste geluid van Nashville. Artiesten zoals Willie Nelson en Waylon Jennings wilden meer creatieve vrijheid en controle over hun muziek. Met een rauwer geluid en persoonlijke teksten veranderden ze de richting van countrymuziek.',
         },
         {
-          year: '1974',
+          year: '1973',
           title: 'Jolene',
           icon: '♫',
           media: { type: 'image', file: 'outlaw_2.jpg' },
-          description: 'Dolly Parton bracht een van haar meest geliefde en blijvende nummers uit.',
+          source: 'libraryOfCongress',
+          sourceLabel: 'Achtergrond: country in de jaren 1970',
+          description: 'Dolly Parton bracht in 1973 het nummer "Jolene" uit, dat in 1974 uitgroeide tot een grote hit. Het lied vertelt het verhaal van een vrouw die een andere vrouw smeekt haar geliefde niet af te pakken. Door de herkenbare melodie, emotionele tekst en krachtige zang werd het een van de bekendste countrynummers ooit.',
         },
         {
           year: '1980',
           title: 'Urban Cowboy',
           icon: '▣',
           media: { type: 'image', file: 'outlaw_3.jpg' },
-          description: 'De film Urban Cowboy hielp countrymuziek en de westerncultuur onder de aandacht van een breed publiek te brengen.',
+          source: 'oklahoma',
+          sourceLabel: 'Achtergrond: country en westerncultuur',
+          description: 'De film "Urban Cowboy", met John Travolta in de hoofdrol, bracht countrymuziek en de Texaanse honky-tonkcultuur onder de aandacht van een groot publiek. De soundtrack werd een succes en zorgde voor een nieuwe populariteit van countrymuziek, cowboylaarzen en linedancing.',
         },
       ],
     },
@@ -114,21 +155,27 @@
           title: 'Uitzendingen van de Grand Ole Opry',
           icon: '♬',
           media: { type: 'image', file: 'radio_1.jpg' },
-          description: 'Het radioprogramma dat later de Grand Ole Opry werd, begon in Nashville en bracht regionale muziek naar een groeiend publiek.',
+          source: 'oklahoma',
+          sourceLabel: 'Achtergrond: country en radio',
+          description: 'In 1925 begon in Nashville een radioprogramma dat later bekend werd als de "Grand Ole Opry". Het programma gaf traditionele muzikanten een podium en bracht countrymuziek bij luisteraars in heel Amerika. De Grand Ole Opry groeide uit tot een van de belangrijkste instellingen binnen de countrygeschiedenis.',
         },
         {
           year: '1927',
           title: 'De Bristol Sessions',
           icon: '◉',
           media: { type: 'image', file: 'radio_2.jpg' },
-          description: 'The Carter Family en Jimmie Rodgers maakten belangrijke opnamen die de commerciële countrymuziek hielpen vormgeven.',
+          source: 'libraryOfCongress',
+          sourceLabel: 'Historische bron',
+          description: 'Tijdens de Bristol Sessions in 1927 werden opnames gemaakt van onder anderen Jimmie Rodgers en The Carter Family. Deze artiesten hielpen het geluid van vroege countrymuziek vorm te geven. De opnames worden vaak beschouwd als een belangrijk keerpunt in de ontwikkeling van country als commercieel muziekgenre.',
         },
         {
           year: '1935',
           title: 'Het tijdperk van de zingende cowboy',
           icon: '★',
           media: { type: 'image', file: 'radio_3.jpg' },
-          description: 'Gene Autry hielp de zingende cowboy populair te maken via films en muziekopnamen.',
+          source: 'oklahoma',
+          sourceLabel: 'Historische bron',
+          description: 'In de jaren 1930 werd de zingende cowboy populair dankzij westernfilms en radio. Gene Autry groeide uit tot een van de bekendste vertegenwoordigers van deze stijl. Zijn muziek combineerde romantische verhalen over het Wilde Westen met toegankelijke countrymelodieën en maakte het genre aantrekkelijk voor een breder publiek.',
         },
       ],
     },
@@ -143,21 +190,27 @@
           title: 'If Tomorrow Never Comes',
           icon: '♫',
           media: { type: 'youtube', videoId: 'M9r0XxLsgic' },
-          description: 'Garth Brooks hielp countrymuziek naar een enorm publiek in grote concertarena’s te brengen.',
+          source: 'oklahoma',
+          sourceLabel: 'Achtergrond: Garth Brooks en de jaren 1990',
+          description: 'Garth Brooks bracht in 1989 "If Tomorrow Never Comes" uit, een emotionele countryballad over liefde en de vraag of je genoeg laat merken hoeveel iemand voor je betekent. Het nummer werd zijn eerste nummer 1-hit in de Amerikaanse countryhitlijsten en hielp hem uit te groeien tot een van de grootste countrysterren van de jaren 1990.',
         },
         {
           year: '1994',
           title: 'American Recordings',
           icon: '◉',
           media: { type: 'image', file: 'superstars_2.jpg' },
-          description: 'Samen met hiphopproducent Rick Rubin brengt Johnny Cash de LP "American Recordings" uit. Het album kenmerkt zich door sobere arrangementen, de nog altijd indrukwekkende stem van Cash en een eclectische keuze aan nummers; critici bestempelen het als een mijlpaal.De daaropvolgende albums uit de "American Recordings"-reeks worden grote successen en herstellen de positie van Cash in de muziekindustrie die hij mede heeft vormgegeven.',        
+          source: 'tulane',
+          sourceLabel: 'Achtergrond: Johnny Cash en country',
+          description: 'Johnny Cash werkte in 1994 samen met producer Rick Rubin aan het album "American Recordings". Met sobere arrangementen en zijn karakteristieke stem keerde Cash terug naar de kern van zijn muziek. Het album kreeg veel waardering en zorgde ervoor dat een nieuwe generatie luisteraars zijn werk ontdekte.',
         },
         {
           year: '2005',
           title: 'Before He Cheats',
           icon: '★',
           media: { type: 'youtube', videoId: 'b3Kd15TVNCY' },
-          description: 'In “Before He Cheats” leert Carrie Underwood een ontrouwe geliefde een lesje. Als derde single van het album *Some Hearts* (2005) werd het nummer het eerste countrynummer in de geschiedenis waarvan meer dan twee miljoen digitale exemplaren werden verkocht. Het won bovendien twee Grammy Awards: een voor ‘Best Female Country Vocal Performance’ en een voor ‘Best Country Song’. Sinds de release is het door de RIAA vijfmaal met platina bekroond, met een verkoop van vijf miljoen exemplaren.',
+          source: 'musicnotes',
+          sourceLabel: 'Achtergrond: country en popinvloeden',
+          description: 'Carrie Underwood bracht "Before He Cheats" in 2006 uit als single van haar debuutalbum "Some Hearts" uit 2005. Het nummer vertelt het verhaal van een vrouw die wraak neemt op haar ontrouwe partner. De combinatie van country, pop en rock werd een enorm succes en leverde Underwood twee Grammy Awards op.',
         },
       ],
     },
@@ -172,21 +225,27 @@
           title: 'Jambalaya',
           icon: '♫',
           media: { type: 'youtube', videoId: 'Mc_2sOWVTxI' },
-          description: 'Hank Williams bracht Jambalaya (On the Bayou) uit, een blijvende countryklassieker.',
+          source: 'tulane',
+          sourceLabel: 'Historische bron',
+          description: 'Hank Williams bracht in 1952 "Jambalaya (On the Bayou)" uit, een vrolijk countrynummer met invloeden uit de Cajunmuziek van Louisiana. Het lied beschrijft een feestelijke bijeenkomst vol eten, dans en muziek. Door de aanstekelijke melodie groeide het uit tot een countryklassieker die door veel artiesten opnieuw werd opgenomen.',
         },
         {
           year: '1957',
           title: 'Walkin’ After Midnight',
           icon: '◉',
           media: { type: 'youtube', videoId: 'lgGI-HOQZBk' },
-          description: 'Patsy Cline bereikte met Walkin’ After Midnight ook een publiek buiten de countrymuziek.',
+          source: 'oklahoma',
+          sourceLabel: 'Achtergrond: de Nashville Sound',
+          description: 'Patsy Cline brak in 1957 door met "Walkin’ After Midnight". Het nummer vertelt over een vrouw die tijdens nachtelijke wandelingen verlangt naar een verloren liefde. Dankzij haar krachtige stem en de combinatie van country en pop werd het een grote hit en hielp het Cline uit te groeien tot een van de invloedrijkste countryzangeressen.',
         },
         {
           year: '1968',
           title: 'Harper Valley, P.T.A.',
           icon: '♪',
           media: { type: 'youtube', videoId: 'aOZPBUu7Fro' },
-          description: 'Jeannie C. Riley neemt “Harper Valley, P.T.A.” ​​op, een van de zeven country-singles die de eerste plaats in de hitlijsten bereikten en door Tom T. Hall werden geschreven. De plaat verkoopt meer dan zes miljoen exemplaren als single, en Riley is de eerste vrouw die tegelijkertijd een nummer 1-hit heeft in zowel de pop- als de country-hitlijsten van Billboard.',
+          source: 'oklahoma',
+          sourceLabel: 'Achtergrond: country in de jaren 1960',
+          description: 'Jeannie C. Riley bracht in 1968 "Harper Valley P.T.A." uit, geschreven door Tom T. Hall. Het lied vertelt over een alleenstaande moeder die de hypocrisie van de plaatselijke oudervereniging aan de kaak stelt. Het nummer bereikte de eerste plaats in zowel de Amerikaanse country- als pophitlijsten en werd een van de grootste countryhits van dat jaar.',
         },
       ],
     },
@@ -197,25 +256,31 @@
       heading: 'MODERNE COUNTRYMUZIEK',
       events: [
         {
-          year: '2013',
+          year: '2012',
           title: 'Cruise',
           icon: '♫',
           media: { type: 'youtube', videoId: '8PvebsWcpto' },
-          description: 'Florida Georgia Line hielp de bro-country-stijl populair te maken.',
+          source: 'musicnotes',
+          sourceLabel: 'Achtergrond: moderne country en pop',
+          description: 'Florida Georgia Line bracht in 2012 "Cruise" uit, een nummer dat country combineert met invloeden uit pop en rock. Het lied werd een van de bekendste voorbeelden van bro-country, een moderne stijl met thema’s zoals autorijden, feesten en het buitenleven. Het enorme succes liet zien hoe countrymuziek steeds meer aansluiting vond bij een jong publiek.',
         },
         {
-          year: '2018',
-          title: 'Golden Hour',
+          year: '2015',
+          title: 'Tennessee Whiskey',
           icon: '◉',
-          media: { type: 'youtube', videoId: 'maONL_HfI20' },
-          description: 'Kacey Musgraves bracht Golden Hour uit, een album dat verschillende muziekgenres combineert.',
+          media: { type: 'youtube', videoId: 'IBLruNfUqUs' },
+          source: 'tulane',
+          sourceLabel: 'Achtergrond: country, blues en soul',
+          description: 'Chris Stapleton bracht in 2015 zijn versie van "Tennessee Whiskey" uit op het album "Traveller". Hij combineerde traditionele country met invloeden uit soul en blues. Zijn krachtige, warme stem gaf het nummer een nieuwe uitstraling en maakte het tot een moderne countryklassieker.',
         },
         {
           year: '2024',
           title: 'Cowboy Carter',
           icon: '★',
           media: { type: 'image', file: 'modern_3.png' },
-          description: 'Beyoncé verkende op Cowboy Carter het erfgoed van countrymuziek en de grenzen tussen muziekgenres.',
+          source: 'tulane',
+          sourceLabel: 'Achtergrond: Afro-Amerikaanse invloeden',
+          description: 'Beyoncé bracht in 2024 het album "Cowboy Carter" uit, waarin ze countrymuziek combineert met onder andere folk, blues, gospel en pop. Het album onderzoekt de invloed van zwarte muzikanten op de geschiedenis van countrymuziek en laat zien hoe het genre zich blijft ontwikkelen en muzikale grenzen kan doorbreken.',
         },
       ],
     },
@@ -555,6 +620,7 @@
       year: find('#card-year'),
       title: find('#card-title'),
       description: find('#card-description'),
+      source: find('.history-source'),
     };
     const eras = countryEras.filter(era => era.events.length);
     if (!keys || !posts || !markers || !shortcuts || !card || !eras.length
@@ -651,6 +717,11 @@
       fields.year.textContent = current.year;
       fields.title.textContent = current.title;
       fields.description.textContent = current.description;
+
+      // De bron volgt de geselecteerde gebeurtenis, ook binnen dezelfde periode.
+      const source = timelineSources[current.source];
+      fields.source.href = source.url;
+      fields.source.textContent = `${current.sourceLabel}: ${source.name} ↗`;
 
       // Geen geforceerde layoutmeting nodig om de animatie opnieuw te starten.
       if (typeof card.getAnimations === 'function') {

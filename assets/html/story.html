@@ -35,7 +35,7 @@
           <a href="bronnen.html" data-i18n="nav_sources">Bronnen</a>
         </li>
         <li>
-          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy Beleid</a>
         </li>
         <li class="nav-language">
           <button id="langToggleBtn" type="button" aria-label="Switch to English">NL</button>
@@ -121,7 +121,7 @@
 
       <!-- ==================== MARK: GITAARTIJDLIJN ==================== -->
       <!-- De begininhoud is leesbaar zonder JavaScript. story.js neemt de bediening over. -->
-      <section class="country-history" id="gardenRoots" aria-labelledby="history-title" data-initial-era="radio" lang="nl">
+      <section class="country-history" id="gardenRoots" aria-labelledby="history-title" data-initial-era="roots" lang="nl">
         <header class="section-heading reveal">
           <span class="eyebrow">01 / THE GUITAR OF TIME</span>
           <h2 id="history-title">Stem af op de geschiedenis</h2>
@@ -148,9 +148,9 @@
                 </div>
 
                 <div class="tuning-keys" id="tuning-keys" role="group" aria-label="Kies een historische periode">
-                  <button class="tuner left" type="button" aria-label="Kies 19e eeuw: Wortels" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>19e eeuw</strong><small>Wortels</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left active" type="button" aria-label="Kies 19e eeuw: Wortels" aria-pressed="true" aria-controls="history-card"><span class="key-label"><strong>19e eeuw</strong><small>Wortels</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
                   <button class="tuner right" type="button" aria-label="Kies 1970–1989: Outlaw en pop" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1970–1989</strong><small>Outlaw en pop</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
-                  <button class="tuner left active" type="button" aria-label="Kies 1920–1949: Radio en pioniers" aria-pressed="true" aria-controls="history-card"><span class="key-label"><strong>1920–1949</strong><small>Radio en pioniers</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
+                  <button class="tuner left" type="button" aria-label="Kies 1920–1949: Radio en pioniers" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1920–1949</strong><small>Radio en pioniers</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
                   <button class="tuner right" type="button" aria-label="Kies 1990–2009: Supersterren" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1990–2009</strong><small>Supersterren</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
                   <button class="tuner left" type="button" aria-label="Kies 1950–1969: Nashville-sound" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>1950–1969</strong><small>Nashville-sound</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
                   <button class="tuner right" type="button" aria-label="Kies 2010–heden: Moderne country" aria-pressed="false" aria-controls="history-card"><span class="key-label"><strong>2010–heden</strong><small>Moderne country</small></span><span class="key-shaft" aria-hidden="true"></span><span class="key-wing" aria-hidden="true"></span></button>
@@ -172,27 +172,18 @@
 
                 <div class="event-markers" id="event-markers">
                   <div class="timeline-event">
-                    <button class="event-marker active" type="button" aria-label="1925: Uitzendingen van de Grand Ole Opry" aria-pressed="true" aria-controls="history-card">♬</button>
-                    <div class="marker-label" aria-hidden="true">
-                      <strong>1925</strong>
-                      Uitzendingen van de Grand Ole Opry
-                    </div>
+                    <button class="event-marker active" type="button" aria-label="19e eeuw: Traditionele volksmuziek" aria-pressed="true" aria-controls="history-card">♫</button>
+                    <div class="marker-label" aria-hidden="true"><strong>19e eeuw</strong>Traditionele volksmuziek</div>
                   </div>
 
                   <div class="timeline-event">
-                    <button class="event-marker" type="button" aria-label="1927: De Bristol Sessions" aria-pressed="false" aria-controls="history-card">◉</button>
-                    <div class="marker-label" aria-hidden="true">
-                      <strong>1927</strong>
-                      De Bristol Sessions
-                    </div>
+                    <button class="event-marker" type="button" aria-label="Jaren 1830: Banjotradities" aria-pressed="false" aria-controls="history-card">♬</button>
+                    <div class="marker-label" aria-hidden="true"><strong>Jaren 1830</strong>Banjotradities</div>
                   </div>
 
                   <div class="timeline-event">
-                    <button class="event-marker" type="button" aria-label="1935: Het tijdperk van de zingende cowboy" aria-pressed="false" aria-controls="history-card">★</button>
-                    <div class="marker-label" aria-hidden="true">
-                      <strong>1935</strong>
-                      Het tijdperk van de zingende cowboy
-                    </div>
+                    <button class="event-marker" type="button" aria-label="Eind 19e eeuw: Snaargroepen op het platteland" aria-pressed="false" aria-controls="history-card">♪</button>
+                    <div class="marker-label" aria-hidden="true"><strong>Eind 19e eeuw</strong>Snaargroepen op het platteland</div>
                   </div>
                 </div>
               </div>
@@ -209,28 +200,37 @@
           </div>
           <aside class="history-details reveal">
             <article class="parchment" id="history-card" aria-live="polite" aria-atomic="true">
-              <p class="paper-era" id="card-era">1920–1949</p>
-              <h3 id="card-heading">RADIO EN PIONIERS</h3>
+              <p class="paper-era" id="card-era">19e eeuw</p>
+              <h3 id="card-heading">FOLK EN DE MUZIKALE WORTELS</h3>
               <figure class="history-media">
                 <div class="history-media-frame" id="historyMediaFrame">
-                  <img class="history-image" src="../resources/images/radio_1.jpg" alt="Uitzendingen van de Grand Ole Opry" loading="lazy" decoding="async">
+                  <img class="history-image" src="../resources/images/roots_1.jpg" alt="Traditionele volksmuziek" loading="lazy" decoding="async">
                 </div>
-                <figcaption id="archive-year">ARCHIEF · 1925</figcaption>
+                <figcaption id="archive-year">ARCHIEF · 19e eeuw</figcaption>
               </figure>
               <a class="history-media-link" id="historyMediaLink" target="_blank" rel="noopener noreferrer" hidden>Bekijk op YouTube ↗</a>
-              <p class="event-year" id="card-year">1925</p>
-              <h4 id="card-title">Uitzendingen van de Grand Ole Opry</h4>
-              <p class="event-description" id="card-description">Het radioprogramma dat later de Grand Ole Opry werd, begon in Nashville en bracht regionale muziek naar een groeiend publiek.</p>
-              <a class="history-source" href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer">Historische bron: Library of Congress ↗</a>
+              <p class="event-year" id="card-year">19e eeuw</p>
+              <h4 id="card-title">Traditionele volksmuziek</h4>
+              <p class="event-description" id="card-description">De wortels van Country muziek liggen in verschillende muzikale tradities. Europese immigranten brachten volksliederen en ballades mee, terwijl Afro-Amerikaanse gemeenschappen blues, ritmes en zangtechnieken ontwiikkelden. Deze invloeden kwamen samen in het zuiden van de Verenigde Staten en vormden de basis voor Country muziek.</p>
+              <a class="history-source" href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer">Historische bron: Tulane — Music Rising ↗</a>
               <div class="paper-flourish" aria-hidden="true">
                 ── ✦ ──
               </div>
             </article>
             <p class="other-heading">✦ MEER VERHALEN UIT DEZE PERIODE ✦</p>
             <div class="event-shortcuts" id="event-shortcuts" role="group" aria-label="Gebeurtenissen">
-              <button class="active" type="button" aria-pressed="true" aria-controls="history-card"><strong>1925 · Uitzendingen van de Grand Ole Opry</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
-              <button type="button" aria-pressed="false" aria-controls="history-card"><strong>1927 · De Bristol Sessions</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
-              <button type="button" aria-pressed="false" aria-controls="history-card"><strong>1935 · Het tijdperk van de zingende cowboy</strong><small>Ontdek dit moment in de countrygeschiedenis</small></button>
+              <button class="active" type="button" aria-pressed="true" aria-controls="history-card">
+                <strong>19e eeuw · Traditionele volksmuziek</strong>
+                <small>Ontdek dit moment in de countrygeschiedenis</small>
+              </button>
+              <button type="button" aria-pressed="false" aria-controls="history-card">
+                <strong>Jaren 1830 · Banjotradities</strong>
+                <small>Ontdek dit moment in de countrygeschiedenis</small>
+              </button>
+              <button type="button" aria-pressed="false" aria-controls="history-card">
+                <strong>Eind 19e eeuw · Snaargroepen op het platteland</strong>
+                <small>Ontdek dit moment in de countrygeschiedenis</small>
+              </button>
             </div>
             <p class="history-quote">“Elke snaar vertelt een verhaal.”</p>
             <noscript>
@@ -453,10 +453,11 @@
         <header class="section-heading">
           <span class="eyebrow">THE READING SHELF</span>
           <h2>Mijn bronnenverzameling</h2>
-          <p>De tien startpunten van dit onderzoek. Sommige bronnen gebruik ik voor feiten, andere als inspiratie om verder te lezen.</p>
+          <p>De startpunten van dit onderzoek. Sommige bronnen gebruik ik voor feiten, andere als inspiratie om verder te lezen.</p>
         </header>
 
         <div class="source-list">
+          <a href="https://www.pbs.org/kenburns/country-music/country-music-timeline" target="_blank" rel="noopener noreferrer">PBS — Country Music Timeline <span aria-hidden="true">↗</span></a>
           <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer">Country Music Hall of Fame <span aria-hidden="true">↗</span></a>
           <a href="https://plumrosepublishing.com/the-history-of-country-music/" target="_blank" rel="noopener noreferrer">Plum Rose Publishing <span aria-hidden="true">↗</span></a>
           <a href="https://www.britannica.com/art/bluegrass-music" target="_blank" rel="noopener noreferrer">Britannica — Bluegrass <span aria-hidden="true">↗</span></a>
