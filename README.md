@@ -684,9 +684,9 @@ Met CSS-view-timelines verandert tekst verder naarmate deze door het scherm bewe
 | :---: |
 | ![ymcaFin](readMeImages/ymca_1.png) |
 
-| Y.M.C.A. 1 | Y.M.C.A. 2 | Y.M.C.A. 3 |
+| Y.M.C.A. 1 | Y.M.C.A. 1.5 | Y.M.C.A. 2 |
 | :---: | :---: | :---: |
-| ![ymca1](readMeImages/ymca_2.png) | ![ymca2](readMeImages/ymca_3.png) | ![ymca3](readMeImages/ymca_4.png) |
+| ![ymca1](readMeImages/ymca_3.png) | ![ymca2](readMeImages/ymca_2.png) | ![ymca3](readMeImages/ymca_4.png) |
 
 </details>
 
@@ -696,115 +696,281 @@ Met CSS-view-timelines verandert tekst verder naarmate deze door het scherm bewe
 
 Het ontwerp van deze website is niet zomaar ontstaan, maar is het resultaat van een zorgvuldig doorlopen creatief proces. Onderzoek naar de Texaanse cultuur, countrymuziek en de sfeer rondom honky-tonk bars en saloons is vertaald naar visuele keuzes, interactie en unieke websitecomponenten.
 
+
+### Dotting the I's - Feedbacktrio's met rolen
+| Dotting I's 1 | Dotting I's 2 |
+| :---: | :---:|
+| ![Dotting1](readMeImages/dotting_i_1.jpg) | ![Dotting2](readMeImages/dotting_i_2.jpg) |
+
 ---
+
 <details>
-<summary><b>Klik hier om de Creatief proces en ontwerpkeuzes verder te lezen</b></summary>
+<summary><b>Klik hier om het creatieve proces en de ontwerpkeuzes verder te lezen</b></summary>
 
 <br>
 
-**Van Moodboard naar Kleurenpalet en Sfeer:**
+## Van Moodboard naar Kleurenpalet en Sfeer
 
-Het visuele startpunt was het verzamelen van beeldmateriaal in een uitgebreid moodboard. Hierin kwamen onder andere klassieke festivalposters, rodeo-evenementen, Texaanse landschappen, countrybars en iconische portretten van countryartiesten terug. Vanuit deze beelden is een warm en rustiek kleurenpalet ontwikkeld met diepe houttinten, warme bruinen en goudachtige accenten.
+Het creatieve proces begon met het verzamelen van visuele inspiratie rondom countrymuziek en de bijbehorende cultuur. Hiervoor heb ik een uitgebreid moodboard samengesteld met onder andere klassieke festivalposters, rodeo-evenementen, Texaanse landschappen, countrybars en iconische countryartiesten.
 
-Deze combinatie zorgt ervoor dat de website een herkenbare country-uitstraling krijgt. De sfeer is geïnspireerd op een authentieke *honky-tonk* bar en traditionele materialen zoals hout en leer. Hierdoor voelt de website minder aan als een standaard webpagina en meer als een digitaal plakboek dat aansluit bij het onderwerp.
+Naast het visuele onderzoek heb ik ook abstract onderzoek gedaan naar vormen, composities, texturen en manieren waarop ik de sfeer van countrymuziek kon vertalen naar een digitaal ontwerp.
 
 | Visueel Onderzoek | Abstract Onderzoek |
 | :---: | :---: |
 | ![Visueel onderzoek](readMeImages/visueel_research.png) | ![Abstract onderzoek](readMeImages/abstract_research.png) |
 | *Kleuren, sfeer en beeldgebruik* | *Vormen, composities en richtingen* |
 
+Uit dit onderzoek ontstond een warm en rustiek kleurenpalet met diepe houttinten, verschillende bruintinten en goudachtige accenten. Deze kleuren zijn geïnspireerd op traditionele materialen zoals hout en leer en de uitstraling van een authentieke *honky-tonk* bar.
+
+![Kleurenpalet](readMeImages/colorPalette.png)
+
+*Het primaire kleurenpalet van mijn Digital Garden.*
+
+Mijn doel was om de website niet als een standaard informatieve webpagina te laten aanvoelen, maar als een interactieve omgeving waarin bezoekers de sfeer, geschiedenis en cultuur van countrymuziek kunnen ontdekken.
+
+Daarbij wilde ik de nostalgische uitstraling combineren met moderne webinteracties, zonder dat het authentieke karakter verloren zou gaan.
+
 ---
 
-**Van Onderzoek naar Eerste Ideeën:**
+## Van Onderzoek naar Eerste Ideeën
 
-Na het verzamelen van inspiratie zijn verschillende ideeën en mogelijke richtingen uitgewerkt. Hiervoor zijn onder andere de Crazy 8's gebruikt om in korte tijd meerdere concepten te bedenken en visueel te verkennen.
+Na het verzamelen van inspiratie ben ik begonnen met het onderzoeken van verschillende ontwerprichtingen.
+
+Hiervoor heb ik gebruikgemaakt van de **Crazy 8's-methode**, waarbij ik in korte tijd acht verschillende ideeën heb geschetst. Hierdoor kon ik experimenteren met composities, navigatie, interactieve elementen en manieren om muziekinstrumenten onderdeel te maken van de gebruikerservaring.
 
 | Crazy 8's (1 t/m 4) | Crazy 8's (5 t/m 8) |
 | :---: | :---: |
 | ![Crazy 8's schetsen 1 t/m 4](readMeImages/Crazy8_1.jpg) | ![Crazy 8's schetsen 5 t/m 8](readMeImages/Crazy8_2.jpg) |
 | *Eerste vier conceptschetsen* | *Laatste vier conceptschetsen* |
 
-![ColorPalette](readMeImages/colorPalette.png)
+Een belangrijk uitgangspunt tijdens het schetsen was dat de website niet alleen visueel bij countrymuziek moest passen, maar dat de interacties ook inhoudelijk verbonden moesten zijn met het onderwerp.
 
-*Primaire kleuren palette*
-
+Hierdoor ontstonden ideeën waarbij muziekinstrumenten, muzieknoten, vinylplaten en andere herkenbare country-elementen worden gebruikt als interactieve onderdelen van de website.
 
 ---
 
-**Het Saloon-startscherm & Thematische Beleving:**
+## Het Saloon-startscherm & Thematische Beleving
 
-Geïnspireerd door old-school countrybars en saloons ontstond het idee voor de introductiepagina. Dit resulteerde in een interactief startscherm met saloondeuren en dynamische, geanimeerde gradientkleuren op de achtergrond.
+Geïnspireerd door traditionele countrybars en saloons ontstond het idee om bezoekers de website te laten betreden via een interactief startscherm.
 
-Tijdens het ontwerpproces is het startscherm meerdere keren aangepast voordat de uiteindelijke versie werd gekozen.
+In plaats van een standaard welkomstpagina koos ik voor **saloondeuren die daadwerkelijk geopend kunnen worden**.
+
+Het startscherm maakt gebruik van geanimeerde gradientkleuren op de achtergrond en een warme, rustieke uitstraling die aansluit bij de rest van de website.
+
+Tijdens het ontwerpproces heb ik verschillende iteraties gemaakt om de compositie, kleuren en interactie te verbeteren.
 
 | Eerste Iteratie | Finale Versie |
 | :---: | :---: |
 | ![Eerste iteratie startscherm](readMeImages/start_iteratie1.png) | ![Finale startscherm](readMeImages/start_final.png) |
-| *Procesfase startscherm* | *Uiteindelijke versie* |
+| *Eerste uitwerking van het startscherm* | *Uiteindelijke versie* |
 
-Wanneer de bezoeker met de cursor over de saloondeuren beweegt, verschijnt een kleine cursor-tool met de tekst **“Come In”**. Na het aanklikken van de deuren wordt een animatie uitgevoerd waarbij de deuren opengaan en de gebruiker wordt verwelkomd op de website.
+Wanneer de bezoeker met de cursor over de saloondeuren beweegt, verschijnt de tekst **"Come In"** als interactieve aanwijzing.
+
+Na het aanklikken worden de deuren met een animatie geopend, waarna de bezoeker de website betreedt.
+
+**Ontwerpkeuze:** Door de navigatie naar de website te koppelen aan het openen van saloondeuren, wordt de gebruiker direct betrokken bij het thema. Het startscherm functioneert daardoor niet alleen als introductie, maar ook als onderdeel van de beleving.
 
 ---
 
-**De Opbouw van het Homescreen & Navigatie:**
+## De Opbouw van het Homescreen & Navigatie
 
-Al tijdens de eerste schetsfase is de structuur van de website gekoppeld aan het thema muziek. Dit is onder andere terug te zien in de navigatie en de visuele lijnen van de startpagina, die zijn geïnspireerd op de snaren en hals van een akoestische gitaar.
+Bij het ontwerpen van het homescreen wilde ik een balans vinden tussen een duidelijke informatiestructuur en een creatieve vormgeving.
 
-Ook het homescreen is tijdens het proces meerdere keren aangepast.
+De eerste ontwerpen waren geïnspireerd op de snaren en hals van een akoestische gitaar. Deze muzikale vormen vormden een uitgangspunt voor de visuele structuur van de pagina.
+
+Tijdens het itereren heb ik verschillende composities onderzocht en aangepast om de inhoud overzichtelijker te presenteren.
 
 | Eerste Iteratie | Finale Versie |
 | :---: | :---: |
 | ![Eerste iteratie homescreen](readMeImages/home_iteratie1.png) | ![Finale homescreen](readMeImages/home_final.png) |
-| *Procesfase homescreen* | *Uiteindelijke versie* |
+| *Eerste uitwerking van het homescreen* | *Uiteindelijke versie* |
 
-De startpagina zelf is bewust overzichtelijk en rustig gehouden, zodat de verschillende onderdelen van de Digital Garden niet met elkaar concurreren. De content is verdeeld over gestapelde kaarten (*cards*). Deze kaarten versterken het gevoel van een fysiek plakboek en sluiten tegelijkertijd aan bij het idee van een Digital Garden waarin informatie steeds verder kan worden uitgebreid en verbonden.
+Uiteindelijk heb ik gekozen voor een indeling met gestapelde kaarten (*cards*), waarin verschillende onderwerpen van de Digital Garden worden gepresenteerd.
+
+Deze opbouw heeft verschillende voordelen:
+
+- De informatie blijft overzichtelijk en leesbaar.
+- Verschillende onderwerpen kunnen visueel van elkaar worden onderscheiden.
+- De website krijgt de uitstraling van een digitaal plakboek.
+- Nieuwe informatie en onderdelen kunnen later worden toegevoegd.
+
+Het homescreen vormt hiermee de basis voor een Digital Garden waarin bezoekers verschillende aspecten van countrymuziek kunnen ontdekken.
 
 ---
 
-**Specifieke Componenten & Micro-interacties:**
+## Specifieke Componenten & Micro-interacties
 
-  - **Navbar & Responsief Banjo-menu:**
+Een belangrijk onderdeel van mijn ontwerpproces was het ontwikkelen van kleine interacties die de website herkenbaar en aantrekkelijk maken.
 
-    De navigatiebalk sluit qua stijl aan bij de houten accenten en de algemene country-esthetiek van de website. Ook de navbar heeft verschillende ontwerpiteraties doorlopen voordat de uiteindelijke versie werd gekozen.
+In plaats van standaard interface-elementen wilde ik waar mogelijk gebruikmaken van vormen en objecten die passen bij het thema.
 
-    ![Finale navbar](readMeImages/navbar_final.png)
+### Navbar & Responsief Banjo-menu
 
-    *Uiteindelijke versie van de navigatiebalk.*
+De navigatiebalk is ontworpen met dezelfde warme kleuren, houten accenten en country-esthetiek als de rest van de website.
 
-    Voor kleinere schermen is een apart mobiel menu ontworpen. Het oorspronkelijke idee was om hiervoor een gitaar als interactief element te gebruiken. Omdat een realistische gitaar met pure CSS onnodig complex zou worden, is gekozen voor een vereenvoudigde banjo.
+Ook de navbar heeft meerdere ontwerpiteraties doorlopen voordat de uiteindelijke versie werd gekozen.
 
-    De banjo heeft meerdere iteraties doorlopen:
+![Finale navbar](readMeImages/navbar_final.png)
 
-    | Banjo Iteratie 1 | Banjo Iteratie 2 | Finale Banjo-menu |
-    | :---: | :---: | :---: |
-    | ![Banjo iteratie 1](readMeImages/banjo_iteratie1.png) | ![Banjo iteratie 2](readMeImages/banjo_iteratie2.png) | ![Finale banjo](readMeImages/banjo_final.png) |
-    | *Eerste opzet* | *Tweede iteratie* | *Uiteindelijk menu-icoon* |
+*Uiteindelijke versie van de navigatiebalk.*
 
-    Door op het banjo-icoon te klikken, wordt het mobiele navigatiemenu geopend.
+Voor kleinere schermen heb ik een apart mobiel navigatiemenu ontworpen.
 
-  - **Custom Scrollbar – Vinylplaat:**
-    
-    |  | *Ontwerp van de custom scrollbar.* |
-    | :---: | :---: |
-    | Om de standaard browser-scrollbar te vervangen door een element dat beter bij het thema past, is een custom scrollbar ontworpen in de vorm van een vinylplaat. Tijdens het scrollen verschijnen er muzieknoten rondom de plaat. Een gouden lijn beweegt mee en geeft visueel aan hoe ver de gebruiker zich op de pagina bevindt. Hierdoor wordt een functioneel onderdeel van de website tegelijkertijd onderdeel van de visuele identiteit. | ![Custom scrollbar](readMeImages/scrollbar.png) |
+Het oorspronkelijke idee was om een gitaar als interactief menu-icoon te gebruiken. Omdat een herkenbare gitaar met alleen CSS relatief complex werd, heb ik dit concept vereenvoudigd tot een banjo.
 
-   
-    
+Hierbij heb ik geëxperimenteerd met de vorm, verhoudingen en herkenbaarheid van het instrument.
+
+| Banjo Iteratie 1 | Banjo Iteratie 2 | Finale Banjo-menu |
+| :---: | :---: | :---: |
+| ![Banjo iteratie 1](readMeImages/banjo_iteratie1.png) | ![Banjo iteratie 2](readMeImages/banjo_iteratie2.png) | ![Finale banjo](readMeImages/banjo_final.png) |
+| *Eerste opzet* | *Tweede iteratie* | *Uiteindelijk menu-icoon* |
+
+Door op het banjo-icoon te klikken, wordt het mobiele navigatiemenu geopend.
+
+**Ontwerpkeuze:** Het banjo-icoon vervangt het traditionele hamburgermenu en maakt de navigatie herkenbaar binnen de visuele identiteit van de website.
+
+### Custom Scrollbar – Vinylplaat
+
+Om ook de kleinere onderdelen van de website bij het thema te laten aansluiten, heb ik een aangepaste scrollbar ontworpen.
+
+In plaats van de standaard browser-scrollbar wordt een **vinylplaat** gebruikt als visueel element.
+
+| Beschrijving | Ontwerp |
+| :--- | :---: |
+| Tijdens het scrollen verschijnen muzieknoten rondom de vinylplaat. Een gouden lijn beweegt mee en laat zien hoe ver de bezoeker zich op de pagina bevindt. Hierdoor wordt een functioneel interface-element onderdeel van de muzikale beleving. | ![Custom scrollbar](readMeImages/scrollbar.png) |
+
+*Ontwerp van de custom scrollbar.*
+
+Deze interactie laat zien hoe een klein onderdeel van een website kan bijdragen aan de totale gebruikerservaring.
+
+### Taalwisselaar – Nederlands & Engels
+
+Omdat countrymuziek internationaal bekend is, wilde ik de website toegankelijk maken voor zowel Nederlandstalige als Engelstalige bezoekers.
+
+Daarom heb ik een taalwisselaar ontwikkeld waarmee bezoekers kunnen schakelen tussen **Nederlands (NL)** en **Engels (EN)**.
+
+De vertalingen worden beheerd via een apart `translations.json`-bestand. In de HTML worden elementen met `data-i18n` gekoppeld aan de juiste vertalingen.
+
+Hierdoor hoeft niet voor iedere taal een aparte webpagina te worden gemaakt en blijft de structuur van de website hetzelfde.
+
+**Ontwerpkeuze:** Door de vertalingen centraal te beheren, kan ik nieuwe teksten toevoegen zonder de volledige HTML-structuur aan te passen.
+
 ---
 
-**Bronnenpagina:**
+## Interactieve Concepten voor de Geschiedenis van Countrymuziek
 
-  De bronnenpagina is bewust overzichtelijk en georganiseerd gehouden. In de nieuwste uitwerking zijn er drie overzichten: twintig afbeeldingscredits, tien onderzoeksbronnen en zeven YouTube-links. Het zoeken en de categorieknoppen horen bij het afbeeldingsoverzicht. Het screenshot hieronder toont een eerdere versie.
+Naast de algemene vormgeving heb ik onderzocht hoe ik historische informatie op een interactieve manier kan presenteren.
 
-  ![Bronnenpagina](readMeImages/bronnen.png)
+Mijn uitgangspunt was dat bezoekers de geschiedenis niet alleen lezen, maar deze ook actief kunnen verkennen.
 
-  *Een eerdere iteratie van de bronnenpagina.*
+### Interactieve Gitaar als Tijdlijn
 
-### Ontwerp als Samenhangend Geheel
+Een van de concepten die ik heb uitgewerkt, is een verticale gitaar die functioneert als historische tijdlijn.
 
-Hoewel ieder onderdeel afzonderlijk is ontworpen, zijn de verschillende componenten bewust met elkaar verbonden. Het kleurenpalet, de houten en leren uitstraling, de muziekgerelateerde interacties, de saloondeuren, de banjo en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit. Hierdoor voelt het countrygedeelte niet als een verzameling losse elementen, maar als één samenhangende digitale omgeving rondom countrymuziek en de Texaanse cultuur. De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit.
+Bij dit concept worden de onderdelen van de gitaar gebruikt als navigatie-elementen.
+
+De **stemmechanieken aan de zijkant van de kop van de gitaar** vertegenwoordigen verschillende historische periodes, zoals de 1800s, 1900s en 1950s.
+
+Wanneer een bezoeker op een stemmechaniek klikt, verschijnen op de snaren langs de hals verschillende belangrijke gebeurtenissen uit de gekozen periode.
+
+Deze gebeurtenissen kunnen vervolgens afzonderlijk worden geselecteerd om meer informatie te bekijken.
+
+Tijdens het uitwerken van dit concept heb ik vooral aandacht besteed aan:
+
+- De verticale positie van de gitaar.
+- De herkenbaarheid van de stemmechanieken.
+- De plaatsing van historische gebeurtenissen op de snaren.
+- De mogelijkheid om direct op de gitaar te klikken in plaats van op losse knoppen.
+- Het combineren van een herkenbaar muziekinstrument met een functionele tijdlijn.
+
+**Ontwerpkeuze:** Door een muziekinstrument als tijdlijn te gebruiken, wordt de geschiedenis van countrymuziek op een thematische en speelse manier gepresenteerd.
+
+### Exploded View van een Viool
+
+Een ander concept dat ik heb onderzocht, is een interactieve *exploded view* van een viool.
+
+Bij een exploded view worden de verschillende onderdelen van een object uit elkaar gehaald, zodat zichtbaar wordt hoe het object is opgebouwd.
+
+In de eerste verkenning stond een gitaar centraal. Later heb ik onderzocht hoe dit concept zou werken met een viool.
+
+Daarbij heb ik gekozen voor een **zijaanzicht van de viool**, omdat de verschillende lagen en onderdelen vanuit dit perspectief beter zichtbaar zijn wanneer ze uit elkaar worden gehaald.
+
+Het doel van dit concept is om bezoekers op een visuele manier kennis te laten maken met de bouw en onderdelen van een muziekinstrument.
+
+### Ondergronds Wortelstelsel
+
+Daarnaast heb ik geëxperimenteerd met een concept waarbij de oorsprong en ontwikkeling van countrymuziek worden weergegeven als een ondergronds wortelstelsel.
+
+De wortels staan hierbij symbool voor de verschillende muzikale invloeden en tradities die hebben bijgedragen aan het ontstaan van countrymuziek.
+
+Vanuit deze wortels kunnen verschillende vertakkingen ontstaan die de verdere ontwikkeling van het genre vertegenwoordigen.
+
+Met dit concept wilde ik onderzoeken hoe een abstracte metafoor kan worden gebruikt om historische verbanden en muzikale invloeden visueel met elkaar te verbinden.
+
+**Reflectie op de concepten:** De gitaar, viool en wortelstructuur laten verschillende manieren zien waarop ik informatie interactief kan presenteren. Hierbij heb ik geëxperimenteerd met de balans tussen een creatieve vormgeving, begrijpelijke navigatie en de inhoudelijke betekenis van het gekozen object.
+
+---
+
+## Privacybeleid & Vragen Stellen
+
+Naast de creatieve onderdelen heb ik ook nagedacht over hoe bezoekers informatie over het privacybeleid kunnen vinden en hierover vragen kunnen stellen.
+
+Hiervoor heb ik verschillende interactieve ontwerpen verkend voor een vraagformulier.
+
+Het uitgangspunt was om een traditioneel formulier minder afstandelijk te laten aanvoelen en beter te laten aansluiten bij de rest van de website.
+
+Tijdens deze verkenning heb ik gekeken naar:
+
+- Een overzichtelijke en toegankelijke indeling.
+- Duidelijke invoervelden voor het stellen van vragen.
+- Interactieve feedback tijdens het gebruik.
+- Een vormgeving die aansluit bij de country-esthetiek.
+- Het behouden van een duidelijke en begrijpelijke gebruikerservaring.
+
+**Ontwerpkeuze:** Ook een functioneel onderdeel zoals een vraagformulier kan worden vormgegeven op een manier die past bij de identiteit van de website, zolang de bruikbaarheid centraal blijft staan.
+
+---
+
+## Bronnenpagina
+
+Voor de Digital Garden heb ik verschillende soorten bronnen gebruikt, waaronder afbeeldingen, onderzoeksartikelen en video's.
+
+Om deze informatie transparant en overzichtelijk te presenteren, heb ik een aparte bronnenpagina ontworpen.
+
+In de nieuwste uitwerking zijn de bronnen verdeeld over drie overzichten:
+
+- **20 afbeeldingscredits** voor gebruikt beeldmateriaal.
+- **10 onderzoeksbronnen** voor inhoudelijke informatie.
+- **7 YouTube-links** voor audiovisueel materiaal.
+
+Bij het afbeeldingsoverzicht kunnen bezoekers gebruikmaken van een zoekfunctie en categorieknoppen om specifieke afbeeldingen gemakkelijker terug te vinden.
+
+![Bronnenpagina](readMeImages/bronnen.png)
+
+*Een eerdere iteratie van de bronnenpagina.*
+
+**Ontwerpkeuze:** Door de bronnen in categorieën te verdelen, blijft de pagina overzichtelijk en kunnen bezoekers gemakkelijker achterhalen waar de informatie en afbeeldingen vandaan komen.
+
+---
+
+## Ontwerp als Samenhangend Geheel
+
+Tijdens het volledige ontwerpproces heb ik geprobeerd om de verschillende onderdelen van de Digital Garden met elkaar te verbinden.
+
+Het warme kleurenpalet, de houten en leren uitstraling, de saloondeuren, het banjo-menu en de vinyl-scrollbar dragen allemaal bij aan dezelfde visuele identiteit.
+
+Ook bij de nieuwere interactieve concepten heb ik dit uitgangspunt aangehouden. De gitaar als tijdlijn, de exploded view van de viool en het wortelstelsel laten zien hoe ik muziekinstrumenten en metaforen kan gebruiken om informatie op een andere manier te presenteren.
+
+Daarbij heb ik steeds gekeken naar de relatie tussen **vormgeving, interactie en inhoud**.
+
+Een belangrijk inzicht uit dit proces is dat een interactief element niet alleen decoratief moet zijn, maar ook een duidelijke functie moet hebben voor de gebruiker.
+
+De Digital Garden is hierdoor niet alleen een verzameling informatie over countrymuziek, maar een ontwerp waarin de bezoeker het onderwerp op verschillende manieren kan ontdekken.
+
+De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, omdat deze gericht is op typografie, compositie en ritme in plaats van de country-esthetiek.
 
 </details>
+
 
 ## Retrospectives
 <details>
