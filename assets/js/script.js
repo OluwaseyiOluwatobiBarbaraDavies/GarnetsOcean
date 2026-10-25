@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!entrance) return;
 
   let opening = false;
-  let tooltipDimissed = false;
-  let navigationTime;
+  let tooltipDismissed = false;
+  let navigationTimer;
 
 
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================== MARK: TEKST BIJ DE MUIS ====================
 
   function hideTooltip() {
-    tooltip?.classList.remove('is-visible');
+    tooltip?.classList.remove('is-positioned');
   }
 
   function showTooltip(event) {
@@ -53,11 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Alleen de muispositie komt uit JavaScript; de styling staat in CSS.
     tooltip.style.setProperty('--tooltip-x', `${x}px`);
     tooltip.style.setProperty('--tooltip-y', `${y}px`);
-    tooltip.classList.add('is-visible');
+    tooltip.classList.add('is-positioned');
   }
 
   entrance.addEventListener('mouseenter', event => {
     tooltipDismissed = false;
+    entrance.classList.remove('tooltip-dismissed');
     showTooltip(event);
   });
 
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       tooltipDismissed = true;
+      entrance.classList.add('tooltip-dismissed');
       hideTooltip();
     }
   });
@@ -122,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.clearTimeout(navigationTimer);
     opening = false;
     tooltipDismissed = false;
-    entrance.classList.remove('open');
+    entrance.classList.remove('open', 'tooltip-dismissed');
     hideTooltip();
   }
 

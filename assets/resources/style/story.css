@@ -81,7 +81,7 @@
 /* MARK: BASIS EN TOEGANKELIJKHEID */
 /*********************************/
 
-html:has(> .story-page) {
+html:has(body.story-page) {
   scroll-behavior: smooth;
 }
 
@@ -1165,6 +1165,14 @@ html:has(> .story-page) {
   animation: garden-paper-reveal 0.5s ease;
 }
 
+.story-page [data-paper-swap="a"] {
+  animation: garden-paper-reveal 0.5s ease;
+}
+
+.story-page [data-paper-swap="b"] {
+  animation: garden-paper-reveal-alternate 0.5s ease;
+}
+
 .story-page .paper-era {
   text-align: center;
   letter-spacing: 0.125rem;
@@ -1912,6 +1920,18 @@ html:has(> .story-page) {
   }
 }
 
+@keyframes garden-paper-reveal-alternate {
+  from {
+    opacity: 0.55;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* De collectie heeft maximaal drie platen per rij. */
 
 .story-page .dialog-image {
@@ -2086,7 +2106,7 @@ html:has(> .story-page) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:has(> .story-page) {
+  html:has(body.story-page) {
     scroll-behavior: auto;
   }
 
@@ -2601,7 +2621,7 @@ html:has(> .story-page) {
 /* MARK: PAGINA ZONDER KADER */
 /******************************/
 
-html:has(> .story-page),
+html:has(body.story-page),
 body.story-page {
   margin: 0;
   border: 0;
@@ -2613,4 +2633,40 @@ body.story-page {
 .story-page #gardenContent:focus {
   outline: none;
   box-shadow: none;
+}
+
+
+
+
+
+/******************************/
+/* MARK: SCROLLANIMATIES IN CSS */
+/****************************/
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-page .reveal:not(#history-card) {
+      animation: garden-scroll-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 25%;
+    }
+
+    /* Een bediend onderdeel mag nooit onzichtbaar blijven. */
+    .story-page .reveal:not(#history-card):focus-within {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@keyframes garden-scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

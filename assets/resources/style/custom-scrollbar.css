@@ -168,7 +168,7 @@ html {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  font-family: Georgia, serif;
+  font-family: Roboto, serif;
   font-weight: bold;
   user-select: none;
   text-shadow: 0 0 6px var(--note-text-shadow-1), 0 0 10px var(--note-text-shadow-2);
@@ -183,7 +183,7 @@ html {
 /* MARK: ANIMATIE */
 /*****************/
 
-/* JavaScript bepaalt per noot de zijwaartse afstand en draaiing. */
+/* CSS-varianten bepalen de zijwaartse afstand en draaiing. */
 @keyframes floatAndFadeNote {
   0% {
     opacity: 1;
@@ -198,4 +198,56 @@ html {
     opacity: 0;
     transform: translate(var(--dx), -70px) scale(1.3) rotate(var(--dr));
   }
+}
+
+
+
+
+
+/******************************/
+/* MARK: NOOTVARIANTEN IN CSS */
+/****************************/
+
+.scroll-music-note.note-variant-1 { color: #d4af37; font-size: 18px; --dx: -20px; --dr: -30deg; }
+.scroll-music-note.note-variant-2 { color: #e6c280; font-size: 20px; --dx: -28px; --dr: -15deg; }
+.scroll-music-note.note-variant-3 { color: #c5a059; font-size: 22px; --dx: -35px; --dr: 0deg; }
+.scroll-music-note.note-variant-4 { color: #fdfbf7; font-size: 24px; --dx: -42px; --dr: 15deg; }
+.scroll-music-note.note-variant-5 { color: #b37228; font-size: 26px; --dx: -50px; --dr: 30deg; }
+
+.country-scroll-widget[hidden] { display: none !important; }
+
+@supports (animation-timeline: scroll(root block)) {
+  .country-scroll-progress {
+    animation: country-scroll-fill linear both;
+    animation-timeline: scroll(root block);
+    transition: none;
+  }
+  .country-scroll-widget {
+    animation: country-scroll-position linear both;
+    animation-timeline: scroll(root block);
+  }
+  .vinyl-disc-indicator {
+    animation: country-scroll-turn linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes country-scroll-fill {
+  from { height: 0%; }
+  to { height: 100%; }
+}
+@keyframes country-scroll-position {
+  from { top: var(--scroll-widget-top); }
+  to { top: calc(100vh - var(--scroll-track-bottom)); }
+}
+@keyframes country-scroll-turn {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(var(--scroll-turn, 0deg)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-scroll-widget, .country-scroll-progress { animation: none !important; }
+  .vinyl-disc-indicator { animation: none !important; transition: none !important; transform: none !important; }
+  .country-scroll-progress { transition: none !important; }
+  .scroll-music-note { display: none !important; animation: none !important; }
 }
