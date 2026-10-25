@@ -395,7 +395,7 @@ Deze week heb ik ook de custom scrollbar gemaakt. In plaats van de standaard scr
 
 De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. Het ontwerp staat verderop in de README bij de componenten en micro-interacties.
 
-![Scrollbar](readMeImages/scrollbar.png)
+![Scrollbar](readMeImages/scroll_anim.gif)
 
 **HTML-validatie**
 
@@ -461,8 +461,6 @@ Ik heb een story-pagina toegevoegd als begin van mijn digital garden. Daarmee kr
 
 De stylesheets zijn apart doorgenomen: `bronnen.css`, `custom-scrollbar.css`, `landing.css`, `language-changer.css`, `navbar.css`, `privacy.css`, `story.css` en `style.css`. De afgesproken volgorde is `:root`, eventuele `@font-face`-regels, de overige styling en onderaan de media queries. De hoofdonderdelen krijgen herkenbare `MARK:`-commentaren. Waar nog Flexbox stond, is een Grid-uitwerking gemaakt, omdat Grid een eis is voor mijn project.
 
-Een aandachtspunt hierbij is dat opruimen de bestaande interacties niet mag veranderen. De deurtooltip, de banjo en de toetsenbordstijlen moeten blijven werken. De aangepaste bestanden moeten daarom ook nog in samenhang worden bekeken; alleen een overzichtelijk CSS-bestand zegt niet of de pagina goed werkt.
-
 | @font-face | :root |
 | :---: | :---: |
 | ![CriteriaCSS1](readMeImages/criteria_css1.png) | ![CriteriaCSS2](readMeImages/criteria_css2.png) |
@@ -513,7 +511,9 @@ Er is een informatieve melding voor `index.html` uitgewerkt, met een uitgebreide
 
 Ik wil hier onderscheid maken tussen cookies, `localStorage` en verzoeken naar andere diensten. Alleen geen cookies zien is onvoldoende om te concluderen dat er nergens gegevens worden verwerkt. De volledige controle van het externe webring-script en het netwerkverkeer staat nog open. De uiteindelijke privacytekst moet overeenkomen met wat de website daadwerkelijk doet.
 
-![PrivacyMelding](readMeImages/pop-up.png)
+| Pop-up Oud | Pop-up Nieuw |
+| :---: | :---: |
+| ![PrivacyMelding](readMeImages/popup_old.png) | ![PrivacyMelding2](readMeImages/popup_new.png) |
 
 </details>
 
@@ -618,6 +618,7 @@ De oorspronkelijke donkere kleuren zijn behouden als donkere modus. Voor lichte 
 De themakleuren staan in `lightDark.css`; de opslag en bediening in `lightDark.js`. Kleuren die in losse paginastylesheets bleven staan, konden de centrale themawaarden overschrijven. Daarom is de lichte uitwerking ook op de Story-, bronnen- en privacypagina nagelopen. Bij de bronnenkaarten zijn de witruimte, het contrast en de padding van onderzoeksitems verder uitgewerkt.
 
 ![LightDark](readMeImages/lightDark.png)
+![lightDark](readMeImages/light_dark.gif)
 
 **Privacy-informatie en een vintage ansichtkaart**
 
@@ -636,7 +637,9 @@ Op de privacypagina staat daarnaast een demoformulier als vintage ansichtkaart. 
 
 | Privacy Experiment 1 | Privacy Experiment 2 | Privacy Experiment 3 / Final |
 | :---: | :---: | :---: |
-| ![PrivExp1](readMeImages/privacy_exp1.png) | ![PrivExp2](readMeImages/privacy_exp2.png) | ![PrivExp3](readMeImages/privacy_final.png)
+| ![PrivExp1](readMeImages/privacy_exp1.png) | ![PrivExp2](readMeImages/privacy_exp2.png) | ![PrivExp3](readMeImages/privacy_final.png) |
+
+![PrivacyInput](readMeImages/privacy_input.gif)
 
 Voor het countrygedeelte gebruik ik de aangeleverde lettertypen Eastwood, Rye en Roboto. De gecontroleerde bestanden hiervan zijn statisch. Roboto Regular en Bold zijn afzonderlijke gewichten; ik behandel deze bestanden niet als een variabel font.
 
@@ -669,6 +672,8 @@ Hierdoor is Roots veranderd van een korte persoonlijke introductie naar een inho
 | Roots Experiment 1 | Roots Experiment 2 | Roots Experiment 3/final | 
 | :---: | :---: | :---: |
 | ![RootsExp1](readMeImages/roots_exp1.png) | ![RootsExp2](readMeImages/roots_exp2.png) | ![RootsExp3](readMeImages/roots_final.png) |
+
+![RootsAnim](readMeImages/roots_anim.gif)
 
 **Y.M.C.A.: van losse composities naar één geheel**
 
@@ -768,6 +773,8 @@ Wanneer de bezoeker met de cursor over de saloondeuren beweegt, verschijnt de te
 
 Na het aanklikken worden de deuren met een animatie geopend, waarna de bezoeker de website betreedt.
 
+![Start2](readMeImages/start_anim.gif)
+
 **Ontwerpkeuze:** Door de navigatie naar de website te koppelen aan het openen van saloondeuren, wordt de gebruiker direct betrokken bij het thema. Het startscherm functioneert daardoor niet alleen als introductie, maar ook als onderdeel van de beleving.
 
 ---
@@ -855,6 +862,12 @@ Hierdoor hoeft niet voor iedere taal een aparte webpagina te worden gemaakt en b
 
 **Ontwerpkeuze:** Door de vertalingen centraal te beheren, kan ik nieuwe teksten toevoegen zonder de volledige HTML-structuur aan te passen.
 
+| Taalwisselaar Oud design | Taalwisselaar nieuw design |
+| :---: | :---: |
+| ![LangOld](readMeImages/lang_1.png) | ![LangNew](readMeImages/lang1_final.png) |
+
+![LangChange](readMeImages/lang_change.gif)
+
 ---
 
 ## Interactieve Concepten voor de Geschiedenis van Countrymuziek
@@ -885,6 +898,8 @@ Tijdens het uitwerken van dit concept heb ik vooral aandacht besteed aan:
 
 **Ontwerpkeuze:** Door een muziekinstrument als tijdlijn te gebruiken, wordt de geschiedenis van countrymuziek op een thematische en speelse manier gepresenteerd.
 
+![Gitaar](readMeImages/gitaar_anim.gif)
+
 ### Exploded View van een Viool
 
 Een ander concept dat ik heb onderzocht, is een interactieve *exploded view* van een viool.
@@ -896,6 +911,10 @@ In de eerste verkenning stond een gitaar centraal. Later heb ik onderzocht hoe d
 Daarbij heb ik gekozen voor een **zijaanzicht van de viool**, omdat de verschillende lagen en onderdelen vanuit dit perspectief beter zichtbaar zijn wanneer ze uit elkaar worden gehaald.
 
 Het doel van dit concept is om bezoekers op een visuele manier kennis te laten maken met de bouw en onderdelen van een muziekinstrument.
+
+| Roots oude design | Roots nieuwe design |
+| :---: | :---: |
+| ![RootsOud](readMeImages/roots_oud.png) | ![Roots]
 
 ### Ondergronds Wortelstelsel
 
