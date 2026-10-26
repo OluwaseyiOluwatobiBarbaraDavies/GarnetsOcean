@@ -346,7 +346,7 @@
   height: 34px;
   background: linear-gradient(180deg, var(--flame-outer-top) 0%, var(--flame-outer-mid) 60%, var(--flame-outer-bottom) 100%);
   border-radius: 50% 50% 35% 35% / 70% 70% 30% 30%;
-  animation: flameFlicker 0.2s ease-in-out 20 alternate;
+  animation: flameFlicker 0.2s ease-in-out infinite alternate;
   transform-origin: bottom center;
 }
 
@@ -357,7 +357,7 @@
   height: 24px;
   background: linear-gradient(180deg, var(--flame-inner-top) 0%, var(--flame-inner-bottom) 100%);
   border-radius: 50% 50% 35% 35% / 70% 70% 30% 30%;
-  animation: flameFlicker 0.15s ease-in-out 20 alternate-reverse;
+  animation: flameFlicker 0.15s ease-in-out infinite alternate-reverse;
   transform-origin: bottom center;
 }
 
@@ -377,7 +377,7 @@
   width: 150px;
   height: 150px;
   background: radial-gradient(circle, var(--lantern-glow) 0%, var(--saloon-transparent) 70%);
-  animation: haloFlicker 0.15s 20 alternate;
+  animation: haloFlicker 0.15s infinite alternate;
   pointer-events: none;
 }
 
@@ -390,7 +390,7 @@
   z-index: 1;
   background: linear-gradient(135deg, var(--saloon-glow-red), var(--saloon-glow-yellow), var(--saloon-glow-green), var(--saloon-glow-blue), var(--saloon-glow-purple));
   background-size: 300% 300%;
-  animation: colorSweep 2s ease 2 alternate;
+  animation: colorSweep 2s ease infinite alternate;
   filter: blur(35px);
   pointer-events: none;
 }
@@ -681,8 +681,9 @@
   transition: opacity 0.2s ease;
 }
 
-/* JavaScript toont de tekst bij het aanwijzen van de deuren. */
-.doorToolTip.is-visible {
+/* CSS bepaalt hover, zichtbaarheid en de overgang.
+   JavaScript levert alleen een geldige muispositie en Escape-status. */
+.landing-body:has(.saloon-doors:hover:not(.open):not(.tooltip-dismissed)):not(:has(dialog[open])) .doorToolTip.is-positioned {
   opacity: 1;
   visibility: visible;
 }

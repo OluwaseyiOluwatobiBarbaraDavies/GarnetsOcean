@@ -14,20 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       widget: 'Drag to scroll page'
     },
     symbols: ['♪', '♫', '♬', '♩', '♭', '♯'],
-    colors: ['#d4af37', '#e6c280', '#c5a059', '#fdfbf7', '#b37228'],
     metrics: {
       padding: 60,
       rotationMultiplier: 0.8,
       scrollDeltaThreshold: 4,
       spawnCooldown: 180,
-      noteLifetime: 1000,
       noteLeftOffset: 10,
       noteTopOffset: 10,
-      minFontSize: 18,
-      fontSizeRange: 8,
-      minDrift: -20,
-      driftRange: -30,
-      rotationRange: 60
     }
   };
 
@@ -73,28 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  const supportsCssScroll = window.CSS?.supports('animation-timeline', 'scroll(root block)') ?? false;
+  const useCssScroll = () => supportsCssScroll && !reducedMotion.matches;
+  let lastRange = -1;
+
   let lastScrollY = window.scrollY;
   let vinylRotation = 0;
   let isSpawning = false;
   let isDragging = false;
 
   const updateScrollUI = () => {
-    if (isDragging) return;
+
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight !== lastRange) {
+      lastRange = totalHeight;
+      vinyl.style.setProperty('--scroll-turn', `${Math.max(0, totalHeight) * CONFIG.metrics.rotationMultiplier}deg`);
+    }
     if (totalHeight <= 0) {
       widget.hidden = true;
       widget.setAttribute('aria-valuenow', '0');
-      progressLine.style.height = '0%';
+      if (!useCssScroll()) progressLine.style.height = '0%';
       return;
     }
 
     widget.hidden = false;
     const scrollPercent = Math.max(0, Math.min(1, window.scrollY / totalHeight));
     widget.setAttribute('aria-valuenow', String(Math.round(scrollPercent * 100)));
-    progressLine.style.height = `${scrollPercent * 100}%`;
+    if (!useCssScroll()) progressLine.style.height = `${scrollPercent * 100}%`;
 
     const topPx = CONFIG.metrics.padding + scrollPercent * (window.innerHeight - (CONFIG.metrics.padding * 2));
-    widget.style.top = `${topPx}px`;
+    if (!useCssScroll()) widget.style.top = `${topPx}px`;
   };
 
   const spawnNoteParticle = () => {
@@ -103,26 +104,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     note.setAttribute('aria-hidden', 'true');
     note.textContent = CONFIG.symbols[Math.floor(Math.random() * CONFIG.symbols.length)];
-    note.style.color = CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)];
-    
+    // CSS bepaalt kleur, grootte, drift en draaiing via een variantklasse.
+    note.classList.add(`note-variant-${Math.floor(Math.random() * 5) + 1}`);
     const widgetRect = widget.getBoundingClientRect();
-    
+    // De startpositie moet de actuele, versleepbare bediening volgen.
     note.style.left = `${widgetRect.left - CONFIG.metrics.noteLeftOffset}px`;
     note.style.top = `${widgetRect.top + CONFIG.metrics.noteTopOffset}px`;
-    note.style.fontSize = `${CONFIG.metrics.minFontSize + Math.random() * CONFIG.metrics.fontSizeRange}px`;
-    
-    const horizontalDrift = CONFIG.metrics.minDrift - (Math.random() * Math.abs(CONFIG.metrics.driftRange));
-    const rotationDeg = (Math.random() - 0.5) * CONFIG.metrics.rotationRange;
-    
-    note.style.setProperty('--dx', `${horizontalDrift}px`);
-    note.style.setProperty('--dr', `${rotationDeg}deg`);
 
     document.body.appendChild(note);
 
-    setTimeout(() => {
-      note.remove();
-    }, CONFIG.metrics.noteLifetime);
+    note.addEventListener('animationend', () => note.remove(), { once: true });
   };
+
+  reducedMotion.addEventListener('change', () => {
+    document.querySelectorAll('.scroll-music-note').forEach(note => note.remove());
+    if (reducedMotion.matches) vinyl.style.transform = '';
+    else { progressLine.style.height = ''; widget.style.top = ''; }
+    updateScrollUI();
+  });
 
   updateScrollUI();
 
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateScrollUI();
 
-    if (!reducedMotion.matches) {
+    if (!useCssScroll() && !reducedMotion.matches) {
       vinylRotation += scrollDelta * CONFIG.metrics.rotationMultiplier;
       vinyl.style.transform = `rotate(${vinylRotation}deg)`;
     }
@@ -187,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let dragPercent = (clampedY - CONFIG.metrics.padding) / availableHeight;
 
     widget.setAttribute('aria-valuenow', String(Math.round(dragPercent * 100)));
-    progressLine.style.height = `${dragPercent * 100}%`;
-    widget.style.top = `${clampedY}px`;
+    if (!useCssScroll()) progressLine.style.height = `${dragPercent * 100}%`;
+    if (!useCssScroll()) widget.style.top = `${clampedY}px`;
 
     window.scrollTo({
       top: dragPercent * totalHeight,

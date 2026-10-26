@@ -8,17 +8,27 @@ Dit project is begonnen als fork van de modelrepository voor 'Het web is voor ie
 
 Website: [garnetsocean.nl](https://garnetsocean.nl)
 
-## Learning Log
+## Inhoud
 
-### 31 aug - Kickoff
+- [Learning log](#learning-log)
+  - [Checkouts](#checkouts)
+  - [Weekoverzicht](#weekoverzicht)
+  - [Feedback in trio’s](#feedbacktrios)
+- [Creatief proces en ontwerpkeuzes](#creatief-proces-en-ontwerpkeuzes)
+- [Retrospectives](#retrospectives)
+- [Bronnen](#bronnen)
+
+---
+
+## Learning log
+
+### Kickoff — 31 augustus 2026
 
 Een fork van de model repository gemaakt en gepubliceerd via mijn eigen Github omgeving.
 
-### Checkouts 
+### Checkouts
 <details>
-<summary><b>Klik hier om alle checkouts te lezen</b></summary>
-
-<br>
+<summary>Klik hier om alle checkouts te lezen</summary>
 
 #### Checkout - 31-08-2026
 1. Een source hosting platform is een platform waarop jouw source code kan worden behouden/beheerd. Ik heb gekozen voor Github omdat ik daar het meest bekend mee ben.
@@ -321,18 +331,16 @@ De onderdelen hieronder vullen mijn eerdere log aan. De eerdere weken beschrijve
 
 #### Week 1 — Reflectie op de workshops
 <details>
-<summary><b>Klik hier om Week 1 te bekijken</b></summary>
-
-<br>
+<summary>Klik hier om Week 1 te bekijken</summary>
 
 ##### 2 sept - Interactie: MMD, microinteracties, forms
- <img src="readMeImages/workshop2sept.jpg" alt="Workshop 2 sept: Interacties: MMD, microinteracties, forms ">
+ <img src="readMeImages/workshop2sept.jpg" alt="Workshop 2 sept: Interacties: MMD, microinteracties, forms " width="760">
 
 ##### 2 sept - CSS: fonts met kleur en effecten 
-<img src="readMeImages/Workshop2sept.png" alt="Workshop 2 sept: CSS: fonts met kleur en effecten">
+<img src="readMeImages/Workshop2sept.png" alt="Workshop 2 sept: CSS: fonts met kleur en effecten" width="760">
 
 ##### 4 sept - Praktische CSS
-<img src="readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS">
+<img src="readMeImages/workshop4sept.jpg" alt="Workshop 4 sept: Praktische CSS" width="760">
 
 </details>
 
@@ -340,22 +348,18 @@ De onderdelen hieronder vullen mijn eerdere log aan. De eerdere weken beschrijve
 
 #### Week 2 — De eerste website en mijn onderwerpkeuze
 <details>
-<summary><b>Klik hier om Week 2 te bekijken</b></summary>
+<summary>Klik hier om Week 2 te bekijken</summary>
 
-<br>
-
-**De saloon en homepage bouwen**
-
+##### De saloon en homepage bouwen
 Deze week heb ik het begin van mijn website gemaakt: de saloon als ingang en de homepage met mijn introductie over Country Music. De saloon had toen nog geen privacypopup en de homepage nog geen custom scrollbar. Die onderdelen horen bij latere versies van het ontwerp.
 
 Ik heb ook een lichte modus gemaakt en de indeling aangepast voor kleine schermen. Daarbij was het belangrijk dat het ontwerp niet alleen op mijn eigen scherm paste, maar dat de inhoud en navigatie ook op een smaller scherm bruikbaar bleven.
 
 | Eerste Iteratie Start| Eerste Iteratie Home | Tweede Iteratie Home |
 | :---: | :---: | :---: |
-| ![Start1](readMeImages/start_iteratie1.png) | ![Home1](readMeImages/home_iteratie1.png) | ![Home2](readMeImages/home_final.png) |
+| <img src="readMeImages/start_iteratie1.png" alt="Start1" width="240"> | <img src="readMeImages/home_iteratie1.png" alt="Home1" width="240"> | <img src="readMeImages/home_final.png" alt="Home2" width="240"> |
 
-**Mijn keuze voor Country Music uitleggen**
-
+##### Mijn keuze voor Country Music uitleggen
 Ik heb een presentatie gemaakt om aan een medestudent uit te leggen waarom ik Country Music als onderwerp voor mijn digital garden heb gekozen. Mijn persoonlijke startpunt is Houston, Texas, waar ik ben geboren en opgegroeid. Country muziek hoort voor mij bij de cultuur en biedt verschillende richtingen om verder te ontdekken: artiesten, muziekstijlen, rodeo, geschiedenis en invloeden uit andere genres.
 
 De presentatie was bedoeld om duidelijk te maken hoe die onderwerpen met elkaar verbonden kunnen worden. Vanuit één artiest of nummer kan ik steeds een nieuw onderwerp onderzoeken. Dat sluit aan bij een digital garden die niet meteen af hoeft te zijn.
@@ -366,46 +370,44 @@ De presentatie was bedoeld om duidelijk te maken hoe die onderwerpen met elkaar 
 
 #### Week 3 — Taalkeuze, bronnen, scrollbar en HTML-validatie
 <details>
-<summary><b>Klik hier om Week 3 te bekijken</b></summary>
+<summary>Klik hier om Week 3 te bekijken</summary>
 
-<br>
-
-**Nederlands en Engels**
-
+##### Nederlands en Engels
 Deze week heb ik een vertaalfunctie toegevoegd, zodat bezoekers tussen Nederlands en Engels kunnen wisselen. De teksten staan samen in `translations.json` onder `NL` en `ENG`. In de HTML verwijzen de `data-i18n`-attributen naar de juiste teksten. De taalkeuze wordt bewaard in `localStorage`.
 
 De taalwisselaar moest ook passen bij het mobiele menu. Op kleine schermen zat de knop het banjo-icoon in de weg. Daarom moest de taalkeuze daar in het uitklapmenu komen. Dit liet zien dat een nieuw onderdeel invloed heeft op de bestaande navigatie, ook wanneer het op een groot scherm wel goed past.
 
 | Engels Vertaling | Nederlandse Vertaling |
 | :---: | :---: |
-| ![TranslationENG](readMeImages/translation_eng.png) | ![TranslationNL](readMeImages/translation_nl.png) |
+| <img src="readMeImages/translation_eng.png" alt="TranslationENG" width="360"> | <img src="readMeImages/translation_nl.png" alt="TranslationNL" width="360"> |
 
 
-**Een aparte bronnenpagina**
-
+##### Een aparte bronnenpagina
 Ik heb een bronnenpagina toegevoegd om de gebruikte afbeeldingen en onderzoeksbronnen bij elkaar te zetten. Bij de afbeeldingen staan onder andere de bestandsnaam, bron of uitgever en eventuele credits. De pagina heeft een zoekveld en categorieknoppen om afbeeldingen terug te vinden, en een apart overzicht voor onderzoek en literatuur.
 
 Bij het vertalen moeten niet alleen koppen en alinea's worden meegenomen, maar ook knoppen, zoekteksten en de inhoud die JavaScript opbouwt. De categoriewaarden waarmee het filter werkt, kunnen hetzelfde blijven terwijl de zichtbare labels veranderen.
 
-![Bronnen](readMeImages/bronnen.png)
+<img src="readMeImages/bronnen.png" alt="Bronnen" width="760">
 
-**Custom scrollbar als vinylplaat**
-
+##### Custom scrollbar als vinylplaat
 Deze week heb ik ook de custom scrollbar gemaakt. In plaats van de standaard scrollbar gebruikt mijn website een vinylplaat die bij het muziekthema past. Een gouden lijn laat zien hoe ver de bezoeker op de pagina is. Tijdens het scrollen verschijnen er muzieknoten rondom de plaat.
 
-De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. Het ontwerp staat verderop in de README bij de componenten en micro-interacties.
+De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. Het ontwerp staat verderop in de README bij de componenten en micro-interacties. 
 
-![Scrollbar](readMeImages/scrollbar.png)
+| | |
+| :---: | :---: |
+| De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. <br> Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. <br> Het ontwerp staat verderop in de README bij de componenten en micro-interacties. | <img src="readMeImages/scroll_anim.gif" alt="Scrollbar" width="400"> |
+| | |
 
-**HTML-validatie**
 
+##### HTML-validatie
 De validator gaf meldingen over een ontbrekende `src` bij de modalafbeelding, een dubbel gebruikt `modalImg`-ID en een `section` zonder kop. Deze meldingen maakten duidelijk dat een alt-tekst geen afbeeldingsbron vervangt en dat een ID maar één keer op een pagina mag voorkomen. Een inhoudelijke sectie heeft een passende kop nodig.
 
 IDs zijn wel nuttig voor gerichte verwijzingen: bijvoorbeeld een skip link naar de hoofdinhoud, een label dat naar een invoerveld verwijst of `aria-labelledby` dat een dialoog met zijn titel verbindt. De laatste versies moeten opnieuw door de validator; hier staat nog geen bevestiging dat alle meldingen zijn opgelost.
 
 | Eerste Error | Tweede Error |
 | :---: | :---: |
-| ![Error1](readMeImages/validatie_1.png) | ![Error2](readMeImages/validatie_2.png) |
+| <img src="readMeImages/validatie_1.png" alt="Error1" width="360"> | <img src="readMeImages/validatie_2.png" alt="Error2" width="360"> |
 
 </details>
 
@@ -413,16 +415,12 @@ IDs zijn wel nuttig voor gerichte verwijzingen: bijvoorbeeld een skip link naar 
 
 #### Week 4 — Thema's, toegankelijkheid en het begin van mijn garden
 <details>
-<summary><b>Klik hier om Week 4 te bekijken</b></summary>
+<summary>Klik hier om Week 4 te bekijken</summary>
 
-<br>
-
-**Lichte en donkere modus uitbreiden**
-
+##### Lichte en donkere modus uitbreiden
 Deze week heb ik lichte en donkere modus ook aan mijn andere pagina's toegevoegd. In die iteratie volgden de pagina's de systeemvoorkeur via `prefers-color-scheme`. Later is dit verder uitgewerkt naar een expliciete zon-/maanknop, opgeslagen voorkeur en een gedeeld `data-theme`. Daarbij moeten tekst, achtergronden, knoppen en focusranden bij elkaar passen. Alleen de achtergrond lichter maken is niet genoeg als de tekst ook licht blijft.
 
-**Werken aan toegankelijkheid**
-
+##### Werken aan toegankelijkheid
 Ik heb gewerkt aan de bruikbaarheid met een screenreader en aan andere toegankelijkheidsaspecten, zoals bediening met het toetsenbord, duidelijke labels en zichtbare focus.
 
 Voor het testen is Edge gekozen. Bij het doorlopen van de bronnenpagina werd gemeld dat het zoekveld en de filters te weinig uitleg gaven. Een bronlink las alleen ‘Bekijk Originele Bron’ voor, zonder duidelijk te maken bij welke afbeelding die hoorde.
@@ -436,8 +434,8 @@ Daarvoor zijn de volgende aanpassingen uitgewerkt:
 - Skip links toevoegen zodat de navigatie kan worden overgeslagen.
 - Extra linkcontext visueel verbergen, terwijl deze voor screenreaders beschikbaar blijft.
 
-![Visualy-Hidden](readMeImages/visually-hidden.png)
-![Visually-Hidden2](readMeImages/visually-hidden2.png)
+<img src="readMeImages/visually-hidden.png" alt="Visualy-Hidden" width="760">
+<img src="readMeImages/visually-hidden2.png" alt="Visually-Hidden2" width="760">
 
 Tab doorloopt de interactieve elementen. De gewone tekst van een bronkaart hoeft daarom geen aparte Tab-stop te worden. Die tekst blijft via de leescommando's van de screenreader beschikbaar. De precieze uitspraak moet nog met de gebruikte screenreader worden vastgelegd.
 
@@ -445,103 +443,90 @@ Bij de saloondeuren is daarnaast gewerkt aan een echte link, een verborgen toega
 
 Dit beschrijft de werkzaamheden en gevonden problemen. De gebruikte screenreader, versie en concrete uitkomsten van de controles moet ik nog toevoegen; daarmee kan ik laten zien wat daadwerkelijk is gecontroleerd.
 
-**Een start maken met de story-pagina**
-
+##### Een start maken met de story-pagina
 Ik heb een story-pagina toegevoegd als begin van mijn digital garden. Daarmee kreeg de website naast de introductie en bronnen ook een plek voor onderwerpen en notities die ik verder kan uitwerken. De verdere uitwerking van deze pagina staat bij de latere verfijningen hieronder.
 
 </details>
 
 #### Week 5 — Destijdse tussenstand: opruimen en verder verfijnen
 <details>
-<summary><b>Klik hier om Week 5 te bekijken</b></summary>
+<summary>Klik hier om Week 5 te bekijken</summary>
 
-<br>
-
-**CSS overzichtelijker maken**
-
+##### CSS overzichtelijker maken
 De stylesheets zijn apart doorgenomen: `bronnen.css`, `custom-scrollbar.css`, `landing.css`, `language-changer.css`, `navbar.css`, `privacy.css`, `story.css` en `style.css`. De afgesproken volgorde is `:root`, eventuele `@font-face`-regels, de overige styling en onderaan de media queries. De hoofdonderdelen krijgen herkenbare `MARK:`-commentaren. Waar nog Flexbox stond, is een Grid-uitwerking gemaakt, omdat Grid een eis is voor mijn project.
-
-Een aandachtspunt hierbij is dat opruimen de bestaande interacties niet mag veranderen. De deurtooltip, de banjo en de toetsenbordstijlen moeten blijven werken. De aangepaste bestanden moeten daarom ook nog in samenhang worden bekeken; alleen een overzichtelijk CSS-bestand zegt niet of de pagina goed werkt.
 
 | @font-face | :root |
 | :---: | :---: |
-| ![CriteriaCSS1](readMeImages/criteria_css1.png) | ![CriteriaCSS2](readMeImages/criteria_css2.png) |
+| <img src="readMeImages/criteria_css1.png" alt="CriteriaCSS1" width="360"> | <img src="readMeImages/criteria_css2.png" alt="CriteriaCSS2" width="360"> |
 
-**Een kleurconflict in lichte modus oplossen**
-
+##### Een kleurconflict in lichte modus oplossen
 Op de homepage was tekst in lichte modus bijna niet leesbaar. De achtergrond was licht, maar de tekst bleef ook licht. In de stylesheets werd `--main-font-color` op meerdere plekken in `:root` ingesteld. Een later geladen stylesheet kon daardoor de kleur overschrijven. De oplossing is om de inhoud eigen kleurvariabelen te geven, zodat de navigatie de tekstkleur van de pagina niet bepaalt.
 
 Dit was een verdere verbetering van de thema's uit de eerdere weken. De kleuruitwerking is ook bij de bronnenpagina, privacypagina en privacymelding nagelopen. De laatste versies moeten nog in beide modi worden gecontroleerd, inclusief hover, toetsenbordfocus en open popups.
 
 | Eerste Iteratie | Finale Versie |
 | :---: | :---: |
-| ![Eerste iteratie light modus](readMeImages/light_iteratie1.png) | ![Finale startscherm](readMeImages/light_final.png) |
+| <img src="readMeImages/light_iteratie1.png" alt="Eerste iteratie light modus" width="360"> | <img src="readMeImages/light_final.png" alt="Finale startscherm" width="360"> |
 | *Procesfase home pagina* | *Uiteindelijke versie* |
 
-**Afbeeldingen vergroten zonder de indeling kwijt te raken**
-
+##### Afbeeldingen vergroten zonder de indeling kwijt te raken
 Bij de afbeeldingspopup zag ik een groot bruin vlak, scrollruimte en later veel ruimte tussen de foto en het bijschrift. De popup-CSS is daarop aangepast. Het doel is nu een foto met een passende maximale grootte, een rand en een aansluitend bijschrift met dezelfde breedte. De sluitknop staat rechts naast de afbeelding en toont een X. De knop kan voor een screenreader nog steeds de naam ‘Sluiten’ hebben.
 
 De extra ruimte kwam in de gebruikte uitwerking door een dialoog die verticaal kon uitrekken en Grid-rijen die de overgebleven hoogte verdeelden. Hiervoor is een inhoudsafhankelijke hoogte uitgewerkt. Een volgende controle is om zowel staande als liggende foto's op een klein scherm te openen en te kijken of de sluitknop en het volledige bijschrift bereikbaar blijven.
 
-**De story-pagina verder uitwerken tot Country Roots**
-
+##### De story-pagina verder uitwerken tot Country Roots
 De in week 4 begonnen story-pagina is verder uitgewerkt als one-pager met de titel **Country Roots — Mijn muzikale tuin**. De inhoud gebruikt mijn bestaande startpunt in Houston, Texas en de vijf artiesten van de homepage: Dolly Parton, Don Williams, Ella Langley, Kameron Marlowe en Warren Zeiders.
 
 De opzet bestaat uit mijn wortels, een doorzoekbare artiestenverzameling en eerste notities over muziekstijlen, cultuur en invloeden. De notities linken naar verwante onderwerpen en de bronnenpagina. Onderzoeksvragen zijn als vragen geformuleerd; ze zijn nog geen uitgewerkte onderzoeksresultaten. HTML, CSS en JavaScript staan in aparte bestanden. Nieuwe vertaalteksten zijn als aanvulling op het bestaande JSON-bestand aangeleverd.
 
 De inhoudslinks hebben een CSS-uitwerking voor soepel scrollen. Bij `prefers-reduced-motion` blijft de sprong direct. Zo kan een kleine interactie aansluiten op de voorkeur van de bezoeker.
 
-![StoryIteratie1](readMeImages/story_iteratie1.png)
+<img src="readMeImages/story_iteratie1.png" alt="StoryIteratie1" width="760">
 
-**Nog zelf aanvullen voor deze week**
-
+##### Nog zelf aanvullen voor deze week
 - Welke van deze bestanden heb ik overgenomen en gepubliceerd? Voeg de commit of datum toe.
 - Wat kan ik inmiddels zelf uitleggen of aanpassen zonder het voorbeeld erbij?
 - Welke feedback heb ik van een docent of medestudent gekregen?
 - Welke controles heb ik uitgevoerd en wat waren de resultaten?
 
-#### Verdere aanpassingen aan de navigatie en taalwisselaar
+##### Navigatie en taalwisselaar
 
 De actieve paginalink moet overeenkomen met de huidige pagina; op een eerder screenshot werd ‘Bronnen’ gemarkeerd terwijl de homepage openstond.
 
 Bij het hergebruiken van de taalwisselaar bleek dat `nav #langToggleBtn` alleen een knop binnen de navigatie selecteert. Voor dezelfde knop in de privacypopup moest de selector ook buiten `nav` werken. Tegelijk mogen de algemene popupknoppen de styling van de taalwisselaar niet overschrijven.
 
-#### Privacy en opslag
+##### Privacy en opslag
 
 Er is een informatieve melding voor `index.html` uitgewerkt, met een uitgebreidere privacypagina in de navigatie. De melding gaat onder andere over de opgeslagen taalkeuze en externe diensten. Het sluiten van de melding is niet bedoeld als toestemming voor tracking.
 
 Ik wil hier onderscheid maken tussen cookies, `localStorage` en verzoeken naar andere diensten. Alleen geen cookies zien is onvoldoende om te concluderen dat er nergens gegevens worden verwerkt. De volledige controle van het externe webring-script en het netwerkverkeer staat nog open. De uiteindelijke privacytekst moet overeenkomen met wat de website daadwerkelijk doet.
 
-![PrivacyMelding](readMeImages/pop-up.png)
+| Pop-up Oud | Pop-up Nieuw |
+| :---: | :---: |
+| <img src="readMeImages/popup_old.png" alt="PrivacyMelding" width="360"> | <img src="readMeImages/popup_new.png" alt="PrivacyMelding2" width="360"> |
 
 </details>
 
 ---
 
-#### Week 6 - Play the Rules
+#### Week 6 — Play the Rules
 <details>
-<summary><b>Klik hier om week 6 te lezen</b></summary>
+<summary>Klik hier om week 6 te lezen</summary>
 
-<br>
-
-**Typografieopdracht: Play the Rules — eerste iteratie**
-
+##### Typografieopdracht: Play the Rules — eerste iteratie
 De schetsen, screenshots en ontwerpkeuzes in dit onderdeel beschrijven de oorspronkelijke zwart-witte versie met losse composities. De latere doorlopende pagina met één terugkerend thema staat bij de aanvulling van 22 oktober.
 
 | | Schetsen | |
 | :---: | :---: | :---: |
-| ![PlayTheRulesSchets1](readMeImages/play_the_rules_sketch1.png) | ![PlayTheRulesSchets2](readMeImages/play_the_rules_sketch2.png) | ![PlayTheRulesSchets3](readMeImages/play_the_rules_sketch3.png) |
+| <img src="readMeImages/play_the_rules_sketch1.png" alt="PlayTheRulesSchets1" width="240"> | <img src="readMeImages/play_the_rules_sketch2.png" alt="PlayTheRulesSchets2" width="240"> | <img src="readMeImages/play_the_rules_sketch3.png" alt="PlayTheRulesSchets3" width="240"> |
 
 | Digitale uitwerking |
 | :---: |
-| ![PlayTheRules](readMeImages/play_the_rules.png) |
-
+| <img src="readMeImages/play_the_rules.png" alt="PlayTheRules" width="760"> |
 
 
 ---
-**Ontwerpkeuzes**
-
+##### Ontwerpkeuzes
 Voor dit ontwerp heb ik de songtekst van *Y.M.C.A.* gebruikt als uitgangspunt. Ik wilde de energie en betekenis van de tekst zichtbaar maken met typografie. Daarom heb ik gespeeld met lettergrootte, gewicht, herhaling, richting en witruimte.
 
 Ik heb gekozen voor zwarte tekst op een witte achtergrond. Zo ligt de aandacht op de letters en hun compositie. De onderdelen hebben geen kaders of nummers, waardoor de pagina meer als één geheel leest. De witruimte zorgt ervoor dat de verschillende effecten elkaar niet verdringen.
@@ -550,16 +535,16 @@ Ik heb gekozen voor zwarte tekst op een witte achtergrond. Zo ligt de aandacht o
 
 | Omschrijving | Uitwerking |
 | :---: | :---: |
-| **YOUNG MAN** staat aan het begin groot en zwaar om meteen de aandacht te trekken. De verticale lijn links verbindt de woorden met de kleinere songtekst eronder. | ![PlayTheRules1](readMeImages/play_the_rules1.png) |
-| Bij de herhaalde **YOUNG MAN** worden de woorden steeds groter en zwaarder. Dit geeft een visuele opbouw, vergelijkbaar met een stem die steeds krachtiger klinkt. De lichte draaiing geeft de compositie extra beweging. | ![PlayTheRules2](readMeImages/play_the_rules2.png) |
-| Bij **DOWN** loopt de tekst van vaag naar duidelijk zichtbaar. De letters staan steeds lager, zodat hun positie de betekenis van het woord ondersteunt.  | ![PlayTheRules3](readMeImages/play_the_rules3.png) |
-| **GROUND** loopt juist omhoog. De pijl volgt dezelfde richting en sluit aan bij de aanmoediging om jezelf weer op te pakken. | ![PlayTheRules4](readMeImages/play_the_rules4.png) |
-| Het refrein **Y.M.C.A.** wordt drie keer herhaald. Deze herhaling maakt het ritme van het nummer zichtbaar.  | ![PlayTheRules5](readMeImages/play_the_rules5.png) |
-| Bij **I said, YOUNG MAN!** zorgen de schuine woorden en de strepen eromheen voor nadruk, alsof de tekst wordt geroepen. | ![PlayTheRules6](readMeImages/play_the_rules6.png) |
-| **UNHAPPY** bestaat uit overlappende lagen die steeds donkerder en zwaarder worden. Dit geeft het woord meer visueel gewicht. Daarna volgt een rustigere compositie: gecentreerde tekst met twee verticale lijnen. Dat zorgt voor afwisseling tussen drukke en rustige delen. | ![PlayTheRules7](readMeImages/play_the_rules7.png) |
-| Een minimalistiche design zodat het de nadruk legt op **YOUNG MAN** | ![PlayTheRules8](readMeImages/play_the_rules8.png) |
-| De golvende versie van **Y.M.C.A.** sluit aan bij het dansbare karakter van het nummer. | ![PlayTheRules9](readMeImages/play_the_rules9.png) |
-| De slingerende weg aan het einde verbeeldt het zoeken naar een plek waar je naartoe kunt gaan. De tekst staat deels op de weg, zodat vorm en inhoud samenkomen. | ![PlayTheRules](readMeImages/play_the_rules10.png) |
+| **YOUNG MAN** staat aan het begin groot en zwaar om meteen de aandacht te trekken. De verticale lijn links verbindt de woorden met de kleinere songtekst eronder. | <img src="readMeImages/play_the_rules1.png" alt="PlayTheRules1" width="180"> |
+| Bij de herhaalde **YOUNG MAN** worden de woorden steeds groter en zwaarder. Dit geeft een visuele opbouw, vergelijkbaar met een stem die steeds krachtiger klinkt. De lichte draaiing geeft de compositie extra beweging. | <img src="readMeImages/play_the_rules2.png" alt="PlayTheRules2" width="180"> |
+| Bij **DOWN** loopt de tekst van vaag naar duidelijk zichtbaar. De letters staan steeds lager, zodat hun positie de betekenis van het woord ondersteunt.  | <img src="readMeImages/play_the_rules3.png" alt="PlayTheRules3" width="180"> |
+| **GROUND** loopt juist omhoog. De pijl volgt dezelfde richting en sluit aan bij de aanmoediging om jezelf weer op te pakken. | <img src="readMeImages/play_the_rules4.png" alt="PlayTheRules4" width="180"> |
+| Het refrein **Y.M.C.A.** wordt drie keer herhaald. Deze herhaling maakt het ritme van het nummer zichtbaar.  | <img src="readMeImages/play_the_rules5.png" alt="PlayTheRules5" width="180"> |
+| Bij **I said, YOUNG MAN!** zorgen de schuine woorden en de strepen eromheen voor nadruk, alsof de tekst wordt geroepen. | <img src="readMeImages/play_the_rules6.png" alt="PlayTheRules6" width="180"> |
+| **UNHAPPY** bestaat uit overlappende lagen die steeds donkerder en zwaarder worden. Dit geeft het woord meer visueel gewicht. Daarna volgt een rustigere compositie: gecentreerde tekst met twee verticale lijnen. Dat zorgt voor afwisseling tussen drukke en rustige delen. | <img src="readMeImages/play_the_rules7.png" alt="PlayTheRules7" width="180"> |
+| Een minimalistiche design zodat het de nadruk legt op **YOUNG MAN** | <img src="readMeImages/play_the_rules8.png" alt="PlayTheRules8" width="180"> |
+| De golvende versie van **Y.M.C.A.** sluit aan bij het dansbare karakter van het nummer. | <img src="readMeImages/play_the_rules9.png" alt="PlayTheRules9" width="180"> |
+| De slingerende weg aan het einde verbeeldt het zoeken naar een plek waar je naartoe kunt gaan. De tekst staat deels op de weg, zodat vorm en inhoud samenkomen. | <img src="readMeImages/play_the_rules10.png" alt="PlayTheRules" width="180"> |
 
 *Het variabele lettertype*
 
@@ -581,12 +566,9 @@ Voor de golvende tekst en de weg gebruik ik SVG. Daarmee kan tekst een gebogen p
 
 #### Week 8 — Stand op 22 oktober: samenhang en verdere uitwerking
 <details>
-<summary><b>Klik hier om de recente uitwerkingen te lezen</b></summary>
+<summary>Klik hier om de recente uitwerkingen te lezen</summary>
 
-<br>
-
-**Country Roots als doorlopende Story-pagina**
-
+##### Country Roots als doorlopende Story-pagina
 De eerste paginaopzet is uitgegroeid tot een verhaal met verschillende ingangen. De bestemmingskaarten linken naar introductie, geschiedenis, muzikale wortels, muziekstijlen, artiesten en bronnen. Op grotere schermen helpt een uitschuifbaar concertticket bij het navigeren. De actieve sectie wordt gemarkeerd. Op kleine schermen is een terug-naar-bovenlink uitgewerkt.
 
 De gitaartijdlijn bevat zes perioden en achttien gebeurtenissen. De stemknoppen kiezen een periode; de gebeurtenissen op de hals en in de bijbehorende lijst kiezen het verhaal. De kaart toont tekst, een afbeelding of video en een passende bronlink. Van de achttien gebeurtenissen gebruiken er elf een afbeelding en zeven een YouTube-video.
@@ -595,61 +577,63 @@ Bij de muzikale wortels is een interactieve viool uitgewerkt. Het uit elkaar hal
 
 | Intro | Geschiedenis | Muzikale wortels |
 | :---: | :---: | :---: |
-| ![Story1](readMeImages/story_1.png) | ![Story2](readMeImages/story_2.png) | ![Story3](readMeImages/story_3.png) |
+| <img src="readMeImages/story_1.png" alt="Story1" width="240"> | <img src="readMeImages/story_2.png" alt="Story2" width="240"> | <img src="readMeImages/story_3.png" alt="Story3" width="240"> |
 
 | Muziekstijlen | Artiesten |
 | :---: | :---: |
-| ![Story4](readMeImages/story_4.png) | ![Story5](readMeImages/story_6.png) | 
+| <img src="readMeImages/story_4.png" alt="Story4" width="360"> | <img src="readMeImages/story_6.png" alt="Story5" width="360"> | 
 
-**Ook dynamische inhoud vertalen**
-
+##### Ook dynamische inhoud vertalen
 Alleen sleutels toevoegen aan JSON bleek niet voldoende: de HTML moet die sleutels gebruiken en JavaScript mag de vertaalde inhoud niet opnieuw met vaste Nederlandse tekst overschrijven. Daarom zijn `data-i18n`-verwijzingen toegevoegd en gebruiken de tijdlijn en artiestendialoog de vertaalfunctie. Het event `languagechange` werkt de dynamische onderdelen bij.
 
 Bij het wisselen van taal moeten de gekozen periode, gebeurtenis, zoekterm en open dialoog behouden blijven. Een spelende video wordt daarom niet opnieuw aangemaakt als alleen de teksttaal verandert. Ook labels, afbeeldingsbeschrijvingen en knopcontext horen bij deze vertaaluitwerking.
 
 | Oude toggle button | Nieuwe toggle button |
 | :---: | :---: |
-| ![Lang1](readMeImages/lang_1.png) | ![Lang2](readMeImages/lang1_final.png) |
+| <img src="readMeImages/lang_1.png" alt="Lang1" width="200"> | <img src="readMeImages/lang1_final.png" alt="Lang2" width="240"> |
 
-**Een gedeeld thema en herkenbare bediening**
-
+##### Een gedeeld thema en herkenbare bediening
 De oorspronkelijke donkere kleuren zijn behouden als donkere modus. Voor lichte modus is een warme, lichtere variant uitgewerkt. De navigatie behoudt in beide modi haar houtstructuur en stikselaccenten. De zon-/maanknop en de NL/ENG-knop hebben een verwante vorm, zodat ze als bedieningsknoppen bij elkaar horen.
 
 De themakleuren staan in `lightDark.css`; de opslag en bediening in `lightDark.js`. Kleuren die in losse paginastylesheets bleven staan, konden de centrale themawaarden overschrijven. Daarom is de lichte uitwerking ook op de Story-, bronnen- en privacypagina nagelopen. Bij de bronnenkaarten zijn de witruimte, het contrast en de padding van onderzoeksitems verder uitgewerkt.
 
-![LightDark](readMeImages/lightDark.png)
+| | |
+| :---: | :---: |
+| <img src="readMeImages/lightDark.png" alt="LightDark" width="200"> | <img src="readMeImages/light_dark.gif" alt="lightDark" width="760"> |
 
-**Privacy-informatie en een vintage ansichtkaart**
 
+
+
+##### Privacy-informatie en een vintage ansichtkaart
 De privacy-informatie is uitgebreid met de opgeslagen taal- en themakeuze en de ingesloten YouTube-spelers op `youtube-nocookie.com`. De melding op het startscherm is informatie; het sluiten ervan is geen toestemming voor tracking. De huidige uitwerking is geen toestemmingsmanager die externe spelers vooraf blokkeert.
 
 Tijdens de verkenning werden na interactie Google-cookies zichtbaar en werden opslagitems van de speler aangetroffen. In enkele bekeken verzoeken ontbraken `Cookie`- en `Set-Cookie`-headers. Dit was onvoldoende om voor alle verzoeken vast te stellen wat werd geplaatst of gelezen. Die onzekerheid blijft ook in de documentatie benoemd.
 
-![Cookies1](readMeImages/cookies_1.png)
-![Cookies2](readMeImages/cookies_2.png)
+<img src="readMeImages/cookies_1.png" alt="Cookies1" width="760">
+<img src="readMeImages/cookies_2.png" alt="Cookies2" width="400">
 
 Op de privacypagina staat daarnaast een demoformulier als vintage ansichtkaart. Naam, e-mailadres en vraag zijn verplicht. Bij ongeldige invoer verschijnt een foutmelding, wordt het betreffende veld gemarkeerd en krijgt het eerste ongeldige veld focus. Na geldige invoer verschijnt een bevestigingsdialoog. De vraag wordt niet echt verstuurd of opgeslagen; het formulier is niet bedoeld voor echte privacyverzoeken.
 
 | Privacy schetsen | 
 | :---: |
-| ![PrivSchets](readMeImages/privacy_schets.jpg) |
+| <img src="readMeImages/privacy_schets.jpg" alt="PrivSchets" width="760"> |
 
 | Privacy Experiment 1 | Privacy Experiment 2 | Privacy Experiment 3 / Final |
 | :---: | :---: | :---: |
-| ![PrivExp1](readMeImages/privacy_exp1.png) | ![PrivExp2](readMeImages/privacy_exp2.png) | ![PrivExp3](readMeImages/privacy_final.png)
+| <img src="readMeImages/privacy_exp1.png" alt="PrivExp1" width="240"> | <img src="readMeImages/privacy_exp2.png" alt="PrivExp2" width="240"> | <img src="readMeImages/privacy_final.png" alt="PrivExp3" width="240"> |
+
+<img src="readMeImages/privacy_input.gif" alt="PrivacyInput" width="480">
 
 Voor het countrygedeelte gebruik ik de aangeleverde lettertypen Eastwood, Rye en Roboto. De gecontroleerde bestanden hiervan zijn statisch. Roboto Regular en Bold zijn afzonderlijke gewichten; ik behandel deze bestanden niet als een variabel font.
 
-**De bronnenpagina laten meegroeien met de inhoud**
-
+##### De bronnenpagina laten meegroeien met de inhoud
 De laatste bronnenuitwerking bevat twintig afbeeldingen: negen bestaande credits en elf nieuwe tijdlijnbeelden. De nieuwe categorie **Tijdlijn** heeft elf items; de bestaande categorieën bevatten vijf artiesten, drie evenementen/posters en één landschap. De aantallen worden uit de gegevens berekend, zodat ze bij verdere toevoegingen niet handmatig in de knoppen hoeven te worden gewijzigd.
 
 Een derde overzicht verzamelt zeven YouTube-links uit de Story-tijdlijn. Hier staan de titel, de bij de tijdlijn genoemde artiest en de periode. De bronpagina laadt hiervoor geen extra videospelers of externe thumbnails. De artiestnaam is geen veronderstelde uploader of kanaalnaam. De opgegeven herkomst van `outlaw_2.jpg` blijft **Oluwaseyi Davies**, als directe vermelding zonder verzonnen bronlink.
 
 Zoeken, filteren en wisselen tussen de overzichten blijven werken bij Nederlands/Engels. De elf nieuwe afbeeldingscredits en zeven videolinks staan ook in de bronnentabellen onderaan deze README.
 
-**De viool als interactieve uitleg van de muzikale wortels**
-
+##### De viool als interactieve uitleg van de muzikale wortels
 Voor dit onderdeel is een viool in SVG uitgewerkt. In de samengevoegde toestand vormt die één instrument. Wanneer de bezoeker de onderdelen uit elkaar haalt, worden vijf ingangen naar de achterliggende verhalen zichtbaar. Het instrument verbindt de losse onderwerpen visueel: verschillende invloeden vormen samen één geluid.
 
 De koppelingen zijn een visuele manier om door het onderzoek te navigeren; ze betekenen niet dat een specifiek vioolonderdeel historisch één muziektraditie vertegenwoordigt. Bij ieder onderwerp staat uitleg, een verbinding met country en een bronlink om verder te lezen.
@@ -660,18 +644,19 @@ Hierdoor is Roots veranderd van een korte persoonlijke introductie naar een inho
 
 | Oude Versie |
 | :---: |
-| ![RootsOud](readMeImages/roots_oud.png) |
+| <img src="readMeImages/roots_oud.png" alt="RootsOud" width="500"> |
 
 | Schetsen voor vernieuwing |
 | :---: |
-| ![RootsSchets](readMeImages/roots_schets.jpg) |
+| <img src="readMeImages/roots_schets.jpg" alt="RootsSchets" width="500"> |
 
 | Roots Experiment 1 | Roots Experiment 2 | Roots Experiment 3/final | 
 | :---: | :---: | :---: |
-| ![RootsExp1](readMeImages/roots_exp1.png) | ![RootsExp2](readMeImages/roots_exp2.png) | ![RootsExp3](readMeImages/roots_final.png) |
+| <img src="readMeImages/roots_exp1.png" alt="RootsExp1" width="240"> | <img src="readMeImages/roots_exp2.png" alt="RootsExp2" width="240"> | <img src="readMeImages/roots_final.png" alt="RootsExp3" width="240"> |
 
-**Y.M.C.A.: van losse composities naar één geheel**
+<img src="readMeImages/roots_anim.gif" alt="RootsAnim" width="760">
 
+##### Y.M.C.A.: van losse composities naar één geheel
 De eerste versie bestond uit verschillende typografische experimenten. De feedback was om één terugkerend thema te maken en de mogelijkheden van SeraphsVF bewuster te gebruiken. De nieuwe uitwerking volgt daarom één doorlopende leesrichting, met een warme papierkleur, violette letters, limekleurige accenten, terugkerende sterren en een vloeiende lijn langs de tekst. Deze opdracht staat los van de countryvormgeving.
 
 Ik gebruik alleen de zestien aangeleverde tekstregels, in dezelfde volgorde. Er zijn geen extra songteksten of dubbele decoratieve tekstlagen toegevoegd. Kop en artiest vermelden Y.M.C.A. en Village People.
@@ -682,13 +667,62 @@ Met CSS-view-timelines verandert tekst verder naarmate deze door het scherm bewe
 
 | Y.M.C.A. Final |
 | :---: |
-| ![ymcaFin](readMeImages/ymca_1.png) |
+| <img src="readMeImages/ymca_1.png" alt="ymcaFin" width="200"> |
 
 | Y.M.C.A. 1 | Y.M.C.A. 1.5 | Y.M.C.A. 2 |
 | :---: | :---: | :---: |
-| ![ymca1](readMeImages/ymca_3.png) | ![ymca2](readMeImages/ymca_2.png) | ![ymca3](readMeImages/ymca_4.png) |
+| <img src="readMeImages/ymca_3.png" alt="ymca1" width="240"> | <img src="readMeImages/ymca_2.png" alt="ymca2" width="240"> | <img src="readMeImages/ymca_4.png" alt="ymca3" width="240"> |
 
 </details>
+
+---
+
+<a id="feedbacktrios"></a>
+
+### Dotting the I’s — Feedbacktrio’s met rollen (sprint 3)
+
+Bij deze opdracht werkte ik in een trio. Ik was de ontwerper van de website, één medestudent testte mijn Garden en de andere medestudent noteerde de opmerkingen en feedback van de tester. Zo kon ik zien hoe iemand anders mijn website gebruikte en werden de bevindingen vastgelegd op het peerfeedbackformulier *De regels & het spel*.
+
+#### Wat wilde ik onderzoeken?
+
+Ik wilde weten of mijn typografie, indeling en interacties samen een duidelijk geheel vormden en of de website ook op een klein scherm bruikbaar was. Daarnaast gebruikten we de rubric om te kijken naar thema’s, toegankelijkheid, privacy, code en de documentatie van mijn proces.
+
+#### Welke feedback kreeg ik?
+
+| Onderdeel | Feedback uit het formulier |
+| :--- | :--- |
+| Typografie en onderwerp | De lettertypen passen goed bij het thema, vooral bij de titels en de `h1`. |
+| Hiërarchie en grid | Het grid is goed toegepast en oogt netjes. De hiërarchie is duidelijk, ook door het kleurgebruik. |
+| Responsive ontwerp | De website werkt volgens de tester goed op een klein scherm. |
+| Typografische experimenten | De experimenten, het gebruik van het variabele lettertype en de (scroll-driven) animaties zijn positief afgevinkt. |
+| Gestalt en visuele hiërarchie | Dit onderdeel is positief afgevinkt. |
+| Thema’s | Dit onderdeel kreeg een ±: NL en ENG zijn beschikbaar, maar light mode moest op sommige pagina’s nog worden uitgewerkt. Taalkeuze en kleurthema zijn verschillende instellingen; de taalwisselaar vervangt geen tweede kleurthema. |
+| Lettertypen laden | Het gebruik van `@font-face` is positief afgevinkt. |
+| Toetsenbord en screenreader | Beide onderdelen kregen een ± met de opmerking ‘heb je zelf getest’. Het formulier bevat daardoor geen concrete bevindingen van een onafhankelijke toetsenbord- of screenreadertest. |
+| HTML, toegankelijkheid en privacy | Het gecombineerde rubriconderdeel is afgevinkt. Dat is feedback binnen deze oefening en geen afzonderlijke technische of juridische controle. |
+| Code en proces | GitHub, testen en verbeteren, en de code zijn positief afgevinkt. Bij de documentatie staat dat bronnen ook op de website staan en dat het learning log heel netjes is. |
+
+#### Wat neem ik mee naar de volgende iteratie?
+
+Op het formulier staat één concreet verbeterpunt onder ‘Mijn top 3’: **light mode op sommige pagina’s toevoegen**. De tweede en derde plek zijn leeg gebleven. Vanuit de overige opmerkingen werk ik daarnaast twee eigen vervolgacties uit; die zijn geen extra letterlijk genoteerde feedback van de tester.
+
+1. **Light mode per pagina controleren en aanvullen.** Ik loop de pagina’s, kaarten, formulieren en dialogen na in beide thema’s. Ik let op leesbare tekst, passende achtergronden en zichtbare bediening. Bij wijzigingen wil ik een screenshot vóór en na de aanpassing vastleggen.
+2. **Toetsenbordbediening concreet vastleggen.** Ik wil per pagina de Tab-volgorde, zichtbare focus, overslaan-link en bediening met Enter, Spatie en Escape controleren. Ook noteer ik of focus na het sluiten van een venster terugkeert naar de juiste knop.
+3. **Een screenreadertest met bevindingen documenteren.** Ik wil met Narrator controleren of koppen, links, knoppen, formuliervelden en foutmeldingen begrijpelijk worden aangekondigd. Ik leg vast wat wel en niet werkt, welke aanpassing daaruit volgt en wat een hertest oplevert.
+
+#### Mijn reflectie
+
+De test laat zien dat mijn visuele richting herkenbaar is: de typografie past bij countrymuziek en het grid en kleurgebruik helpen om de inhoud te ordenen. Dat zijn keuzes die ik in verdere iteraties wil behouden. Het verbeterpunt over light mode maakt tegelijk duidelijk dat een samenhangend ontwerp ook over alle pagina’s en instellingen heen moet werken.
+
+Ik neem vooral mee dat ‘zelf getest’ nog weinig vertelt over hoe ik heb getest en wat het resultaat was. Bij toegankelijkheid wil ik daarom verder gaan dan een vinkje: ik wil de gebruikte bediening, gevonden problemen en hertests beschrijven. De positieve feedback op mijn learning log geeft een goede basis om ook die testresultaten beter vast te leggen.
+
+#### Vastgelegde feedback
+
+De twee onderstaande foto’s tonen de ingevulde formulieren van de trio-opdracht. Ze leggen de feedback op dat testmoment vast; ze bewijzen niet dat alle genoemde vervolgacties al zijn afgerond.
+
+| Typografie en ontwerp | Toegankelijkheid, privacy, code en verbeterpunten |
+| :---: | :---: |
+| <img src="readMeImages/dotting_i_1.jpg" alt="Peerfeedbackformulier sprint 3: typografie, grid, responsive ontwerp en nog aan te vullen light mode" width="360"> | <img src="readMeImages/dotting_i_2.jpg" alt="Peerfeedbackformulier sprint 3: toetsenbord en screenreader met de opmerking zelf getest, documentatie en light mode als verbeterpunt" width="360"> |
 
 ---
 
@@ -696,20 +730,12 @@ Met CSS-view-timelines verandert tekst verder naarmate deze door het scherm bewe
 
 Het ontwerp van deze website is niet zomaar ontstaan, maar is het resultaat van een zorgvuldig doorlopen creatief proces. Onderzoek naar de Texaanse cultuur, countrymuziek en de sfeer rondom honky-tonk bars en saloons is vertaald naar visuele keuzes, interactie en unieke websitecomponenten.
 
-
-### Dotting the I's - Feedbacktrio's met rolen
-| Dotting I's 1 | Dotting I's 2 |
-| :---: | :---:|
-| ![Dotting1](readMeImages/dotting_i_1.jpg) | ![Dotting2](readMeImages/dotting_i_2.jpg) |
-
 ---
 
 <details>
-<summary><b>Klik hier om het creatieve proces en de ontwerpkeuzes verder te lezen</b></summary>
+<summary>Klik hier om het creatieve proces en de ontwerpkeuzes verder te lezen</summary>
 
-<br>
-
-## Van Moodboard naar Kleurenpalet en Sfeer
+### Van Moodboard naar Kleurenpalet en Sfeer
 
 Het creatieve proces begon met het verzamelen van visuele inspiratie rondom countrymuziek en de bijbehorende cultuur. Hiervoor heb ik een uitgebreid moodboard samengesteld met onder andere klassieke festivalposters, rodeo-evenementen, Texaanse landschappen, countrybars en iconische countryartiesten.
 
@@ -717,12 +743,12 @@ Naast het visuele onderzoek heb ik ook abstract onderzoek gedaan naar vormen, co
 
 | Visueel Onderzoek | Abstract Onderzoek |
 | :---: | :---: |
-| ![Visueel onderzoek](readMeImages/visueel_research.png) | ![Abstract onderzoek](readMeImages/abstract_research.png) |
+| <img src="readMeImages/visueel_research.png" alt="Visueel onderzoek" width="360"> | <img src="readMeImages/abstract_research.png" alt="Abstract onderzoek" width="360"> |
 | *Kleuren, sfeer en beeldgebruik* | *Vormen, composities en richtingen* |
 
 Uit dit onderzoek ontstond een warm en rustiek kleurenpalet met diepe houttinten, verschillende bruintinten en goudachtige accenten. Deze kleuren zijn geïnspireerd op traditionele materialen zoals hout en leer en de uitstraling van een authentieke *honky-tonk* bar.
 
-![Kleurenpalet](readMeImages/colorPalette.png)
+<img src="readMeImages/colorPalette.png" alt="Kleurenpalet" width="760">
 
 *Het primaire kleurenpalet van mijn Digital Garden.*
 
@@ -732,7 +758,7 @@ Daarbij wilde ik de nostalgische uitstraling combineren met moderne webinteracti
 
 ---
 
-## Van Onderzoek naar Eerste Ideeën
+### Van Onderzoek naar Eerste Ideeën
 
 Na het verzamelen van inspiratie ben ik begonnen met het onderzoeken van verschillende ontwerprichtingen.
 
@@ -740,7 +766,7 @@ Hiervoor heb ik gebruikgemaakt van de **Crazy 8's-methode**, waarbij ik in korte
 
 | Crazy 8's (1 t/m 4) | Crazy 8's (5 t/m 8) |
 | :---: | :---: |
-| ![Crazy 8's schetsen 1 t/m 4](readMeImages/Crazy8_1.jpg) | ![Crazy 8's schetsen 5 t/m 8](readMeImages/Crazy8_2.jpg) |
+| <img src="readMeImages/Crazy8_1.jpg" alt="Crazy 8&#x27;s schetsen 1 t/m 4" width="360"> | <img src="readMeImages/Crazy8_2.jpg" alt="Crazy 8&#x27;s schetsen 5 t/m 8" width="360"> |
 | *Eerste vier conceptschetsen* | *Laatste vier conceptschetsen* |
 
 Een belangrijk uitgangspunt tijdens het schetsen was dat de website niet alleen visueel bij countrymuziek moest passen, maar dat de interacties ook inhoudelijk verbonden moesten zijn met het onderwerp.
@@ -749,7 +775,7 @@ Hierdoor ontstonden ideeën waarbij muziekinstrumenten, muzieknoten, vinylplaten
 
 ---
 
-## Het Saloon-startscherm & Thematische Beleving
+### Het Saloon-startscherm & Thematische Beleving
 
 Geïnspireerd door traditionele countrybars en saloons ontstond het idee om bezoekers de website te laten betreden via een interactief startscherm.
 
@@ -761,18 +787,20 @@ Tijdens het ontwerpproces heb ik verschillende iteraties gemaakt om de compositi
 
 | Eerste Iteratie | Finale Versie |
 | :---: | :---: |
-| ![Eerste iteratie startscherm](readMeImages/start_iteratie1.png) | ![Finale startscherm](readMeImages/start_final.png) |
+| <img src="readMeImages/start_iteratie1.png" alt="Eerste iteratie startscherm" width="360"> | <img src="readMeImages/start_final.png" alt="Finale startscherm" width="360"> |
 | *Eerste uitwerking van het startscherm* | *Uiteindelijke versie* |
 
 Wanneer de bezoeker met de cursor over de saloondeuren beweegt, verschijnt de tekst **"Come In"** als interactieve aanwijzing.
 
 Na het aanklikken worden de deuren met een animatie geopend, waarna de bezoeker de website betreedt.
 
+<img src="readMeImages/start_anim.gif" alt="Start2" width="760">
+
 **Ontwerpkeuze:** Door de navigatie naar de website te koppelen aan het openen van saloondeuren, wordt de gebruiker direct betrokken bij het thema. Het startscherm functioneert daardoor niet alleen als introductie, maar ook als onderdeel van de beleving.
 
 ---
 
-## De Opbouw van het Homescreen & Navigatie
+### De Opbouw van het Homescreen & Navigatie
 
 Bij het ontwerpen van het homescreen wilde ik een balans vinden tussen een duidelijke informatiestructuur en een creatieve vormgeving.
 
@@ -782,7 +810,7 @@ Tijdens het itereren heb ik verschillende composities onderzocht en aangepast om
 
 | Eerste Iteratie | Finale Versie |
 | :---: | :---: |
-| ![Eerste iteratie homescreen](readMeImages/home_iteratie1.png) | ![Finale homescreen](readMeImages/home_final.png) |
+| <img src="readMeImages/home_iteratie1.png" alt="Eerste iteratie homescreen" width="360"> | <img src="readMeImages/home_final.png" alt="Finale homescreen" width="360"> |
 | *Eerste uitwerking van het homescreen* | *Uiteindelijke versie* |
 
 Uiteindelijk heb ik gekozen voor een indeling met gestapelde kaarten (*cards*), waarin verschillende onderwerpen van de Digital Garden worden gepresenteerd.
@@ -798,19 +826,19 @@ Het homescreen vormt hiermee de basis voor een Digital Garden waarin bezoekers v
 
 ---
 
-## Specifieke Componenten & Micro-interacties
+### Specifieke Componenten & Micro-interacties
 
 Een belangrijk onderdeel van mijn ontwerpproces was het ontwikkelen van kleine interacties die de website herkenbaar en aantrekkelijk maken.
 
 In plaats van standaard interface-elementen wilde ik waar mogelijk gebruikmaken van vormen en objecten die passen bij het thema.
 
-### Navbar & Responsief Banjo-menu
+#### Navbar & Responsief Banjo-menu
 
 De navigatiebalk is ontworpen met dezelfde warme kleuren, houten accenten en country-esthetiek als de rest van de website.
 
 Ook de navbar heeft meerdere ontwerpiteraties doorlopen voordat de uiteindelijke versie werd gekozen.
 
-![Finale navbar](readMeImages/navbar_final.png)
+<img src="readMeImages/navbar_final.png" alt="Finale navbar" width="760">
 
 *Uiteindelijke versie van de navigatiebalk.*
 
@@ -822,14 +850,14 @@ Hierbij heb ik geëxperimenteerd met de vorm, verhoudingen en herkenbaarheid van
 
 | Banjo Iteratie 1 | Banjo Iteratie 2 | Finale Banjo-menu |
 | :---: | :---: | :---: |
-| ![Banjo iteratie 1](readMeImages/banjo_iteratie1.png) | ![Banjo iteratie 2](readMeImages/banjo_iteratie2.png) | ![Finale banjo](readMeImages/banjo_final.png) |
+| <img src="readMeImages/banjo_iteratie1.png" alt="Banjo iteratie 1" width="240"> | <img src="readMeImages/banjo_iteratie2.png" alt="Banjo iteratie 2" width="240"> | <img src="readMeImages/banjo_final.png" alt="Finale banjo" width="240"> |
 | *Eerste opzet* | *Tweede iteratie* | *Uiteindelijk menu-icoon* |
 
 Door op het banjo-icoon te klikken, wordt het mobiele navigatiemenu geopend.
 
 **Ontwerpkeuze:** Het banjo-icoon vervangt het traditionele hamburgermenu en maakt de navigatie herkenbaar binnen de visuele identiteit van de website.
 
-### Custom Scrollbar – Vinylplaat
+#### Custom Scrollbar – Vinylplaat
 
 Om ook de kleinere onderdelen van de website bij het thema te laten aansluiten, heb ik een aangepaste scrollbar ontworpen.
 
@@ -837,13 +865,13 @@ In plaats van de standaard browser-scrollbar wordt een **vinylplaat** gebruikt a
 
 | Beschrijving | Ontwerp |
 | :--- | :---: |
-| Tijdens het scrollen verschijnen muzieknoten rondom de vinylplaat. Een gouden lijn beweegt mee en laat zien hoe ver de bezoeker zich op de pagina bevindt. Hierdoor wordt een functioneel interface-element onderdeel van de muzikale beleving. | ![Custom scrollbar](readMeImages/scrollbar.png) |
+| Tijdens het scrollen verschijnen muzieknoten rondom de vinylplaat. Een gouden lijn beweegt mee en laat zien hoe ver de bezoeker zich op de pagina bevindt. Hierdoor wordt een functioneel interface-element onderdeel van de muzikale beleving. | <img src="readMeImages/scrollbar.png" alt="Custom scrollbar" width="760"> |
 
 *Ontwerp van de custom scrollbar.*
 
 Deze interactie laat zien hoe een klein onderdeel van een website kan bijdragen aan de totale gebruikerservaring.
 
-### Taalwisselaar – Nederlands & Engels
+#### Taalwisselaar – Nederlands & Engels
 
 Omdat countrymuziek internationaal bekend is, wilde ik de website toegankelijk maken voor zowel Nederlandstalige als Engelstalige bezoekers.
 
@@ -855,15 +883,21 @@ Hierdoor hoeft niet voor iedere taal een aparte webpagina te worden gemaakt en b
 
 **Ontwerpkeuze:** Door de vertalingen centraal te beheren, kan ik nieuwe teksten toevoegen zonder de volledige HTML-structuur aan te passen.
 
+| Taalwisselaar Oud design | Taalwisselaar nieuw design |
+| :---: | :---: |
+| <img src="readMeImages/lang_1.png" alt="LangOld" width="300"> | <img src="readMeImages/lang1_final.png" alt="LangNew" width="340"> |
+
+<img src="readMeImages/lang_change.gif" alt="LangChange" width="760">
+
 ---
 
-## Interactieve Concepten voor de Geschiedenis van Countrymuziek
+### Interactieve Concepten voor de Geschiedenis van Countrymuziek
 
 Naast de algemene vormgeving heb ik onderzocht hoe ik historische informatie op een interactieve manier kan presenteren.
 
 Mijn uitgangspunt was dat bezoekers de geschiedenis niet alleen lezen, maar deze ook actief kunnen verkennen.
 
-### Interactieve Gitaar als Tijdlijn
+#### Interactieve Gitaar als Tijdlijn
 
 Een van de concepten die ik heb uitgewerkt, is een verticale gitaar die functioneert als historische tijdlijn.
 
@@ -885,7 +919,9 @@ Tijdens het uitwerken van dit concept heb ik vooral aandacht besteed aan:
 
 **Ontwerpkeuze:** Door een muziekinstrument als tijdlijn te gebruiken, wordt de geschiedenis van countrymuziek op een thematische en speelse manier gepresenteerd.
 
-### Exploded View van een Viool
+<img src="readMeImages/gitaar_anim.gif" alt="Gitaar" width="600">
+
+#### Exploded View van een Viool
 
 Een ander concept dat ik heb onderzocht, is een interactieve *exploded view* van een viool.
 
@@ -897,7 +933,11 @@ Daarbij heb ik gekozen voor een **zijaanzicht van de viool**, omdat de verschill
 
 Het doel van dit concept is om bezoekers op een visuele manier kennis te laten maken met de bouw en onderdelen van een muziekinstrument.
 
-### Ondergronds Wortelstelsel
+| Roots oude design | Roots nieuwe design |
+| :---: | :---: |
+| <img src="readMeImages/roots_oud.png" alt="Oud Roots-ontwerp" width="360"> | <img src="readMeImages/roots_final.png" alt="Nieuwe viooluitwerking" width="360"> |
+
+#### Ondergronds Wortelstelsel
 
 Daarnaast heb ik geëxperimenteerd met een concept waarbij de oorsprong en ontwikkeling van countrymuziek worden weergegeven als een ondergronds wortelstelsel.
 
@@ -911,7 +951,7 @@ Met dit concept wilde ik onderzoeken hoe een abstracte metafoor kan worden gebru
 
 ---
 
-## Privacybeleid & Vragen Stellen
+### Privacybeleid & Vragen Stellen
 
 Naast de creatieve onderdelen heb ik ook nagedacht over hoe bezoekers informatie over het privacybeleid kunnen vinden en hierover vragen kunnen stellen.
 
@@ -931,7 +971,7 @@ Tijdens deze verkenning heb ik gekeken naar:
 
 ---
 
-## Bronnenpagina
+### Bronnenpagina
 
 Voor de Digital Garden heb ik verschillende soorten bronnen gebruikt, waaronder afbeeldingen, onderzoeksartikelen en video's.
 
@@ -945,7 +985,7 @@ In de nieuwste uitwerking zijn de bronnen verdeeld over drie overzichten:
 
 Bij het afbeeldingsoverzicht kunnen bezoekers gebruikmaken van een zoekfunctie en categorieknoppen om specifieke afbeeldingen gemakkelijker terug te vinden.
 
-![Bronnenpagina](readMeImages/bronnen.png)
+<img src="readMeImages/bronnen.png" alt="Bronnenpagina" width="760">
 
 *Een eerdere iteratie van de bronnenpagina.*
 
@@ -953,7 +993,7 @@ Bij het afbeeldingsoverzicht kunnen bezoekers gebruikmaken van een zoekfunctie e
 
 ---
 
-## Ontwerp als Samenhangend Geheel
+### Ontwerp als Samenhangend Geheel
 
 Tijdens het volledige ontwerpproces heb ik geprobeerd om de verschillende onderdelen van de Digital Garden met elkaar te verbinden.
 
@@ -974,34 +1014,29 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 ## Retrospectives
 <details>
-<summary><b>Retrospect 1</b></summary>
-
-<br>
+<summary>Retrospect 1</summary>
 
 | Retro opdr 1 | Retro opdr 2 | Retro opdr 3 |
 | :---: | :---: | :---: |
-| ![Retro1](readMeImages/Retro_1_1.png) | ![Retro2](readMeImages/Retro_1_2.png) | ![Retro3](readMeImages/Retro_1_3.png) |
+| <img src="readMeImages/Retro_1_1.png" alt="Retro1" width="360"> | <img src="readMeImages/Retro_1_2.png" alt="Retro2" width="360"> | <img src="readMeImages/Retro_1_3.png" alt="Retro3" width="360"> |
 
 | Retro opdr 4 |
 | :---: |
-| ![Retro4](readMeImages/Retro_1_4.png) |
+| <img src="readMeImages/Retro_1_4.png" alt="Retro4" width="360"> |
 
 </details>
 
 <details>
-<summary><b>Retrospect 2</b></summary>
-
-<br>
+<summary>Retrospect 2</summary>
 
 | Retro opdr 1 | Retro opdr 2 | Retro opdr 3 | Retro opdr 4 |
 | :---: | :---: | :---: | :---: |
-| ![Retro1](readMeImages/Retro_2_1.jpg) | ![Retro2](readMeImages/Retro_2_2.jpg) | ![Retro3](readMeImages/Retro_2_3.jpg) | ![Retro3](readMeImages/Retro_2_4.jpg)
-
+| <img src="readMeImages/Retro_2_1.jpg" alt="Retro1" width="360"> | <img src="readMeImages/Retro_2_2.jpg" alt="Retro2" width="360"> | <img src="readMeImages/Retro_2_3.jpg" alt="Retro3" width="360"> | <img src="readMeImages/Retro_2_4.jpg" alt="Retro3" width="360"> |
 
 
 | Retro opdr 5 |
 | :---: |
-| ![Retro4](readMeImages/Retro_2_5.jpg) |
+| <img src="readMeImages/Retro_2_5.jpg" alt="Retro4" width="360"> |
 
 </details>
 
@@ -1032,9 +1067,7 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 ### Bronnen voor Onderzoek
 <details>
-<summary><b>📂 Klik hier om alle onderzoeksbronnen te bekijken (10 bronnen)</b></summary>
-
-<br>
+<summary>📂 Klik hier om alle onderzoeksbronnen te bekijken (10 bronnen)</summary>
 
 | Bron | Beschrijving | Link |
 | :--- | :--- | :--- |
@@ -1058,21 +1091,19 @@ Een overzicht van twintig afbeeldingen: fotografie, posters, albumbeelden en de 
 Bestandsmap: `assets/resources/images/`
 
 <details>
-<summary><b>📷 Klik om de Bronnentabel te Openen / Sluiten (20 afbeeldingen)</b></summary>
-
-<br />
+<summary>📷 Klik om de Bronnentabel te Openen / Sluiten (20 afbeeldingen)</summary>
 
 | Miniatuur | Bestandspad & Titel | Categorie | Bron / Uitgever | Originele Webkoppeling |
 | :---: | :--- | :---: | :--- | :---: |
-| <img src="assets/resources/images/texasFlag.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Vlag van Texas"> | **Vlag van Texas**<br>`assets/resources/images/texasFlag.jpg` | `Landschap` | **Valley Homes** | [Bekijk Bron](https://valleyhomeslc.com/location/mobile-homes-for-sale-dumas-tx/) |
-| <img src="assets/resources/images/rodeo.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Rodeo Evenement"> | **Rodeo Evenement**<br>`assets/resources/images/rodeo.jpg` | `Evenementen & Posters` | **National Western Stock Show** | [Bekijk Bron](https://nationalwestern.com/rodeos/) |
-| <img src="assets/resources/images/CountryDay.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Country Day bij Houston Rodeo"> | **Country Day bij Houston Rodeo**<br>`assets/resources/images/CountryDay.jpg` | `Evenementen & Posters` | **Houstonia Magazine**<br><sub>*Houston Livestock Show and Rodeo*</sub> | [Bekijk Bron](https://www.houstoniamag.com/arts-and-culture/2025/03/houston-rodeo-best-days-to-visit) |
-| <img src="assets/resources/images/FestivalPoster.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Festival Poster / Line-up"> | **Festival Poster / Line-up**<br>`assets/resources/images/FestivalPoster.jpg` | `Evenementen & Posters` | **Houston Chronicle**<br><sub>*Houston Livestock Show and Rodeo*</sub> | [Bekijk Bron](https://www.houstonchronicle.com/entertainment/music/article/houston-rodeo-genre-calendar-2025-acts-lineup-tix-19934612.php) |
-| <img src="assets/resources/images/artist-dolly.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Dolly Parton"> | **Dolly Parton**<br>`assets/resources/images/artist-dolly.jpg` | `Artiesten` | **Daily Bruin**<br><sub>*Foto door Richard E. Aaron / Redferns / Getty Images*</sub> | [Bekijk Bron](https://dailybruin.com/2026/08/27/in-moments-remembering-queen-of-country-dolly-partons-career) |
-| <img src="assets/resources/images/artist_don.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Don Williams"> | **Don Williams**<br>`assets/resources/images/artist_don.jpg` | `Artiesten` | **Getty Images**<br><sub>*Foto door Michael Putland*</sub> | [Bekijk Bron](https://www.gettyimages.nl/detail/nieuwsfoto%27s/don-williams-portrait-london-1989-nieuwsfotos/109364677?adppopup=true) |
-| <img src="assets/resources/images/artist_ella.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Ella Langley"> | **Ella Langley**<br>`assets/resources/images/artist_ella.jpg` | `Artiesten` | **Woman's World** | [Bekijk Bron](https://www.womansworld.com/entertainment/celebrities/ella-langley-before-fame-was-totally-different-how-she-found-her-look) |
-| <img src="assets/resources/images/artist_kameron.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Kameron Marlowe"> | **Kameron Marlowe**<br>`assets/resources/images/artist_kameron.jpg` | `Artiesten` | **Oluwaseyi Davies**<br><sub>*Directe vermelding*</sub> | *Directe Vermelding* |
-| <img src="assets/resources/images/artist_warren.jpg" width="75" height="50" style="object-fit:cover; border-radius:4px;" alt="Warren Zeiders"> | **Warren Zeiders**<br>`assets/resources/images/artist_warren.jpg` | `Artiesten` | **Wikipedia** | [Bekijk Bron](https://en.wikipedia.org/wiki/Warren_Zeiders) |
+| <img src="assets/resources/images/texasFlag.jpg" width="75" height="50" alt="Vlag van Texas"> | **Vlag van Texas**<br>`assets/resources/images/texasFlag.jpg` | `Landschap` | **Valley Homes** | [Bekijk Bron](https://valleyhomeslc.com/location/mobile-homes-for-sale-dumas-tx/) |
+| <img src="assets/resources/images/rodeo.jpg" width="75" height="50" alt="Rodeo Evenement"> | **Rodeo Evenement**<br>`assets/resources/images/rodeo.jpg` | `Evenementen & Posters` | **National Western Stock Show** | [Bekijk Bron](https://nationalwestern.com/rodeos/) |
+| <img src="assets/resources/images/CountryDay.jpg" width="75" height="50" alt="Country Day bij Houston Rodeo"> | **Country Day bij Houston Rodeo**<br>`assets/resources/images/CountryDay.jpg` | `Evenementen & Posters` | **Houstonia Magazine**<br><sub>*Houston Livestock Show and Rodeo*</sub> | [Bekijk Bron](https://www.houstoniamag.com/arts-and-culture/2025/03/houston-rodeo-best-days-to-visit) |
+| <img src="assets/resources/images/FestivalPoster.jpg" width="75" height="50" alt="Festival Poster / Line-up"> | **Festival Poster / Line-up**<br>`assets/resources/images/FestivalPoster.jpg` | `Evenementen & Posters` | **Houston Chronicle**<br><sub>*Houston Livestock Show and Rodeo*</sub> | [Bekijk Bron](https://www.houstonchronicle.com/entertainment/music/article/houston-rodeo-genre-calendar-2025-acts-lineup-tix-19934612.php) |
+| <img src="assets/resources/images/artist-dolly.jpg" width="75" height="50" alt="Dolly Parton"> | **Dolly Parton**<br>`assets/resources/images/artist-dolly.jpg` | `Artiesten` | **Daily Bruin**<br><sub>*Foto door Richard E. Aaron / Redferns / Getty Images*</sub> | [Bekijk Bron](https://dailybruin.com/2026/08/27/in-moments-remembering-queen-of-country-dolly-partons-career) |
+| <img src="assets/resources/images/artist_don.jpg" width="75" height="50" alt="Don Williams"> | **Don Williams**<br>`assets/resources/images/artist_don.jpg` | `Artiesten` | **Getty Images**<br><sub>*Foto door Michael Putland*</sub> | [Bekijk Bron](https://www.gettyimages.nl/detail/nieuwsfoto%27s/don-williams-portrait-london-1989-nieuwsfotos/109364677?adppopup=true) |
+| <img src="assets/resources/images/artist_ella.jpg" width="75" height="50" alt="Ella Langley"> | **Ella Langley**<br>`assets/resources/images/artist_ella.jpg` | `Artiesten` | **Woman's World** | [Bekijk Bron](https://www.womansworld.com/entertainment/celebrities/ella-langley-before-fame-was-totally-different-how-she-found-her-look) |
+| <img src="assets/resources/images/artist_kameron.jpg" width="75" height="50" alt="Kameron Marlowe"> | **Kameron Marlowe**<br>`assets/resources/images/artist_kameron.jpg` | `Artiesten` | **Oluwaseyi Davies**<br><sub>*Directe vermelding*</sub> | *Directe Vermelding* |
+| <img src="assets/resources/images/artist_warren.jpg" width="75" height="50" alt="Warren Zeiders"> | **Warren Zeiders**<br>`assets/resources/images/artist_warren.jpg` | `Artiesten` | **Wikipedia** | [Bekijk Bron](https://en.wikipedia.org/wiki/Warren_Zeiders) |
 | <img src="assets/resources/images/superstars_2.jpg" width="75" alt="Johnny Cash — American Recordings"> | **Johnny Cash — American Recordings**<br>`assets/resources/images/superstars_2.jpg` | `Tijdlijn` | **Wikipedia — American Recordings** | [Bekijk Bron](https://en.wikipedia.org/wiki/American_Recordings_%28album%29) |
 | <img src="assets/resources/images/modern_3.png" width="75" alt="Beyoncé — Cowboy Carter"> | **Beyoncé — Cowboy Carter**<br>`assets/resources/images/modern_3.png` | `Tijdlijn` | **Wikipedia — Cowboy Carter** | [Bekijk Bron](https://en.wikipedia.org/wiki/Cowboy_Carter) |
 | <img src="assets/resources/images/radio_3.jpg" width="75" alt="De zingende cowboy — filmafbeelding"> | **De zingende cowboy — filmafbeelding**<br>`assets/resources/images/radio_3.jpg` | `Tijdlijn` | **IMDb** | [Bekijk Bron](https://www.imdb.com/title/tt0045305/) |
@@ -1093,9 +1124,7 @@ Bestandsmap: `assets/resources/images/`
 De onderstaande links komen overeen met de zeven video-ID’s in de Story-tijdlijn. De artiest en titel volgen de bijbehorende gebeurtenis; er is geen ongecontroleerde kanaal- of uploadernaam toegevoegd.
 
 <details>
-<summary><b>🎬 Klik om de zeven videobronnen te bekijken</b></summary>
-
-<br>
+<summary>🎬 Klik om de zeven videobronnen te bekijken</summary>
 
 | Artiest in de tijdlijn | Nummer | Bronlink |
 | :--- | :--- | :--- |

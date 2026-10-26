@@ -380,6 +380,8 @@
   /***********************/
 
   function initReveals(page) {
+    // CSS verzorgt scrollanimaties waar view-timelines beschikbaar zijn.
+    if (window.CSS?.supports('animation-timeline', 'view()')) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (!('IntersectionObserver' in window) || reducedMotion.matches) return;
 
@@ -777,12 +779,8 @@
       fields.source.href = source.url;
       fields.source.textContent = `${current.sourceLabel}: ${source.name} ↗`;
 
-      // Geen geforceerde layoutmeting nodig om de animatie opnieuw te starten.
-      if (typeof card.getAnimations === 'function') {
-        card.getAnimations().forEach(animation => animation.cancel());
-      }
-      card.classList.remove('paper-swap');
-      window.requestAnimationFrame(() => card.classList.add('paper-swap'));
+      // Alleen de selectiestaat wijzigt; CSS start de bijbehorende animatie.
+      card.dataset.paperSwap = card.dataset.paperSwap === 'a' ? 'b' : 'a';
     }
 
     document.addEventListener('languagechange', () => {
