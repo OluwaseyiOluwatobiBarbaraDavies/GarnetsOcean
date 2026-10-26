@@ -1014,7 +1014,7 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 ## Retrospectives
 <details>
-<summary>Retrospect 1</summary>
+<summary><b>Retrospect 1</b></summary>
 
 | Retro opdr 1 | Retro opdr 2 | Retro opdr 3 |
 | :---: | :---: | :---: |
@@ -1022,12 +1022,14 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 | Retro opdr 4 |
 | :---: |
-| <img src="readMeImages/Retro_1_4.png" alt="Retro4" width="360"> |
+| <img src="readMeImages/Retro_1_4.png" alt="Retro4" width="600"> |
+
+In sprint 1, heb ik veel upds en downs meegemaakt. Voornamelijk bij het kiezen van een thema voor mijn Digital Garden en de nieuwe leermethode. Alles ging het begin op een snelle tempo. Maar op een gegeven moment kreeg ik alles onder de knie en begon ik goed om weg te komen vooral na verkrijgen van mijn Propedeuse die ik met Cum Laude heb kunnen halen. Dit gaf mij een confidence boost, die ik zeer nodig had. Vooral omdat ik moeite heb met mijn creatieve proces te documenteren, omdat ik vaak al  1 idee in mijn hoofd hebt dat ik gelijk wil uitwerken in plaats van oprecht te gaan experimenteren met wat mogelijk is. 
 
 </details>
 
 <details>
-<summary>Retrospect 2</summary>
+<summary><b>Retrospect 2</b></summary>
 
 | Retro opdr 1 | Retro opdr 2 | Retro opdr 3 | Retro opdr 4 |
 | :---: | :---: | :---: | :---: |
@@ -1036,7 +1038,9 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 | Retro opdr 5 |
 | :---: |
-| <img src="readMeImages/Retro_2_5.jpg" alt="Retro4" width="360"> |
+| <img src="readMeImages/Retro_2_5.jpg" alt="Retro4" width="600"> |
+
+Aan het begin van Sprint 2 was ik goed op weg echter liep ik nog steeds grotendeels achter bij het documenteren van mijn werk. Ik kreeg postieve feedback over mijn code en website, echter moest ik nog veel werk doen aan mijn Learning Log. Omdat ik nogal perfectionistisch ben, werkte ik hard door voor lange uren. 
 
 </details>
 
