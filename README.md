@@ -1005,6 +1005,29 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 
 </details>
 
+<details>
+<summary><b>Retrospect 3</b></summary>
+
+<br>
+
+| Retro Opdracht 1 | Retro Opdracht 2 |
+| :---: | :---: |
+| ![Retro3_1](readMeImages/retro_3_1.png) | ![Retro3_2](readMeImages/retro_3_2.png) |
+
+| Retro Opdracht 3 | Retro Opdracht 4 |
+| :---: | :---: |
+| ![Retro3_3](readMeImages/retro_3_3.png) | ![Retro3_4](readMeImages/retro_3_4.png) |
+
+| Retro Opdracht 5 |
+| :---: |
+| ![Retro3_5](readMeImages/retro_3_5.png) |
+
+| Retro Opdracht 6 |
+| :---: |
+| ![Retro3_6](readMeImages/retro_3_6.jpg) |
+
+</details>
+
 ## Bronnen
 
 ### Bronnen voor Onderzoek
