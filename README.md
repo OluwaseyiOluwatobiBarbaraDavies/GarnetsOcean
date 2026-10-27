@@ -146,7 +146,7 @@ Semantiek en gebruikservaring staan daarmee voor mij niet tegenover elkaar. Pass
 
 Er zijn onder andere visuele, auditieve, motorische, cognitieve en neurologische beperkingen. Denk aan slechtziendheid, doofheid, moeite met nauwkeurig aanwijzen, moeite met complexe taal of gevoeligheid voor beweging. Een beperking kan ook tijdelijk zijn, zoals een gebroken arm. De situatie kan eveneens een drempel veroorzaken: zonlicht vermindert het zicht op een scherm, in een stille ruimte kan geluid niet altijd aan en een trage verbinding maakt zware media moeilijker bereikbaar.
 
-Voor mijn Garden betekent dat onder meer: leesbare tekst, duidelijke koppen, alternatieven voor beeld en geluid, bediening zonder muis en een manier om beweging te beperken. Ik wil niet aannemen dat iedere bezoeker mijn scherm, mijn zintuigen of mijn manier van navigeren deelt. [Bron: W3C — Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/).
+Voor mijn Garden betekent dat onder meer: leesbare tekst, duidelijke koppen, alternatieven voor beeld en geluid, bediening zonder muis en een manier om beweging te beperken. Ik wil niet aannemen dat iedere bezoeker mijn scherm, mijn zintuigen of mijn manier van navigeren deelt. [Bron: W3C - Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/).
 
 **3. Drie manieren om met een screenreader te navigeren**
 
@@ -245,7 +245,7 @@ Ik hoef niet alle contrasten tegelijk maximaal te maken. Eén duidelijk verschil
 
 **2. Wat is mijn ideale regellengte en waarom?**
 
-Voor langere uitleg in mijn Garden kies ik als startpunt ongeveer **55–65 tekens per regel, inclusief spaties**. Dat geeft genoeg ruimte om een zin vloeiend te volgen, zonder dat mijn ogen na iedere regel een heel grote afstand naar het volgende begin moeten overbruggen. Heel korte regels breken de tekst juist vaak op. Dit is mijn ontwerprichting, geen vaste ideale maat voor iedere bezoeker of ieder font. [Butterick — Line length](https://practicaltypography.com/line-length.html) bespreekt waarom regellengte samen met de andere tekstinstellingen moet worden beoordeeld.
+Voor langere uitleg in mijn Garden kies ik als startpunt ongeveer **55–65 tekens per regel, inclusief spaties**. Dat geeft genoeg ruimte om een zin vloeiend te volgen, zonder dat mijn ogen na iedere regel een heel grote afstand naar het volgende begin moeten overbruggen. Heel korte regels breken de tekst juist vaak op. Dit is mijn ontwerprichting, geen vaste ideale maat voor iedere bezoeker of ieder font. [Butterick - Line length](https://practicaltypography.com/line-length.html) bespreekt waarom regellengte samen met de andere tekstinstellingen moet worden beoordeeld.
 
 In CSS kan ik bijvoorbeeld met `max-width: 60ch` beginnen. De eenheid `ch` is gebaseerd op de breedte van de nul in het gebruikte font en garandeert bij een proportioneel font dus niet letterlijk zestig tekens. Ik moet de tekst ook met het echte lettertype, vergrote tekst en verschillende schermbreedtes bekijken.
 
@@ -329,7 +329,7 @@ De onderdelen hieronder vullen mijn eerdere log aan. De eerdere weken beschrijve
 | 7 | 12–18 oktober 2026 | Nog geen afzonderlijke weekreflectie vastgelegd. |
 | 8 | 19–25 oktober 2026 | Stand op 22 oktober: verdere uitwerking van Story, thema’s, vertalingen, privacy, mediaregistratie en de doorlopende Y.M.C.A.-pagina. |
 
-#### Week 1 — Reflectie op de workshops
+#### Week 1 - Reflectie op de workshops
 <details>
 <summary>Klik hier om Week 1 te bekijken</summary>
 
@@ -346,7 +346,7 @@ De onderdelen hieronder vullen mijn eerdere log aan. De eerdere weken beschrijve
 
 ---
 
-#### Week 2 — De eerste website en mijn onderwerpkeuze
+#### Week 2 - De eerste website en mijn onderwerpkeuze
 <details>
 <summary>Klik hier om Week 2 te bekijken</summary>
 
@@ -368,7 +368,7 @@ De presentatie was bedoeld om duidelijk te maken hoe die onderwerpen met elkaar 
 
 ---
 
-#### Week 3 — Taalkeuze, bronnen, scrollbar en HTML-validatie
+#### Week 3 - Taalkeuze, bronnen, scrollbar en HTML-validatie
 <details>
 <summary>Klik hier om Week 3 te bekijken</summary>
 
@@ -396,7 +396,7 @@ De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scroll
 
 | | |
 | :---: | :---: |
-| De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. <br> Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. <br> Het ontwerp staat verderop in de README bij de componenten en micro-interacties. | <img src="readMeImages/scroll_anim.gif" alt="Scrollbar" width="400"> |
+| De vormgeving staat in `custom-scrollbar.css` en de interactie in `custom-scrollbar.js`. <br> Zo kan ik de uitstraling aanpassen zonder de werking en styling door elkaar te zetten. <br> Het ontwerp staat verderop in de README bij de componenten en micro-interacties. | <img src="readMeImages/scroll_anim.gif" alt="Scrollbar" width="300"> |
 | | |
 
 
@@ -413,7 +413,7 @@ IDs zijn wel nuttig voor gerichte verwijzingen: bijvoorbeeld een skip link naar 
 
 ---
 
-#### Week 4 — Thema's, toegankelijkheid en het begin van mijn garden
+#### Week 4 - Thema's, toegankelijkheid en het begin van mijn garden
 <details>
 <summary>Klik hier om Week 4 te bekijken</summary>
 
@@ -429,7 +429,7 @@ Daarvoor zijn de volgende aanpassingen uitgewerkt:
 
 - Het zoeklabel koppelen aan het juiste input-ID en de werking uitleggen via `aria-describedby`.
 - Filterknoppen een beschrijving geven en de geselecteerde staat communiceren met `aria-pressed`.
-- Bronlinks een naam geven zoals ‘Bekijk Originele Bron — Vlag van Texas — Bron: Valley Homes’, met aanvullende informatie over bestand en credits.
+- Bronlinks een naam geven zoals ‘Bekijk Originele Bron - Vlag van Texas — Bron: Valley Homes’, met aanvullende informatie over bestand en credits.
 - Het aantal zoekresultaten laten melden zonder bij elke toetsaanslag direct een nieuwe melding te geven.
 - Skip links toevoegen zodat de navigatie kan worden overgeslagen.
 - Extra linkcontext visueel verbergen, terwijl deze voor screenreaders beschikbaar blijft.
@@ -448,7 +448,7 @@ Ik heb een story-pagina toegevoegd als begin van mijn digital garden. Daarmee kr
 
 </details>
 
-#### Week 5 — Destijdse tussenstand: opruimen en verder verfijnen
+#### Week 5 - Destijdse tussenstand: opruimen en verder verfijnen
 <details>
 <summary>Klik hier om Week 5 te bekijken</summary>
 
@@ -509,7 +509,7 @@ Ik wil hier onderscheid maken tussen cookies, `localStorage` en verzoeken naar a
 
 ---
 
-#### Week 6 — Play the Rules
+#### Week 6 - Play the Rules
 <details>
 <summary>Klik hier om week 6 te lezen</summary>
 
@@ -564,7 +564,7 @@ Voor de golvende tekst en de weg gebruik ik SVG. Daarmee kan tekst een gebogen p
 
 ---
 
-#### Week 8 — Stand op 22 oktober: samenhang en verdere uitwerking
+#### Week 8 - Stand op 22 oktober: samenhang en verdere uitwerking
 <details>
 <summary>Klik hier om de recente uitwerkingen te lezen</summary>
 
@@ -599,7 +599,7 @@ De themakleuren staan in `lightDark.css`; de opslag en bediening in `lightDark.j
 
 | | |
 | :---: | :---: |
-| <img src="readMeImages/lightDark.png" alt="LightDark" width="200"> | <img src="readMeImages/light_dark.gif" alt="lightDark" width="760"> |
+| <img src="readMeImages/lightDark.png" alt="LightDark" width="400"> | <img src="readMeImages/light_dark.gif" alt="lightDark" width="700"> |
 
 
 
@@ -865,7 +865,7 @@ In plaats van de standaard browser-scrollbar wordt een **vinylplaat** gebruikt a
 
 | Beschrijving | Ontwerp |
 | :--- | :---: |
-| Tijdens het scrollen verschijnen muzieknoten rondom de vinylplaat. Een gouden lijn beweegt mee en laat zien hoe ver de bezoeker zich op de pagina bevindt. Hierdoor wordt een functioneel interface-element onderdeel van de muzikale beleving. | <img src="readMeImages/scrollbar.png" alt="Custom scrollbar" width="760"> |
+| Tijdens het scrollen verschijnen muzieknoten rondom de vinylplaat. Een gouden lijn beweegt mee en laat zien hoe ver de bezoeker zich op de pagina bevindt. Hierdoor wordt een functioneel interface-element onderdeel van de muzikale beleving. | <img src="readMeImages/scroll_anim.gif" alt="Custom scrollbar" width="760"> |
 
 *Ontwerp van de custom scrollbar.*
 
@@ -1024,7 +1024,55 @@ De afzonderlijke Y.M.C.A.-opdracht heeft bewust een eigen visuele identiteit, om
 | :---: |
 | <img src="readMeImages/Retro_1_4.png" alt="Retro4" width="600"> |
 
-In sprint 1, heb ik veel upds en downs meegemaakt. Voornamelijk bij het kiezen van een thema voor mijn Digital Garden en de nieuwe leermethode. Alles ging het begin op een snelle tempo. Maar op een gegeven moment kreeg ik alles onder de knie en begon ik goed om weg te komen vooral na verkrijgen van mijn Propedeuse die ik met Cum Laude heb kunnen halen. Dit gaf mij een confidence boost, die ik zeer nodig had. Vooral omdat ik moeite heb met mijn creatieve proces te documenteren, omdat ik vaak al  1 idee in mijn hoofd hebt dat ik gelijk wil uitwerken in plaats van oprecht te gaan experimenteren met wat mogelijk is. 
+#### Mijn metafoor
+
+Mijn metafoor is een **kronkelend pad** dat mijn leerproces tijdens de eerste twee weken van het project weergeeft. Het pad symboliseert mijn zoektocht naar een eigen werktempo en laat zien hoe ik met verschillende uitdagingen omging.
+
+De bochten en hoogteverschillen staan voor de momenten waarop ik moeite had om alles bij te houden, maar ook voor de momenten waarop ik vooruitgang boekte en meer zelfvertrouwen kreeg.
+
+#### 1. Een chaotische start
+
+Aan het begin van het pad is het erg chaotisch. Ik had moeite om te wennen aan de nieuwe manier van leren. Alles ging erg snel en ik moest nog ontdekken hoe de deep dives en de nieuwe lesstructuur werkten.
+
+De **rondvliegende papieren, klok, laptop en verwarde persoon** symboliseren de hoeveelheid nieuwe informatie en de drukte die ik ervaarde. Ik had het gevoel dat ik achterliep en wist niet altijd waar ik mijn aandacht op moest richten.
+
+#### 2. Focus op mijn Digital Garden
+
+Na de chaotische start begon ik steeds meer mijn draai te vinden. Ik richtte mij vooral op het ontwerpen en ontwikkelen van mijn **Digital Garden**. Dit gaf mij plezier en motivatie, omdat ik mijn creativiteit kwijt kon in het project.
+
+De **persoon achter de laptop, het lampje en het bordje Digital Garden** symboliseren mijn focus en de ideeën die ik tijdens het werken kreeg.
+
+Toch had deze focus ook een nadeel. Ik besteedde zoveel tijd aan mijn Digital Garden dat ik mijn Learning Log minder prioriteit gaf.
+
+Het **Learning Log onderaan het pad, bedekt met spinnenwebben**, symboliseert hoe ik dit onderdeel steeds verder liet liggen.
+
+#### 3. Een keerpunt: Cum Laude
+
+Een belangrijk keerpunt tijdens deze sprint was het behalen van mijn **propedeuse Cum Laude**, vlak voor de eerste retrospective.
+
+Dit gaf mij een enorme boost in mijn zelfvertrouwen. Het herinnerde mij eraan dat ik ondanks de uitdagingen wel degelijk in staat was om goed te presteren.
+
+De **blije persoon met opgeheven armen en het stralende diploma** symboliseren dit succesmoment. Het gaf mij nieuwe energie en motivatie om mijn achterstand in te halen en weer grip te krijgen op mijn schoolwerk.
+
+#### 4. Mijn eigen tempo vinden
+
+Na het behalen van mijn propedeuse voelde ik mij zelfverzekerder en begon ik mijn werkzaamheden beter te organiseren. Ik kreeg meer overzicht en kon mijn aandacht weer verdelen over mijn Digital Garden en mijn Learning Log.
+
+De **persoon die met een rugzak verder over het pad loopt**, symboliseert dat ik mijn leerproces met meer vertrouwen voortzette.
+
+De **muzieknoten** verwijzen naar countrymuziek, een persoonlijke inspiratiebron die mij helpt om gemotiveerd en creatief te blijven.
+
+Aan het einde van het pad zie je een **zon, bloemen en een bordje met 'Verder'**. Deze symboliseren mijn groei, het terugvinden van mijn motivatie en het vooruitkijken naar de rest van het project.
+
+De **checklist en laptop onderaan het pad** laten zien dat ik mijn schoolwerk weer beter onder controle kreeg en mijn taken kon oppakken.
+
+#### Wat heb ik geleerd?
+
+Tijdens deze sprint heb ik geleerd dat ik **mijn aandacht beter moet verdelen over verschillende onderdelen van het project**. Door mij voornamelijk op mijn Digital Garden te richten, verloor ik mijn Learning Log uit het oog.
+
+Daarnaast heb ik ontdekt dat ik mezelf soms onderschat. Het behalen van mijn propedeuse Cum Laude gaf mij het vertrouwen dat ik ook nieuwe en onbekende uitdagingen aankan.
+
+Mijn belangrijkste leerpunt is dat ik **niet alles meteen onder controle hoef te hebben**. Het is belangrijk om mezelf de tijd te geven om aan een nieuwe werkwijze te wennen, prioriteiten te stellen en mijn eigen tempo te vinden.
 
 </details>
 
@@ -1033,14 +1081,74 @@ In sprint 1, heb ik veel upds en downs meegemaakt. Voornamelijk bij het kiezen v
 
 | Retro opdr 1 | Retro opdr 2 | Retro opdr 3 | Retro opdr 4 |
 | :---: | :---: | :---: | :---: |
-| <img src="readMeImages/Retro_2_1.jpg" alt="Retro1" width="360"> | <img src="readMeImages/Retro_2_2.jpg" alt="Retro2" width="360"> | <img src="readMeImages/Retro_2_3.jpg" alt="Retro3" width="360"> | <img src="readMeImages/Retro_2_4.jpg" alt="Retro3" width="360"> |
+| <img src="readMeImages/Retro_2_1.jpg" alt="Retro1" width="360"> | <img src="readMeImages/retro_2_2.jpg" alt="Retro2" width="360"> | <img src="readMeImages/retro_2_3.jpg" alt="Retro3" width="360"> | <img src="readMeImages/retro_2_4.jpg" alt="Retro3" width="360"> |
 
 
 | Retro opdr 5 |
 | :---: |
 | <img src="readMeImages/Retro_2_5.jpg" alt="Retro4" width="600"> |
 
-Aan het begin van Sprint 2 was ik goed op weg echter liep ik nog steeds grotendeels achter bij het documenteren van mijn werk. Ik kreeg postieve feedback over mijn code en website, echter moest ik nog veel werk doen aan mijn Learning Log. Omdat ik nogal perfectionistisch ben, werkte ik hard door voor lange uren. 
+#### Mijn metafoor
+
+Mijn metafoor is een **achtbaan** die de pieken en dalen van mijn energie, motivatie en productiviteit tijdens Sprint 2 weergeeft. De hoogteverschillen symboliseren hoe mijn werktempo gedurende deze twee weken veranderde.
+
+De achtbaan laat zien hoe ik van een productieve start naar overbelasting ging, vervolgens rust nam en uiteindelijk mijn motivatie en creativiteit weer terugvond.
+
+#### 1. Een vliegende start
+
+Aan het begin van de sprint ging alles soepel. Ik had veel motivatie en werkte enthousiast aan mijn Digital Garden. Ik had het gevoel dat ik goed vooruitging en mijn werkzaamheden onder controle had.
+
+De **eerste hoge piek van de achtbaan**, met een blije persoon, laptop en afgevinkte taken, symboliseert mijn productiviteit en enthousiasme. De zon achter mij benadrukt dit positieve begin.
+
+#### 2. Van overdrive naar uitputting
+
+Doordat ik zo gemotiveerd was, bleef ik steeds langer doorwerken. Ik nam nauwelijks pauzes en besteedde zoveel tijd aan mijn schoolwerk dat ik steeds minder slaap kreeg.
+
+De **steile afdaling van de achtbaan**, met rondvliegende papieren, een bijna lege batterij en een verwarde persoon, symboliseert hoe mijn energie langzaam opraakte.
+
+De snelheid van de afdaling staat voor het gevoel dat ik de controle over mijn werk- en slaapritme verloor.
+
+#### 3. Een noodzakelijke tussenstop
+
+Uiteindelijk besloot ik een heel weekend vrij te nemen, iets wat ik normaal gesproken bijna nooit doe. Hierdoor kon ik mijn slaapritme herstellen en weer energie opbouwen.
+
+Het **diepste punt van de achtbaan**, waar ik onder een deken lig te slapen met een bordje 'Weekend Off', symboliseert deze rustperiode.
+
+Hoewel dit visueel een dieptepunt is, was het juist een positief keerpunt. Door tijdelijk te stoppen met werken, kon ik daarna weer met meer energie verder.
+
+#### 4. Weer op de rails
+
+Na mijn weekend rust voelde ik mij een stuk beter. Mijn slaapritme was hersteld en ik kon mijn schoolwerk weer op mijn gebruikelijke tempo oppakken.
+
+De **middelste stijging van de achtbaan**, met een ontspannen en glimlachende persoon achter een laptop, symboliseert het terugvinden van mijn energie en werkritme.
+
+Dit moment laat zien dat het nemen van rust mij uiteindelijk hielp om productiever te worden.
+
+#### 5. Een creatieve blokkade
+
+Ondanks dat ik mijn energie had teruggevonden, kreeg ik opnieuw een kleine dip. Ik had tijdelijk weinig inspiratie en vond het lastig om mijn Learning Log bij te houden naast het werken aan mijn Digital Garden.
+
+De **tweede afdaling van de achtbaan**, met vraagtekens, een verwarde gedachtewolk, rondliggende papieren en een bordje 'Learning Log', symboliseert deze creatieve blokkade.
+
+Ik wilde graag verder werken, maar wist even niet goed hoe ik mijn ideeën verder moest ontwikkelen.
+
+#### 6. Countrymuziek brengt mij weer omhoog
+
+Om mijn inspiratie terug te vinden, begon ik opnieuw meer naar countrymuziek te luisteren. Hierdoor kreeg ik weer nieuwe ideeën en vond ik mijn motivatie terug om aan mijn Digital Garden te werken.
+
+De **laatste steile stijging van de achtbaan**, met een cowboyhoed, gitaar en muzieknoten, symboliseert hoe countrymuziek mijn creativiteit opnieuw stimuleerde.
+
+Aan het einde van de achtbaan zit ik weer vrolijk achter mijn laptop, met een brandend lampje en afgevinkte taken. Dit symboliseert dat ik mijn inspiratie had teruggevonden en weer op mijn normale tempo kon werken.
+
+#### Wat heb ik geleerd?
+
+Tijdens deze sprint heb ik geleerd dat **hard werken niet automatisch betekent dat ik productiever ben**. Door te weinig rust te nemen, raakte ik juist uitgeput en verloor ik tijdelijk mijn motivatie.
+
+Het nemen van een heel weekend vrij heeft mij laten zien hoe belangrijk een goede balans tussen school en ontspanning is. Door mezelf voldoende rust te gunnen, kon ik daarna weer met meer energie en concentratie verder werken.
+
+Daarnaast heb ik ontdekt dat **inspiratie niet altijd uit het ontwerpproces zelf hoeft te komen**. Door naar countrymuziek te luisteren, kon ik mijn creativiteit opnieuw stimuleren en nieuwe ideeën ontwikkelen.
+
+Mijn belangrijkste leerpunt is dat ik **mijn eigen grenzen beter moet herkennen en bewaken**. Ik wil leren om mijn werkzaamheden beter te verdelen en voldoende rustmomenten in te plannen, zodat ik gemotiveerd kan blijven zonder mezelf te overbelasten.
 
 </details>
 
@@ -1064,6 +1172,75 @@ Aan het begin van Sprint 2 was ik goed op weg echter liep ik nog steeds grotende
 | Retro Opdracht 6 |
 | :---: |
 | ![Retro3_6](readMeImages/retro_3_6.jpg) |
+
+#### Mijn metafoor
+
+Mijn metafoor is een **platenspeler met drie vinylplaten**, waarbij iedere plaat een andere fase van mijn leerproces tijdens het Digital Garden-project vertegenwoordigt. De drie platen symboliseren de drie sprints van het project, die samen één groter verhaal vertellen.
+
+Net zoals een muziekalbum uit verschillende nummers bestaat, bestond mijn leerproces uit verschillende ervaringen, uitdagingen en successen. Niet ieder nummer klinkt hetzelfde en niet iedere sprint verliep even soepel, maar samen vormen ze mijn persoonlijke ontwikkeling.
+
+De **A- en B-kanten van de platen** staan voor de positieve en minder positieve momenten. De A-kant laat zien wat goed ging, terwijl de B-kant de uitdagingen en obstakels weergeeft.
+
+#### 1. Eerste plaat – Een enthousiaste start en nieuwe uitdagingen
+
+De eerste plaat vertegenwoordigt de eerste fase van mijn project. Ik begon met enthousiasme en had veel ideeën voor mijn Digital Garden. Tegelijkertijd moest ik wennen aan de nieuwe manier van leren en vond ik het lastig om mijn aandacht goed te verdelen.
+
+De **A-kant met de zonnige weg** symboliseert mijn motivatie en de mogelijkheden die ik aan het begin zag.
+
+De **B-kant met de donkere onweerswolken** vertegenwoordigt de momenten waarop ik mij overweldigd voelde door de hoeveelheid werk en nieuwe informatie.
+
+Deze plaat laat zien dat een positieve start niet betekent dat alles vanzelf gaat.
+
+#### 2. Tweede plaat – Grenzen ontdekken en opnieuw richting vinden
+
+De tweede plaat staat voor de periode waarin ik steeds meer van mezelf vroeg. Ik werkte hard aan mijn Digital Garden, maar verloor daarbij soms de balans tussen schoolwerk en rust.
+
+De **A-kant met het warme landschap en het raam** symboliseert het moment waarop ik rust nam, afstand creëerde en opnieuw energie vond om verder te werken.
+
+De **B-kant met de verschillende wegwijzers** vertegenwoordigt mijn twijfels en de momenten waarop ik niet goed wist welke richting ik moest kiezen. Vooral het bijhouden van mijn Learning Log en het vinden van nieuwe inspiratie waren uitdagingen.
+
+Deze plaat heeft mij geleerd dat het belangrijk is om af en toe stil te staan en opnieuw te bepalen wat prioriteit heeft.
+
+#### 3. Derde plaat – Inspiratie en vooruitgang
+
+De derde plaat vertegenwoordigt de laatste fase van het project, waarin ik mijn motivatie en creativiteit steeds beter wist terug te vinden.
+
+De **A-kant met de gitaar, cowboylaarzen en muzieknoten** symboliseert de rol die countrymuziek speelde in mijn creatieve proces. Muziek hielp mij om nieuwe ideeën te ontwikkelen en mijn Digital Garden verder vorm te geven.
+
+De **B-kant met de ondergaande zon en de doorlopende weg** staat voor het afronden van deze projectperiode. Hoewel mijn Digital Garden steeds verder vorm kreeg, betekent het einde van het project niet dat mijn ontwikkeling stopt.
+
+De weg loopt verder, net zoals ik de kennis en ervaringen uit dit project meeneem naar toekomstige projecten.
+
+#### 4. De platenspeler – Mijn persoonlijke leerproces
+
+De **platenspeler bovenaan de tekening** verbindt alle drie de platen met elkaar. Iedere plaat heeft een eigen verhaal, maar ze maken allemaal deel uit van dezelfde verzameling ervaringen.
+
+De platenspeler symboliseert mijn leerproces als geheel. Soms verliep alles soepel, terwijl ik op andere momenten vastliep of opnieuw moest beginnen.
+
+De tekst **"Verschillende nummers, dezelfde playlist, een groter verhaal"** benadrukt dat zowel de positieve als negatieve ervaringen hebben bijgedragen aan mijn ontwikkeling.
+
+#### 5. De playlist – Wat ik meeneem
+
+Rechtsboven in mijn tekening staat een lijst met zes begrippen die mijn ervaringen tijdens het project samenvatten:
+
+- **Leren:** Nieuwe vaardigheden ontwikkelen en wennen aan andere manieren van werken.
+- **Experimenteren:** Verschillende ideeën, ontwerpen en technische oplossingen uitproberen.
+- **Uitdagingen:** Omgaan met werkdruk, vermoeidheid en creatieve blokkades.
+- **Rust:** Ontdekken hoe belangrijk voldoende ontspanning is om productief te blijven.
+- **Inspiratie:** Nieuwe motivatie vinden door countrymuziek en mijn persoonlijke interesses.
+- **Groei:** Meer vertrouwen krijgen in mijn eigen vaardigheden en zelfstandiger leren werken.
+
+Deze begrippen vormen samen de belangrijkste lessen die ik uit het project meeneem.
+
+#### Wat heb ik geleerd?
+
+Tijdens deze laatste sprint heb ik vooral geleerd om **terug te kijken op mijn eigen ontwikkeling en de verschillende ervaringen met elkaar te verbinden**.
+
+Aan het begin van het project had ik moeite om mijn werkzaamheden goed te verdelen en de nieuwe manier van leren bij te houden. Naarmate het project vorderde, ontdekte ik steeds beter hoe ik mijn motivatie kon behouden, mijn grenzen kon herkennen en inspiratie kon gebruiken in mijn ontwerpproces.
+
+Ook heb ik geleerd dat **niet iedere fase van een project even productief hoeft te zijn**. Momenten van twijfel, vermoeidheid of weinig inspiratie betekenen niet dat ik geen vooruitgang boek. Juist door deze momenten leer ik hoe ik mijn werkwijze kan verbeteren.
+
+Mijn belangrijkste leerpunt is dat **persoonlijke groei niet altijd in een rechte lijn verloopt**. Net zoals een album verschillende nummers bevat, bestaat mijn leerproces uit verschillende hoogte- en dieptepunten. Samen hebben deze ervaringen mij geholpen om zelfverzekerder, bewuster en zelfstandiger te ontwerpen.
 
 </details>
 
