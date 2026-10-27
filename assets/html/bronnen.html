@@ -1,1014 +1,1739 @@
 <!DOCTYPE html>
 <html lang="nl" data-theme="dark" data-translations-path="../../translations.json">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#190e08">
-  <title data-i18n="sources_page_title">Wilde Westen &amp; Country Bronnen Ledger</title>
-  <link rel="stylesheet" href="../resources/style/landing.css">
-  <link rel="stylesheet" href="../resources/style/navbar.css">
-  <link rel="stylesheet" href="../resources/style/bronnen.css">
-  <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
-  <link rel="stylesheet" href="../resources/style/language-changer.css">
-  <link rel="stylesheet" href="../resources/style/lightDark.css">
-  <link rel="stylesheet" href="../resources/style/accessibility.css">
 
-  <script src="../js/bronnen.js" defer></script>
-  <script src="../js/navbar.js" defer></script>
-  <script src="../js/language-changer.js" defer></script>
-  <script src="../js/lightDark.js" defer></script>
-  <script src="../js/custom-scrollbar.js" defer></script>
 
-</head>
 
-<body class="page-body sources-page">
-  <!-- Met Tab verschijnt deze link linksboven. -->
-  <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a> 
 
-  <!-- ==================== MARK: NAVIGATIE ==================== -->
-  <nav class="western-nav nav-margin">
-    <ul>
-      <li><a href="../html/landing.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean" target="_blank" rel="noopener" aria-describedby="sourcesNewTabNotice" data-i18n="nav_readme">Read Me</a></li>
-      <li><a href="../html/story.html" data-i18n="nav_story">Story</a></li>
-      <li><a href="../html/bronnen.html" class="active" aria-current="page" data-i18n="nav_sources">Bronnen</a></li>
-      <li><a href="../html/privacy.html" data-i18n="nav_privacy">Privacy Beleid</a></li>
-      <li><a href="../typografie_opdr/ymca.html" data-i18n="nav_song">Song Opdracht</a></li>
-      <li class="nav-theme">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Lichte modus" aria-pressed="false" hidden>
-          <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="12" r="4"/>
-          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
-          </svg>
-          <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-          <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/>
-          </svg>
-        </button>
+
+  <!-- ==================== MARK: DOCUMENTINSTELLINGEN ==================== -->
+  <head>
+    <!-- MARK: METADATA EN STIJLBLADEN -->
+    <!-- data-i18n koppelt tekst aan vertalingen; de JSON-locatie staat op het html-element. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#190e08">
+    <title data-i18n="sources_page_title">Wilde Westen &amp; Country Bronnen Ledger</title>
+    <link rel="stylesheet" href="../resources/style/landing.css">
+    <link rel="stylesheet" href="../resources/style/navbar.css">
+    <link rel="stylesheet" href="../resources/style/bronnen.css">
+    <link rel="stylesheet" href="../resources/style/custom-scrollbar.css">
+    <link rel="stylesheet" href="../resources/style/language-changer.css">
+    <link rel="stylesheet" href="../resources/style/lightDark.css">
+    <link rel="stylesheet" href="../resources/style/accessibility.css">
+
+    <!-- MARK: JAVASCRIPT -->
+    <!-- defer voert de scripts in deze volgorde uit nadat de HTML is ingelezen. -->
+    <script src="../js/bronnen.js" defer></script>
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/language-changer.js" defer></script>
+    <script src="../js/lightDark.js" defer></script>
+    <script src="../js/custom-scrollbar.js" defer></script>
+  </head>
+
+  <body class="page-body sources-page">
+
+
+
+
+
+    <!-- ==================== MARK: TOEGANKELIJKE SNELKOPPELING ==================== -->
+    <!-- Met Tab verschijnt deze link linksboven. -->
+    <a href="#mainContent" class="skip-link" data-i18n="skip_content">Ga direct naar hoofdinhoud</a>
+
+
+
+
+
+    <!-- ==================== MARK: NAVIGATIE ==================== -->
+    <nav class="western-nav nav-margin">
+      <ul>
+        <li>
+          <a href="../html/landing.html" data-i18n="nav_home">Home</a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/OluwaseyiOluwatobiBarbaraDavies/GarnetsOcean"
+            target="_blank"
+            rel="noopener"
+            aria-describedby="sourcesNewTabNotice"
+            data-i18n="nav_readme"
+          >Read Me</a>
+        </li>
+        <li>
+          <a href="../html/story.html" data-i18n="nav_story">Story</a>
+        </li>
+        <li>
+          <a
+            href="../html/bronnen.html"
+            class="active"
+            aria-current="page"
+            data-i18n="nav_sources"
+          >Bronnen</a>
+        </li>
+        <li>
+          <a href="../html/privacy.html" data-i18n="nav_privacy">Privacy Beleid</a>
+        </li>
+        <li>
+          <a href="../typografie_opdr/ymca.html" data-i18n="nav_song">Song Opdracht</a>
+        </li>
+
+        <!-- MARK: THEMA- EN TAALKEUZE -->
+        <!-- De SVG-iconen zijn decoratief; aria-label benoemt de knop voor schermlezers. -->
+        <li class="nav-theme">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Lichte modus"
+            aria-pressed="false"
+            hidden
+          >
+            <svg
+              class="theme-icon theme-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle cx="12" cy="12" r="4"/>
+              <path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+              />
+            </svg>
+            <svg
+              class="theme-icon theme-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/>
+            </svg>
+          </button>
         </li>
         <li class="nav-language">
-        <button id="langToggleBtn" type="button" aria-label="Taal: Nederlands. Wissel naar Engels">
-          <span class="language-option language-nl" aria-hidden="true">NL</span>
-          <span class="language-option language-eng" aria-hidden="true">ENG</span>
-        </button>
-      </li>
-    </ul>
-  </nav>
+          <button
+            id="langToggleBtn"
+            type="button"
+            aria-label="Taal: Nederlands. Wissel naar Engels"
+          >
+            <span class="language-option language-nl" aria-hidden="true">NL</span>
+            <span class="language-option language-eng" aria-hidden="true">ENG</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
 
 
 
 
 
-  <!-- ==================== MARK: PAGINATITEL EN KNOPPEN ==================== -->
-  <header class="page-container header-margin text-center">
-    <div class="wooden-plank header-card">
-      <h1 id="sourcesTitle" data-i18n="sources_heading">BRONVERMELDINGEN</h1>
-      <div class="tab-container" role="group" aria-label="Kies een bronnenoverzicht" data-i18n-aria-label="a11y_sources_views">
-        <button type="button" aria-controls="visualView" id="tabVisualBtn" class="tab-btn tab-btn-active" data-i18n="sources_tab_visual" disabled>🖼️ Afbeeldingsbronnen</button>
-        <button type="button" aria-controls="researchView" id="tabResearchBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_research" disabled>📚 Onderzoek &amp; Literatuur</button>
-        <button type="button" aria-controls="videoView" id="tabVideoBtn" class="tab-btn tab-btn-inactive" data-i18n="sources_tab_video" disabled>🎬 YouTube-video’s</button>
-      </div>
-    </div>
-  </header>
-
-
-
-
-
-  <p id="sourcesNewTabNotice" class="visually-hidden" data-i18n="sources_new_tab">Opent in een nieuw tabblad.</p>
-  <p id="sourcesViewStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
-  <p class="page-container sources-read"><a id="sourcesReadLink" href="#visualSourcesTitle" data-i18n="a11y_sources_read">Lees het geselecteerde bronnenoverzicht</a></p>
-  <noscript><p class="page-container sources-nojs" data-i18n="a11y_sources_nojs">Zonder JavaScript worden alle bronnen hieronder getoond. Zoeken en filteren zijn dan niet beschikbaar.</p></noscript>
-
-
-
-
-
-  <!-- ==================== MARK: BRONNEN ==================== -->
-  <main id="mainContent" class="page-container" aria-labelledby="sourcesTitle" tabindex="-1">
-    <!-- MARK: AFBEELDINGSBRONNEN -->
-    <section id="visualView" class="view-section" aria-labelledby="visualSourcesTitle">
-      <h2 id="visualSourcesTitle" tabindex="-1" data-i18n="sources_tab_visual">🖼️ Afbeeldingsbronnen</h2>
-      <div class="parchment-bg filter-bar">
-        <!-- Het zoekveld krijgt een label zonder de indeling te veranderen. -->
-        <label for="searchInput" class="visually-hidden" data-i18n="sources_search_label">Zoek in afbeeldingsbronnen</label>
-        <input type="search" id="searchInput" disabled placeholder="Zoek bestand, artiest, uitgever..." aria-describedby="sourcesSearchHelp" data-i18n-placeholder="sources_search" class="search-input">
-        <p id="sourcesSearchHelp" class="visually-hidden" data-i18n="sources_search_help">Typ een titel, bestandsnaam of uitgever. De afbeeldingen worden tijdens het typen gefilterd, binnen de gekozen categorie.</p>
-        <p id="sourcesFilterHelp" class="visually-hidden" data-i18n="sources_filter_help">Toon afbeeldingen uit deze categorie. Alle toont alle categorieën. Je zoekterm blijft van toepassing.</p>
-        <!-- De categoriewaaarden blijven hetzelfde bij het wisselen van taal -->
-        <div id="filterContainer" class="filter-group" role="group" aria-label="Filter afbeeldingen op categorie" data-i18n-aria-label="a11y_sources_categories">
-          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Alle" class="filter-btn filter-btn-active" disabled><span data-i18n="sources_filter_all">Alle</span> (<span class="filter-count">20</span>)</button>
-          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Artiesten" class="filter-btn filter-btn-inactive" disabled><span data-i18n="sources_filter_artists">Artiesten</span> (<span class="filter-count">5</span>)</button>
-          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Evenementen &amp; Posters" class="filter-btn filter-btn-inactive" disabled><span data-i18n="sources_filter_events">Evenementen</span> (<span class="filter-count">3</span>)</button>
-          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Landschap" class="filter-btn filter-btn-inactive" disabled><span data-i18n="sources_filter_landscape">Landschap</span> (<span class="filter-count">1</span>)</button>
-          <button type="button" aria-describedby="sourcesFilterHelp" data-category="Tijdlijn" class="filter-btn filter-btn-inactive" disabled><span data-i18n="sources_filter_timeline">Tijdlijn</span> (<span class="filter-count">11</span>)</button>
+    <!-- ==================== MARK: PAGINATITEL EN KNOPPEN ==================== -->
+    <header class="page-container header-margin text-center">
+      <div class="wooden-plank header-card">
+        <h1 id="sourcesTitle" data-i18n="sources_heading">BRONVERMELDINGEN</h1>
+        <!-- aria-controls verwijst naar de bijbehorende bronsectie. -->
+        <!-- De knoppen starten uitgeschakeld; het gekoppelde script verzorgt de interactie. -->
+        <div
+          class="tab-container"
+          role="group"
+          aria-label="Kies een bronnenoverzicht"
+          data-i18n-aria-label="a11y_sources_views"
+        >
+          <button
+            type="button"
+            aria-controls="visualView"
+            id="tabVisualBtn"
+            class="tab-btn tab-btn-active"
+            data-i18n="sources_tab_visual"
+            disabled
+          >🖼️ Afbeeldingsbronnen</button>
+          <button
+            type="button"
+            aria-controls="researchView"
+            id="tabResearchBtn"
+            class="tab-btn tab-btn-inactive"
+            data-i18n="sources_tab_research"
+            disabled
+          >📚 Onderzoek &amp; Literatuur</button>
+          <button
+            type="button"
+            aria-controls="videoView"
+            id="tabVideoBtn"
+            class="tab-btn tab-btn-inactive"
+            data-i18n="sources_tab_video"
+            disabled
+          >🎬 YouTube-video’s</button>
         </div>
       </div>
-      <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
-      <p id="sourcesResults" class="visually-hidden" role="status" aria-atomic="true"></p>
-      <div id="sourcesGrid" class="sources-grid">
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/texasFlag.jpg" alt="Vlag van Texas">
-      <span class="category-badge">Landschap</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Vlag van Texas</h3>
-      <p id="image-file-0" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>texasFlag.jpg</p>
-      <div id="image-details-0" class="card-details">
-        <div><strong>Bron:</strong> Valley Homes</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-0" class="visually-hidden">
-      Categorie: Landschap.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://valleyhomeslc.com/location/mobile-homes-for-sale-dumas-tx/" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-0 image-context-0">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Vlag van Texas â€” Bron: Valley Homes</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/rodeo.jpg" alt="Rodeo Evenement">
-      <span class="category-badge">Evenementen &amp; Posters</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Rodeo Evenement</h3>
-      <p id="image-file-1" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>rodeo.jpg</p>
-      <div id="image-details-1" class="card-details">
-        <div><strong>Bron:</strong> National Western Stock Show</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-1" class="visually-hidden">
-      Categorie: Evenementen &amp; Posters.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://nationalwestern.com/rodeos/" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-1 image-context-1">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Rodeo Evenement â€” Bron: National Western Stock Show</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/CountryDay.jpg" alt="Country Day bij Houston Rodeo">
-      <span class="category-badge">Evenementen &amp; Posters</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Country Day bij Houston Rodeo</h3>
-      <p id="image-file-2" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>CountryDay.jpg</p>
-      <div id="image-details-2" class="card-details">
-        <div><strong>Bron:</strong> Houstonia Magazine</div>
-        <div id="image-credit-2" class="source-credit"><strong>Fotograaf:</strong> Houston Livestock Show and Rodeo</div>
-      </div>
-      </div>
-    </div>
-    <p id="image-context-2" class="visually-hidden">
-      Categorie: Evenementen &amp; Posters.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.houstoniamag.com/arts-and-culture/2025/03/houston-rodeo-best-days-to-visit" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-2 image-credit-2 image-context-2">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Country Day bij Houston Rodeo â€” Bron: Houstonia Magazine</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/FestivalPoster.jpg" alt="Festival Poster / Line-up">
-      <span class="category-badge">Evenementen &amp; Posters</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Festival Poster / Line-up</h3>
-      <p id="image-file-3" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>FestivalPoster.jpg</p>
-      <div id="image-details-3" class="card-details">
-        <div><strong>Bron:</strong> Houston Chronicle</div>
-        <div id="image-credit-3" class="source-credit"><strong>Fotograaf:</strong> Houston Livestock Show and Rodeo</div>
-      </div>
-      </div>
-    </div>
-    <p id="image-context-3" class="visually-hidden">
-      Categorie: Evenementen &amp; Posters.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.houstonchronicle.com/entertainment/music/article/houston-rodeo-genre-calendar-2025-acts-lineup-tix-19934612.php" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-3 image-credit-3 image-context-3">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Festival Poster / Line-up â€” Bron: Houston Chronicle</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/artist-dolly.jpg" alt="Dolly Parton">
-      <span class="category-badge">Artiesten</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Dolly Parton</h3>
-      <p id="image-file-4" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>artist-dolly.jpg</p>
-      <div id="image-details-4" class="card-details">
-        <div><strong>Bron:</strong> Daily Bruin</div>
-        <div id="image-credit-4" class="source-credit"><strong>Fotograaf:</strong> Foto door Richard E. Aaron / Redferns / Getty Images</div>
-      </div>
-      </div>
-    </div>
-    <p id="image-context-4" class="visually-hidden">
-      Categorie: Artiesten.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://dailybruin.com/2026/08/27/in-moments-remembering-queen-of-country-dolly-partons-career" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-4 image-credit-4 image-context-4">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Dolly Parton â€” Bron: Daily Bruin</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/artist_don.jpg" alt="Don Williams">
-      <span class="category-badge">Artiesten</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Don Williams</h3>
-      <p id="image-file-5" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>artist_don.jpg</p>
-      <div id="image-details-5" class="card-details">
-        <div><strong>Bron:</strong> Getty Images</div>
-        <div id="image-credit-5" class="source-credit"><strong>Fotograaf:</strong> Foto door Michael Putland</div>
-      </div>
-      </div>
-    </div>
-    <p id="image-context-5" class="visually-hidden">
-      Categorie: Artiesten.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.gettyimages.nl/detail/nieuwsfoto%27s/don-williams-portrait-london-1989-nieuwsfotos/109364677?adppopup=true" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-5 image-credit-5 image-context-5">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Don Williams â€” Bron: Getty Images</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/artist_ella.jpg" alt="Ella Langley">
-      <span class="category-badge">Artiesten</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Ella Langley</h3>
-      <p id="image-file-6" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>artist_ella.jpg</p>
-      <div id="image-details-6" class="card-details">
-        <div><strong>Bron:</strong> Woman&#39;s World</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-6" class="visually-hidden">
-      Categorie: Artiesten.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.womansworld.com/entertainment/celebrities/ella-langley-before-fame-was-totally-different-how-she-found-her-look" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-6 image-context-6">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Ella Langley â€” Bron: Woman&#39;s World</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/artist_kameron.jpg" alt="Kameron Marlowe">
-      <span class="category-badge">Artiesten</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Kameron Marlowe</h3>
-      <p id="image-file-7" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>artist_kameron.jpg</p>
-      <div id="image-details-7" class="card-details">
-        <div><strong>Bron:</strong> Oluwaseyi Davies</div>
-        <div id="image-credit-7" class="source-credit"><strong>Fotograaf:</strong> Directe vermelding</div>
-      </div>
-      </div>
-    </div>
-    <p id="image-context-7" class="visually-hidden">
-      Categorie: Artiesten.
-      
-    </p>
-    <div class="card-footer">
-      
-      <span class="card-badge-direct">
-        Directe Vermelding
-      </span>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/artist_warren.jpg" alt="Warren Zeiders">
-      <span class="category-badge">Artiesten</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Warren Zeiders</h3>
-      <p id="image-file-8" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>artist_warren.jpg</p>
-      <div id="image-details-8" class="card-details">
-        <div><strong>Bron:</strong> Wikipedia</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-8" class="visually-hidden">
-      Categorie: Artiesten.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://en.wikipedia.org/wiki/Warren_Zeiders" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-8 image-context-8">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Warren Zeiders â€” Bron: Wikipedia</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="cover">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/superstars_2.jpg" alt="Johnny Cash â€” American Recordings">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Johnny Cash â€” American Recordings</h3>
-      <p id="image-file-9" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>superstars_2.jpg</p>
-      <div id="image-details-9" class="card-details">
-        <div><strong>Bron:</strong> Wikipedia â€” American Recordings</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-9" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://en.wikipedia.org/wiki/American_Recordings_(album)" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-9 image-context-9">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Johnny Cash â€” American Recordings â€” Bron: Wikipedia â€” American Recordings</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="cover">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/modern_3.png" alt="BeyoncÃ© â€” Cowboy Carter">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">BeyoncÃ© â€” Cowboy Carter</h3>
-      <p id="image-file-10" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>modern_3.png</p>
-      <div id="image-details-10" class="card-details">
-        <div><strong>Bron:</strong> Wikipedia â€” Cowboy Carter</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-10" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://en.wikipedia.org/wiki/Cowboy_Carter" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-10 image-context-10">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” BeyoncÃ© â€” Cowboy Carter â€” Bron: Wikipedia â€” Cowboy Carter</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/radio_3.jpg" alt="De zingende cowboy â€” filmafbeelding">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">De zingende cowboy â€” filmafbeelding</h3>
-      <p id="image-file-11" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>radio_3.jpg</p>
-      <div id="image-details-11" class="card-details">
-        <div><strong>Bron:</strong> IMDb</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-11" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.imdb.com/title/tt0045305/" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-11 image-context-11">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” De zingende cowboy â€” filmafbeelding â€” Bron: IMDb</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/radio_2.jpg" alt="The Carter Family">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">The Carter Family</h3>
-      <p id="image-file-12" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>radio_2.jpg</p>
-      <div id="image-details-12" class="card-details">
-        <div><strong>Bron:</strong> Country Music Hall of Fame and Museum</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-12" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.countrymusichalloffame.org/hall-of-fame/carter-family" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-12 image-context-12">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” The Carter Family â€” Bron: Country Music Hall of Fame and Museum</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/radio_1.jpg" alt="Grand Ole Opry">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Grand Ole Opry</h3>
-      <p id="image-file-13" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>radio_1.jpg</p>
-      <div id="image-details-13" class="card-details">
-        <div><strong>Bron:</strong> Grand Ole Opry</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-13" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.opry.com/about/history" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-13 image-context-13">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Grand Ole Opry â€” Bron: Grand Ole Opry</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/outlaw_3.jpg" alt="Urban Cowboy">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Urban Cowboy</h3>
-      <p id="image-file-14" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>outlaw_3.jpg</p>
-      <div id="image-details-14" class="card-details">
-        <div><strong>Bron:</strong> IMDb</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-14" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.imdb.com/title/tt0081696/" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-14 image-context-14">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Urban Cowboy â€” Bron: IMDb</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/outlaw_2.jpg" alt="Dolly Parton â€” Jolene">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Dolly Parton â€” Jolene</h3>
-      <p id="image-file-15" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>outlaw_2.jpg</p>
-      <div id="image-details-15" class="card-details">
-        <div><strong>Bron:</strong> Oluwaseyi Davies</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-15" class="visually-hidden">
-      Categorie: Tijdlijn.
-      
-    </p>
-    <div class="card-footer">
-      
-      <span class="card-badge-direct">
-        Directe Vermelding
-      </span>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="cover">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/outlaw_1.jpg" alt="Waylon &amp; Willie">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Waylon &amp; Willie</h3>
-      <p id="image-file-16" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>outlaw_1.jpg</p>
-      <div id="image-details-16" class="card-details">
-        <div><strong>Bron:</strong> Wikipedia â€” Waylon &amp; Willie</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-16" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://en.wikipedia.org/wiki/Waylon_%26_Willie" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-16 image-context-16">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Waylon &amp; Willie â€” Bron: Wikipedia â€” Waylon &amp; Willie</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/roots_3.png" alt="Snaargroepen op het platteland">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Snaargroepen op het platteland</h3>
-      <p id="image-file-17" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>roots_3.png</p>
-      <div id="image-details-17" class="card-details">
-        <div><strong>Bron:</strong> NCpedia</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-17" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://www.ncpedia.org/country-music" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-17 image-context-17">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Snaargroepen op het platteland â€” Bron: NCpedia</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/roots_2.jpg" alt="Banjotradities">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Banjotradities</h3>
-      <p id="image-file-18" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>roots_2.jpg</p>
-      <div id="image-details-18" class="card-details">
-        <div><strong>Bron:</strong> Wellcome Collection</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-18" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://wellcomecollection.org/works/n3733yh6" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-18 image-context-18">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Banjotradities â€” Bron: Wellcome Collection</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card" data-media-kind="image">
-    <div>
-      <div class="card-img-container">
-      <img loading="lazy" decoding="async" src="../resources/images/roots_1.jpg" alt="Afro-Amerikaanse muzikale wortels">
-      <span class="category-badge">Tijdlijn</span>
-      </div>
-      <div class="card-body">
-      <h3 class="card-title">Afro-Amerikaanse muzikale wortels</h3>
-      <p id="image-file-19" class="card-filename"><span class="visually-hidden">Bestandsnaam: </span>roots_1.jpg</p>
-      <div id="image-details-19" class="card-details">
-        <div><strong>Bron:</strong> Wood &amp; Steel â€” Taylor Guitars</div>
-        
-      </div>
-      </div>
-    </div>
-    <p id="image-context-19" class="visually-hidden">
-      Categorie: Tijdlijn.
-      Opent in een nieuw tabblad.
-    </p>
-    <div class="card-footer">
-      
-      <a href="https://woodandsteel.taylorguitars.com/issue/2021-issue-2/feature-story/deep-roots-the-national-museum-of-african-american-music/" target="_blank" rel="noopener noreferrer" class="card-btn" aria-describedby="image-file-19 image-context-19">
-        <span>Bekijk Originele Bron</span>
-        <span class="visually-hidden"> â€” Afro-Amerikaanse muzikale wortels â€” Bron: Wood &amp; Steel â€” Taylor Guitars</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      
-    </div>
-    </div>
-  </div>
-    </section>
-
-    <!-- MARK: ONDERZOEK EN LITERATUUR -->
-    <section id="researchView" class="view-section" aria-labelledby="researchSourcesTitle">
-      <div class="parchment-bg research-card">
-        <div class="research-header">
-        <h2 id="researchSourcesTitle" tabindex="-1" data-i18n="sources_research_heading">📚 Literatuur &amp; Historische Bronnen</h2>
-        <p class="research-subtitle" data-i18n="sources_research_subtitle">Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
-        </div>
-        <div id="researchList" class="research-list">
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">Geschiedenis van het Wilde Westen &amp; Frontier Life</h3>
-      <span class="category-badge">Geschiedenis</span>
-    </div>
-    <p id="research-description-0" class="research-description">Achtergrondinformatie over de geschiedenis van countrymuziek en de Amerikaanse cultuur.</p>
-    <div class="research-source-footer">
-      <span id="research-author-0"><strong>Auteur/Instituut:</strong> Plum Rose Publishing</span>
-      <a href="https://plumrosepublishing.com/the-history-of-country-music/" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-0 research-author-0 research-context-0">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” Geschiedenis van het Wilde Westen &amp; Frontier Life</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-0" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">De Evolutie van Country Muziek &amp; Subgenres</h3>
-      <span class="category-badge">Muziek</span>
-    </div>
-    <p id="research-description-1" class="research-description">Historische documentatie over de oorsprong van Honky Tonk, Outlaw Country en de moderne countrymuziekindustrie.</p>
-    <div class="research-source-footer">
-      <span id="research-author-1"><strong>Auteur/Instituut:</strong> Country Music Hall of Fame</span>
-      <a href="https://www.countrymusichalloffame.org/learn/country-music-history" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-1 research-author-1 research-context-1">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” De Evolutie van Country Muziek &amp; Subgenres</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-1" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">Roots &amp; Branches of Country Music</h3>
-      <span class="category-badge">Cultuur &amp; Evenementen</span>
-    </div>
-    <p id="research-description-2" class="research-description">Gedocumenteerde geschiedenis van de roots, vertakkingen en culturele impact van countrymuziek.</p>
-    <div class="research-source-footer">
-      <span id="research-author-2"><strong>Auteur/Instituut:</strong> PBS - Ken Burns</span>
-      <a href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-2 research-author-2 research-context-2">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” Roots &amp; Branches of Country Music</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-2" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">History of Country Music in Oklahoma</h3>
-      <span class="category-badge">Geschiedenis</span>
-    </div>
-    <p id="research-description-3" class="research-description">Online encyclopedie en academische artikelen over de geschiedenis van countrymuziek.</p>
-    <div class="research-source-footer">
-      <span id="research-author-3"><strong>Auteur/Instituut:</strong> Oklahoma Historical Society</span>
-      <a href="https://www.okhistory.org/publications/enc/entry?entry=CO072" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-3 research-author-3 research-context-3">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” History of Country Music in Oklahoma</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-3" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">The Roots of American Roots &amp; Bluegrass Music</h3>
-      <span class="category-badge">Muziek</span>
-    </div>
-    <p id="research-description-4" class="research-description">Onderzoek naar traditionele Amerikaanse volksmuziek, bluegrass en vroege verhalen verteld via liedjes.</p>
-    <div class="research-source-footer">
-      <span id="research-author-4"><strong>Auteur/Instituut:</strong> Britannica</span>
-      <a href="https://www.britannica.com/art/bluegrass-music" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-4 research-author-4 research-context-4">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” The Roots of American Roots &amp; Bluegrass Music</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-4" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">History of Country Music</h3>
-      <span class="category-badge">Muziek</span>
-    </div>
-    <p id="research-description-5" class="research-description">Overzicht van de rijke geschiedenis van countrymuziek, artiesten en locaties.</p>
-    <div class="research-source-footer">
-      <span id="research-author-5"><strong>Auteur/Instituut:</strong> Grizzly Rose</span>
-      <a href="https://grizzlyrose.com/history-of-country-music/" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-5 research-author-5 research-context-5">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” History of Country Music</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-5" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">Discover Country Music Themes</h3>
-      <span class="category-badge">Muziek</span>
-    </div>
-    <p id="research-description-6" class="research-description">Thematisch onderzoek naar de muzikale tradities en ontwikkeling van countrymuziek.</p>
-    <div class="research-source-footer">
-      <span id="research-author-6"><strong>Auteur/Instituut:</strong> Music Rising at Tulane</span>
-      <a href="https://musicrising.tulane.edu/discover/themes/country-music/" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-6 research-author-6 research-context-6">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” Discover Country Music Themes</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-6" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">A Brief History of Country Music</h3>
-      <span class="category-badge">Geschiedenis</span>
-    </div>
-    <p id="research-description-7" class="research-description">Een beknopt historisch overzicht van het ontstaan en de evolutie van het genre.</p>
-    <div class="research-source-footer">
-      <span id="research-author-7"><strong>Auteur/Instituut:</strong> Medium (Midweek Crisis)</span>
-      <a href="https://midweekcrisis.medium.com/a-brief-history-of-country-music-ca72e8fff803" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-7 research-author-7 research-context-7">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” A Brief History of Country Music</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-7" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">An American Tradition: History of Country Music Influences</h3>
-      <span class="category-badge">Muziek</span>
-    </div>
-    <p id="research-description-8" class="research-description">Artikelen over de invloeden en muzikale tradities die country gevormd hebben.</p>
-    <div class="research-source-footer">
-      <span id="research-author-8"><strong>Auteur/Instituut:</strong> Musicnotes</span>
-      <a href="https://www.musicnotes.com/blog/an-american-tradition-the-history-of-country-music-influences/?srsltid=AfmBOopG-MGnrjlAKgoXNbYHh73PstFLviQs8-YRZ_68QN1us4Aj6wYG" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-8 research-author-8 research-context-8">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” An American Tradition: History of Country Music Influences</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-8" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  
-    <div class="parchment-bg source-card">
-    <div class="research-source-heading">
-      <h3 class="card-title">Dolly Parton and the Roots of Country Music</h3>
-      <span class="category-badge">Muziek &amp; Geschiedenis</span>
-    </div>
-    <p id="research-description-9" class="research-description">Tijdlijn en historische artikelen over de wortels van countrymuziek en iconische artiesten.</p>
-    <div class="research-source-footer">
-      <span id="research-author-9"><strong>Auteur/Instituut:</strong> Library of Congress</span>
-      <a href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/" target="_blank" rel="noopener noreferrer" aria-describedby="research-description-9 research-author-9 research-context-9">
-        Bezoek Bron
-        <span class="visually-hidden"> â€” Dolly Parton and the Roots of Country Music</span>
-        <span aria-hidden="true">â†—</span>
-      </a>
-      <span id="research-context-9" class="visually-hidden">Opent in een nieuw tabblad.</span>
-    </div>
-    </div>
-  </div>
-      </div>
-    </section>
+    </header>
 
 
-    <!-- MARK: YOUTUBE-VIDEOBRONNEN -->
-    <section id="videoView" class="view-section" aria-labelledby="videoSourcesTitle">
-      <div class="parchment-bg research-card">
-        <div class="research-header">
-          <h2 id="videoSourcesTitle" tabindex="-1" data-i18n="sources_video_heading">🎬 Videobronnen uit de Story-tijdlijn</h2>
-          <p class="research-subtitle" data-i18n="sources_video_intro">De YouTube-video’s die bij de gebeurtenissen op de Story-pagina worden gebruikt. Open de oorspronkelijke video via de bijbehorende link.</p>
-        </div>
-        <div id="videoList" class="research-list">
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>If Tomorrow Never Comes</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-0" class="research-description"><strong>Artiest:</strong> Garth Brooks</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 1990â€“2009</span>
-          <a href="https://www.youtube.com/watch?v=M9r0XxLsgic" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-0 video-context-0">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Garth Brooks â€” If Tomorrow Never Comes</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-0" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Before He Cheats</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-1" class="research-description"><strong>Artiest:</strong> Carrie Underwood</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 1990â€“2009</span>
-          <a href="https://www.youtube.com/watch?v=b3Kd15TVNCY" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-1 video-context-1">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Carrie Underwood â€” Before He Cheats</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-1" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Jambalaya</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-2" class="research-description"><strong>Artiest:</strong> Hank Williams</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 1950â€“1969</span>
-          <a href="https://www.youtube.com/watch?v=Mc_2sOWVTxI" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-2 video-context-2">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Hank Williams â€” Jambalaya</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-2" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Walkinâ€™ After Midnight</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-3" class="research-description"><strong>Artiest:</strong> Patsy Cline</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 1950â€“1969</span>
-          <a href="https://www.youtube.com/watch?v=lgGI-HOQZBk" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-3 video-context-3">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Patsy Cline â€” Walkinâ€™ After Midnight</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-3" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Harper Valley, P.T.A.</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-4" class="research-description"><strong>Artiest:</strong> Jeannie C. Riley</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 1950â€“1969</span>
-          <a href="https://www.youtube.com/watch?v=aOZPBUu7Fro" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-4 video-context-4">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Jeannie C. Riley â€” Harper Valley, P.T.A.</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-4" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Cruise</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-5" class="research-description"><strong>Artiest:</strong> Florida Georgia Line</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 2010â€“heden</span>
-          <a href="https://www.youtube.com/watch?v=8PvebsWcpto" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-5 video-context-5">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Florida Georgia Line â€” Cruise</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-5" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article>
-      <article class="parchment-bg source-card">
-        <div class="research-source-heading">
-          <h3>Tennessee Whiskey</h3>
-          <span class="category-badge">YouTube</span>
-        </div>
-        <p id="video-credit-6" class="research-description"><strong>Artiest:</strong> Chris Stapleton</p>
-        <div class="research-source-footer">
-          <span>Gebruikt in Story Â· 2010â€“heden</span>
-          <a href="https://www.youtube.com/watch?v=IBLruNfUqUs" target="_blank" rel="noopener noreferrer" aria-describedby="video-credit-6 video-context-6">
-            Bekijk op YouTube
-            <span class="visually-hidden"> â€” Chris Stapleton â€” Tennessee Whiskey</span>
-            <span aria-hidden="true">â†—</span>
-          </a>
-          <span id="video-context-6" class="visually-hidden">Opent in een nieuw tabblad.</span>
-        </div>
-      </article></div>
-      </div>
-    </section>
-  </main>
 
-</body>
+
+
+    <!-- ==================== MARK: LEESHULP EN STATUSMELDINGEN ==================== -->
+    <!-- aria-describedby koppelt links aan de melding over het openen van een nieuw tabblad. -->
+    <!-- role="status" laat schermlezers wijzigingen melden zonder de focus te verplaatsen. -->
+    <p
+      id="sourcesNewTabNotice"
+      class="visually-hidden"
+      data-i18n="sources_new_tab"
+    >Opent in een nieuw tabblad.</p>
+    <p id="sourcesViewStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
+    <p class="page-container sources-read">
+      <a
+        id="sourcesReadLink"
+        href="#visualSourcesTitle"
+        data-i18n="a11y_sources_read"
+      >Lees het geselecteerde bronnenoverzicht</a>
+    </p>
+
+    <!-- Zonder JavaScript blijven de bronoverzichten als gewone HTML beschikbaar. -->
+    <noscript>
+      <p
+        class="page-container sources-nojs"
+        data-i18n="a11y_sources_nojs"
+      >Zonder JavaScript worden alle bronnen hieronder getoond. Zoeken en filteren zijn dan niet beschikbaar.</p>
+    </noscript>
+
+
+
+
+
+    <!-- ==================== MARK: BRONNEN ==================== -->
+    <main id="mainContent" class="page-container" aria-labelledby="sourcesTitle" tabindex="-1">
+      <!-- MARK: AFBEELDINGSBRONNEN -->
+      <section id="visualView" class="view-section" aria-labelledby="visualSourcesTitle">
+        <h2
+          id="visualSourcesTitle"
+          tabindex="-1"
+          data-i18n="sources_tab_visual"
+        >🖼️ Afbeeldingsbronnen</h2>
+
+        <!-- MARK: ZOEKEN EN FILTEREN -->
+        <div class="parchment-bg filter-bar">
+          <!-- Het zoekveld krijgt een label zonder de indeling te veranderen. -->
+          <label
+            for="searchInput"
+            class="visually-hidden"
+            data-i18n="sources_search_label"
+          >Zoek in afbeeldingsbronnen</label>
+          <input
+            type="search"
+            id="searchInput"
+            disabled
+            placeholder="Zoek bestand, artiest, uitgever..."
+            aria-describedby="sourcesSearchHelp"
+            data-i18n-placeholder="sources_search"
+            class="search-input"
+          >
+          <p
+            id="sourcesSearchHelp"
+            class="visually-hidden"
+            data-i18n="sources_search_help"
+          >Typ een titel, bestandsnaam of uitgever. De afbeeldingen worden tijdens het typen gefilterd, binnen de gekozen categorie.</p>
+          <p
+            id="sourcesFilterHelp"
+            class="visually-hidden"
+            data-i18n="sources_filter_help"
+          >Toon afbeeldingen uit deze categorie. Alle toont alle categorieën. Je zoekterm blijft van toepassing.</p>
+          <!-- De categoriewaarden blijven gelijk bij een taalwissel; alleen de zichtbare labels worden vertaald. -->
+          <div
+            id="filterContainer"
+            class="filter-group"
+            role="group"
+            aria-label="Filter afbeeldingen op categorie"
+            data-i18n-aria-label="a11y_sources_categories"
+          >
+            <button
+              type="button"
+              aria-describedby="sourcesFilterHelp"
+              data-category="Alle"
+              class="filter-btn filter-btn-active"
+              disabled
+            >
+              <span
+                data-i18n="sources_filter_all"
+              >Alle</span> (<span class="filter-count">20</span>)
+            </button>
+            <button
+              type="button"
+              aria-describedby="sourcesFilterHelp"
+              data-category="Artiesten"
+              class="filter-btn filter-btn-inactive"
+              disabled
+            ><span data-i18n="sources_filter_artists">Artiesten</span> (<span class="filter-count">5</span>)</button>
+            <button
+              type="button"
+              aria-describedby="sourcesFilterHelp"
+              data-category="Evenementen &amp; Posters"
+              class="filter-btn filter-btn-inactive"
+              disabled
+            ><span data-i18n="sources_filter_events">Evenementen</span> (<span class="filter-count">3</span>)</button>
+            <button
+              type="button"
+              aria-describedby="sourcesFilterHelp"
+              data-category="Landschap"
+              class="filter-btn filter-btn-inactive"
+              disabled
+            ><span data-i18n="sources_filter_landscape">Landschap</span> (<span class="filter-count">1</span>)</button>
+            <button
+              type="button"
+              aria-describedby="sourcesFilterHelp"
+              data-category="Tijdlijn"
+              class="filter-btn filter-btn-inactive"
+              disabled
+            ><span data-i18n="sources_filter_timeline">Tijdlijn</span> (<span class="filter-count">11</span>)</button>
+          </div>
+        </div>
+        <!-- Hier zet bronnen.js de afbeeldingen en hun bronnen neer. -->
+        <p id="sourcesResults" class="visually-hidden" role="status" aria-atomic="true"></p>
+        <div id="sourcesGrid" class="sources-grid">
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/texasFlag.jpg"
+                  alt="Vlag van Texas"
+                >
+                <span class="category-badge">Landschap</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Vlag van Texas</h3>
+                <p
+                  id="image-file-0"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>texasFlag.jpg</p>
+                <div id="image-details-0" class="card-details">
+                  <div><strong>Bron:</strong> Valley Homes</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-0" class="visually-hidden">
+              Categorie: Landschap.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://valleyhomeslc.com/location/mobile-homes-for-sale-dumas-tx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-0 image-context-0"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Vlag van Texas â€” Bron: Valley Homes</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/rodeo.jpg"
+                  alt="Rodeo Evenement"
+                >
+                <span class="category-badge">Evenementen &amp; Posters</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Rodeo Evenement</h3>
+                <p
+                  id="image-file-1"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>rodeo.jpg</p>
+                <div id="image-details-1" class="card-details">
+                  <div><strong>Bron:</strong> National Western Stock Show</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-1" class="visually-hidden">
+              Categorie: Evenementen &amp; Posters.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://nationalwestern.com/rodeos/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-1 image-context-1"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Rodeo Evenement â€” Bron: National Western Stock Show</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/CountryDay.jpg"
+                  alt="Country Day bij Houston Rodeo"
+                >
+                <span class="category-badge">Evenementen &amp; Posters</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Country Day bij Houston Rodeo</h3>
+                <p
+                  id="image-file-2"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>CountryDay.jpg</p>
+                <div id="image-details-2" class="card-details">
+                  <div><strong>Bron:</strong> Houstonia Magazine</div>
+                  <div
+                    id="image-credit-2"
+                    class="source-credit"
+                  ><strong>Fotograaf:</strong> Houston Livestock Show and Rodeo</div>
+                </div>
+              </div>
+            </div>
+            <p id="image-context-2" class="visually-hidden">
+              Categorie: Evenementen &amp; Posters.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.houstoniamag.com/arts-and-culture/2025/03/houston-rodeo-best-days-to-visit"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-2 image-credit-2 image-context-2"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Country Day bij Houston Rodeo â€” Bron: Houstonia Magazine</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/FestivalPoster.jpg"
+                  alt="Festival Poster / Line-up"
+                >
+                <span class="category-badge">Evenementen &amp; Posters</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Festival Poster / Line-up</h3>
+                <p
+                  id="image-file-3"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>FestivalPoster.jpg</p>
+                <div id="image-details-3" class="card-details">
+                  <div><strong>Bron:</strong> Houston Chronicle</div>
+                  <div
+                    id="image-credit-3"
+                    class="source-credit"
+                  ><strong>Fotograaf:</strong> Houston Livestock Show and Rodeo</div>
+                </div>
+              </div>
+            </div>
+            <p id="image-context-3" class="visually-hidden">
+              Categorie: Evenementen &amp; Posters.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.houstonchronicle.com/entertainment/music/article/houston-rodeo-genre-calendar-2025-acts-lineup-tix-19934612.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-3 image-credit-3 image-context-3"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Festival Poster / Line-up â€” Bron: Houston Chronicle</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/artist-dolly.jpg"
+                  alt="Dolly Parton"
+                >
+                <span class="category-badge">Artiesten</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Dolly Parton</h3>
+                <p
+                  id="image-file-4"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>artist-dolly.jpg</p>
+                <div id="image-details-4" class="card-details">
+                  <div><strong>Bron:</strong> Daily Bruin</div>
+                  <div
+                    id="image-credit-4"
+                    class="source-credit"
+                  ><strong>Fotograaf:</strong> Foto door Richard E. Aaron / Redferns / Getty Images</div>
+                </div>
+              </div>
+            </div>
+            <p id="image-context-4" class="visually-hidden">
+              Categorie: Artiesten.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://dailybruin.com/2026/08/27/in-moments-remembering-queen-of-country-dolly-partons-career"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-4 image-credit-4 image-context-4"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Dolly Parton â€” Bron: Daily Bruin</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/artist_don.jpg"
+                  alt="Don Williams"
+                >
+                <span class="category-badge">Artiesten</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Don Williams</h3>
+                <p
+                  id="image-file-5"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>artist_don.jpg</p>
+                <div id="image-details-5" class="card-details">
+                  <div><strong>Bron:</strong> Getty Images</div>
+                  <div
+                    id="image-credit-5"
+                    class="source-credit"
+                  ><strong>Fotograaf:</strong> Foto door Michael Putland</div>
+                </div>
+              </div>
+            </div>
+            <p id="image-context-5" class="visually-hidden">
+              Categorie: Artiesten.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.gettyimages.nl/detail/nieuwsfoto%27s/don-williams-portrait-london-1989-nieuwsfotos/109364677?adppopup=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-5 image-credit-5 image-context-5"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Don Williams â€” Bron: Getty Images</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/artist_ella.jpg"
+                  alt="Ella Langley"
+                >
+                <span class="category-badge">Artiesten</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Ella Langley</h3>
+                <p
+                  id="image-file-6"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>artist_ella.jpg</p>
+                <div id="image-details-6" class="card-details">
+                  <div><strong>Bron:</strong> Woman&#39;s World</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-6" class="visually-hidden">
+              Categorie: Artiesten.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.womansworld.com/entertainment/celebrities/ella-langley-before-fame-was-totally-different-how-she-found-her-look"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-6 image-context-6"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Ella Langley â€” Bron: Woman&#39;s World</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/artist_kameron.jpg"
+                  alt="Kameron Marlowe"
+                >
+                <span class="category-badge">Artiesten</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Kameron Marlowe</h3>
+                <p
+                  id="image-file-7"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>artist_kameron.jpg</p>
+                <div id="image-details-7" class="card-details">
+                  <div><strong>Bron:</strong> Oluwaseyi Davies</div>
+                  <div
+                    id="image-credit-7"
+                    class="source-credit"
+                  ><strong>Fotograaf:</strong> Directe vermelding</div>
+                </div>
+              </div>
+            </div>
+            <p id="image-context-7" class="visually-hidden">
+              Categorie: Artiesten.
+
+            </p>
+            <div class="card-footer">
+
+              <span class="card-badge-direct">
+                Directe Vermelding
+              </span>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/artist_warren.jpg"
+                  alt="Warren Zeiders"
+                >
+                <span class="category-badge">Artiesten</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Warren Zeiders</h3>
+                <p
+                  id="image-file-8"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>artist_warren.jpg</p>
+                <div id="image-details-8" class="card-details">
+                  <div><strong>Bron:</strong> Wikipedia</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-8" class="visually-hidden">
+              Categorie: Artiesten.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://en.wikipedia.org/wiki/Warren_Zeiders"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-8 image-context-8"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Warren Zeiders â€” Bron: Wikipedia</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="cover">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/superstars_2.jpg"
+                  alt="Johnny Cash â€” American Recordings"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Johnny Cash â€” American Recordings</h3>
+                <p
+                  id="image-file-9"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>superstars_2.jpg</p>
+                <div id="image-details-9" class="card-details">
+                  <div><strong>Bron:</strong> Wikipedia â€” American Recordings</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-9" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://en.wikipedia.org/wiki/American_Recordings_(album)"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-9 image-context-9"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Johnny Cash â€” American Recordings â€” Bron: Wikipedia â€” American Recordings</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="cover">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/modern_3.png"
+                  alt="BeyoncÃ© â€” Cowboy Carter"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">BeyoncÃ© â€” Cowboy Carter</h3>
+                <p
+                  id="image-file-10"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>modern_3.png</p>
+                <div id="image-details-10" class="card-details">
+                  <div><strong>Bron:</strong> Wikipedia â€” Cowboy Carter</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-10" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://en.wikipedia.org/wiki/Cowboy_Carter"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-10 image-context-10"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” BeyoncÃ© â€” Cowboy Carter â€” Bron: Wikipedia â€” Cowboy Carter</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/radio_3.jpg"
+                  alt="De zingende cowboy â€” filmafbeelding"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">De zingende cowboy â€” filmafbeelding</h3>
+                <p
+                  id="image-file-11"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>radio_3.jpg</p>
+                <div id="image-details-11" class="card-details">
+                  <div><strong>Bron:</strong> IMDb</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-11" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.imdb.com/title/tt0045305/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-11 image-context-11"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” De zingende cowboy â€” filmafbeelding â€” Bron: IMDb</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/radio_2.jpg"
+                  alt="The Carter Family"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">The Carter Family</h3>
+                <p
+                  id="image-file-12"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>radio_2.jpg</p>
+                <div id="image-details-12" class="card-details">
+                  <div><strong>Bron:</strong> Country Music Hall of Fame and Museum</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-12" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.countrymusichalloffame.org/hall-of-fame/carter-family"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-12 image-context-12"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” The Carter Family â€” Bron: Country Music Hall of Fame and Museum</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/radio_1.jpg"
+                  alt="Grand Ole Opry"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Grand Ole Opry</h3>
+                <p
+                  id="image-file-13"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>radio_1.jpg</p>
+                <div id="image-details-13" class="card-details">
+                  <div><strong>Bron:</strong> Grand Ole Opry</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-13" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.opry.com/about/history"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-13 image-context-13"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Grand Ole Opry â€” Bron: Grand Ole Opry</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/outlaw_3.jpg"
+                  alt="Urban Cowboy"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Urban Cowboy</h3>
+                <p
+                  id="image-file-14"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>outlaw_3.jpg</p>
+                <div id="image-details-14" class="card-details">
+                  <div><strong>Bron:</strong> IMDb</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-14" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.imdb.com/title/tt0081696/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-14 image-context-14"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span class="visually-hidden"> â€” Urban Cowboy â€” Bron: IMDb</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/outlaw_2.jpg"
+                  alt="Dolly Parton â€” Jolene"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Dolly Parton â€” Jolene</h3>
+                <p
+                  id="image-file-15"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>outlaw_2.jpg</p>
+                <div id="image-details-15" class="card-details">
+                  <div><strong>Bron:</strong> Oluwaseyi Davies</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-15" class="visually-hidden">
+              Categorie: Tijdlijn.
+
+            </p>
+            <div class="card-footer">
+
+              <span class="card-badge-direct">
+                Directe Vermelding
+              </span>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="cover">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/outlaw_1.jpg"
+                  alt="Waylon &amp; Willie"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Waylon &amp; Willie</h3>
+                <p
+                  id="image-file-16"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>outlaw_1.jpg</p>
+                <div id="image-details-16" class="card-details">
+                  <div><strong>Bron:</strong> Wikipedia â€” Waylon &amp; Willie</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-16" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://en.wikipedia.org/wiki/Waylon_%26_Willie"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-16 image-context-16"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Waylon &amp; Willie â€” Bron: Wikipedia â€” Waylon &amp; Willie</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/roots_3.png"
+                  alt="Snaargroepen op het platteland"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Snaargroepen op het platteland</h3>
+                <p
+                  id="image-file-17"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>roots_3.png</p>
+                <div id="image-details-17" class="card-details">
+                  <div><strong>Bron:</strong> NCpedia</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-17" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://www.ncpedia.org/country-music"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-17 image-context-17"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Snaargroepen op het platteland â€” Bron: NCpedia</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/roots_2.jpg"
+                  alt="Banjotradities"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Banjotradities</h3>
+                <p
+                  id="image-file-18"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>roots_2.jpg</p>
+                <div id="image-details-18" class="card-details">
+                  <div><strong>Bron:</strong> Wellcome Collection</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-18" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://wellcomecollection.org/works/n3733yh6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-18 image-context-18"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Banjotradities â€” Bron: Wellcome Collection</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="parchment-bg source-card" data-media-kind="image">
+            <div>
+              <div class="card-img-container">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="../resources/images/roots_1.jpg"
+                  alt="Afro-Amerikaanse muzikale wortels"
+                >
+                <span class="category-badge">Tijdlijn</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Afro-Amerikaanse muzikale wortels</h3>
+                <p
+                  id="image-file-19"
+                  class="card-filename"
+                ><span class="visually-hidden">Bestandsnaam: </span>roots_1.jpg</p>
+                <div id="image-details-19" class="card-details">
+                  <div><strong>Bron:</strong> Wood &amp; Steel â€” Taylor Guitars</div>
+
+                </div>
+              </div>
+            </div>
+            <p id="image-context-19" class="visually-hidden">
+              Categorie: Tijdlijn.
+              Opent in een nieuw tabblad.
+            </p>
+            <div class="card-footer">
+
+              <a
+                href="https://woodandsteel.taylorguitars.com/issue/2021-issue-2/feature-story/deep-roots-the-national-museum-of-african-american-music/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-btn"
+                aria-describedby="image-file-19 image-context-19"
+              >
+                <span>Bekijk Originele Bron</span>
+                <span
+                  class="visually-hidden"
+                > â€” Afro-Amerikaanse muzikale wortels â€” Bron: Wood &amp; Steel â€” Taylor Guitars</span>
+                <span aria-hidden="true">â†—</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARK: ONDERZOEK EN LITERATUUR -->
+      <section id="researchView" class="view-section" aria-labelledby="researchSourcesTitle">
+        <div class="parchment-bg research-card">
+          <div class="research-header">
+            <h2
+              id="researchSourcesTitle"
+              tabindex="-1"
+              data-i18n="sources_research_heading"
+            >📚 Literatuur &amp; Historische Bronnen</h2>
+            <p
+              class="research-subtitle"
+              data-i18n="sources_research_subtitle"
+            >Overzicht van artikelen, musea en archieven die zijn geraadpleegd voor het onderzoek.</p>
+          </div>
+          <div id="researchList" class="research-list">
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">Geschiedenis van het Wilde Westen &amp; Frontier Life</h3>
+                <span class="category-badge">Geschiedenis</span>
+              </div>
+              <p
+                id="research-description-0"
+                class="research-description"
+              >Achtergrondinformatie over de geschiedenis van countrymuziek en de Amerikaanse cultuur.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-0"
+                ><strong>Auteur/Instituut:</strong> Plum Rose Publishing</span>
+                <a
+                  href="https://plumrosepublishing.com/the-history-of-country-music/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-0 research-author-0 research-context-0"
+                >
+                  Bezoek Bron
+                  <span
+                    class="visually-hidden"
+                  > â€” Geschiedenis van het Wilde Westen &amp; Frontier Life</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-0"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">De Evolutie van Country Muziek &amp; Subgenres</h3>
+                <span class="category-badge">Muziek</span>
+              </div>
+              <p
+                id="research-description-1"
+                class="research-description"
+              >Historische documentatie over de oorsprong van Honky Tonk, Outlaw Country en de moderne countrymuziekindustrie.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-1"
+                ><strong>Auteur/Instituut:</strong> Country Music Hall of Fame</span>
+                <a
+                  href="https://www.countrymusichalloffame.org/learn/country-music-history"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-1 research-author-1 research-context-1"
+                >
+                  Bezoek Bron
+                  <span
+                    class="visually-hidden"
+                  > â€” De Evolutie van Country Muziek &amp; Subgenres</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-1"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">Roots &amp; Branches of Country Music</h3>
+                <span class="category-badge">Cultuur &amp; Evenementen</span>
+              </div>
+              <p
+                id="research-description-2"
+                class="research-description"
+              >Gedocumenteerde geschiedenis van de roots, vertakkingen en culturele impact van countrymuziek.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-2"
+                ><strong>Auteur/Instituut:</strong> PBS - Ken Burns</span>
+                <a
+                  href="https://www.pbs.org/kenburns/country-music/roots-branches-of-country-music"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-2 research-author-2 research-context-2"
+                >
+                  Bezoek Bron
+                  <span class="visually-hidden"> â€” Roots &amp; Branches of Country Music</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-2"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">History of Country Music in Oklahoma</h3>
+                <span class="category-badge">Geschiedenis</span>
+              </div>
+              <p
+                id="research-description-3"
+                class="research-description"
+              >Online encyclopedie en academische artikelen over de geschiedenis van countrymuziek.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-3"
+                ><strong>Auteur/Instituut:</strong> Oklahoma Historical Society</span>
+                <a
+                  href="https://www.okhistory.org/publications/enc/entry?entry=CO072"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-3 research-author-3 research-context-3"
+                >
+                  Bezoek Bron
+                  <span class="visually-hidden"> â€” History of Country Music in Oklahoma</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-3"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">The Roots of American Roots &amp; Bluegrass Music</h3>
+                <span class="category-badge">Muziek</span>
+              </div>
+              <p
+                id="research-description-4"
+                class="research-description"
+              >Onderzoek naar traditionele Amerikaanse volksmuziek, bluegrass en vroege verhalen verteld via liedjes.</p>
+              <div class="research-source-footer">
+                <span id="research-author-4"><strong>Auteur/Instituut:</strong> Britannica</span>
+                <a
+                  href="https://www.britannica.com/art/bluegrass-music"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-4 research-author-4 research-context-4"
+                >
+                  Bezoek Bron
+                  <span
+                    class="visually-hidden"
+                  > â€” The Roots of American Roots &amp; Bluegrass Music</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-4"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">History of Country Music</h3>
+                <span class="category-badge">Muziek</span>
+              </div>
+              <p
+                id="research-description-5"
+                class="research-description"
+              >Overzicht van de rijke geschiedenis van countrymuziek, artiesten en locaties.</p>
+              <div class="research-source-footer">
+                <span id="research-author-5"><strong>Auteur/Instituut:</strong> Grizzly Rose</span>
+                <a
+                  href="https://grizzlyrose.com/history-of-country-music/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-5 research-author-5 research-context-5"
+                >
+                  Bezoek Bron
+                  <span class="visually-hidden"> â€” History of Country Music</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-5"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">Discover Country Music Themes</h3>
+                <span class="category-badge">Muziek</span>
+              </div>
+              <p
+                id="research-description-6"
+                class="research-description"
+              >Thematisch onderzoek naar de muzikale tradities en ontwikkeling van countrymuziek.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-6"
+                ><strong>Auteur/Instituut:</strong> Music Rising at Tulane</span>
+                <a
+                  href="https://musicrising.tulane.edu/discover/themes/country-music/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-6 research-author-6 research-context-6"
+                >
+                  Bezoek Bron
+                  <span class="visually-hidden"> â€” Discover Country Music Themes</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-6"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">A Brief History of Country Music</h3>
+                <span class="category-badge">Geschiedenis</span>
+              </div>
+              <p
+                id="research-description-7"
+                class="research-description"
+              >Een beknopt historisch overzicht van het ontstaan en de evolutie van het genre.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-7"
+                ><strong>Auteur/Instituut:</strong> Medium (Midweek Crisis)</span>
+                <a
+                  href="https://midweekcrisis.medium.com/a-brief-history-of-country-music-ca72e8fff803"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-7 research-author-7 research-context-7"
+                >
+                  Bezoek Bron
+                  <span class="visually-hidden"> â€” A Brief History of Country Music</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-7"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3
+                  class="card-title"
+                >An American Tradition: History of Country Music Influences</h3>
+                <span class="category-badge">Muziek</span>
+              </div>
+              <p
+                id="research-description-8"
+                class="research-description"
+              >Artikelen over de invloeden en muzikale tradities die country gevormd hebben.</p>
+              <div class="research-source-footer">
+                <span id="research-author-8"><strong>Auteur/Instituut:</strong> Musicnotes</span>
+                <a
+                  href="https://www.musicnotes.com/blog/an-american-tradition-the-history-of-country-music-influences/?srsltid=AfmBOopG-MGnrjlAKgoXNbYHh73PstFLviQs8-YRZ_68QN1us4Aj6wYG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-8 research-author-8 research-context-8"
+                >
+                  Bezoek Bron
+                  <span
+                    class="visually-hidden"
+                  > â€” An American Tradition: History of Country Music Influences</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-8"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+
+            <div class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3 class="card-title">Dolly Parton and the Roots of Country Music</h3>
+                <span class="category-badge">Muziek &amp; Geschiedenis</span>
+              </div>
+              <p
+                id="research-description-9"
+                class="research-description"
+              >Tijdlijn en historische artikelen over de wortels van countrymuziek en iconische artiesten.</p>
+              <div class="research-source-footer">
+                <span
+                  id="research-author-9"
+                ><strong>Auteur/Instituut:</strong> Library of Congress</span>
+                <a
+                  href="https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/country-music-timeline/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="research-description-9 research-author-9 research-context-9"
+                >
+                  Bezoek Bron
+                  <span
+                    class="visually-hidden"
+                  > â€” Dolly Parton and the Roots of Country Music</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="research-context-9"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARK: YOUTUBE-VIDEOBRONNEN -->
+      <section id="videoView" class="view-section" aria-labelledby="videoSourcesTitle">
+        <div class="parchment-bg research-card">
+          <div class="research-header">
+            <h2
+              id="videoSourcesTitle"
+              tabindex="-1"
+              data-i18n="sources_video_heading"
+            >🎬 Videobronnen uit de Story-tijdlijn</h2>
+            <p
+              class="research-subtitle"
+              data-i18n="sources_video_intro"
+            >De YouTube-video’s die bij de gebeurtenissen op de Story-pagina worden gebruikt. Open de oorspronkelijke video via de bijbehorende link.</p>
+          </div>
+          <div id="videoList" class="research-list">
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>If Tomorrow Never Comes</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-0"
+                class="research-description"
+              ><strong>Artiest:</strong> Garth Brooks</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 1990â€“2009</span>
+                <a
+                  href="https://www.youtube.com/watch?v=M9r0XxLsgic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-0 video-context-0"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Garth Brooks â€” If Tomorrow Never Comes</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-0"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Before He Cheats</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-1"
+                class="research-description"
+              ><strong>Artiest:</strong> Carrie Underwood</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 1990â€“2009</span>
+                <a
+                  href="https://www.youtube.com/watch?v=b3Kd15TVNCY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-1 video-context-1"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Carrie Underwood â€” Before He Cheats</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-1"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Jambalaya</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-2"
+                class="research-description"
+              ><strong>Artiest:</strong> Hank Williams</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 1950â€“1969</span>
+                <a
+                  href="https://www.youtube.com/watch?v=Mc_2sOWVTxI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-2 video-context-2"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Hank Williams â€” Jambalaya</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-2"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Walkinâ€™ After Midnight</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-3"
+                class="research-description"
+              ><strong>Artiest:</strong> Patsy Cline</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 1950â€“1969</span>
+                <a
+                  href="https://www.youtube.com/watch?v=lgGI-HOQZBk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-3 video-context-3"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Patsy Cline â€” Walkinâ€™ After Midnight</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-3"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Harper Valley, P.T.A.</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-4"
+                class="research-description"
+              ><strong>Artiest:</strong> Jeannie C. Riley</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 1950â€“1969</span>
+                <a
+                  href="https://www.youtube.com/watch?v=aOZPBUu7Fro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-4 video-context-4"
+                >
+                  Bekijk op YouTube
+                  <span
+                    class="visually-hidden"
+                  > â€” Jeannie C. Riley â€” Harper Valley, P.T.A.</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-4"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Cruise</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-5"
+                class="research-description"
+              ><strong>Artiest:</strong> Florida Georgia Line</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 2010â€“heden</span>
+                <a
+                  href="https://www.youtube.com/watch?v=8PvebsWcpto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-5 video-context-5"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Florida Georgia Line â€” Cruise</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-5"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+            <article class="parchment-bg source-card">
+              <div class="research-source-heading">
+                <h3>Tennessee Whiskey</h3>
+                <span class="category-badge">YouTube</span>
+              </div>
+              <p
+                id="video-credit-6"
+                class="research-description"
+              ><strong>Artiest:</strong> Chris Stapleton</p>
+              <div class="research-source-footer">
+                <span>Gebruikt in Story Â· 2010â€“heden</span>
+                <a
+                  href="https://www.youtube.com/watch?v=IBLruNfUqUs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="video-credit-6 video-context-6"
+                >
+                  Bekijk op YouTube
+                  <span class="visually-hidden"> â€” Chris Stapleton â€” Tennessee Whiskey</span>
+                  <span aria-hidden="true">â†—</span>
+                </a>
+                <span
+                  id="video-context-6"
+                  class="visually-hidden"
+                >Opent in een nieuw tabblad.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </body>
 </html>
